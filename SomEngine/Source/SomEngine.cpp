@@ -6,7 +6,6 @@ SomEngine::SomEngine()
 {
 }
 
-
 SomEngine::~SomEngine()
 {
 }
@@ -15,7 +14,8 @@ LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
 HINSTANCE g_hInst;
 LPCTSTR lpszClass = TEXT("SomEngine");
 
-int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpszCmdParam, int nCmdShow)
+// SomWorks :D // WINAPI or APIENTRY
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpszCmdParam, int nCmdShow)
 {
 	HWND hWnd;
 	MSG Message;
@@ -54,5 +54,5 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 		return 0;
 		break;
 	}
-	return(DefWindowProc(hWnd, iMessage, wParam, lParam));
+	return DefWindowProc(hWnd, iMessage, wParam, lParam);
 }
