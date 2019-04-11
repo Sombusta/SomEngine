@@ -1,0 +1,9 @@
+[일반]
+출력 디렉터리 : $(SolutionDir)\Build\$(Configuration)\
+중간 디렉터리 : $(SolutionDir)\Saved\$(Configuration)
+
+[링커/일반]
+추가 종속성에 다음 라이브러리 추가
+d3dcompiler.lib
+D3D12.lib
+dxgi.lib
