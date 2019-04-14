@@ -19,11 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source\Engine.h" />
-    <ClInclude Include="Source\SomEngine.h" />
+    <ClInclude Include="Source\Engine\DX12\d3dx12.h" />
+    <ClInclude Include="Source\Engine\DX12\DXSampleHelper.h" />
+    <ClInclude Include="Source\Engine\Engine.h" />
+    <ClInclude Include="Source\Engine\WinMain\Win32Application.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\SomEngine.cpp" />
+    <ClCompile Include="Source\Engine\WinMain\Win32Application.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
@@ -98,6 +100,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>D:\Developments\Projects\Native_Projects\SomEngine\SomEngine\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalDependencies>d3dcompiler.lib;D3D12.lib;dxgi.lib;%(AdditionalDependencies)</AdditionalDependencies>

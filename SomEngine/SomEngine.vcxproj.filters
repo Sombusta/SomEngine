@@ -1,21 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClInclude Include="Source\Engine.h">
-      <Filter>Main</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\SomEngine.h">
-      <Filter>Main</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Filter Include="Main">
+    <Filter Include="Engine">
       <UniqueIdentifier>{9371a536-2181-4157-a2e3-0ed6da179df5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\WinMain">
+      <UniqueIdentifier>{8acc7cdf-be5a-40d4-8f33-1b4e6e09da59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\DX12">
+      <UniqueIdentifier>{64b357b3-f6fb-4082-be4d-355d96ff5fb6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\SomEngine.cpp">
-      <Filter>Main</Filter>
+    <ClInclude Include="Source\Engine\Engine.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\WinMain\Win32Application.h">
+      <Filter>Engine\WinMain</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\DX12\d3dx12.h">
+      <Filter>Engine\DX12</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\DX12\DXSampleHelper.h">
+      <Filter>Engine\DX12</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Engine\WinMain\Win32Application.cpp">
+      <Filter>Engine\WinMain</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

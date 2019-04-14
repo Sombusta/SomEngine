@@ -1,14 +1,6 @@
 // Copyright (c) 2014-2019 Sombusta, All Rights Reserved.
 
-#include "SomEngine.h"
-
-SomEngine::SomEngine()
-{
-}
-
-SomEngine::~SomEngine()
-{
-}
+#include "Win32Application.h"
 
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
 HINSTANCE g_hInst;
