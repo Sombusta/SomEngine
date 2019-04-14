@@ -18,11 +18,16 @@ using namespace std;
 #include <wrl.h>
 #include <shellapi.h>
 
+using namespace Microsoft::WRL;
+using Microsoft::WRL::ComPtr;
+
 // SomWorks :D // DirectX 12 Library Header
 #include <d3d12.h>
 #include <dxgi1_4.h>
 #include <D3Dcompiler.h>
 #include <DirectXMath.h>
+
+using namespace DirectX;
 
 // SomWorks :D // DirectX 12 SDK Header
 #include "Engine/DX12/d3dx12.h"
