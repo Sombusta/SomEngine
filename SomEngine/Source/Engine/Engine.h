@@ -30,10 +30,13 @@
 
 using namespace std;
 
+// SomWorks :D // 리소스 파일들
 #include "Resource/targetver.h"
 #include "Resource/Resource.h"
 
 #if bUseSoftRenderer
+#include "Renderer/SoftRenderer/GDIHelper.h"
+#include "Renderer/SoftRenderer/SoftRenderer.h"
 #endif
 
 #if bUseDX11

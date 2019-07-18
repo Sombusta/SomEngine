@@ -20,11 +20,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Engine\Engine.h" />
+    <ClInclude Include="Source\Engine\Renderer\SoftRenderer\GDIHelper.h" />
+    <ClInclude Include="Source\Engine\Renderer\SoftRenderer\SoftRenderer.h" />
     <ClInclude Include="Source\Engine\Resource\Resource.h" />
     <ClInclude Include="Source\Engine\Resource\targetver.h" />
     <ClInclude Include="Source\Engine\WinMain\Win32Application.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Engine\Renderer\SoftRenderer\GDIGelper.cpp" />
+    <ClCompile Include="Source\Engine\Renderer\SoftRenderer\SoftRenderer.cpp" />
     <ClCompile Include="Source\Engine\WinMain\Win32Application.cpp" />
     <ClCompile Include="Source\Engine\WinMain\WinMain.cpp" />
   </ItemGroup>

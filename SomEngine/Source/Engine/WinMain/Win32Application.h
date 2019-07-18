@@ -8,6 +8,10 @@
 #define SomHeight 720
 #define SomTitle L"SomEngine"
 
+extern int g_nClientWidth = SomWidth;
+extern int g_nClientHeight = SomHeight;
+extern bool g_bIsActive;
+
 /*
 class SomEngine
 {

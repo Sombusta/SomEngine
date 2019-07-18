@@ -13,6 +13,15 @@
     <Filter Include="Engine\Resource">
       <UniqueIdentifier>{e418c61a-bec7-4104-a054-c23282bad268}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\SomRender">
+      <UniqueIdentifier>{64a521b2-aad6-4ec0-b425-f2794ad4a3e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\SomRender\SoftRenderer">
+      <UniqueIdentifier>{00251de8-d0ae-4a97-9fdf-82be990a46a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\SomRender\SoftRenderer\GDI">
+      <UniqueIdentifier>{98103fc7-441f-4d71-8f79-080df08093c3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Engine\Engine.h">
@@ -27,6 +36,12 @@
     <ClInclude Include="Source\Engine\Resource\targetver.h">
       <Filter>Engine\Resource</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Engine\Renderer\SoftRenderer\GDIHelper.h">
+      <Filter>Engine\SomRender\SoftRenderer\GDI</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\Renderer\SoftRenderer\SoftRenderer.h">
+      <Filter>Engine\SomRender\SoftRenderer</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Engine\WinMain\Win32Application.cpp">
@@ -34,6 +49,12 @@
     </ClCompile>
     <ClCompile Include="Source\Engine\WinMain\WinMain.cpp">
       <Filter>Engine\WinMain</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\Renderer\SoftRenderer\GDIGelper.cpp">
+      <Filter>Engine\SomRender\SoftRenderer\GDI</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\Renderer\SoftRenderer\SoftRenderer.cpp">
+      <Filter>Engine\SomRender\SoftRenderer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
