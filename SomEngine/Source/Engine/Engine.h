@@ -2,6 +2,12 @@
 
 #pragma once
 
+// SomWorks :D // WinAPI Windows Setup
+#define SomWidth 1280
+#define SomHeight 720
+#define SomTitle L"SomEngine_Win32"
+
+// SomWorks :D // Renderer Setup
 #define bUseSoftRenderer true
 #define bUseDX11 false
 #define bUseDX12 false
@@ -22,7 +28,7 @@
 #include <iostream>
 #include <string>
 
-// SomWorks :D // C 런타임 헤더 파일입니다.
+// SomWorks :D // C Header, C 스타일 런타임 헤더 파일입니다.
 #include <stdlib.h>
 #include <malloc.h>
 #include <memory.h>

@@ -50,11 +50,11 @@
     <ClCompile Include="Source\Engine\WinMain\WinMain.cpp">
       <Filter>Engine\WinMain</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Engine\Renderer\SoftRenderer\GDIGelper.cpp">
-      <Filter>Engine\SomRender\SoftRenderer\GDI</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Engine\Renderer\SoftRenderer\SoftRenderer.cpp">
       <Filter>Engine\SomRender\SoftRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\Renderer\SoftRenderer\GDIHelper.cpp">
+      <Filter>Engine\SomRender\SoftRenderer\GDI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

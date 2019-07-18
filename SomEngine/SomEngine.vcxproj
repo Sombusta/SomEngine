@@ -27,7 +27,7 @@
     <ClInclude Include="Source\Engine\WinMain\Win32Application.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\Engine\Renderer\SoftRenderer\GDIGelper.cpp" />
+    <ClCompile Include="Source\Engine\Renderer\SoftRenderer\GDIHelper.cpp" />
     <ClCompile Include="Source\Engine\Renderer\SoftRenderer\SoftRenderer.cpp" />
     <ClCompile Include="Source\Engine\WinMain\Win32Application.cpp" />
     <ClCompile Include="Source\Engine\WinMain\WinMain.cpp" />

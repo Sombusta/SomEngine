@@ -1,5 +1,4 @@
 
-#include "Engine/WinMain/Win32Application.h"
 #include "GDIHelper.h"
 
 // º¯¼ö
@@ -50,14 +49,10 @@ void InitGDI(HWND hWnd)
 
 	hDIBitmap = CreateDIBSection(hMemoryDC, &bmi, DIB_RGB_COLORS, (void**)&g_pBits, NULL, 0);
 	hDefaultBitmap = (HBITMAP)SelectObject(hMemoryDC, hDIBitmap);
-
-	g_bIsActive = TRUE;
 }
 
 void ReleaseGDI(HWND hWnd)
 {
-	g_bIsActive = FALSE;
-
 	DeleteObject(hDefaultBitmap);
 	DeleteObject(hDIBitmap);
 	ReleaseDC(hWnd, hScreenDC);
