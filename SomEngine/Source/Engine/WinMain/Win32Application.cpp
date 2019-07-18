@@ -1,63 +1,83 @@
 // Copyright (c) 2014-2019 Sombusta, All Rights Reserved.
 
 #include "Win32Application.h"
-#include "SomRender_DX12.h"
-#include "TestCode.h"
 
 HWND Win32Application::m_hwnd = nullptr;
+HINSTANCE Win32Application::m_hInstance = nullptr;
 
-LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
-HINSTANCE g_hInst;
-LPCTSTR lpszClass = TEXT("SomEngine");
+INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
 
-// SomWorks :D // WINAPI or APIENTRY
-int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpszCmdParam, int nCmdShow)
+int Win32Application::Run(HINSTANCE hInstance, int nCmdShow)
 {
-	TestCode pSample(0, 0, L"SomEngineTest");
-	
+	m_hInstance = hInstance;
+
+	// Parse the command line parameters
 	int argc;
 	LPWSTR* argv = CommandLineToArgvW(GetCommandLineW(), &argc);
-	pSample.ParseCommandLineArgs(argv, argc);
 	LocalFree(argv);
 
-	HWND hWnd;
-	MSG Message;
-	WNDCLASS WndClass;
-	g_hInst = hInstance;
+	// SomWorks :D // Initialize the window class. // 창 클래스를 등록합니다.
+	WNDCLASSEX windowClass = { 0 };
+	windowClass.cbSize = sizeof(WNDCLASSEX);
+	windowClass.style = CS_HREDRAW | CS_VREDRAW;
+	windowClass.lpfnWndProc = WindowProc;
+	windowClass.cbClsExtra = 0;
+	windowClass.cbWndExtra = 0;
+	windowClass.hInstance = hInstance;
+	windowClass.hIcon = LoadIcon(hInstance, MAKEINTRESOURCE(IDI_SOMENGINE));
+	windowClass.hCursor = LoadCursor(nullptr, IDC_ARROW);
+	windowClass.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
+	windowClass.lpszMenuName = MAKEINTRESOURCEW(IDC_SOMENGINE);
+	windowClass.lpszClassName = SomTitle;
+	windowClass.hIconSm = LoadIcon(windowClass.hInstance, MAKEINTRESOURCE(IDI_SMALL));
 
-	WndClass.cbClsExtra = 0;
-	WndClass.cbWndExtra = 0;
-	WndClass.hbrBackground = (HBRUSH)GetStockObject(WHITE_BRUSH);
-	WndClass.hCursor = LoadCursor(NULL, IDC_ARROW);
-	WndClass.hIcon = LoadIcon(NULL, IDI_APPLICATION);
-	WndClass.hInstance = hInstance;
-	WndClass.lpfnWndProc = WndProc;
-	WndClass.lpszClassName = lpszClass;
-	WndClass.lpszMenuName = NULL;
-	WndClass.style = CS_HREDRAW | CS_VREDRAW;
-	RegisterClass(&WndClass);
+	RegisterClassEx(&windowClass);
 
-	hWnd = CreateWindow(lpszClass, lpszClass, WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT, NULL, (HMENU)NULL, hInstance, NULL);
-	ShowWindow(hWnd, nCmdShow);
+	// SomWorks :D // Instance Init // 인스턴스 핸들을 저장하고 주 창을 만듭니다.
+	m_hInstance = hInstance; // 인스턴스 핸들을 전역 변수에 저장합니다.
 
-	Win32Application::SetHWND(hWnd);
+	RECT windowRect = { 0, 0, static_cast<LONG>(SomWidth), static_cast<LONG>(SomHeight) };
+	AdjustWindowRect(&windowRect, WS_OVERLAPPEDWINDOW, FALSE);
 
-	pSample.OnInit();
+	// Create the window and store a handle to it.
+	m_hwnd = CreateWindow(
+		SomTitle,
+		SomTitle,
+		WS_OVERLAPPEDWINDOW,
+		CW_USEDEFAULT,
+		CW_USEDEFAULT,
+		windowRect.right - windowRect.left,
+		windowRect.bottom - windowRect.top,
+		nullptr,        // We have no parent window.
+		nullptr,        // We aren't using menus.
+		hInstance,
+		nullptr);
 
-	while (GetMessage(&Message, NULL, 0, 0))
+	ShowWindow(m_hwnd, nCmdShow);
+	UpdateWindow(m_hwnd);
+	   
+	// SomWorks :D // Main sample loop.
+	MSG msg = {};
+
+	while (msg.message != WM_QUIT)
 	{
-		TranslateMessage(&Message);
-		DispatchMessage(&Message);
+		// Process any messages in the queue.
+		if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
+		{
+			TranslateMessage(&msg);
+			DispatchMessage(&msg);
+		}
 	}
 
-	return (int)Message.wParam;
+	// Return this part of the WM_QUIT message to Windows.
+	return static_cast<char>(msg.wParam);
 }
 
-LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
+// Main message handler for the sample.
+LRESULT CALLBACK Win32Application::WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
-	SomRender_DX12* pSample = reinterpret_cast<SomRender_DX12*>(GetWindowLongPtr(hWnd, GWLP_USERDATA));
-
-	switch (iMessage)
+/*
+	switch (message)
 	{
 	case WM_CREATE:
 	{
@@ -66,20 +86,94 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 		SetWindowLongPtr(hWnd, GWLP_USERDATA, reinterpret_cast<LONG_PTR>(pCreateStruct->lpCreateParams));
 	}
 	return 0;
-	case WM_PAINT:
-		if (pSample)
+
+	case WM_COMMAND:
+	{
+		int wmId = LOWORD(wParam);
+		// 메뉴 선택을 구문 분석합니다:
+		switch (wmId)
 		{
-			pSample->OnUpdate();
-			pSample->OnRender();
+		case IDM_ABOUT:
+			DialogBox(m_hInstance, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
+			break;
+		case IDM_EXIT:
+			DestroyWindow(hWnd);
+			break;
+					default:
+						return DefWindowProc(hWnd, message, wParam, lParam);
 		}
+	}
+	return 0;
+
+	case WM_KEYDOWN:
 		return 0;
-		break;
+
+	case WM_KEYUP:
+		return 0;
+
+	case WM_PAINT:
+		return 0;
+
 	case WM_DESTROY:
 		PostQuitMessage(0);
 		return 0;
-		break;
 	}
 
 	// Handle any messages the switch statement didn't.
-	return DefWindowProc(hWnd, iMessage, wParam, lParam);
+	return DefWindowProc(hWnd, message, wParam, lParam);*/
+
+	switch (message)
+	{
+	case WM_COMMAND: // 응용 프로그램 메뉴를 처리합니다.
+	{
+		int wmId = LOWORD(wParam);
+		// 메뉴 선택을 구문 분석합니다:
+		switch (wmId)
+		{
+		case IDM_ABOUT:
+			DialogBox(m_hInstance, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
+			break;
+		case IDM_EXIT:
+			DestroyWindow(hWnd);
+			break;
+		default:
+			return DefWindowProc(hWnd, message, wParam, lParam);
+		}
+	}
+	break;
+	case WM_PAINT: // 주 창을 그립니다.
+	{
+		PAINTSTRUCT ps;
+		HDC hdc = BeginPaint(hWnd, &ps);
+		// TODO: 여기에 hdc를 사용하는 그리기 코드를 추가합니다...
+		EndPaint(hWnd, &ps);
+	}
+	break;
+	case WM_DESTROY: // 종료 메시지를 게시하고 반환합니다.
+		PostQuitMessage(0);
+		break;
+	default:
+		return DefWindowProc(hWnd, message, wParam, lParam);
+	}
+	return 0;
+}
+
+// SomWorks :D // 정보 대화 상자의 메시지 처리기입니다.
+INT_PTR CALLBACK About(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
+{
+	UNREFERENCED_PARAMETER(lParam);
+	switch (message)
+	{
+	case WM_INITDIALOG:
+		return (INT_PTR)TRUE;
+
+	case WM_COMMAND:
+		if (LOWORD(wParam) == IDOK || LOWORD(wParam) == IDCANCEL)
+		{
+			EndDialog(hDlg, LOWORD(wParam));
+			return (INT_PTR)TRUE;
+		}
+		break;
+	}
+	return (INT_PTR)FALSE;
 }

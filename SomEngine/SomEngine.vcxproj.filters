@@ -7,11 +7,11 @@
     <Filter Include="Engine\WinMain">
       <UniqueIdentifier>{8acc7cdf-be5a-40d4-8f33-1b4e6e09da59}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\DX12">
-      <UniqueIdentifier>{64b357b3-f6fb-4082-be4d-355d96ff5fb6}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Main">
       <UniqueIdentifier>{1e2e29a3-7992-4740-9763-e58f04f8c7ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Resource">
+      <UniqueIdentifier>{e418c61a-bec7-4104-a054-c23282bad268}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -21,28 +21,32 @@
     <ClInclude Include="Source\Engine\WinMain\Win32Application.h">
       <Filter>Engine\WinMain</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Engine\DX12\d3dx12.h">
-      <Filter>Engine\DX12</Filter>
+    <ClInclude Include="Source\Engine\Resource\Resource.h">
+      <Filter>Engine\Resource</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Engine\DX12\DXSampleHelper.h">
-      <Filter>Engine\DX12</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\TestCode.h">
-      <Filter>Main</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\SomRender_DX12.h">
-      <Filter>Engine\DX12</Filter>
+    <ClInclude Include="Source\Engine\Resource\targetver.h">
+      <Filter>Engine\Resource</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Engine\WinMain\Win32Application.cpp">
       <Filter>Engine\WinMain</Filter>
     </ClCompile>
-    <ClCompile Include="Source\TestCode.cpp">
-      <Filter>Main</Filter>
+    <ClCompile Include="Source\Engine\WinMain\WinMain.cpp">
+      <Filter>Engine\WinMain</Filter>
     </ClCompile>
-    <ClCompile Include="Source\SomRender_DX12.cpp">
-      <Filter>Engine\DX12</Filter>
-    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Source\Engine\Resource\small.ico">
+      <Filter>Engine\Resource</Filter>
+    </Image>
+    <Image Include="Source\Engine\Resource\SomEngine.ico">
+      <Filter>Engine\Resource</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Source\Engine\Resource\SomEngine.rc">
+      <Filter>Engine\Resource</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

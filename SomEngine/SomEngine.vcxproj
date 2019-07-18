@@ -19,17 +19,21 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source\Engine\DX12\d3dx12.h" />
-    <ClInclude Include="Source\Engine\DX12\DXSampleHelper.h" />
     <ClInclude Include="Source\Engine\Engine.h" />
+    <ClInclude Include="Source\Engine\Resource\Resource.h" />
+    <ClInclude Include="Source\Engine\Resource\targetver.h" />
     <ClInclude Include="Source\Engine\WinMain\Win32Application.h" />
-    <ClInclude Include="Source\SomRender_DX12.h" />
-    <ClInclude Include="Source\TestCode.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Engine\WinMain\Win32Application.cpp" />
-    <ClCompile Include="Source\SomRender_DX12.cpp" />
-    <ClCompile Include="Source\TestCode.cpp" />
+    <ClCompile Include="Source\Engine\WinMain\WinMain.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Source\Engine\Resource\small.ico" />
+    <Image Include="Source\Engine\Resource\SomEngine.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Source\Engine\Resource\SomEngine.rc" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
@@ -84,7 +88,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>$(SolutionDir)\Build\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)\Saved\$(Configuration)</IntDir>
+    <IntDir>$(SolutionDir)\Saved\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IntDir>$(SolutionDir)\Saved\$(Configuration)</IntDir>

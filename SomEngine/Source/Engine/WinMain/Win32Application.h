@@ -4,27 +4,65 @@
 
 #include "Engine/Engine.h"
 
-class Win32Application
-{
-public:
-	static int Run(class SomRender_DX12* pSample, HINSTANCE hInstance, int nCmdShow);
-	static HWND GetHwnd() { return m_hwnd; }
-	static void SetHWND(HWND hWnd) { m_hwnd = hWnd; };
-
-private:
-	static HWND m_hwnd;
-
-protected:
-	static LRESULT CALLBACK WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
-
-public:
-};
+#define SomWidth 1280
+#define SomHeight 720
+#define SomTitle L"SomEngine"
 
 /*
 class SomEngine
 {
 public:
-	SomEngine();
-	~SomEngine();
+	SomEngine(UINT width, UINT height, std::wstring name);
+	virtual ~SomEngine();
 
-};*/
+	// virtual void OnInit() = 0;
+	// virtual void OnUpdate() = 0;
+	// virtual void OnRender() = 0;
+	// virtual void OnDestroy() = 0;
+
+	// Samples override the event handlers to handle specific messages.
+	virtual void OnKeyDown(UINT8 / *key* /) {}
+	virtual void OnKeyUp(UINT8 / *key* /) {}
+
+private:
+	// Root assets path.
+	std::wstring m_assetsPath;
+
+	// Window title.
+	std::wstring m_title;
+
+protected:
+	void SetCustomWindowText(LPCWSTR text);
+
+	// Viewport dimensions.
+	UINT m_width;
+	UINT m_height;
+	float m_aspectRatio;
+
+	// Adapter info.
+	bool m_useWarpDevice;
+
+public:
+	// Accessors.
+	UINT GetWidth() const { return m_width; }
+	UINT GetHeight() const { return m_height; }
+	const WCHAR* GetTitle() const { return m_title.c_str(); }
+};
+*/
+
+class Win32Application
+{
+public:
+	static int Run(HINSTANCE hInstance, int nCmdShow);
+
+private:
+	static HWND m_hwnd;
+	static HINSTANCE m_hInstance;
+
+protected:
+	static LRESULT CALLBACK WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
+
+public:
+	static HWND GetHwnd() { return m_hwnd; }
+	static HINSTANCE GetHInstnace() { return m_hInstance; }
+};
