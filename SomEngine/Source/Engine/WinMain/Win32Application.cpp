@@ -71,7 +71,7 @@ int Win32Application::Run(HINSTANCE hInstance, int nCmdShow)
 		else if (bIsActive)
 		{
 			// SomWorks :D // SoftRender 메인 업데이트
-			UpdateFrame();
+			UpdateGDI();
 		}
 		else
 		{

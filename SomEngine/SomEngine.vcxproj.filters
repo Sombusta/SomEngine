@@ -28,6 +28,12 @@
     <Filter Include="Engine\SomLibraries\Math">
       <UniqueIdentifier>{302b98ed-22e8-4fed-bfcb-98a40a4e1d88}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\SomLibraries\Draw">
+      <UniqueIdentifier>{7b529e7e-7c20-4573-bf0f-c24e1f98413d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\SomLibraries\Math\Vector">
+      <UniqueIdentifier>{5052dd8c-df1f-41e9-9ce1-38343cbe317d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Engine\Engine.h">
@@ -45,11 +51,23 @@
     <ClInclude Include="Source\Engine\Renderer\SoftRenderer\GDIHelper.h">
       <Filter>Engine\SomRender\SoftRenderer\GDI</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Engine\Renderer\SoftRenderer\SoftRenderer.h">
-      <Filter>Engine\SomRender\SoftRenderer</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Engine\SomLibraries\Math\SomMathLibrary.h">
       <Filter>Engine\SomLibraries\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomLibraries\Draw\SomDrawLibrary.h">
+      <Filter>Engine\SomLibraries\Draw</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomLibraries\Math\Vector\Point2D.h">
+      <Filter>Engine\SomLibraries\Math\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomLibraries\Math\Vector\Vector2D.h">
+      <Filter>Engine\SomLibraries\Math\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomLibraries\Math\Vector\Vector3D.h">
+      <Filter>Engine\SomLibraries\Math\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\Renderer\SoftRenderer\SoftRenderer.h">
+      <Filter>Engine\SomRender\SoftRenderer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -59,11 +77,17 @@
     <ClCompile Include="Source\Engine\WinMain\WinMain.cpp">
       <Filter>Engine\WinMain</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Engine\Renderer\SoftRenderer\SoftRenderer.cpp">
-      <Filter>Engine\SomRender\SoftRenderer</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Engine\Renderer\SoftRenderer\GDIHelper.cpp">
       <Filter>Engine\SomRender\SoftRenderer\GDI</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\SomLibraries\Draw\SomDrawLibrary.cpp">
+      <Filter>Engine\SomLibraries\Draw</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\SomLibraries\Math\SomMathLibrary.cpp">
+      <Filter>Engine\SomLibraries\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\Renderer\SoftRenderer\SoftRenderer.cpp">
+      <Filter>Engine\SomRender\SoftRenderer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

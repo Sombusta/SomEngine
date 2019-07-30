@@ -24,12 +24,18 @@
     <ClInclude Include="Source\Engine\Renderer\SoftRenderer\SoftRenderer.h" />
     <ClInclude Include="Source\Engine\Resource\Resource.h" />
     <ClInclude Include="Source\Engine\Resource\targetver.h" />
+    <ClInclude Include="Source\Engine\SomLibraries\Draw\SomDrawLibrary.h" />
     <ClInclude Include="Source\Engine\SomLibraries\Math\SomMathLibrary.h" />
+    <ClInclude Include="Source\Engine\SomLibraries\Math\Vector\Point2D.h" />
+    <ClInclude Include="Source\Engine\SomLibraries\Math\Vector\Vector2D.h" />
+    <ClInclude Include="Source\Engine\SomLibraries\Math\Vector\Vector3D.h" />
     <ClInclude Include="Source\Engine\WinMain\Win32Application.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Engine\Renderer\SoftRenderer\GDIHelper.cpp" />
     <ClCompile Include="Source\Engine\Renderer\SoftRenderer\SoftRenderer.cpp" />
+    <ClCompile Include="Source\Engine\SomLibraries\Draw\SomDrawLibrary.cpp" />
+    <ClCompile Include="Source\Engine\SomLibraries\Math\SomMathLibrary.cpp" />
     <ClCompile Include="Source\Engine\WinMain\Win32Application.cpp" />
     <ClCompile Include="Source\Engine\WinMain\WinMain.cpp" />
   </ItemGroup>

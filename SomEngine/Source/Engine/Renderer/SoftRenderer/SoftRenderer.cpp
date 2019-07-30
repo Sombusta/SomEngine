@@ -1,64 +1,9 @@
-﻿
+﻿// Copyright (c) 2014-2019 Sombusta, All Rights Reserved.
+
 #include "SoftRenderer.h"
 
-bool IsInRange(int x, int y);
-void PutPixel(int x, int y);
-
-bool IsInRange(int x, int y)
-{
-	return (abs(x) < (SomWidth / 2)) && (abs(y) < (SomHeight / 2));
-}
-
-void PutPixel(int x, int y)
-{
-	if (!IsInRange(x, y)) return;
-
-	ULONG* dest = (ULONG*)g_pBits;
-	DWORD offset = SomWidth * SomHeight / 2 + SomWidth / 2 + x + SomWidth * -y; // SomWidth * x + SomHeight * y;
-	*(dest + offset) = g_CurrentColor;
-}
-
-// SomWorks :D // 직선의 방정식만 가지고 제작된 선 긋기 알고리즘
-// y = (x2 - x1)/(y2 - y1) * (x - x1) + y1
-void DrawLine(Vector2D v1, Vector2D v2)
-{
-	int ResultY = 0;
-	
-	// SomWorks :D // i는 X값 ResultY 는 Y값
-	for (int i = v1.x; i < v2.x; i++)
-	{
-		ResultY = static_cast<int>(((v2.y - v1.y) / (v2.x - v1.x)) * (i - v1.x) + v1.y);
-		PutPixel(i, ResultY);
-		// cout << Result << endl;
-	}
-}
-
-// SomWorks :D // 브레젠험 직선 알고리즘
-// -W( y - yl ) + H ( x - xl ) < 0
-void CalcBresenhamAlgorithm(Vector2D v1, Vector2D v2)
-{
-	int dx, dy = 0;
-
-	dx = abs(v2.x - v1.x);
-	dy = abs(v2.y - v1.y);
-
-	if (dy <= dx)
-	{
-		
-	}
-	else
-	{
-
-	}
-}
-
-void CalcLocation(int a, int b)
-{
-
-}
-
 // SomWorks :D // 인터넷 레퍼런스
-void Reference(Vector2D v1, Vector2D v2)
+void Reference(Point2D v1, Point2D v2)
 {
 	int dx, dy;
 	int p_value;
@@ -99,12 +44,13 @@ void Reference(Vector2D v1, Vector2D v2)
 			inc_value = -1;
 		}
 
-		PutPixel(v1.x, v1.y);
+		FSomDrawLibrary::DrawPixel(v1.x, v1.y);
 
 		//처음 판단 값
 		p_value = 2 * dy - dx;
 
-		for (ndx = v1.x; ndx < v2.x; ++ndx) {
+		for (ndx = v1.x; ndx < v2.x; ++ndx)
+		{
 			if (0 > p_value) {
 				p_value += inc_minus;
 			}
@@ -112,8 +58,8 @@ void Reference(Vector2D v1, Vector2D v2)
 				p_value += inc_plus;
 				v1.y += inc_value;
 			}
-
-			PutPixel(ndx, v1.y);
+		
+			FSomDrawLibrary::DrawPixel(ndx, v1.y);
 		}
 	}
 	else
@@ -137,7 +83,7 @@ void Reference(Vector2D v1, Vector2D v2)
 		else {
 			inc_value = -1;
 		}
-		PutPixel(v1.x, v1.y);
+		FSomDrawLibrary::DrawPixel(v1.x, v1.y);
 
 		p_value = 2 * dx - dy;
 
@@ -153,33 +99,34 @@ void Reference(Vector2D v1, Vector2D v2)
 				v1.x += inc_value;
 			}
 
-			PutPixel(v1.x, ndx);
+			FSomDrawLibrary::DrawPixel(v1.x, ndx);
 		}
 	}
 }
 
 void UpdateFrame(void)
 {
-	// Buffer Clear
-	SetColor(32, 128, 255); // SetColor(0, 0, 0);
-	Clear();
-
 	// Draw
 	SetColor(255, 255, 255); // SetColor(255, 0, 0);
-	// PutPixel(0, 0);
+	// FSomDrawLibrary::DrawPixel(0, 0);
 
-	//CalcBresenhamAlgorithm(Vector2D(-100, -100), Vector2D(100, 100));
+	Point2D p1;
+	p1.x = 0;
+	p1.y = 0;
+
+	Point2D p2;
+	p2.x = -100;
+	p2.y = 100;
 	
-	DrawLine(Vector2D(-100, -100), Vector2D(100, 100));
-	
-	static bool a = false;	
+	Reference(p1, p2); // FSomDrawLibrary::DrawLine(p1, p2);
+		
+	// =================================================================
+
+	static bool a = false;
 
 	if (!a)
 	{
-		DrawLine(Vector2D(-100, -100), Vector2D(100, 100));
+		FSomDrawLibrary::DrawLine(Point2D(-100, -100), Point2D(100, 100));		
 		a = true;
 	}
-
-	// Buffer Swap 
-	BufferSwap();
 }

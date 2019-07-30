@@ -42,6 +42,7 @@ using namespace std;
 
 // SomWorks :D // SomFramework Library
 #include "SomLibraries/Math/SomMathLibrary.h"
+#include "SomLibraries/Draw/SomDrawLibrary.h"
 
 #if bUseSoftRenderer
 #include "Renderer/SoftRenderer/GDIHelper.h"

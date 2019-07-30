@@ -1,42 +1,24 @@
+// Copyright (c) 2014-2019 Sombusta, All Rights Reserved.
+
 #pragma once
 
-// SomWorks :D // Vector2D
-typedef struct FVector2D
+#include "Vector/Point2D.h"
+#include "Vector/Vector2D.h"
+#include "Vector/Vector3D.h"
+
+class FSomMathLibrary
 {
-	FVector2D()
-	{
-		x = 0;
-		y = 0;
-	}
+public:
+	FSomMathLibrary();
+	~FSomMathLibrary();
 
-	FVector2D(int x1, int y1)
-	{
-		x = x1;
-		y = y1;
-	}
+	// SomWorks :D // 수가 범위 안에 있는지 체크
+	static bool IsInRange(int x, int y);
 
-	int x = 0;
-	int y = 0;
-} Vector2D;
+private:
 
-// SomWorks :D // Vector3D
-typedef struct FVector
-{
-	FVector()
-	{
-		x = 0;
-		y = 0;
-		z = 0;
-	}
+protected:
 
-	FVector(int x1, int y1, int z1)
-	{
-		x = x1;
-		y = y1;
-		z = z1;
-	}
+public:
 
-	int x = 0;
-	int y = 0;
-	int z = 0;
-} Vector3D;
+};
