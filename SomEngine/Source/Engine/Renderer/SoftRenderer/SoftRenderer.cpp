@@ -118,12 +118,14 @@ void UpdateFrame(void)
 	p2.x = -100;
 	p2.y = 100;
 	
-	Reference(p1, p2); // FSomDrawLibrary::DrawLine(p1, p2);
-		
+	//Reference(p1, p2);
+	FSomDrawLibrary::DrawLine(p1, p2);
+	//FSomDrawLibrary::DrawCircle(p1, 10);
 	// =================================================================
+	// SomWorks :D // Debug
 
 	static bool a = false;
-
+	
 	if (!a)
 	{
 		FSomDrawLibrary::DrawLine(Point2D(-100, -100), Point2D(100, 100));		

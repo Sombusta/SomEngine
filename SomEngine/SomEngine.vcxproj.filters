@@ -19,9 +19,6 @@
     <Filter Include="Engine\SomRender\SoftRenderer">
       <UniqueIdentifier>{00251de8-d0ae-4a97-9fdf-82be990a46a5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\SomRender\SoftRenderer\GDI">
-      <UniqueIdentifier>{98103fc7-441f-4d71-8f79-080df08093c3}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Engine\SomLibraries">
       <UniqueIdentifier>{b602d141-68ee-4e39-bed6-ea6ecdfc75bd}</UniqueIdentifier>
     </Filter>
@@ -33,6 +30,9 @@
     </Filter>
     <Filter Include="Engine\SomLibraries\Math\Vector">
       <UniqueIdentifier>{5052dd8c-df1f-41e9-9ce1-38343cbe317d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\SomRender\SoftRenderer\Sample">
+      <UniqueIdentifier>{35fa02d0-534d-45eb-b348-7a8c9a6c0b90}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -63,11 +63,11 @@
     <ClInclude Include="Source\Engine\SomLibraries\Math\Vector\Vector3D.h">
       <Filter>Engine\SomLibraries\Math\Vector</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Engine\Renderer\SoftRenderer\SoftRenderer.h">
+    <ClInclude Include="Source\Engine\Renderer\SoftRenderer\SomFramework_SR.h">
       <Filter>Engine\SomRender\SoftRenderer</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Engine\Renderer\SoftRenderer\SomFramework_SR.h">
-      <Filter>Engine\SomRender\SoftRenderer\GDI</Filter>
+    <ClInclude Include="Source\Engine\Renderer\SoftRenderer\SoftRenderer.h">
+      <Filter>Engine\SomRender\SoftRenderer\Sample</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -83,11 +83,11 @@
     <ClCompile Include="Source\Engine\SomLibraries\Math\SomMathLibrary.cpp">
       <Filter>Engine\SomLibraries\Math</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Engine\Renderer\SoftRenderer\SoftRenderer.cpp">
+    <ClCompile Include="Source\Engine\Renderer\SoftRenderer\SomFramework_SR.cpp">
       <Filter>Engine\SomRender\SoftRenderer</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Engine\Renderer\SoftRenderer\SomFramework_SR.cpp">
-      <Filter>Engine\SomRender\SoftRenderer\GDI</Filter>
+    <ClCompile Include="Source\Engine\Renderer\SoftRenderer\SoftRenderer.cpp">
+      <Filter>Engine\SomRender\SoftRenderer\Sample</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

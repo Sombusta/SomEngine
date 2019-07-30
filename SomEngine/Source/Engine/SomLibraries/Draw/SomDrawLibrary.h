@@ -22,6 +22,8 @@ public:
 	// SomWorks :D // 삼각형 그리기
 	static void DrawTriangle(FVector2D a, FVector2D b, FVector2D c);
 
+	// SomWorks :D // 원 그리기
+	static void DrawCircle(Point2D CenterLocation, int r);
 private:
 
 protected:
