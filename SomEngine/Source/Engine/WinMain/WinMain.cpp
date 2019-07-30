@@ -6,6 +6,11 @@
 // #include "SomRender_DX11.h"
 // #include "SomRender_DX12.h"
 
+#ifdef _DEBUG // SomWorks :D // Debug Console
+#pragma comment(linker, "/entry:WinMainCRTStartup")
+#pragma comment(linker, "/subsystem:console")
+#endif
+
 // SomWorks :D // WINAPI or APIENTRY
 _Use_decl_annotations_
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int nCmdShow)

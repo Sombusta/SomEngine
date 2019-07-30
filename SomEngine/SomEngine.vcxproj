@@ -24,6 +24,7 @@
     <ClInclude Include="Source\Engine\Renderer\SoftRenderer\SoftRenderer.h" />
     <ClInclude Include="Source\Engine\Resource\Resource.h" />
     <ClInclude Include="Source\Engine\Resource\targetver.h" />
+    <ClInclude Include="Source\Engine\SomLibraries\Math\SomMathLibrary.h" />
     <ClInclude Include="Source\Engine\WinMain\Win32Application.h" />
   </ItemGroup>
   <ItemGroup>
@@ -116,6 +117,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>d3dcompiler.lib;D3D12.lib;dxgi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>NotSet</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">

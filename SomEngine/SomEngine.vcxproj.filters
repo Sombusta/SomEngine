@@ -22,6 +22,12 @@
     <Filter Include="Engine\SomRender\SoftRenderer\GDI">
       <UniqueIdentifier>{98103fc7-441f-4d71-8f79-080df08093c3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\SomLibraries">
+      <UniqueIdentifier>{b602d141-68ee-4e39-bed6-ea6ecdfc75bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\SomLibraries\Math">
+      <UniqueIdentifier>{302b98ed-22e8-4fed-bfcb-98a40a4e1d88}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Engine\Engine.h">
@@ -41,6 +47,9 @@
     </ClInclude>
     <ClInclude Include="Source\Engine\Renderer\SoftRenderer\SoftRenderer.h">
       <Filter>Engine\SomRender\SoftRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomLibraries\Math\SomMathLibrary.h">
+      <Filter>Engine\SomLibraries\Math</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

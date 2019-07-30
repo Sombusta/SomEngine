@@ -6,7 +6,7 @@ HWND Win32Application::m_hwnd = nullptr;
 HINSTANCE Win32Application::m_hInstance = nullptr;
 bool Win32Application::bIsActive = false;
 
-INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
+INT_PTR CALLBACK About(HWND, UINT, WPARAM, LPARAM);
 
 int Win32Application::Run(HINSTANCE hInstance, int nCmdShow)
 {
@@ -152,9 +152,9 @@ LRESULT CALLBACK Win32Application::WindowProc(HWND hWnd, UINT message, WPARAM wP
 	}
 	break;
 
-	// SomWorks :D // GDI Initialize
 	case WM_CREATE:
 	{
+		// SomWorks :D // SoftRender GDI Initialize
 		InitGDI(hWnd);
 		bIsActive = true;
 	}
@@ -171,6 +171,7 @@ LRESULT CALLBACK Win32Application::WindowProc(HWND hWnd, UINT message, WPARAM wP
 
 	case WM_DESTROY: // 종료 메시지를 게시하고 반환합니다.
 		bIsActive = false;
+		// SomWorks :D // SoftRender GDI Release
 		ReleaseGDI(hWnd);
 		PostQuitMessage(0);
 		break;

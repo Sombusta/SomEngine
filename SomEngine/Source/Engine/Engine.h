@@ -40,6 +40,9 @@ using namespace std;
 #include "Resource/targetver.h"
 #include "Resource/Resource.h"
 
+// SomWorks :D // SomFramework Library
+#include "SomLibraries/Math/SomMathLibrary.h"
+
 #if bUseSoftRenderer
 #include "Renderer/SoftRenderer/GDIHelper.h"
 #include "Renderer/SoftRenderer/SoftRenderer.h"

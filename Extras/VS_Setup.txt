@@ -1,6 +1,11 @@
 [일반]
 출력 디렉터리 : $(SolutionDir)\Build\$(Configuration)\
-중간 디렉터리 : $(SolutionDir)\Saved\$(Configuration)
+중간 디렉터리 : $(SolutionDir)\Saved\$(Configuration)\
+
+[C/C++, 일반]
+추가 포함 디렉토리 경로 수정
+D:\Developments\Projects\Native_Projects\SomEngine\SomEngine\Source;%(AdditionalIncludeDirectories)
+-> SomEngine의 Source파일로 경로 수정
 
 [링커/일반]
 추가 종속성에 다음 라이브러리 추가
