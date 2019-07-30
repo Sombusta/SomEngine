@@ -20,7 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Engine\Engine.h" />
-    <ClInclude Include="Source\Engine\Renderer\SoftRenderer\GDIHelper.h" />
+    <ClInclude Include="Source\Engine\Renderer\SoftRenderer\SomFramework_SR.h" />
     <ClInclude Include="Source\Engine\Renderer\SoftRenderer\SoftRenderer.h" />
     <ClInclude Include="Source\Engine\Resource\Resource.h" />
     <ClInclude Include="Source\Engine\Resource\targetver.h" />
@@ -32,7 +32,7 @@
     <ClInclude Include="Source\Engine\WinMain\Win32Application.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\Engine\Renderer\SoftRenderer\GDIHelper.cpp" />
+    <ClCompile Include="Source\Engine\Renderer\SoftRenderer\SomFramework_SR.cpp" />
     <ClCompile Include="Source\Engine\Renderer\SoftRenderer\SoftRenderer.cpp" />
     <ClCompile Include="Source\Engine\SomLibraries\Draw\SomDrawLibrary.cpp" />
     <ClCompile Include="Source\Engine\SomLibraries\Math\SomMathLibrary.cpp" />

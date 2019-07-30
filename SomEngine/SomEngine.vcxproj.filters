@@ -48,9 +48,6 @@
     <ClInclude Include="Source\Engine\Resource\targetver.h">
       <Filter>Engine\Resource</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Engine\Renderer\SoftRenderer\GDIHelper.h">
-      <Filter>Engine\SomRender\SoftRenderer\GDI</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Engine\SomLibraries\Math\SomMathLibrary.h">
       <Filter>Engine\SomLibraries\Math</Filter>
     </ClInclude>
@@ -69,6 +66,9 @@
     <ClInclude Include="Source\Engine\Renderer\SoftRenderer\SoftRenderer.h">
       <Filter>Engine\SomRender\SoftRenderer</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Engine\Renderer\SoftRenderer\SomFramework_SR.h">
+      <Filter>Engine\SomRender\SoftRenderer\GDI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Engine\WinMain\Win32Application.cpp">
@@ -76,9 +76,6 @@
     </ClCompile>
     <ClCompile Include="Source\Engine\WinMain\WinMain.cpp">
       <Filter>Engine\WinMain</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Engine\Renderer\SoftRenderer\GDIHelper.cpp">
-      <Filter>Engine\SomRender\SoftRenderer\GDI</Filter>
     </ClCompile>
     <ClCompile Include="Source\Engine\SomLibraries\Draw\SomDrawLibrary.cpp">
       <Filter>Engine\SomLibraries\Draw</Filter>
@@ -88,6 +85,9 @@
     </ClCompile>
     <ClCompile Include="Source\Engine\Renderer\SoftRenderer\SoftRenderer.cpp">
       <Filter>Engine\SomRender\SoftRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\Renderer\SoftRenderer\SomFramework_SR.cpp">
+      <Filter>Engine\SomRender\SoftRenderer\GDI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

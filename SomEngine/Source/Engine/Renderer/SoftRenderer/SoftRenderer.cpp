@@ -107,7 +107,7 @@ void Reference(Point2D v1, Point2D v2)
 void UpdateFrame(void)
 {
 	// Draw
-	SomSoftRenderObject::GetInstance()->SetColor(255, 255, 255); // SetColor(255, 0, 0);
+	SomFramework_SR::GetInstance()->SetColor(255, 255, 255); // SetColor(255, 0, 0);
 	// FSomDrawLibrary::DrawPixel(0, 0);
 
 	Point2D p1;

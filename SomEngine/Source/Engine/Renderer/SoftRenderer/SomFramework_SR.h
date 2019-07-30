@@ -6,11 +6,11 @@
 
 #include "Engine/Engine.h"
 
-class SomSoftRenderObject
+class SomFramework_SR
 {
 public:
-	SomSoftRenderObject();
-	~SomSoftRenderObject();
+	SomFramework_SR();
+	~SomFramework_SR();
 
 	static void InitGDI(HWND hWnd);
 	static void UpdateGDI();
@@ -21,7 +21,7 @@ public:
 	void BufferSwap();
 
 private:
-	static SomSoftRenderObject* Instance;
+	static SomFramework_SR* Instance;
 
 protected:
 
@@ -29,5 +29,5 @@ public:
 	ULONG g_CurrentColor;
 	BYTE* g_pBits;
 
-	static SomSoftRenderObject* GetInstance() { return Instance; }
+	static SomFramework_SR* GetInstance() { return Instance; }
 };

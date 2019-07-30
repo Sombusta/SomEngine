@@ -45,7 +45,7 @@ using namespace std;
 #include "SomLibraries/Draw/SomDrawLibrary.h"
 
 #if bUseSoftRenderer
-#include "Renderer/SoftRenderer/GDIHelper.h"
+#include "Renderer/SoftRenderer/SomFramework_SR.h"
 #include "Renderer/SoftRenderer/SoftRenderer.h"
 #endif
 

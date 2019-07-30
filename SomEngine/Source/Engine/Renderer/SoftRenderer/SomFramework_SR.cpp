@@ -1,27 +1,27 @@
 // Copyright (c) 2014-2019 Sombusta, All Rights Reserved.
 
-#include "GDIHelper.h"
+#include "SomFramework_SR.h"
 #include "SoftRenderer.h"
 
 HDC	hScreenDC, hMemoryDC;
 HBITMAP hDefaultBitmap, hDIBitmap;
 
-SomSoftRenderObject* SomSoftRenderObject::Instance = nullptr;
+SomFramework_SR* SomFramework_SR::Instance = nullptr;
 
-SomSoftRenderObject::SomSoftRenderObject()
+SomFramework_SR::SomFramework_SR()
 {
 }
 
-SomSoftRenderObject::~SomSoftRenderObject()
+SomFramework_SR::~SomFramework_SR()
 {
 }
 
 // SomWorks :D // GDI 오브젝트 생성
-void SomSoftRenderObject::InitGDI(HWND hWnd)
+void SomFramework_SR::InitGDI(HWND hWnd)
 {
 	if (Instance == nullptr)
 	{
-		Instance = new SomSoftRenderObject;
+		Instance = new SomFramework_SR;
 
 		hScreenDC = GetDC(hWnd);
 		hMemoryDC = CreateCompatibleDC(hScreenDC);
@@ -45,7 +45,7 @@ void SomSoftRenderObject::InitGDI(HWND hWnd)
 }
 
 // SomWorks :D // 모든 업데이트는 이곳에서
-void SomSoftRenderObject::UpdateGDI()
+void SomFramework_SR::UpdateGDI()
 {
 	// Buffer Clear
 	Instance->SetColor(32, 128, 255); // SetColor(0, 0, 0);
@@ -59,7 +59,7 @@ void SomSoftRenderObject::UpdateGDI()
 }
 
 // SomWorks :D // 릴리즈
-void SomSoftRenderObject::ReleaseGDI(HWND hWnd)
+void SomFramework_SR::ReleaseGDI(HWND hWnd)
 {
 	if (Instance)
 	{
@@ -73,12 +73,12 @@ void SomSoftRenderObject::ReleaseGDI(HWND hWnd)
 }
 
 // SomWorks :D // 글로벌 컬러 초기화
-void SomSoftRenderObject::SetColor(BYTE r, BYTE g, BYTE b)
+void SomFramework_SR::SetColor(BYTE r, BYTE g, BYTE b)
 {
 	g_CurrentColor = RGB(b, g, r);
 }
 
-void SomSoftRenderObject::Clear()
+void SomFramework_SR::Clear()
 {
 	ULONG* dest = (ULONG*)g_pBits;
 	DWORD bytecount = SomWidth * SomHeight * sizeof(ULONG);
@@ -92,7 +92,7 @@ void SomSoftRenderObject::Clear()
 	return;
 }
 
-void SomSoftRenderObject::BufferSwap()
+void SomFramework_SR::BufferSwap()
 {
 	BitBlt(hScreenDC, 0, 0, SomWidth, SomHeight, hMemoryDC, 0, 0, SRCCOPY);
 }
