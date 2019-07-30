@@ -71,7 +71,7 @@ int Win32Application::Run(HINSTANCE hInstance, int nCmdShow)
 		else if (bIsActive)
 		{
 			// SomWorks :D // SoftRender 메인 업데이트
-			UpdateGDI();
+			SomSoftRenderObject::UpdateGDI();
 		}
 		else
 		{
@@ -155,7 +155,7 @@ LRESULT CALLBACK Win32Application::WindowProc(HWND hWnd, UINT message, WPARAM wP
 	case WM_CREATE:
 	{
 		// SomWorks :D // SoftRender GDI Initialize
-		InitGDI(hWnd);
+		SomSoftRenderObject::InitGDI(hWnd);
 		bIsActive = true;
 	}
 	break;
@@ -172,7 +172,7 @@ LRESULT CALLBACK Win32Application::WindowProc(HWND hWnd, UINT message, WPARAM wP
 	case WM_DESTROY: // 종료 메시지를 게시하고 반환합니다.
 		bIsActive = false;
 		// SomWorks :D // SoftRender GDI Release
-		ReleaseGDI(hWnd);
+		SomSoftRenderObject::ReleaseGDI(hWnd);
 		PostQuitMessage(0);
 		break;
 

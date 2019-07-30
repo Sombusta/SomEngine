@@ -6,13 +6,28 @@
 
 #include "Engine/Engine.h"
 
-extern ULONG g_CurrentColor;
-extern BYTE *g_pBits;
+class SomSoftRenderObject
+{
+public:
+	SomSoftRenderObject();
+	~SomSoftRenderObject();
 
-void InitGDI(HWND hWnd);
-void UpdateGDI();
-void ReleaseGDI(HWND hWnd);
+	static void InitGDI(HWND hWnd);
+	static void UpdateGDI();
+	static void ReleaseGDI(HWND hWnd);
 
-void SetColor(BYTE r, BYTE g, BYTE b);
-void Clear();
-void BufferSwap();
+	void SetColor(BYTE r, BYTE g, BYTE b);
+	void Clear();
+	void BufferSwap();
+
+private:
+	static SomSoftRenderObject* Instance;
+
+protected:
+
+public:
+	ULONG g_CurrentColor;
+	BYTE* g_pBits;
+
+	static SomSoftRenderObject* GetInstance() { return Instance; }
+};

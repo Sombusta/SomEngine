@@ -15,9 +15,9 @@ void FSomDrawLibrary::DrawPixel(int x, int y)
 {
 	if (!FSomMathLibrary::IsInRange(x, y)) return;
 
-	ULONG* dest = (ULONG*)g_pBits;
+	ULONG* dest = (ULONG*)SomSoftRenderObject::GetInstance()->g_pBits;
 	DWORD offset = SomWidth * SomHeight / 2 + SomWidth / 2 + x + SomWidth * -y; // SomWidth * x + SomHeight * y;
-	*(dest + offset) = g_CurrentColor;
+	*(dest + offset) = SomSoftRenderObject::GetInstance()->g_CurrentColor;
 }
 
 // SomWorks :D // 직선의 방정식만 가지고 제작된 선 긋기 알고리즘
