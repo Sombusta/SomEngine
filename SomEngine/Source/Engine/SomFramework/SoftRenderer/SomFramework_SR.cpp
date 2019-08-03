@@ -1,7 +1,7 @@
 // Copyright (c) 2014-2019 Sombusta, All Rights Reserved.
 
 #include "SomFramework_SR.h"
-#include "Main/SoftRenderer.h"
+#include "Main/SR_Sample.h"
 
 SomFramework_SR* SomFramework_SR::Instance = nullptr;
 
@@ -47,9 +47,6 @@ void SomFramework_SR::UpdateGDI()
 	// SomWorks :D // Buffer Clear
 	Instance->BufferClear();
 
-	// SomWorks :D // 그리드 십자선 그리기
-	// Instance->DrawGridLine(true);
-
 	// SomWorks :D // 소프트 렌더러 업데이트
 	UpdateFrame();
 
@@ -74,19 +71,22 @@ void SomFramework_SR::ReleaseGDI(HWND hWnd)
 // SomWorks :D // 버퍼 클리어
 void SomFramework_SR::BufferClear()
 {
-	ULONG* dest = (ULONG*)Bits;
-	DWORD bytecount = SomWidth * SomHeight * sizeof(ULONG);
-	
 	// SomWorks :D // 배경색
 	FColor BG_Color = FColor(32, 128, 255);
-	ULONG value = RGB(BG_Color.b, BG_Color.g, BG_Color.r);
+	ULONG BG_Pixel = BG_Color.GetColor();
 
+	ULONG* dest = (ULONG*)Bits;
+
+	DWORD bytecount = SomWidth * SomHeight * sizeof(ULONG);
 	bytecount /= 4;
 
 	while (bytecount--)
 	{
-		*dest++ = value;
+		*dest++ = BG_Pixel;
 	}
+
+	// SomWorks :D // 그리드 십자선 그리기
+	// Instance->DrawGridLine(true);
 }
 
 // SomWorks :D // 버퍼 스왑

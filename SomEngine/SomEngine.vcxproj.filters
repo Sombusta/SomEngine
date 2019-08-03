@@ -78,7 +78,7 @@
     <ClInclude Include="Source\Engine\SomLibraries\Container\Color\Color.h">
       <Filter>Engine\SomLibraries\Container\Color</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Main\SoftRenderer.h">
+    <ClInclude Include="Source\Main\SR_Sample.h">
       <Filter>Main</Filter>
     </ClInclude>
   </ItemGroup>
@@ -101,7 +101,7 @@
     <ClCompile Include="Source\Engine\SomLibraries\Parser\TextureParser_Bmp.cpp">
       <Filter>Engine\SomLibraries\Parser</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Main\SoftRenderer.cpp">
+    <ClCompile Include="Source\Main\SR_Sample.cpp">
       <Filter>Main</Filter>
     </ClCompile>
   </ItemGroup>

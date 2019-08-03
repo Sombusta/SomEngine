@@ -15,11 +15,11 @@ public:
 	// -
 	// *
 
+	int x = 0;
+	int y = 0;
+
 	FORCEINLINE void Printf()
 	{
 		cout << x << ", " << y << endl;
 	}
-
-	int x = 0;
-	int y = 0;
 } Point2D;

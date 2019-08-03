@@ -10,12 +10,12 @@ public:
 
 	FVector(float X, float Y, float Z) : x(X), y(Y), z(Z) {}
 
+	float x = 0.0f;
+	float y = 0.0f;
+	float z = 0.0f;
+
 	FORCEINLINE void Printf()
 	{
 		cout << x << ", " << y << ", " << z << endl;
 	}
-
-	float x = 0.0f;
-	float y = 0.0f;
-	float z = 0.0f;
 } Vector3D;

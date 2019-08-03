@@ -12,6 +12,7 @@ public:
 	SomFramework_SR();
 	~SomFramework_SR();
 
+	// SomWorks :D // 소프트 렌더러 셋업
 	static void InitGDI(HWND hWnd);
 	static void UpdateGDI();
 	static void ReleaseGDI(HWND hWnd);

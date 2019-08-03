@@ -31,7 +31,7 @@
     <ClInclude Include="Source\Engine\SomLibraries\Math\SomMathLibrary.h" />
     <ClInclude Include="Source\Engine\SomLibraries\Parser\TextureParser_Bmp.h" />
     <ClInclude Include="Source\Engine\WinMain\Win32Application.h" />
-    <ClInclude Include="Source\Main\SoftRenderer.h" />
+    <ClInclude Include="Source\Main\SR_Sample.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Engine\SomFramework\SoftRenderer\SomFramework_SR.cpp" />
@@ -40,7 +40,7 @@
     <ClCompile Include="Source\Engine\SomLibraries\Parser\TextureParser_Bmp.cpp" />
     <ClCompile Include="Source\Engine\WinMain\Win32Application.cpp" />
     <ClCompile Include="Source\Engine\WinMain\WinMain.cpp" />
-    <ClCompile Include="Source\Main\SoftRenderer.cpp" />
+    <ClCompile Include="Source\Main\SR_Sample.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Source\Engine\Resource\small.ico" />
