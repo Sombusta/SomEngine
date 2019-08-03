@@ -15,7 +15,7 @@ public:
 	// -
 	// *
 
-	void Printf()
+	FORCEINLINE void Printf()
 	{
 		cout << x << ", " << y << endl;
 	}

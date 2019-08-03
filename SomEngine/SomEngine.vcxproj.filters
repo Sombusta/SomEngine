@@ -28,9 +28,6 @@
     <Filter Include="Engine\SomFramework\SoftRenderer">
       <UniqueIdentifier>{00251de8-d0ae-4a97-9fdf-82be990a46a5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\SomFramework\SoftRenderer\Sample">
-      <UniqueIdentifier>{35fa02d0-534d-45eb-b348-7a8c9a6c0b90}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Engine\SomLibraries\Parser">
       <UniqueIdentifier>{042440f9-e18d-45ab-a448-3aeffc18c235}</UniqueIdentifier>
     </Filter>
@@ -66,9 +63,6 @@
     <ClInclude Include="Source\Engine\SomFramework\SoftRenderer\SomFramework_SR.h">
       <Filter>Engine\SomFramework\SoftRenderer</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\SoftRenderer\SoftRenderer.h">
-      <Filter>Engine\SomFramework\SoftRenderer\Sample</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Engine\SomLibraries\Parser\TextureParser_Bmp.h">
       <Filter>Engine\SomLibraries\Parser</Filter>
     </ClInclude>
@@ -83,6 +77,9 @@
     </ClInclude>
     <ClInclude Include="Source\Engine\SomLibraries\Container\Color\Color.h">
       <Filter>Engine\SomLibraries\Container\Color</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Main\SoftRenderer.h">
+      <Filter>Main</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -101,11 +98,11 @@
     <ClCompile Include="Source\Engine\SomFramework\SoftRenderer\SomFramework_SR.cpp">
       <Filter>Engine\SomFramework\SoftRenderer</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Engine\SomFramework\SoftRenderer\SoftRenderer.cpp">
-      <Filter>Engine\SomFramework\SoftRenderer\Sample</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Engine\SomLibraries\Parser\TextureParser_Bmp.cpp">
       <Filter>Engine\SomLibraries\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Main\SoftRenderer.cpp">
+      <Filter>Main</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -16,24 +16,23 @@ public:
 	static void UpdateGDI();
 	static void ReleaseGDI(HWND hWnd);
 
-	void SetBackgroundColor(FColor rgb);
-
-	void Clear();
-
+	void BufferClear();
 	void BufferSwap();
 
+	// SomWorks :D // 디버그 그리드
 	void DrawGridLine(bool bActivate);
 
 private:
 	// SomWorks :D // 싱글턴 객체
 	static SomFramework_SR* Instance;
 
-	// SomWorks :D // 배경색
-	ULONG BackgroundColor;
-
 protected:
 
 public:	
+	HDC	hScreenDC, hMemoryDC;
+
+	HBITMAP hDefaultBitmap, hDIBitmap;
+
 	BYTE* Bits;
 
 	static SomFramework_SR* GetInstance() { return Instance; }

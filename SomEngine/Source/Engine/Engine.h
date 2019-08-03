@@ -2,19 +2,19 @@
 
 #pragma once
 
+// SomWorks :D // 리소스 파일들
+#include "Resource/targetver.h"
+#include "Resource/Resource.h"
+
 // SomWorks :D // WinAPI Windows Setup
 #define SomWidth 1280
 #define SomHeight 720
 #define SomTitle L"SomEngine_Win32"
 
-// SomWorks :D // Renderer Setup
-#define bUseSoftRenderer true
+// SomWorks :D // Rendering Framework Setup
+#define bUseSR true
 #define bUseDX11 false
 #define bUseDX12 false
-
-// #pragma comment(lib, "d3dcompiler.lib")
-// #pragma comment(lib, "D3D12.lib")
-// #pragma comment(lib, "dxgi.lib")
 
 #define WIN32_LEAN_AND_MEAN // 거의 사용되지 않는 내용을 Windows 헤더에서 제외합니다.
 
@@ -36,10 +36,6 @@
 
 using namespace std;
 
-// SomWorks :D // 리소스 파일들
-#include "Resource/targetver.h"
-#include "Resource/Resource.h"
-
 // SomWorks :D // 컨테이너
 #include "Engine/SomLibraries/Container/Vector/Point2D.h"
 #include "Engine/SomLibraries/Container/Vector/Vector2D.h"
@@ -50,9 +46,8 @@ using namespace std;
 #include "SomLibraries/Math/SomMathLibrary.h"
 #include "SomLibraries/Draw/SomDrawLibrary.h"
 
-#if bUseSoftRenderer
+#if bUseSR
 #include "SomFramework/SoftRenderer/SomFramework_SR.h"
-#include "SomFramework/SoftRenderer/SoftRenderer.h"
 #endif
 
 #if bUseDX11
@@ -61,6 +56,10 @@ using namespace std;
 
 #if bUseDX12
 // SomWorks :D // DirectX 12 Library Header
+
+// #pragma comment(lib, "d3dcompiler.lib")
+// #pragma comment(lib, "D3D12.lib")
+// #pragma comment(lib, "dxgi.lib")
 
 // #include "SomFramework/DX12/SomFramework_DX12.h"
 #include <d3d12.h>

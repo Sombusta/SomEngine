@@ -1,10 +1,7 @@
 // Copyright (c) 2014-2019 Sombusta, All Rights Reserved.
 
 #include "SomFramework_SR.h"
-#include "SoftRenderer.h"
-
-HDC	hScreenDC, hMemoryDC;
-HBITMAP hDefaultBitmap, hDIBitmap;
+#include "Main/SoftRenderer.h"
 
 SomFramework_SR* SomFramework_SR::Instance = nullptr;
 
@@ -23,8 +20,8 @@ void SomFramework_SR::InitGDI(HWND hWnd)
 	{
 		Instance = new SomFramework_SR;
 
-		hScreenDC = GetDC(hWnd);
-		hMemoryDC = CreateCompatibleDC(hScreenDC);
+		Instance->hScreenDC = GetDC(hWnd);
+		Instance->hMemoryDC = CreateCompatibleDC(Instance->hScreenDC);
 
 		BITMAPINFO bmi;
 		memset(&bmi, 0, sizeof(BITMAPINFO));
@@ -35,8 +32,8 @@ void SomFramework_SR::InitGDI(HWND hWnd)
 		bmi.bmiHeader.biBitCount = 32;
 		bmi.bmiHeader.biCompression = BI_RGB;
 
-		hDIBitmap = CreateDIBSection(hMemoryDC, &bmi, DIB_RGB_COLORS, (void**)&Instance->Bits, NULL, 0);
-		hDefaultBitmap = (HBITMAP)SelectObject(hMemoryDC, hDIBitmap);
+		Instance->hDIBitmap = CreateDIBSection(Instance->hMemoryDC, &bmi, DIB_RGB_COLORS, (void**)&Instance->Bits, NULL, 0);
+		Instance->hDefaultBitmap = (HBITMAP)SelectObject(Instance->hMemoryDC, Instance->hDIBitmap);
 	}
 	else
 	{
@@ -48,8 +45,7 @@ void SomFramework_SR::InitGDI(HWND hWnd)
 void SomFramework_SR::UpdateGDI()
 {
 	// SomWorks :D // Buffer Clear
-	Instance->SetBackgroundColor(FColor(32, 128, 255)); // SetBackgroundColor(0, 0, 0);
-	Instance->Clear();
+	Instance->BufferClear();
 
 	// SomWorks :D // 그리드 십자선 그리기
 	// Instance->DrawGridLine(true);
@@ -66,33 +62,31 @@ void SomFramework_SR::ReleaseGDI(HWND hWnd)
 {
 	if (Instance)
 	{
-		DeleteObject(hDefaultBitmap);
-		DeleteObject(hDIBitmap);
-		ReleaseDC(hWnd, hScreenDC);
-		ReleaseDC(hWnd, hMemoryDC);
+		DeleteObject(Instance->hDefaultBitmap);
+		DeleteObject(Instance->hDIBitmap);
+		ReleaseDC(hWnd, Instance->hScreenDC);
+		ReleaseDC(hWnd, Instance->hMemoryDC);
 		delete Instance;
 		Instance = nullptr;
 	}
 }
 
-// SomWorks :D // 글로벌 컬러 초기화
-void SomFramework_SR::SetBackgroundColor(FColor rgb)
-{
-	BackgroundColor = RGB(rgb.b, rgb.g, rgb.r);
-}
-
-void SomFramework_SR::Clear()
+// SomWorks :D // 버퍼 클리어
+void SomFramework_SR::BufferClear()
 {
 	ULONG* dest = (ULONG*)Bits;
 	DWORD bytecount = SomWidth * SomHeight * sizeof(ULONG);
-	ULONG value = BackgroundColor;
+	
+	// SomWorks :D // 배경색
+	FColor BG_Color = FColor(32, 128, 255);
+	ULONG value = RGB(BG_Color.b, BG_Color.g, BG_Color.r);
+
 	bytecount /= 4;
 
 	while (bytecount--)
 	{
 		*dest++ = value;
 	}
-	return;
 }
 
 // SomWorks :D // 버퍼 스왑

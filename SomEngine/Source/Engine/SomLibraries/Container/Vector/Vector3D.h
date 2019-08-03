@@ -10,7 +10,7 @@ public:
 
 	FVector(float X, float Y, float Z) : x(X), y(Y), z(Z) {}
 
-	void Printf()
+	FORCEINLINE void Printf()
 	{
 		cout << x << ", " << y << ", " << z << endl;
 	}

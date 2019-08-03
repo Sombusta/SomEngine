@@ -22,7 +22,6 @@
     <ClInclude Include="Source\Engine\Engine.h" />
     <ClInclude Include="Source\Engine\Resource\Resource.h" />
     <ClInclude Include="Source\Engine\Resource\targetver.h" />
-    <ClInclude Include="Source\Engine\SomFramework\SoftRenderer\SoftRenderer.h" />
     <ClInclude Include="Source\Engine\SomFramework\SoftRenderer\SomFramework_SR.h" />
     <ClInclude Include="Source\Engine\SomLibraries\Container\Color\Color.h" />
     <ClInclude Include="Source\Engine\SomLibraries\Container\Vector\Point2D.h" />
@@ -32,15 +31,16 @@
     <ClInclude Include="Source\Engine\SomLibraries\Math\SomMathLibrary.h" />
     <ClInclude Include="Source\Engine\SomLibraries\Parser\TextureParser_Bmp.h" />
     <ClInclude Include="Source\Engine\WinMain\Win32Application.h" />
+    <ClInclude Include="Source\Main\SoftRenderer.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\Engine\SomFramework\SoftRenderer\SoftRenderer.cpp" />
     <ClCompile Include="Source\Engine\SomFramework\SoftRenderer\SomFramework_SR.cpp" />
     <ClCompile Include="Source\Engine\SomLibraries\Draw\SomDrawLibrary.cpp" />
     <ClCompile Include="Source\Engine\SomLibraries\Math\SomMathLibrary.cpp" />
     <ClCompile Include="Source\Engine\SomLibraries\Parser\TextureParser_Bmp.cpp" />
     <ClCompile Include="Source\Engine\WinMain\Win32Application.cpp" />
     <ClCompile Include="Source\Engine\WinMain\WinMain.cpp" />
+    <ClCompile Include="Source\Main\SoftRenderer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Source\Engine\Resource\small.ico" />

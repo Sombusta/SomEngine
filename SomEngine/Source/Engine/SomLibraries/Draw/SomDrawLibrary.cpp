@@ -25,7 +25,17 @@ void FSomDrawLibrary::DrawPixel(int x, int y, FColor color)
 // SomWorks :D // 직선의 방정식만 가지고 제작된 선 긋기 알고리즘
 void FSomDrawLibrary::DrawLine(Point2D Point1, Point2D Point2)
 {
+	// SomWorks :D // 직선의 방정식
 	// y = (x2 - x1)/(y2 - y1) * (x - x1) + y1
+
+	// SomWorks :D // i는 X값 Result는 Y값 
+	/*int Result = 0;
+
+	for (int i = Point1.x; i < Point2.x; i++)
+	{
+		Result = static_cast<int>(((Point2.y - Point1.y) / (Point2.x - Point1.x)) * (i - Point1.x) + Point1.y);
+		DrawPixel(i, Result);
+	}*/
 
 	int Result = 0;
 
@@ -39,14 +49,6 @@ void FSomDrawLibrary::DrawLine(Point2D Point1, Point2D Point2)
 		Result = static_cast<int>(((Point2.y - Point1.y) / (Point2.x - Point1.x)) * (i - Point1.x) + Point1.y);
 		DrawPixel((Point1.x + i) * a, (Point1.y + i) * b);
 	}
-
-	// SomWorks :D // i는 X값 Result는 Y값
-/*
-	for (int i = Point1.x; i < Point2.x; i++)
-	{
-		Result = static_cast<int>(((Point2.y - Point1.y) / (Point2.x - Point1.x)) * (i - Point1.x) + Point1.y);
-		DrawPixel(i, Result);
-	}*/
 }
 
 // SomWorks :D // 브레젠험 직선 알고리즘

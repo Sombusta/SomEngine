@@ -10,7 +10,7 @@ public:
 	
 	FVector2D(float X, float Y) : x(X), y(Y) {}
 	
-	void Printf()
+	FORCEINLINE void Printf()
 	{
 		cout << x << ", " << y << endl;
 	}
