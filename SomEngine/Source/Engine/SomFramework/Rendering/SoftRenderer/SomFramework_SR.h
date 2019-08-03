@@ -36,5 +36,8 @@ public:
 
 	BYTE* Bits;
 
+	// SomWorks :D // 전방선언
+	class SR_Sample* SampleObject;
+
 	static SomFramework_SR* GetInstance() { return Instance; }
 };

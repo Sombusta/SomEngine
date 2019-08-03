@@ -34,6 +34,8 @@ void SomFramework_SR::InitGDI(HWND hWnd)
 
 		Instance->hDIBitmap = CreateDIBSection(Instance->hMemoryDC, &bmi, DIB_RGB_COLORS, (void**)&Instance->Bits, NULL, 0);
 		Instance->hDefaultBitmap = (HBITMAP)SelectObject(Instance->hMemoryDC, Instance->hDIBitmap);
+
+		Instance->SampleObject = new SR_Sample;
 	}
 	else
 	{
@@ -48,7 +50,7 @@ void SomFramework_SR::UpdateGDI()
 	Instance->BufferClear();
 
 	// SomWorks :D // 소프트 렌더러 업데이트
-	UpdateFrame();
+	Instance->SampleObject->Update();
 
 	// SomWorks :D // Buffer Swap 
 	Instance->BufferSwap();
@@ -63,6 +65,9 @@ void SomFramework_SR::ReleaseGDI(HWND hWnd)
 		DeleteObject(Instance->hDIBitmap);
 		ReleaseDC(hWnd, Instance->hScreenDC);
 		ReleaseDC(hWnd, Instance->hMemoryDC);
+
+		delete Instance->SampleObject;
+
 		delete Instance;
 		Instance = nullptr;
 	}

@@ -46,8 +46,11 @@ using namespace std;
 #include "SomLibraries/Math/SomMathLibrary.h"
 #include "SomLibraries/Draw/SomDrawLibrary.h"
 
+// SomWorks :D // SomFramework GamePlay
+#include "SomFramework/Game/Object/SomObject.h"
+
 #if bUseSR
-#include "SomFramework/SoftRenderer/SomFramework_SR.h"
+#include "SomFramework/Rendering/SoftRenderer/SomFramework_SR.h"
 #endif
 
 #if bUseDX11

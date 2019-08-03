@@ -4,4 +4,19 @@
 
 #include "Engine/Engine.h"
 
-void UpdateFrame(void);
+class SR_Sample : public SomObject
+{
+public:
+	SR_Sample();
+	~SR_Sample();
+
+	virtual void Init() override;
+	virtual void Update(float DeltaTime = 0.0f) override;
+	virtual void Render() override;
+
+private:
+
+protected:
+
+public:
+};
