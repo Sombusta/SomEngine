@@ -11,7 +11,7 @@ public:
 	~SR_Sample();
 
 	virtual void Init() override;
-	virtual void Update(float DeltaTime = 0.0f) override;
+	virtual void Update(float DeltaTime) override;
 	virtual void Render() override;
 
 private:

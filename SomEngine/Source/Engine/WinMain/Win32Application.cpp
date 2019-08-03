@@ -70,8 +70,8 @@ int Win32Application::Run(HINSTANCE hInstance, int nCmdShow)
 		}
 		else if (bIsActive)
 		{
-			// SomWorks :D // SoftRender 메인 업데이트
-			SomFramework_SR::UpdateGDI();
+			// SomWorks :D // SoftRender 메인 업데이트, 향후에 DeltaTime 관련 구현해야함.
+			SomFramework_SR::UpdateGDI(0.0f);
 		}
 		else
 		{

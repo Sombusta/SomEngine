@@ -35,7 +35,7 @@ void SomFramework_SR::InitGDI(HWND hWnd)
 		Instance->hDIBitmap = CreateDIBSection(Instance->hMemoryDC, &bmi, DIB_RGB_COLORS, (void**)&Instance->Bits, NULL, 0);
 		Instance->hDefaultBitmap = (HBITMAP)SelectObject(Instance->hMemoryDC, Instance->hDIBitmap);
 
-		Instance->SampleObject = new SR_Sample;
+		Instance->GamePlayInit();
 	}
 	else
 	{
@@ -44,13 +44,13 @@ void SomFramework_SR::InitGDI(HWND hWnd)
 }
 
 // SomWorks :D // 모든 업데이트는 이곳에서
-void SomFramework_SR::UpdateGDI()
+void SomFramework_SR::UpdateGDI(float DeltaTime)
 {
 	// SomWorks :D // Buffer Clear
 	Instance->BufferClear();
 
 	// SomWorks :D // 소프트 렌더러 업데이트
-	Instance->SampleObject->Update();
+	Instance->GamePlayUpdate(DeltaTime);
 
 	// SomWorks :D // Buffer Swap 
 	Instance->BufferSwap();
@@ -66,7 +66,7 @@ void SomFramework_SR::ReleaseGDI(HWND hWnd)
 		ReleaseDC(hWnd, Instance->hScreenDC);
 		ReleaseDC(hWnd, Instance->hMemoryDC);
 
-		delete Instance->SampleObject;
+		Instance->GamePlayRelease();
 
 		delete Instance;
 		Instance = nullptr;
@@ -108,4 +108,21 @@ void SomFramework_SR::DrawGridLine(bool bActivate)
 		FSomDrawLibrary::DrawLine_BresenhamAlgorithm(Point2D(0 - SomWidth / 2, 0), Point2D(0 + SomWidth / 2, 0));
 		FSomDrawLibrary::DrawLine_BresenhamAlgorithm(Point2D(0, 0 + SomHeight / 2), Point2D(0, 0 - SomHeight / 2));
 	}
+}
+
+void SomFramework_SR::GamePlayInit()
+{
+	SampleObject = new SR_Sample;
+	SampleObject->Init();
+}
+
+void SomFramework_SR::GamePlayUpdate(float DeltaTime)
+{
+	SampleObject->Update(DeltaTime);
+	SampleObject->Render();
+}
+
+void SomFramework_SR::GamePlayRelease()
+{
+	delete SampleObject;
 }

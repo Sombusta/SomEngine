@@ -14,11 +14,15 @@ public:
 
 	// SomWorks :D // 소프트 렌더러 셋업
 	static void InitGDI(HWND hWnd);
-	static void UpdateGDI();
+	static void UpdateGDI(float DeltaTime);
 	static void ReleaseGDI(HWND hWnd);
 
 	void BufferClear();
 	void BufferSwap();
+
+	void GamePlayInit();
+	void GamePlayUpdate(float DeltaTime);
+	void GamePlayRelease();
 
 	// SomWorks :D // 디버그 그리드
 	void DrawGridLine(bool bActivate);
