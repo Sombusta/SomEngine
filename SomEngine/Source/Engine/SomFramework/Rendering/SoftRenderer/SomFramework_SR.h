@@ -20,12 +20,13 @@ public:
 	void BufferClear();
 	void BufferSwap();
 
+	// SomWorks :D // 디버그 그리드
+	void DrawGridLine(bool bActivate);
+
+	// SomWorks :D // 게임 플레이 셋업
 	void GamePlayInit();
 	void GamePlayUpdate(float DeltaTime);
 	void GamePlayRelease();
-
-	// SomWorks :D // 디버그 그리드
-	void DrawGridLine(bool bActivate);
 
 private:
 	// SomWorks :D // 싱글턴 객체
@@ -43,5 +44,6 @@ public:
 	// SomWorks :D // 전방선언
 	class SR_Sample* SampleObject;
 
+	// SomWorks :D // 싱글턴 인스턴스 Getter
 	static SomFramework_SR* GetInstance() { return Instance; }
 };

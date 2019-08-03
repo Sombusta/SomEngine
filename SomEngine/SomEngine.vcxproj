@@ -23,23 +23,23 @@
     <ClInclude Include="Source\Engine\Resource\Resource.h" />
     <ClInclude Include="Source\Engine\Resource\targetver.h" />
     <ClInclude Include="Source\Engine\SomFramework\Game\Object\SomObject.h" />
+    <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Color\Color.h" />
+    <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Vector\Point2D.h" />
+    <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Vector\Vector2D.h" />
+    <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Vector\Vector3D.h" />
+    <ClInclude Include="Source\Engine\SomFramework\Libraries\Draw\SomDrawLibrary.h" />
+    <ClInclude Include="Source\Engine\SomFramework\Libraries\Math\SomMathLibrary.h" />
+    <ClInclude Include="Source\Engine\SomFramework\Libraries\Parser\TextureParser_Bmp.h" />
     <ClInclude Include="Source\Engine\SomFramework\Rendering\SoftRenderer\SomFramework_SR.h" />
-    <ClInclude Include="Source\Engine\SomLibraries\Container\Color\Color.h" />
-    <ClInclude Include="Source\Engine\SomLibraries\Container\Vector\Point2D.h" />
-    <ClInclude Include="Source\Engine\SomLibraries\Container\Vector\Vector2D.h" />
-    <ClInclude Include="Source\Engine\SomLibraries\Container\Vector\Vector3D.h" />
-    <ClInclude Include="Source\Engine\SomLibraries\Draw\SomDrawLibrary.h" />
-    <ClInclude Include="Source\Engine\SomLibraries\Math\SomMathLibrary.h" />
-    <ClInclude Include="Source\Engine\SomLibraries\Parser\TextureParser_Bmp.h" />
     <ClInclude Include="Source\Engine\WinMain\Win32Application.h" />
     <ClInclude Include="Source\Main\SR_Sample.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Engine\SomFramework\Game\Object\SomObject.cpp" />
+    <ClCompile Include="Source\Engine\SomFramework\Libraries\Draw\SomDrawLibrary.cpp" />
+    <ClCompile Include="Source\Engine\SomFramework\Libraries\Math\SomMathLibrary.cpp" />
+    <ClCompile Include="Source\Engine\SomFramework\Libraries\Parser\TextureParser_Bmp.cpp" />
     <ClCompile Include="Source\Engine\SomFramework\Rendering\SoftRenderer\SomFramework_SR.cpp" />
-    <ClCompile Include="Source\Engine\SomLibraries\Draw\SomDrawLibrary.cpp" />
-    <ClCompile Include="Source\Engine\SomLibraries\Math\SomMathLibrary.cpp" />
-    <ClCompile Include="Source\Engine\SomLibraries\Parser\TextureParser_Bmp.cpp" />
     <ClCompile Include="Source\Engine\WinMain\Win32Application.cpp" />
     <ClCompile Include="Source\Engine\WinMain\WinMain.cpp" />
     <ClCompile Include="Source\Main\SR_Sample.cpp" />

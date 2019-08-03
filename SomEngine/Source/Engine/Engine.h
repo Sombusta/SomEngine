@@ -37,14 +37,14 @@
 using namespace std;
 
 // SomWorks :D // 컨테이너
-#include "Engine/SomLibraries/Container/Vector/Point2D.h"
-#include "Engine/SomLibraries/Container/Vector/Vector2D.h"
-#include "Engine/SomLibraries/Container/Vector/Vector3D.h"
-#include "Engine/SomLibraries/Container/Color/Color.h"
+#include "SomFramework/Libraries/Container/Vector/Point2D.h"
+#include "SomFramework/Libraries/Container/Vector/Vector2D.h"
+#include "SomFramework/Libraries/Container/Vector/Vector3D.h"
+#include "SomFramework/Libraries/Container/Color/Color.h"
 
 // SomWorks :D // SomFramework Library
-#include "SomLibraries/Math/SomMathLibrary.h"
-#include "SomLibraries/Draw/SomDrawLibrary.h"
+#include "SomFramework/Libraries/Math/SomMathLibrary.h"
+#include "SomFramework/Libraries/Draw/SomDrawLibrary.h"
 
 // SomWorks :D // SomFramework GamePlay
 #include "SomFramework/Game/Object/SomObject.h"

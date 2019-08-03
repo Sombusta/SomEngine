@@ -13,29 +13,8 @@
     <Filter Include="Engine\Resource">
       <UniqueIdentifier>{e418c61a-bec7-4104-a054-c23282bad268}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\SomLibraries">
-      <UniqueIdentifier>{b602d141-68ee-4e39-bed6-ea6ecdfc75bd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\SomLibraries\Math">
-      <UniqueIdentifier>{302b98ed-22e8-4fed-bfcb-98a40a4e1d88}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\SomLibraries\Draw">
-      <UniqueIdentifier>{7b529e7e-7c20-4573-bf0f-c24e1f98413d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Engine\SomFramework">
       <UniqueIdentifier>{64a521b2-aad6-4ec0-b425-f2794ad4a3e1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\SomLibraries\Parser">
-      <UniqueIdentifier>{042440f9-e18d-45ab-a448-3aeffc18c235}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\SomLibraries\Container">
-      <UniqueIdentifier>{d100b1ce-c595-4bb5-87b3-cb86bba5b5bf}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\SomLibraries\Container\Color">
-      <UniqueIdentifier>{e6b3321d-b4d8-4584-b8e4-06c390a913ff}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\SomLibraries\Container\Vector">
-      <UniqueIdentifier>{5052dd8c-df1f-41e9-9ce1-38343cbe317d}</UniqueIdentifier>
     </Filter>
     <Filter Include="Engine\SomFramework\Rendering">
       <UniqueIdentifier>{c26288fb-8c97-44dc-b03a-7f70bf402b85}</UniqueIdentifier>
@@ -48,6 +27,27 @@
     </Filter>
     <Filter Include="Engine\SomFramework\Game\Object">
       <UniqueIdentifier>{82823a11-7872-45ed-bca4-98a9922bba3e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\SomFramework\Libraries">
+      <UniqueIdentifier>{b602d141-68ee-4e39-bed6-ea6ecdfc75bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\SomFramework\Libraries\Math">
+      <UniqueIdentifier>{302b98ed-22e8-4fed-bfcb-98a40a4e1d88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\SomFramework\Libraries\Draw">
+      <UniqueIdentifier>{7b529e7e-7c20-4573-bf0f-c24e1f98413d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\SomFramework\Libraries\Parser">
+      <UniqueIdentifier>{042440f9-e18d-45ab-a448-3aeffc18c235}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\SomFramework\Libraries\Container">
+      <UniqueIdentifier>{d100b1ce-c595-4bb5-87b3-cb86bba5b5bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\SomFramework\Libraries\Container\Color">
+      <UniqueIdentifier>{e6b3321d-b4d8-4584-b8e4-06c390a913ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\SomFramework\Libraries\Container\Vector">
+      <UniqueIdentifier>{5052dd8c-df1f-41e9-9ce1-38343cbe317d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -63,27 +63,6 @@
     <ClInclude Include="Source\Engine\Resource\targetver.h">
       <Filter>Engine\Resource</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Engine\SomLibraries\Math\SomMathLibrary.h">
-      <Filter>Engine\SomLibraries\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomLibraries\Draw\SomDrawLibrary.h">
-      <Filter>Engine\SomLibraries\Draw</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomLibraries\Parser\TextureParser_Bmp.h">
-      <Filter>Engine\SomLibraries\Parser</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomLibraries\Container\Vector\Point2D.h">
-      <Filter>Engine\SomLibraries\Container\Vector</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomLibraries\Container\Vector\Vector2D.h">
-      <Filter>Engine\SomLibraries\Container\Vector</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomLibraries\Container\Vector\Vector3D.h">
-      <Filter>Engine\SomLibraries\Container\Vector</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomLibraries\Container\Color\Color.h">
-      <Filter>Engine\SomLibraries\Container\Color</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Main\SR_Sample.h">
       <Filter>Main</Filter>
     </ClInclude>
@@ -93,6 +72,27 @@
     <ClInclude Include="Source\Engine\SomFramework\Game\Object\SomObject.h">
       <Filter>Engine\SomFramework\Game\Object</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Color\Color.h">
+      <Filter>Engine\SomFramework\Libraries\Container\Color</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Vector\Point2D.h">
+      <Filter>Engine\SomFramework\Libraries\Container\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Vector\Vector2D.h">
+      <Filter>Engine\SomFramework\Libraries\Container\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Vector\Vector3D.h">
+      <Filter>Engine\SomFramework\Libraries\Container\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Libraries\Draw\SomDrawLibrary.h">
+      <Filter>Engine\SomFramework\Libraries\Draw</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Libraries\Math\SomMathLibrary.h">
+      <Filter>Engine\SomFramework\Libraries\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Libraries\Parser\TextureParser_Bmp.h">
+      <Filter>Engine\SomFramework\Libraries\Parser</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Engine\WinMain\Win32Application.cpp">
@@ -100,15 +100,6 @@
     </ClCompile>
     <ClCompile Include="Source\Engine\WinMain\WinMain.cpp">
       <Filter>Engine\WinMain</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Engine\SomLibraries\Draw\SomDrawLibrary.cpp">
-      <Filter>Engine\SomLibraries\Draw</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Engine\SomLibraries\Math\SomMathLibrary.cpp">
-      <Filter>Engine\SomLibraries\Math</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Engine\SomLibraries\Parser\TextureParser_Bmp.cpp">
-      <Filter>Engine\SomLibraries\Parser</Filter>
     </ClCompile>
     <ClCompile Include="Source\Main\SR_Sample.cpp">
       <Filter>Main</Filter>
@@ -118,6 +109,15 @@
     </ClCompile>
     <ClCompile Include="Source\Engine\SomFramework\Game\Object\SomObject.cpp">
       <Filter>Engine\SomFramework\Game\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\SomFramework\Libraries\Draw\SomDrawLibrary.cpp">
+      <Filter>Engine\SomFramework\Libraries\Draw</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\SomFramework\Libraries\Math\SomMathLibrary.cpp">
+      <Filter>Engine\SomFramework\Libraries\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\SomFramework\Libraries\Parser\TextureParser_Bmp.cpp">
+      <Filter>Engine\SomFramework\Libraries\Parser</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
