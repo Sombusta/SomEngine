@@ -2,10 +2,6 @@
 
 #include "Win32Application.h"
 
-// #include "SomRender_SR.h"
-// #include "SomRender_DX11.h"
-// #include "SomRender_DX12.h"
-
 #ifdef _DEBUG // SomWorks :D // Debug Console
 #pragma comment(linker, "/entry:WinMainCRTStartup")
 #pragma comment(linker, "/subsystem:console")

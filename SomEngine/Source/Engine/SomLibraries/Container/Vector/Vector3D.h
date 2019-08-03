@@ -5,9 +5,10 @@
 // SomWorks :D // Vector3D
 typedef struct FVector
 {
+public:
 	FVector() : x(0.0f), y(0.0f), z(0.0f) {}
 
-	FVector(float x1, float y1, float z1) : x(x1), y(y1), z(z1) {}
+	FVector(float X, float Y, float Z) : x(X), y(Y), z(Z) {}
 
 	void Printf()
 	{

@@ -11,13 +11,15 @@ FSomDrawLibrary::~FSomDrawLibrary()
 }
 
 // SomWorks :D // 픽셀 찍기 API
-void FSomDrawLibrary::DrawPixel(int x, int y)
+void FSomDrawLibrary::DrawPixel(int x, int y, FColor color)
 {
 	if (!FSomMathLibrary::IsInRange(x, y)) return;
 
-	ULONG* dest = (ULONG*)SomFramework_SR::GetInstance()->g_pBits;
+	ULONG PixelColor = RGB(color.b, color.g, color.r);
+
+	ULONG* dest = (ULONG*)SomFramework_SR::GetInstance()->Bits;
 	DWORD offset = SomWidth * SomHeight / 2 + SomWidth / 2 + x + SomWidth * -y; // SomWidth * x + SomHeight * y;
-	*(dest + offset) = SomFramework_SR::GetInstance()->g_CurrentColor;
+	*(dest + offset) = PixelColor; // SomFramework_SR::GetInstance()->CurrentColor;
 }
 
 // SomWorks :D // 직선의 방정식만 가지고 제작된 선 긋기 알고리즘
@@ -50,8 +52,6 @@ void FSomDrawLibrary::DrawLine(Point2D Point1, Point2D Point2)
 // SomWorks :D // 브레젠험 직선 알고리즘
 void FSomDrawLibrary::DrawLine_BresenhamAlgorithm(Point2D Point1, Point2D Point2)
 {
-	// -W( y - yl ) + H ( x - xl ) < 0
-
 	int dx, dy = 0;
 
 	int p_value;
@@ -179,8 +179,7 @@ void FSomDrawLibrary::FillTriangle(bool bUseBarycentricCoordinate)
 	}
 	else
 	{
-		// SomWorks :D // 삼각형 내부 색상 초기화
-		SomFramework_SR::GetInstance()->SetColor(255, 0, 0);
+		// SomWorks :D // 삼각형 내부 색상 초기화		
 	}
 	// SomWorks :D // 버텍스 정렬
 

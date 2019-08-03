@@ -2,7 +2,15 @@
 
 #include "TextureParser_Bmp.h"
 
-ULONG* OpenBMP(char *filename, int *width, int *height)
+FSomTextureParser_BMP::FSomTextureParser_BMP()
+{
+}
+
+FSomTextureParser_BMP::~FSomTextureParser_BMP()
+{
+}
+
+ULONG* FSomTextureParser_BMP::OpenBMP(char *filename, int *width, int *height)
 {
 	FILE* fp;
 	errno_t err;
@@ -59,7 +67,7 @@ ULONG* OpenBMP(char *filename, int *width, int *height)
 	return (ULONG*)pImageBuf;
 }
 
-ULONG GetPixel(int x, int width, int y, ULONG* bmp)
+ULONG FSomTextureParser_BMP::GetPixel(int x, int width, int y, ULONG* bmp)
 {
 	return bmp[y * width + x];
 }

@@ -16,18 +16,25 @@ public:
 	static void UpdateGDI();
 	static void ReleaseGDI(HWND hWnd);
 
-	void SetColor(BYTE r, BYTE g, BYTE b);
+	void SetBackgroundColor(FColor rgb);
+
 	void Clear();
+
 	void BufferSwap();
 
+	void DrawGridLine(bool bActivate);
+
 private:
+	// SomWorks :D // ½Ì±ÛÅÏ °´Ã¼
 	static SomFramework_SR* Instance;
+
+	// SomWorks :D // ¹è°æ»ö
+	ULONG BackgroundColor;
 
 protected:
 
-public:
-	ULONG g_CurrentColor;
-	BYTE* g_pBits;
+public:	
+	BYTE* Bits;
 
 	static SomFramework_SR* GetInstance() { return Instance; }
 };

@@ -35,7 +35,7 @@ void SomFramework_SR::InitGDI(HWND hWnd)
 		bmi.bmiHeader.biBitCount = 32;
 		bmi.bmiHeader.biCompression = BI_RGB;
 
-		hDIBitmap = CreateDIBSection(hMemoryDC, &bmi, DIB_RGB_COLORS, (void**)&Instance->g_pBits, NULL, 0);
+		hDIBitmap = CreateDIBSection(hMemoryDC, &bmi, DIB_RGB_COLORS, (void**)&Instance->Bits, NULL, 0);
 		hDefaultBitmap = (HBITMAP)SelectObject(hMemoryDC, hDIBitmap);
 	}
 	else
@@ -47,14 +47,17 @@ void SomFramework_SR::InitGDI(HWND hWnd)
 // SomWorks :D // 모든 업데이트는 이곳에서
 void SomFramework_SR::UpdateGDI()
 {
-	// Buffer Clear
-	Instance->SetColor(32, 128, 255); // SetColor(0, 0, 0);
+	// SomWorks :D // Buffer Clear
+	Instance->SetBackgroundColor(FColor(32, 128, 255)); // SetBackgroundColor(0, 0, 0);
 	Instance->Clear();
+
+	// SomWorks :D // 그리드 십자선 그리기
+	// Instance->DrawGridLine(true);
 
 	// SomWorks :D // 소프트 렌더러 업데이트
 	UpdateFrame();
 
-	// Buffer Swap 
+	// SomWorks :D // Buffer Swap 
 	Instance->BufferSwap();
 }
 
@@ -73,16 +76,16 @@ void SomFramework_SR::ReleaseGDI(HWND hWnd)
 }
 
 // SomWorks :D // 글로벌 컬러 초기화
-void SomFramework_SR::SetColor(BYTE r, BYTE g, BYTE b)
+void SomFramework_SR::SetBackgroundColor(FColor rgb)
 {
-	g_CurrentColor = RGB(b, g, r);
+	BackgroundColor = RGB(rgb.b, rgb.g, rgb.r);
 }
 
 void SomFramework_SR::Clear()
 {
-	ULONG* dest = (ULONG*)g_pBits;
+	ULONG* dest = (ULONG*)Bits;
 	DWORD bytecount = SomWidth * SomHeight * sizeof(ULONG);
-	ULONG value = g_CurrentColor;
+	ULONG value = BackgroundColor;
 	bytecount /= 4;
 
 	while (bytecount--)
@@ -92,7 +95,18 @@ void SomFramework_SR::Clear()
 	return;
 }
 
+// SomWorks :D // 버퍼 스왑
 void SomFramework_SR::BufferSwap()
 {
 	BitBlt(hScreenDC, 0, 0, SomWidth, SomHeight, hMemoryDC, 0, 0, SRCCOPY);
+}
+
+// SomWorks :D // 그리드 십자선 그리기
+void SomFramework_SR::DrawGridLine(bool bActivate)
+{
+	if (bActivate)
+	{
+		FSomDrawLibrary::DrawLine_BresenhamAlgorithm(Point2D(0 - SomWidth / 2, 0), Point2D(0 + SomWidth / 2, 0));
+		FSomDrawLibrary::DrawLine_BresenhamAlgorithm(Point2D(0, 0 + SomHeight / 2), Point2D(0, 0 - SomHeight / 2));
+	}
 }

@@ -22,9 +22,6 @@
     <Filter Include="Engine\SomLibraries\Draw">
       <UniqueIdentifier>{7b529e7e-7c20-4573-bf0f-c24e1f98413d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\SomLibraries\Math\Vector">
-      <UniqueIdentifier>{5052dd8c-df1f-41e9-9ce1-38343cbe317d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Engine\SomFramework">
       <UniqueIdentifier>{64a521b2-aad6-4ec0-b425-f2794ad4a3e1}</UniqueIdentifier>
     </Filter>
@@ -36,6 +33,15 @@
     </Filter>
     <Filter Include="Engine\SomLibraries\Parser">
       <UniqueIdentifier>{042440f9-e18d-45ab-a448-3aeffc18c235}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\SomLibraries\Container">
+      <UniqueIdentifier>{d100b1ce-c595-4bb5-87b3-cb86bba5b5bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\SomLibraries\Container\Color">
+      <UniqueIdentifier>{e6b3321d-b4d8-4584-b8e4-06c390a913ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\SomLibraries\Container\Vector">
+      <UniqueIdentifier>{5052dd8c-df1f-41e9-9ce1-38343cbe317d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -57,15 +63,6 @@
     <ClInclude Include="Source\Engine\SomLibraries\Draw\SomDrawLibrary.h">
       <Filter>Engine\SomLibraries\Draw</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Engine\SomLibraries\Math\Vector\Point2D.h">
-      <Filter>Engine\SomLibraries\Math\Vector</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomLibraries\Math\Vector\Vector2D.h">
-      <Filter>Engine\SomLibraries\Math\Vector</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomLibraries\Math\Vector\Vector3D.h">
-      <Filter>Engine\SomLibraries\Math\Vector</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Engine\SomFramework\SoftRenderer\SomFramework_SR.h">
       <Filter>Engine\SomFramework\SoftRenderer</Filter>
     </ClInclude>
@@ -74,6 +71,18 @@
     </ClInclude>
     <ClInclude Include="Source\Engine\SomLibraries\Parser\TextureParser_Bmp.h">
       <Filter>Engine\SomLibraries\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomLibraries\Container\Vector\Point2D.h">
+      <Filter>Engine\SomLibraries\Container\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomLibraries\Container\Vector\Vector2D.h">
+      <Filter>Engine\SomLibraries\Container\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomLibraries\Container\Vector\Vector3D.h">
+      <Filter>Engine\SomLibraries\Container\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomLibraries\Container\Color\Color.h">
+      <Filter>Engine\SomLibraries\Container\Color</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

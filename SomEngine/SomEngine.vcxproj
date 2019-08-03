@@ -24,11 +24,12 @@
     <ClInclude Include="Source\Engine\Resource\targetver.h" />
     <ClInclude Include="Source\Engine\SomFramework\SoftRenderer\SoftRenderer.h" />
     <ClInclude Include="Source\Engine\SomFramework\SoftRenderer\SomFramework_SR.h" />
+    <ClInclude Include="Source\Engine\SomLibraries\Container\Color\Color.h" />
+    <ClInclude Include="Source\Engine\SomLibraries\Container\Vector\Point2D.h" />
+    <ClInclude Include="Source\Engine\SomLibraries\Container\Vector\Vector2D.h" />
+    <ClInclude Include="Source\Engine\SomLibraries\Container\Vector\Vector3D.h" />
     <ClInclude Include="Source\Engine\SomLibraries\Draw\SomDrawLibrary.h" />
     <ClInclude Include="Source\Engine\SomLibraries\Math\SomMathLibrary.h" />
-    <ClInclude Include="Source\Engine\SomLibraries\Math\Vector\Point2D.h" />
-    <ClInclude Include="Source\Engine\SomLibraries\Math\Vector\Vector2D.h" />
-    <ClInclude Include="Source\Engine\SomLibraries\Math\Vector\Vector3D.h" />
     <ClInclude Include="Source\Engine\SomLibraries\Parser\TextureParser_Bmp.h" />
     <ClInclude Include="Source\Engine\WinMain\Win32Application.h" />
   </ItemGroup>

@@ -4,13 +4,7 @@
 
 void UpdateFrame(void)
 {
-	// Draw
-	SomFramework_SR::GetInstance()->SetColor(255, 255, 255); // SetColor(255, 0, 0);
 	// FSomDrawLibrary::DrawPixel(0, 0);
-
-	// SomWorks :D // 십자선
-	// FSomDrawLibrary::DrawLine_BresenhamAlgorithm(Point2D(0 - SomWidth / 2, 0), Point2D(0 + SomWidth / 2, 0));
-	// FSomDrawLibrary::DrawLine_BresenhamAlgorithm(Point2D(0, 0 + SomHeight / 2), Point2D(0, 0 - SomHeight / 2));
 
 	Point2D p1;
 	p1.x = 0;

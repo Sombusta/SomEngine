@@ -5,9 +5,10 @@
 // SomWorks :D // Vector2D
 typedef struct FVector2D
 {
+public:
 	FVector2D() : x(0.0f), y(0.0f) {}
 	
-	FVector2D(float x1, float y1) : x(x1), y(y1) {}
+	FVector2D(float X, float Y) : x(X), y(Y) {}
 	
 	void Printf()
 	{

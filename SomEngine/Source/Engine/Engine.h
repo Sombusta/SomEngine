@@ -40,6 +40,12 @@ using namespace std;
 #include "Resource/targetver.h"
 #include "Resource/Resource.h"
 
+// SomWorks :D // 컨테이너
+#include "Engine/SomLibraries/Container/Vector/Point2D.h"
+#include "Engine/SomLibraries/Container/Vector/Vector2D.h"
+#include "Engine/SomLibraries/Container/Vector/Vector3D.h"
+#include "Engine/SomLibraries/Container/Color/Color.h"
+
 // SomWorks :D // SomFramework Library
 #include "SomLibraries/Math/SomMathLibrary.h"
 #include "SomLibraries/Draw/SomDrawLibrary.h"
@@ -50,10 +56,13 @@ using namespace std;
 #endif
 
 #if bUseDX11
+// #include "SomFramework/DX11/SomFramework_DX11.h"
 #endif
 
 #if bUseDX12
 // SomWorks :D // DirectX 12 Library Header
+
+// #include "SomFramework/DX12/SomFramework_DX12.h"
 #include <d3d12.h>
 #include <dxgi1_4.h>
 #include <D3Dcompiler.h>

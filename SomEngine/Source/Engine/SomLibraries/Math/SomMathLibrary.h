@@ -2,9 +2,7 @@
 
 #pragma once
 
-#include "Vector/Point2D.h"
-#include "Vector/Vector2D.h"
-#include "Vector/Vector3D.h"
+#include "Engine/Engine.h"
 
 class FSomMathLibrary
 {
