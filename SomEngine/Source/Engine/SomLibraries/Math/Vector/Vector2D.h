@@ -5,12 +5,8 @@
 // SomWorks :D // Vector2D
 typedef struct FVector2D
 {
-	FVector2D()
-	{
-		x = 0.0f;
-		y = 0.0f;
-	}
-
+	FVector2D() : x(0.0f), y(0.0f) {}
+	
 	FVector2D(float x1, float y1) : x(x1), y(y1) {}
 	
 	void Printf()

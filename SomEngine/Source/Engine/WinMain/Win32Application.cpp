@@ -170,11 +170,15 @@ LRESULT CALLBACK Win32Application::WindowProc(HWND hWnd, UINT message, WPARAM wP
 	break;
 
 	case WM_DESTROY: // 종료 메시지를 게시하고 반환합니다.
+	{
 		bIsActive = false;
+
 		// SomWorks :D // SoftRender GDI Release
 		SomFramework_SR::ReleaseGDI(hWnd);
+
 		PostQuitMessage(0);
-		break;
+	}
+	break;
 
 	default:
 		return DefWindowProc(hWnd, message, wParam, lParam);

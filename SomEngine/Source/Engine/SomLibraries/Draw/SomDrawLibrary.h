@@ -20,11 +20,14 @@ public:
 	static void DrawLine_BresenhamAlgorithm(Point2D Point1, Point2D Point2);
 
 	// SomWorks :D // 삼각형 그리기
-	static void DrawTriangle(FVector2D a, FVector2D b, FVector2D c);
+	static void DrawTriangle(FVector2D a, FVector2D b, FVector2D c, bool bFillTriangle = false);
+
+	// SomWorks :D // 삼각형 채우기
+	static void FillTriangle(bool bUseBarycentricCoordinate = false);
 
 	// SomWorks :D // 원 그리기
-	static void DrawCircle(Point2D CenterLocation, int r);
-private:
+	static void DrawCircle(Point2D CenterVec, int r);
+private:	
 
 protected:
 

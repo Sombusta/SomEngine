@@ -35,9 +35,7 @@ void FSomDrawLibrary::DrawLine(Point2D Point1, Point2D Point2)
 	for (int i = 0; i < Length; i++)
 	{
 		Result = static_cast<int>(((Point2.y - Point1.y) / (Point2.x - Point1.x)) * (i - Point1.x) + Point1.y);
-		//cout << (Point2.y - Point1.y) / (Point2.x - Point1.x) << ", " << Result << endl;
 		DrawPixel((Point1.x + i) * a, (Point1.y + i) * b);
-		// cout << Result << endl;
 	}
 
 	// SomWorks :D // i는 X값 Result는 Y값
@@ -45,9 +43,7 @@ void FSomDrawLibrary::DrawLine(Point2D Point1, Point2D Point2)
 	for (int i = Point1.x; i < Point2.x; i++)
 	{
 		Result = static_cast<int>(((Point2.y - Point1.y) / (Point2.x - Point1.x)) * (i - Point1.x) + Point1.y);
-		//cout << (Point2.y - Point1.y) / (Point2.x - Point1.x) << ", " << Result << endl;
 		DrawPixel(i, Result);
-		// cout << Result << endl;
 	}*/
 }
 
@@ -157,7 +153,7 @@ void FSomDrawLibrary::DrawLine_BresenhamAlgorithm(Point2D Point1, Point2D Point2
 }
 
 // SomWorks :D // 삼각형 그리기
-void FSomDrawLibrary::DrawTriangle(FVector2D a, FVector2D b, FVector2D c)
+void FSomDrawLibrary::DrawTriangle(FVector2D a, FVector2D b, FVector2D c, bool bFillTriangle)
 {
 	Point2D a1 = Point2D(static_cast<int>(a.x), static_cast<int>(a.y));
 	Point2D b1 = Point2D(static_cast<int>(b.x), static_cast<int>(b.y));
@@ -166,10 +162,37 @@ void FSomDrawLibrary::DrawTriangle(FVector2D a, FVector2D b, FVector2D c)
 	DrawLine_BresenhamAlgorithm(a1, b1);
 	DrawLine_BresenhamAlgorithm(b1, c1);
 	DrawLine_BresenhamAlgorithm(c1, a1);
+
+	// SomWorks :D // 삼각형 채우기
+	if (bFillTriangle)
+	{		
+		FillTriangle(false);
+	}
+}
+
+// SomWorks :D // 삼각형 채우기
+void FSomDrawLibrary::FillTriangle(bool bUseBarycentricCoordinate)
+{
+	// SomWorks :D // 무게중심 좌표계 사용 그라데이션 처리
+	if (bUseBarycentricCoordinate)
+	{
+	}
+	else
+	{
+		// SomWorks :D // 삼각형 내부 색상 초기화
+		SomFramework_SR::GetInstance()->SetColor(255, 0, 0);
+	}
+	// SomWorks :D // 버텍스 정렬
+
+	// SomWorks :D // 삼각형 제 4의 버텍스 계산
+
+	// SomWorks :D // 위에 삼각형부터 순회
+
+	// SomWorks :D // 삼각형 내부 채우기
 }
 
 // SomWorks :D // 원 그리기
-void FSomDrawLibrary::DrawCircle(Point2D CenterLocation, int r)
+void FSomDrawLibrary::DrawCircle(Point2D CenterVec, int r)
 {
 	int x = 0, y = 0;
 
@@ -178,13 +201,17 @@ void FSomDrawLibrary::DrawCircle(Point2D CenterLocation, int r)
 		// SomWorks :D // y 축 좌표를 계산한다.
 		y = (int)(sqrt(r*r - x * x) + 0.5);
 
-		FSomDrawLibrary::DrawPixel(CenterLocation.x + x, CenterLocation.y + y); // (1) 계산된 (x,y) 좌표에 픽셀을 출력한다.
-		FSomDrawLibrary::DrawPixel(CenterLocation.x + x, CenterLocation.y - y); // (2) 픽셀의 출력은 원점(cx, cy) 만큼 평행 이동 시킨다.
-		FSomDrawLibrary::DrawPixel(CenterLocation.x - x, CenterLocation.y + y);
-		FSomDrawLibrary::DrawPixel(CenterLocation.x - x, CenterLocation.y - y);
-		FSomDrawLibrary::DrawPixel(CenterLocation.x + y, CenterLocation.y + x);
-		FSomDrawLibrary::DrawPixel(CenterLocation.x + y, CenterLocation.y - x);
-		FSomDrawLibrary::DrawPixel(CenterLocation.x - y, CenterLocation.y + x);
-		FSomDrawLibrary::DrawPixel(CenterLocation.x - y, CenterLocation.y - x);
+		// SomWorks :D // 계산 방법
+		// (1) 계산된 (x,y) 좌표에 픽셀을 출력한다.
+		// (2) 픽셀의 출력은 원점(cx, cy) 만큼 평행 이동 시킨다.
+
+		FSomDrawLibrary::DrawPixel(CenterVec.x + x, CenterVec.y + y);
+		FSomDrawLibrary::DrawPixel(CenterVec.x + x, CenterVec.y - y);
+		FSomDrawLibrary::DrawPixel(CenterVec.x - x, CenterVec.y + y);
+		FSomDrawLibrary::DrawPixel(CenterVec.x - x, CenterVec.y - y);
+		FSomDrawLibrary::DrawPixel(CenterVec.x + y, CenterVec.y + x);
+		FSomDrawLibrary::DrawPixel(CenterVec.x + y, CenterVec.y - x);
+		FSomDrawLibrary::DrawPixel(CenterVec.x - y, CenterVec.y + x);
+		FSomDrawLibrary::DrawPixel(CenterVec.x - y, CenterVec.y - x);
 	}
 }

@@ -5,14 +5,10 @@
 // SomWorks :D // Vector2D
 typedef struct FPoint2D
 {
-	FPoint2D()
-	{
-		x = 0;
-		y = 0;
-	}
+	FPoint2D() : x(0), y(0) {}
 
 	FPoint2D(int x1, int y1) : x(x1), y(y1) {}
-
+		
 	// SomWorks :D // 향후 오퍼레이터 추가
 	// +
 	// -

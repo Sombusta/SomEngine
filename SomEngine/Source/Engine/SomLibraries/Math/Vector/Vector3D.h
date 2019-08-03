@@ -5,12 +5,7 @@
 // SomWorks :D // Vector3D
 typedef struct FVector
 {
-	FVector()
-	{
-		x = 0.0f;
-		y = 0.0f;
-		z = 0.0f;
-	}
+	FVector() : x(0.0f), y(0.0f), z(0.0f) {}
 
 	FVector(float x1, float y1, float z1) : x(x1), y(y1), z(z1) {}
 
