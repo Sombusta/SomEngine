@@ -16,7 +16,9 @@
 #define bUseDX11 false
 #define bUseDX12 false
 
-#define WIN32_LEAN_AND_MEAN // 거의 사용되지 않는 내용을 Windows 헤더에서 제외합니다.
+// SomWorks :D //
+// 거의 사용되지 않는 내용을 Windows 헤더에서 제외합니다, Time 관련 함수를 쓰기 위해서는 Define하면 안됩니다.
+// #define WIN32_LEAN_AND_MEAN
 
 // SomWorks :D // Windows SDK Header
 #include <windows.h>
@@ -26,7 +28,6 @@
 // SomWorks :D // C++ Header
 #include <stdio.h>
 #include <iostream>
-#include <string>
 
 // SomWorks :D // C Header, C 스타일 런타임 헤더 파일입니다.
 #include <stdlib.h>
@@ -34,7 +35,14 @@
 #include <memory.h>
 #include <tchar.h>
 
+// SomWorks :D // Using STL
+#include <string>
+#include <vector>
+#include <list>
+
 using namespace std;
+using std::vector;
+using std::list;
 
 // SomWorks :D // 컨테이너
 #include "SomFramework/Libraries/Container/Vector/Point2D.h"

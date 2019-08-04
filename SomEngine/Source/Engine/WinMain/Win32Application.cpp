@@ -60,6 +60,9 @@ int Win32Application::Run(HINSTANCE hInstance, int nCmdShow)
 	// SomWorks :D // Main sample loop.
 	MSG msg = {};
 
+	// SomWorks :D // 이전 시간
+	DWORD PreviousTime = timeGetTime();
+
 	while (msg.message != WM_QUIT)
 	{
 		// Process any messages in the queue.
@@ -70,8 +73,16 @@ int Win32Application::Run(HINSTANCE hInstance, int nCmdShow)
 		}
 		else if (bIsActive)
 		{
-			// SomWorks :D // SoftRender 메인 업데이트, 향후에 DeltaTime 관련 구현해야함.
-			SomFramework_SR::UpdateGDI(0.0f);
+			// SomWorks :D // 현재 시간
+			DWORD CurrentTime = timeGetTime();
+
+			// SomWorks :D // 밀리 세컨드 단위, DeltaTime
+			float ElapsedTime = (CurrentTime - PreviousTime) / 1000.f;
+			
+			PreviousTime = CurrentTime;
+
+			// SomWorks :D // SoftRender 메인 업데이트, 향후에 DeltaTime 관련 구현해야함. 현재는 0.01로 고정
+			SomFramework_SR::UpdateGDI(0.01f);
 		}
 		else
 		{

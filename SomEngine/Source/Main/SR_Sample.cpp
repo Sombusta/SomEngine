@@ -16,18 +16,18 @@ void SR_Sample::Init()
 }
 
 void SR_Sample::Update(float DeltaTime)
-{
-	// FSomDrawLibrary::DrawPixel(0, 0);
-
-	Point2D p1 = Point2D(0, 0);
-	
-	Point2D p2 = Point2D(-100, 100);
-	
-	// FSomDrawLibrary::DrawLine_BresenhamAlgorithm(Point2D(0, 0), Point2D(100, 0));	
+{	
 }
 
 void SR_Sample::Render()
 {
+	// FSomDrawLibrary::DrawPixel(0, 0);
+
+	Point2D p1 = Point2D(0, 0);
+
+	Point2D p2 = Point2D(-100, 100);
+
+	// FSomDrawLibrary::DrawLine_BresenhamAlgorithm(Point2D(0, 0), Point2D(100, 0));	
 	FSomDrawLibrary::DrawTriangle(FVector2D(-100, -100), FVector2D(-50, 100), FVector2D(80, -50));
 }
 
