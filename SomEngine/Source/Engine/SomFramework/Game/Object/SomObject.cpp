@@ -9,3 +9,19 @@ SomObject::SomObject()
 SomObject::~SomObject()
 {
 }
+
+void SomObject::Init()
+{
+}
+
+void SomObject::Update(float DeltaTime)
+{
+}
+
+void SomObject::Render()
+{
+}
+
+void SomObject::Terminate()
+{
+}

@@ -1,7 +1,6 @@
 // Copyright (c) 2014-2019 Sombusta, All Rights Reserved.
 
 #include "SomFramework_SR.h"
-#include "Main/SR_Sample.h"
 
 SomFramework_SR* SomFramework_SR::Instance = nullptr;
 
@@ -35,7 +34,7 @@ void SomFramework_SR::InitGDI(HWND hWnd)
 		Instance->hDIBitmap = CreateDIBSection(Instance->hMemoryDC, &bmi, DIB_RGB_COLORS, (void**)&Instance->Bits, NULL, 0);
 		Instance->hDefaultBitmap = (HBITMAP)SelectObject(Instance->hMemoryDC, Instance->hDIBitmap);
 
-		Instance->GamePlayInit();
+		SomManager_Main::CreateGameManager();
 	}
 	else
 	{
@@ -50,7 +49,8 @@ void SomFramework_SR::UpdateGDI(float DeltaTime)
 	Instance->BufferClear();
 
 	// SomWorks :D // 소프트 렌더러 업데이트
-	Instance->GamePlayUpdate(DeltaTime);
+	SomManager_Main::GetInstance()->Game_Update(DeltaTime);
+	SomManager_Main::GetInstance()->Game_Render();
 
 	// SomWorks :D // Buffer Swap 
 	Instance->BufferSwap();
@@ -66,7 +66,7 @@ void SomFramework_SR::ReleaseGDI(HWND hWnd)
 		ReleaseDC(hWnd, Instance->hScreenDC);
 		ReleaseDC(hWnd, Instance->hMemoryDC);
 
-		Instance->GamePlayRelease();
+		SomManager_Main::TerminateGameManager();
 
 		delete Instance;
 		Instance = nullptr;
@@ -108,21 +108,4 @@ void SomFramework_SR::DrawGridLine(bool bActivate)
 		FSomDrawLibrary::DrawLine_BresenhamAlgorithm(Point2D(0 - SomWidth / 2, 0), Point2D(0 + SomWidth / 2, 0));
 		FSomDrawLibrary::DrawLine_BresenhamAlgorithm(Point2D(0, 0 + SomHeight / 2), Point2D(0, 0 - SomHeight / 2));
 	}
-}
-
-void SomFramework_SR::GamePlayInit()
-{
-	SampleObject = new SR_Sample;
-	SampleObject->Init();
-}
-
-void SomFramework_SR::GamePlayUpdate(float DeltaTime)
-{
-	SampleObject->Update(DeltaTime);
-	SampleObject->Render();
-}
-
-void SomFramework_SR::GamePlayRelease()
-{
-	delete SampleObject;
 }

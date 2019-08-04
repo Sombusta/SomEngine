@@ -49,6 +49,9 @@
     <Filter Include="Engine\SomFramework\Libraries\Container\Vector">
       <UniqueIdentifier>{5052dd8c-df1f-41e9-9ce1-38343cbe317d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Main\Core">
+      <UniqueIdentifier>{c2efacc2-189d-4acd-98bc-aa8950289214}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Engine\Engine.h">
@@ -93,6 +96,9 @@
     <ClInclude Include="Source\Engine\SomFramework\Libraries\Parser\TextureParser_Bmp.h">
       <Filter>Engine\SomFramework\Libraries\Parser</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Main\Core\SomManager_Main.h">
+      <Filter>Main\Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Engine\WinMain\Win32Application.cpp">
@@ -118,6 +124,9 @@
     </ClCompile>
     <ClCompile Include="Source\Engine\SomFramework\Libraries\Parser\TextureParser_Bmp.cpp">
       <Filter>Engine\SomFramework\Libraries\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Main\Core\SomManager_Main.cpp">
+      <Filter>Main\Core</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

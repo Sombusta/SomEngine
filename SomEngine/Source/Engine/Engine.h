@@ -48,13 +48,14 @@ using namespace std;
 
 // SomWorks :D // SomFramework GamePlay
 #include "SomFramework/Game/Object/SomObject.h"
+#include "Main/Core/SomManager_Main.h"
 
 #if bUseSR
 #include "SomFramework/Rendering/SoftRenderer/SomFramework_SR.h"
 #endif
 
 #if bUseDX11
-// #include "SomFramework/DX11/SomFramework_DX11.h"
+// #include "SomFramework/Rendering/DX11/SomFramework_DX11.h"
 #endif
 
 #if bUseDX12
@@ -64,7 +65,7 @@ using namespace std;
 // #pragma comment(lib, "D3D12.lib")
 // #pragma comment(lib, "dxgi.lib")
 
-// #include "SomFramework/DX12/SomFramework_DX12.h"
+// #include "SomFramework/Rendering/DX12/SomFramework_DX12.h"
 #include <d3d12.h>
 #include <dxgi1_4.h>
 #include <D3Dcompiler.h>

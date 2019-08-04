@@ -10,9 +10,18 @@ public:
 	SomObject();
 	~SomObject();
 
+	// 초기화
 	virtual void Init() = 0;
+
+	// 업데이트
 	virtual void Update(float DeltaTime) = 0;
+
+	// 렌더링
 	virtual void Render() = 0;
+
+	// 삭제, 소거
+	virtual void Terminate() = 0;
+
 private:
 
 protected:

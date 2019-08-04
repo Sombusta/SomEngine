@@ -30,3 +30,7 @@ void SR_Sample::Render()
 {
 	FSomDrawLibrary::DrawTriangle(FVector2D(-100, -100), FVector2D(-50, 100), FVector2D(80, -50));
 }
+
+void SR_Sample::Terminate()
+{
+}

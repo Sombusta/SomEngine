@@ -13,6 +13,7 @@ public:
 	virtual void Init() override;
 	virtual void Update(float DeltaTime) override;
 	virtual void Render() override;
+	virtual void Terminate() override;
 
 private:
 
