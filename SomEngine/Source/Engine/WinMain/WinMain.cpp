@@ -11,5 +11,5 @@
 _Use_decl_annotations_
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int nCmdShow)
 {
-	return Win32Application::Run(hInstance, nCmdShow);
+	return Win32Application::Run(hInstance, nCmdShow, SomFrameworkSetup::SR);
 }

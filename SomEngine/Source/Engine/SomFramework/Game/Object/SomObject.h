@@ -4,11 +4,11 @@
 
 #include "Engine/Engine.h"
 
-class SomObject
+class SomObject : public ISomInterface_Actor
 {
 public:
 	SomObject();
-	~SomObject();
+	virtual ~SomObject();
 
 	// 초기화
 	virtual void Init() = 0;
@@ -22,7 +22,11 @@ public:
 	// 삭제, 소거
 	virtual void Terminate() = 0;
 
+	// SomWorks :D // SomInterface
+	virtual void SetActive(bool bActivate);
+
 private:
+	bool bIsActive = false;
 
 protected:
 

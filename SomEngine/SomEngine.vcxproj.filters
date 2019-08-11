@@ -52,6 +52,9 @@
     <Filter Include="Main\Core">
       <UniqueIdentifier>{c2efacc2-189d-4acd-98bc-aa8950289214}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\SomFramework\Libraries\Interface">
+      <UniqueIdentifier>{20dc23d9-9e0e-4119-9bbb-f2e627030476}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Engine\Engine.h">
@@ -78,13 +81,7 @@
     <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Color\Color.h">
       <Filter>Engine\SomFramework\Libraries\Container\Color</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Vector\Point2D.h">
-      <Filter>Engine\SomFramework\Libraries\Container\Vector</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Vector\Vector2D.h">
-      <Filter>Engine\SomFramework\Libraries\Container\Vector</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Vector\Vector3D.h">
       <Filter>Engine\SomFramework\Libraries\Container\Vector</Filter>
     </ClInclude>
     <ClInclude Include="Source\Engine\SomFramework\Libraries\Draw\SomDrawLibrary.h">
@@ -98,6 +95,15 @@
     </ClInclude>
     <ClInclude Include="Source\Main\Core\SomManager_Main.h">
       <Filter>Main\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Vector\Vector.h">
+      <Filter>Engine\SomFramework\Libraries\Container\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Libraries\Interface\SomInterface_Actor.h">
+      <Filter>Engine\SomFramework\Libraries\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Vector\Point.h">
+      <Filter>Engine\SomFramework\Libraries\Container\Vector</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -127,6 +133,9 @@
     </ClCompile>
     <ClCompile Include="Source\Main\Core\SomManager_Main.cpp">
       <Filter>Main\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\SomFramework\Libraries\Interface\SomInterface_Actor.cpp">
+      <Filter>Engine\SomFramework\Libraries\Interface</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

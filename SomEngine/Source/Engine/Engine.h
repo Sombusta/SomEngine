@@ -16,9 +16,17 @@
 #define bUseDX11 false
 #define bUseDX12 false
 
-// SomWorks :D //
-// 거의 사용되지 않는 내용을 Windows 헤더에서 제외합니다, Time 관련 함수를 쓰기 위해서는 Define하면 안됩니다.
-// #define WIN32_LEAN_AND_MEAN
+// SomWorks :D // 프레임워크 셋업 enum
+enum SomFrameworkSetup
+{
+	None,
+	SR,
+	DX11,
+	DX12
+};
+
+// SomWorks :D // 거의 사용되지 않는 내용을 Windows 헤더에서 제외합니다
+// #define WIN32_LEAN_AND_MEAN // Time 관련 함수를 쓰기 위해서는 Define하면 안됩니다.
 
 // SomWorks :D // Windows SDK Header
 #include <windows.h>
@@ -39,20 +47,24 @@
 #include <string>
 #include <vector>
 #include <list>
+#include <algorithm>
 
 using namespace std;
 using std::vector;
 using std::list;
 
 // SomWorks :D // 컨테이너
-#include "SomFramework/Libraries/Container/Vector/Point2D.h"
+#include "SomFramework/Libraries/Container/Vector/Point.h"
 #include "SomFramework/Libraries/Container/Vector/Vector2D.h"
-#include "SomFramework/Libraries/Container/Vector/Vector3D.h"
+#include "SomFramework/Libraries/Container/Vector/Vector.h"
 #include "SomFramework/Libraries/Container/Color/Color.h"
 
 // SomWorks :D // SomFramework Library
 #include "SomFramework/Libraries/Math/SomMathLibrary.h"
 #include "SomFramework/Libraries/Draw/SomDrawLibrary.h"
+
+// SomWorks :D // SomInterface Library
+#include "SomFramework/Libraries/Interface/SomInterface_Actor.h"
 
 // SomWorks :D // SomFramework GamePlay
 #include "SomFramework/Game/Object/SomObject.h"

@@ -25,3 +25,8 @@ void SomObject::Render()
 void SomObject::Terminate()
 {
 }
+
+void SomObject::SetActive(bool bActivate)
+{
+	bIsActive = bActivate;
+}

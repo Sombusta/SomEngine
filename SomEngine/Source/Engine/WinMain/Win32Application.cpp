@@ -5,12 +5,16 @@
 HWND Win32Application::m_hwnd = nullptr;
 HINSTANCE Win32Application::m_hInstance = nullptr;
 bool Win32Application::bIsActive = false;
+SomFrameworkSetup Win32Application::CurrentRenderer = SomFrameworkSetup::None;
 
 INT_PTR CALLBACK About(HWND, UINT, WPARAM, LPARAM);
 
-int Win32Application::Run(HINSTANCE hInstance, int nCmdShow)
+int Win32Application::Run(HINSTANCE hInstance, int nCmdShow, SomFrameworkSetup RenderType)
 {
 	m_hInstance = hInstance;
+	
+	// SomWorks :D // ·»´õ·¯ ¼Â¾÷
+	CurrentRenderer = RenderType;
 
 	// Parse the command line parameters
 	int argc;

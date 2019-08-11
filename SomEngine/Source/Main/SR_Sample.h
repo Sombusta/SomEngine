@@ -16,6 +16,7 @@ public:
 	virtual void Terminate() override;
 
 private:
+	vector<FPoint> Points;
 
 protected:
 

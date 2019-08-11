@@ -24,10 +24,11 @@
     <ClInclude Include="Source\Engine\Resource\targetver.h" />
     <ClInclude Include="Source\Engine\SomFramework\Game\Object\SomObject.h" />
     <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Color\Color.h" />
-    <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Vector\Point2D.h" />
+    <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Vector\Point.h" />
     <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Vector\Vector2D.h" />
-    <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Vector\Vector3D.h" />
+    <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Vector\Vector.h" />
     <ClInclude Include="Source\Engine\SomFramework\Libraries\Draw\SomDrawLibrary.h" />
+    <ClInclude Include="Source\Engine\SomFramework\Libraries\Interface\SomInterface_Actor.h" />
     <ClInclude Include="Source\Engine\SomFramework\Libraries\Math\SomMathLibrary.h" />
     <ClInclude Include="Source\Engine\SomFramework\Libraries\Parser\TextureParser_Bmp.h" />
     <ClInclude Include="Source\Engine\SomFramework\Rendering\SoftRenderer\SomFramework_SR.h" />
@@ -38,6 +39,7 @@
   <ItemGroup>
     <ClCompile Include="Source\Engine\SomFramework\Game\Object\SomObject.cpp" />
     <ClCompile Include="Source\Engine\SomFramework\Libraries\Draw\SomDrawLibrary.cpp" />
+    <ClCompile Include="Source\Engine\SomFramework\Libraries\Interface\SomInterface_Actor.cpp" />
     <ClCompile Include="Source\Engine\SomFramework\Libraries\Math\SomMathLibrary.cpp" />
     <ClCompile Include="Source\Engine\SomFramework\Libraries\Parser\TextureParser_Bmp.cpp" />
     <ClCompile Include="Source\Engine\SomFramework\Rendering\SoftRenderer\SomFramework_SR.cpp" />

@@ -22,8 +22,7 @@ public:
 
 	// SomWorks :D // 디버그 그리드
 	void DrawGridLine(bool bActivate);
-
-
+	
 private:
 	// SomWorks :D // 싱글턴 객체
 	static SomFramework_SR* Instance;
