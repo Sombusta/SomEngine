@@ -64,4 +64,28 @@ public:
 	{
 		std::cout << X << ", " << Y << std::endl;
 	}
+
+	// SomWorks :D // º¤ÅÍÀÇ ±æÀÌ ±¸ÇÏ±â °ø½Ä, ·çÆ®(x Á¦°ö + y Á¦°ö)
+	FORCEINLINE static float GetVectorLength(const FVector2D& Value)
+	{		
+		return std::sqrtf(std::powf(Value.X, 2) + std::powf(Value.Y, 2));
+	}
+
+	FORCEINLINE static FVector2D Normalize(const FVector2D& Value)
+	{
+		FVector2D temp;
+
+		float VectorLength = GetVectorLength(Value);
+
+		if (VectorLength <= 0.001f)
+		{
+			return Value;
+		}
+
+		temp.X = Value.X / VectorLength;
+		temp.Y = Value.Y / VectorLength;
+
+		return temp;
+	}
+
 } FVector2D;

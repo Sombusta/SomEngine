@@ -30,7 +30,7 @@ void SR_Sample::Render()
 
 	FPoint p1 = FPoint(0, 0);
 	FPoint p2 = FPoint(-100, 100);
-
+	
 	/*
 	Points.push_back(p1);
 	Points.push_back(p2);

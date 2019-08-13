@@ -24,7 +24,8 @@ void FSomDrawLibrary::DrawPixel(int x, int y, FColor PixelColor)
 void FSomDrawLibrary::DrawLine(FPoint Point1, FPoint Point2)
 {
 	// SomWorks :D // 직선의 방정식
-	// y = (x2 - x1)/(y2 - y1) * (x - x1) + y1
+	// 1. x = x1 - (y1 - y) * (x2 - x1) / (y2 - y1)
+	// 2. y = (x2 - x1) / (y2 - y1) * (x - x1) + y1
 
 	// SomWorks :D // i는 X값 Result는 Y값 
 	/*int Result = 0;
@@ -41,7 +42,7 @@ void FSomDrawLibrary::DrawLine(FPoint Point1, FPoint Point2)
 
 	int a = Point2.X < 0 ? -1 : 1;
 	int b = Point2.Y < 0 ? -1 : 1;
-		
+
 	for (int i = 0; i < Length; i++)
 	{
 		Result = static_cast<int>(((Point2.Y - Point1.Y) / (Point2.X - Point1.X)) * (i - Point1.X) + Point1.Y);
@@ -51,8 +52,13 @@ void FSomDrawLibrary::DrawLine(FPoint Point1, FPoint Point2)
 
 // SomWorks :D // 브레젠험 직선 알고리즘
 void FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint Point1, FPoint Point2)
-{
-	int dx, dy = 0;
+{	
+	// SomWorks :D // X의 길이와 Y의 길이
+	int dx = abs(Point2.X - Point1.X);
+	int dy = abs(Point2.Y - Point1.Y);
+
+	// SomWorks :D // 직선의 기울기 구하기
+	//int dc = dy / dx;
 
 	int p_value;
 	int inc_minus;
@@ -60,10 +66,8 @@ void FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint Point1, FPoint Point2)
 	int inc_value;
 	int ndx;
 
-	dx = abs(Point2.X - Point1.X);
-	dy = abs(Point2.Y - Point1.Y);
-
 	//변화폭을 따져 완만한 좌표를 기준으로 점을 찍는다.
+	// SomWorks :D // 기울기가 0 ~ 1
 	if (dy <= dx)
 	{
 		// y 보다 x 변화폭이 클 경우
@@ -132,7 +136,7 @@ void FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint Point1, FPoint Point2)
 		{
 			inc_value = 1;
 		}
-		else 
+		else
 		{
 			inc_value = -1;
 		}
@@ -171,7 +175,7 @@ void FSomDrawLibrary::DrawTriangle(FVector2D a, FVector2D b, FVector2D c, bool b
 
 	// SomWorks :D // 삼각형 채우기
 	if (bFillTriangle)
-	{		
+	{
 		FillTriangle(a, b, c, false);
 	}
 }
@@ -186,7 +190,7 @@ void FSomDrawLibrary::FillTriangle(FVector2D a, FVector2D b, FVector2D c, bool b
 
 	if (a.Y >= b.Y)
 	{
-		TopVertex = a;		
+		TopVertex = a;
 		MiddleVertex = b.Y >= c.Y ? b : c;
 		BottomVertex = b.Y >= c.Y ? c : b;
 
@@ -211,28 +215,42 @@ void FSomDrawLibrary::FillTriangle(FVector2D a, FVector2D b, FVector2D c, bool b
 		}
 	}
 
-	// SomWorks :D // 삼각형 제 4의 버텍스 계산
-	float x = TopVertex.X - (TopVertex.Y - MiddleVertex.Y) * (TopVertex.X - BottomVertex.X) / (TopVertex.Y - BottomVertex.Y);
+	// SomWorks :D // 삼각형 제 4의 버텍스 계산 // x = x1 - (y1 - y) * (x1 - x2) / (y1 - y2)
+	FVector2D v4 = FVector2D(TopVertex.X - (TopVertex.Y - MiddleVertex.Y) * (TopVertex.X - BottomVertex.X) / (TopVertex.Y - BottomVertex.Y), MiddleVertex.Y);
+	// int Length_Y = static_cast<int>(abs(TopVertex.Y - BottomVertex.Y));
 
-	FVector2D d = FVector2D(x, MiddleVertex.Y);
-		
-	int Length_Y = static_cast<int>(abs(TopVertex.Y - BottomVertex.Y));
-	
 	// SomWorks :D // 위에 버텍스부터 순회, 삼각형 내부 채우기
-	for (int i = static_cast<int>(TopVertex.Y); i >= d.Y; i--) //for (int i = 0; i <= Length_Y; i++)
+	for (int i = static_cast<int>(TopVertex.Y); i >= v4.Y; i--) //for (int i = 0; i <= Length_Y; i++)
 	{
-		// for(int j = 0;)
+		// SomWorks :D // 유레카!!!!
+		float x1 = TopVertex.X - (TopVertex.Y - i) * (TopVertex.X - MiddleVertex.X) / (TopVertex.Y - MiddleVertex.Y);
+		float x2 = TopVertex.X - (TopVertex.Y - i) * (TopVertex.X - v4.X) / (TopVertex.Y - v4.Y);
 		
+		// DrawPixel(static_cast<int>(x1), i);
+		// DrawPixel(static_cast<int>(x2), i);
+		
+		if (bUseBarycentricCoordinate)
+		{
+		}
+		else
+		{
+			DrawLine_BresenhamAlgorithm(FPoint(static_cast<int>(x1), i), FPoint(static_cast<int>(x2), i));
+		}
+	}
 
-	}
-	
-	// SomWorks :D // 무게중심 좌표계 사용 그라데이션 처리
-	if (bUseBarycentricCoordinate)
+	for (int i = static_cast<int>(BottomVertex.Y); i <= MiddleVertex.Y; i++)
 	{
+		float x1 = BottomVertex.X - (BottomVertex.Y - i) * (BottomVertex.X - MiddleVertex.X) / (BottomVertex.Y - MiddleVertex.Y);
+		float x2 = BottomVertex.X - (BottomVertex.Y - i) * (BottomVertex.X - v4.X) / (BottomVertex.Y - v4.Y);
+
+		if (bUseBarycentricCoordinate)
+		{
+		}
+		else
+		{
+			DrawLine_BresenhamAlgorithm(FPoint(static_cast<int>(x1), i), FPoint(static_cast<int>(x2), i));
+		}
 	}
-	else
-	{		
-	}	
 }
 
 // SomWorks :D // 원 그리기

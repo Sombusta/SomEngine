@@ -59,7 +59,7 @@ public:
 		Result.Y = this->Y * Value;
 		return Result;
 	}
-
+	
 	FORCEINLINE void Printf()
 	{
 		std::cout << X << ", " << Y << std::endl;
