@@ -52,7 +52,23 @@ public:
 		return Result;
 	}
 
+	FORCEINLINE FVector2D operator/(const FVector2D& Value) const
+	{
+		FVector2D Result;
+		Result.X = this->X / Value.X;
+		Result.Y = this->Y / Value.Y;
+		return Result;
+	}
+
 	FORCEINLINE FVector2D operator*(const float& Value) const
+	{
+		FVector2D Result;
+		Result.X = this->X * Value;
+		Result.Y = this->Y * Value;
+		return Result;
+	}
+
+	FORCEINLINE FVector2D operator*(const int& Value) const
 	{
 		FVector2D Result;
 		Result.X = this->X * Value;
@@ -86,6 +102,12 @@ public:
 		temp.Y = Value.Y / VectorLength;
 
 		return temp;
+	}
+
+	// SomWorks :D // 벡터의 내적
+	FORCEINLINE static float DotProduct(const FVector2D& v1, const FVector2D& v2)
+	{
+		return v1.X * v2.X + v1.Y * v2.Y;
 	}
 
 } FVector2D;

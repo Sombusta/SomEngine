@@ -27,31 +27,38 @@ void FSomDrawLibrary::DrawLine(FPoint Point1, FPoint Point2)
 	// 1. x = x1 - (y1 - y) * (x2 - x1) / (y2 - y1)
 	// 2. y = (x2 - x1) / (y2 - y1) * (x - x1) + y1
 
-	// SomWorks :D // i는 X값 Result는 Y값 
-	/*int Result = 0;
+	FPoint StartVertex;
+	FPoint EndVertex;
 
-	for (int i = Point1.x; i < Point2.x; i++)
+	if (Point1.Y >= Point2.Y)
 	{
-		Result = static_cast<int>(((Point2.y - Point1.y) / (Point2.x - Point1.x)) * (i - Point1.x) + Point1.y);
-		DrawPixel(i, Result);
-	}*/
+		StartVertex = Point2;
+		EndVertex = Point1;
 
-	int Result = 0;
+		for (int i = static_cast<int>(StartVertex.Y); i <= EndVertex.Y; i++)
+		{
+			float x1 = EndVertex.X - (EndVertex.Y - i) * (EndVertex.X - StartVertex.X) / (EndVertex.Y - StartVertex.Y);
+			// float x1 = ((EndVertex.Y - StartVertex.Y) / (EndVertex.X - StartVertex.X)) * (i - StartVertex.X) + StartVertex.Y;
 
-	int Length = FSomMathLibrary::GetLineLength(Point1, Point2);
-
-	int a = Point2.X < 0 ? -1 : 1;
-	int b = Point2.Y < 0 ? -1 : 1;
-
-	for (int i = 0; i < Length; i++)
+			DrawPixel(static_cast<int>(x1), i);
+		}
+	}
+	else
 	{
-		Result = static_cast<int>(((Point2.Y - Point1.Y) / (Point2.X - Point1.X)) * (i - Point1.X) + Point1.Y);
-		DrawPixel((Point1.X + i) * a, (Point1.Y + i) * b);
+		StartVertex = Point1;
+		EndVertex = Point2;
+
+		for (int i = static_cast<int>(StartVertex.Y); i <= EndVertex.Y; i++)
+		{
+			float x1 = EndVertex.X - (EndVertex.Y - i) * (EndVertex.X - StartVertex.X) / (EndVertex.Y - StartVertex.Y);
+
+			DrawPixel(static_cast<int>(x1), i);
+		}
 	}
 }
 
 // SomWorks :D // 브레젠험 직선 알고리즘
-void FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint Point1, FPoint Point2)
+void FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint Point1, FPoint Point2, FColor PixelColor)
 {	
 	// SomWorks :D // X의 길이와 Y의 길이
 	int dx = abs(Point2.X - Point1.X);
@@ -96,7 +103,7 @@ void FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint Point1, FPoint Point2)
 			inc_value = -1;
 		}
 
-		DrawPixel(Point1.X, Point1.Y);
+		DrawPixel(Point1.X, Point1.Y, PixelColor);
 
 		//처음 판단 값
 		p_value = 2 * dy - dx;
@@ -113,7 +120,7 @@ void FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint Point1, FPoint Point2)
 				Point1.Y += inc_value;
 			}
 
-			DrawPixel(ndx, Point1.Y);
+			DrawPixel(ndx, Point1.Y, PixelColor);
 		}
 	}
 	else
@@ -141,7 +148,7 @@ void FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint Point1, FPoint Point2)
 			inc_value = -1;
 		}
 
-		DrawPixel(Point1.X, Point1.Y);
+		DrawPixel(Point1.X, Point1.Y, PixelColor);
 
 		p_value = 2 * dx - dy;
 
@@ -157,7 +164,7 @@ void FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint Point1, FPoint Point2)
 				Point1.X += inc_value;
 			}
 
-			DrawPixel(Point1.X, ndx);
+			DrawPixel(Point1.X, ndx, PixelColor);
 		}
 	}
 }
@@ -169,9 +176,13 @@ void FSomDrawLibrary::DrawTriangle(FVector2D a, FVector2D b, FVector2D c, bool b
 	FPoint b1 = FPoint(b.X, b.Y);
 	FPoint c1 = FPoint(c.X, c.Y);
 
-	DrawLine_BresenhamAlgorithm(a1, b1);
-	DrawLine_BresenhamAlgorithm(b1, c1);
-	DrawLine_BresenhamAlgorithm(c1, a1);
+	//DrawLine_BresenhamAlgorithm(c1, a1);
+	//DrawLine_BresenhamAlgorithm(a1, b1);
+	//DrawLine_BresenhamAlgorithm(b1, c1);
+
+	//DrawLine(a1, b1);
+	//DrawLine(b1, c1);
+	//DrawLine(c1, a1);
 
 	// SomWorks :D // 삼각형 채우기
 	if (bFillTriangle)
@@ -219,6 +230,8 @@ void FSomDrawLibrary::FillTriangle(FVector2D a, FVector2D b, FVector2D c, bool b
 	FVector2D v4 = FVector2D(TopVertex.X - (TopVertex.Y - MiddleVertex.Y) * (TopVertex.X - BottomVertex.X) / (TopVertex.Y - BottomVertex.Y), MiddleVertex.Y);
 	// int Length_Y = static_cast<int>(abs(TopVertex.Y - BottomVertex.Y));
 
+	FColor Test;
+
 	// SomWorks :D // 위에 버텍스부터 순회, 삼각형 내부 채우기
 	for (int i = static_cast<int>(TopVertex.Y); i >= v4.Y; i--) //for (int i = 0; i <= Length_Y; i++)
 	{
@@ -229,13 +242,24 @@ void FSomDrawLibrary::FillTriangle(FVector2D a, FVector2D b, FVector2D c, bool b
 		// DrawPixel(static_cast<int>(x1), i);
 		// DrawPixel(static_cast<int>(x2), i);
 		
-		if (bUseBarycentricCoordinate)
-		{
-		}
-		else
-		{
-			DrawLine_BresenhamAlgorithm(FPoint(static_cast<int>(x1), i), FPoint(static_cast<int>(x2), i));
-		}
+		FVector2D u = TopVertex - MiddleVertex;
+		FVector2D v = TopVertex - BottomVertex;
+		FVector2D w = TopVertex - FVector2D(x1, static_cast<float>(i));
+
+		FVector2D Result;
+
+		float mWeightDenominator = FVector2D::DotProduct(u, u) * FVector2D::DotProduct(v, v) - FVector2D::DotProduct(u, v) * FVector2D::DotProduct(v, u);
+
+		Result.X = (FVector2D::DotProduct(w, u) * FVector2D::DotProduct(v, v)
+			- FVector2D::DotProduct(w, v) * FVector2D::DotProduct(v, u)) / mWeightDenominator;
+		Result.Y = (FVector2D::DotProduct(w, v) * FVector2D::DotProduct(u, u)
+			- FVector2D::DotProduct(w, u) * FVector2D::DotProduct(u, v)) / mWeightDenominator;
+
+		Test.r = 255;
+		Test.g = Result.X * 255;
+		Test.b = Result.Y * 255;
+		
+		DrawLine_BresenhamAlgorithm(FPoint(static_cast<int>(x1), i), FPoint(static_cast<int>(x2), i), Test);
 	}
 
 	for (int i = static_cast<int>(BottomVertex.Y); i <= MiddleVertex.Y; i++)
@@ -243,13 +267,16 @@ void FSomDrawLibrary::FillTriangle(FVector2D a, FVector2D b, FVector2D c, bool b
 		float x1 = BottomVertex.X - (BottomVertex.Y - i) * (BottomVertex.X - MiddleVertex.X) / (BottomVertex.Y - MiddleVertex.Y);
 		float x2 = BottomVertex.X - (BottomVertex.Y - i) * (BottomVertex.X - v4.X) / (BottomVertex.Y - v4.Y);
 
-		if (bUseBarycentricCoordinate)
-		{
-		}
-		else
-		{
-			DrawLine_BresenhamAlgorithm(FPoint(static_cast<int>(x1), i), FPoint(static_cast<int>(x2), i));
-		}
+		DrawLine_BresenhamAlgorithm(FPoint(static_cast<int>(x1), i), FPoint(static_cast<int>(x2), i));
+	}
+
+	if (bUseBarycentricCoordinate)
+	{
+		
+	}
+	else
+	{
+
 	}
 }
 
