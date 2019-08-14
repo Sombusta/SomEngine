@@ -231,7 +231,8 @@ void FSomDrawLibrary::FillTriangle(FVector2D a, FVector2D b, FVector2D c, bool b
 	// int Length_Y = static_cast<int>(abs(TopVertex.Y - BottomVertex.Y));
 
 	FColor Test;
-
+	FColor Test1;
+	
 	// SomWorks :D // 위에 버텍스부터 순회, 삼각형 내부 채우기
 	for (int i = static_cast<int>(TopVertex.Y); i >= v4.Y; i--) //for (int i = 0; i <= Length_Y; i++)
 	{
@@ -244,22 +245,42 @@ void FSomDrawLibrary::FillTriangle(FVector2D a, FVector2D b, FVector2D c, bool b
 		
 		FVector2D u = TopVertex - MiddleVertex;
 		FVector2D v = TopVertex - BottomVertex;
-		FVector2D w = TopVertex - FVector2D(x1, static_cast<float>(i));
+		//FVector2D w = TopVertex; // -FVector2D(x1, static_cast<float>(i));
+				
+		FVector2D StartVertex = FVector2D(static_cast<int>(x1), i);
+		FVector2D EndVertex = FVector2D(static_cast<int>(x2), i);
 
 		FVector2D Result;
 
 		float mWeightDenominator = FVector2D::DotProduct(u, u) * FVector2D::DotProduct(v, v) - FVector2D::DotProduct(u, v) * FVector2D::DotProduct(v, u);
 
-		Result.X = (FVector2D::DotProduct(w, u) * FVector2D::DotProduct(v, v)
-			- FVector2D::DotProduct(w, v) * FVector2D::DotProduct(v, u)) / mWeightDenominator;
-		Result.Y = (FVector2D::DotProduct(w, v) * FVector2D::DotProduct(u, u)
-			- FVector2D::DotProduct(w, u) * FVector2D::DotProduct(u, v)) / mWeightDenominator;
+		if (StartVertex.X > EndVertex.X)
+		{
+			FVector2D Temp;
+			Temp = StartVertex;
+			StartVertex = EndVertex;
+			EndVertex = Temp;
+		}
 
-		Test.r = 255;
-		Test.g = Result.X * 255;
-		Test.b = Result.Y * 255;
-		
-		DrawLine_BresenhamAlgorithm(FPoint(static_cast<int>(x1), i), FPoint(static_cast<int>(x2), i), Test);
+		for (int j = static_cast<int>(StartVertex.X); j < EndVertex.X; j++)
+		{
+			float testy = (EndVertex.Y - StartVertex.Y) / (EndVertex.X - StartVertex.X) * (j - StartVertex.X) + StartVertex.Y;
+
+			FVector2D w = TopVertex - FVector2D(j, static_cast<int>(testy));
+
+			Result.X = (FVector2D::DotProduct(w, u) * FVector2D::DotProduct(v, v)
+				- FVector2D::DotProduct(w, v) * FVector2D::DotProduct(v, u)) / mWeightDenominator;
+			Result.Y = (FVector2D::DotProduct(w, v) * FVector2D::DotProduct(u, u)
+				- FVector2D::DotProduct(w, u) * FVector2D::DotProduct(u, v)) / mWeightDenominator;
+
+			Test.r = 0;
+			Test.b = Result.X * 255;
+			Test.g = Result.Y * 255;
+
+			DrawPixel(j, static_cast<int>(testy), Test);
+		}
+
+		//DrawLine_BresenhamAlgorithm(FPoint(static_cast<int>(x1), i), FPoint(static_cast<int>(x2), i), Test);
 	}
 
 	for (int i = static_cast<int>(BottomVertex.Y); i <= MiddleVertex.Y; i++)
@@ -267,7 +288,44 @@ void FSomDrawLibrary::FillTriangle(FVector2D a, FVector2D b, FVector2D c, bool b
 		float x1 = BottomVertex.X - (BottomVertex.Y - i) * (BottomVertex.X - MiddleVertex.X) / (BottomVertex.Y - MiddleVertex.Y);
 		float x2 = BottomVertex.X - (BottomVertex.Y - i) * (BottomVertex.X - v4.X) / (BottomVertex.Y - v4.Y);
 
-		DrawLine_BresenhamAlgorithm(FPoint(static_cast<int>(x1), i), FPoint(static_cast<int>(x2), i));
+		FVector2D u = TopVertex - MiddleVertex;
+		FVector2D v = TopVertex - BottomVertex;
+		// FVector2D w = TopVertex - FVector2D(x1, static_cast<float>(i));
+
+		FVector2D StartVertex = FVector2D(static_cast<int>(x1), i);
+		FVector2D EndVertex = FVector2D(static_cast<int>(x2), i);
+
+		FVector2D Result;
+
+		float mWeightDenominator = FVector2D::DotProduct(u, u) * FVector2D::DotProduct(v, v) - FVector2D::DotProduct(u, v) * FVector2D::DotProduct(v, u);
+
+		if (StartVertex.X > EndVertex.X)
+		{
+			FVector2D Temp;
+			Temp = StartVertex;
+			StartVertex = EndVertex;
+			EndVertex = Temp;
+		}
+
+		for (int j = static_cast<int>(StartVertex.X); j < EndVertex.X; j++)
+		{
+			float testy = (EndVertex.Y - StartVertex.Y) / (EndVertex.X - StartVertex.X) * (j - StartVertex.X) + StartVertex.Y;
+
+			FVector2D w = TopVertex - FVector2D(j, static_cast<int>(testy));
+
+			Result.X = (FVector2D::DotProduct(w, u) * FVector2D::DotProduct(v, v)
+				- FVector2D::DotProduct(w, v) * FVector2D::DotProduct(v, u)) / mWeightDenominator;
+			Result.Y = (FVector2D::DotProduct(w, v) * FVector2D::DotProduct(u, u)
+				- FVector2D::DotProduct(w, u) * FVector2D::DotProduct(u, v)) / mWeightDenominator;
+
+			Test1.r = 0;
+			Test1.b = Result.X * 255;
+			Test1.g = Result.Y * 255;
+
+			DrawPixel(j, static_cast<int>(testy), Test1);
+		}
+
+		//DrawLine_BresenhamAlgorithm(FPoint(static_cast<int>(x1), i), FPoint(static_cast<int>(x2), i), Test1);
 	}
 
 	if (bUseBarycentricCoordinate)
