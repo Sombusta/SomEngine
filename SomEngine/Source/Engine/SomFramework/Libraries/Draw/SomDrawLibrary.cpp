@@ -273,7 +273,7 @@ void FSomDrawLibrary::FillTriangle(FVector2D a, FVector2D b, FVector2D c, bool b
 			Result.Y = (FVector2D::DotProduct(w, v) * FVector2D::DotProduct(u, u)
 				- FVector2D::DotProduct(w, u) * FVector2D::DotProduct(u, v)) / mWeightDenominator;
 
-			Test.r = 0;
+			Test.r = (1 - Result.X - Result.Y) * 255;
 			Test.b = Result.X * 255;
 			Test.g = Result.Y * 255;
 
@@ -318,7 +318,7 @@ void FSomDrawLibrary::FillTriangle(FVector2D a, FVector2D b, FVector2D c, bool b
 			Result.Y = (FVector2D::DotProduct(w, v) * FVector2D::DotProduct(u, u)
 				- FVector2D::DotProduct(w, u) * FVector2D::DotProduct(u, v)) / mWeightDenominator;
 
-			Test1.r = 0;
+			Test1.r = (1 - Result.X - Result.Y) * 255;
 			Test1.b = Result.X * 255;
 			Test1.g = Result.Y * 255;
 
