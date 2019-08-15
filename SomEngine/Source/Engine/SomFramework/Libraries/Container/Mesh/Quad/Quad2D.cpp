@@ -26,7 +26,8 @@ FQuad2D::FQuad2D(const FTexture2D& Tex, char* FileName)
 	FSomTextureParser_BMP::OpenBMP(CurrentTex, FileName);
 
 	StartVertex = FVector2D(0.0f, 0.0f);
-	EndVertex = FVector2D(CurrentTex.Width/3, CurrentTex.Height/3);
+	//EndVertex = FVector2D(300.0f, 300.0f);
+	EndVertex = FVector2D(CurrentTex.Width, CurrentTex.Height);
 
 	QuadInitialize();
 
@@ -55,8 +56,7 @@ void FQuad2D::QuadInitialize()
 
 	V_u = StartVertex - StartVertex_End;
 	V_v = StartVertex - EndVertex_Start;
-
-
+	
 	DotUU = FVector2D::DotProduct(V_u, V_u);
 	DotVV = FVector2D::DotProduct(V_v, V_v);
 	DotUV = FVector2D::DotProduct(V_u, V_v);
@@ -112,19 +112,13 @@ void FQuad2D::DrawQuad(bool bFillQuad)
 
 void FQuad2D::FillQuad()
 {
-	// SomWorks :D // 무게중심 UV
-	FVector2D Result;
-
-	for (int i = StartVertex.Y; i < EndVertex.Y; i++)
+	for (int i = StartVertex.Y; i < EndVertex.Y; ++i)
 	{
-		for (int j = StartVertex.X; j < EndVertex.Y; j++)
+		for (int j = StartVertex.X; j < EndVertex.X; ++j)
 		{
-			FVector2D w = StartVertex - FVector2D(j, i);
-
-			Result.X = (FVector2D::DotProduct(w, V_u) * DotVV - FVector2D::DotProduct(w, V_v) * DotVU) / WeightDenominator;
-			Result.Y = (FVector2D::DotProduct(w, V_v) * DotUU - FVector2D::DotProduct(w, V_u) * DotUV) / WeightDenominator;
-
-			FColor QuadColor = bUseBarycentricCoordinate ? GetVertexWeightColor(FVector2D(j, i)) : FSomTextureParser_BMP::GetPixel(j, 800, i, CurrentTex);
+			FVector2D Result = GetVertexWeight(FVector2D(j, i));
+			
+			FColor QuadColor = bUseBarycentricCoordinate ? GetVertexWeightColor(FVector2D(j, i)) : FSomTextureParser_BMP::GetPixel(j, CurrentTex.Width, i, CurrentTex);
 
 			FSomDrawLibrary::DrawPixel(j, i, QuadColor);
 		}

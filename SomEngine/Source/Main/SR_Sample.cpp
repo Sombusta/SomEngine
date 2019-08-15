@@ -41,7 +41,7 @@ void SR_Sample::Render()
 */
 	FTexture2D Texture;
 
-	FQuad2D Texting(Texture, const_cast<char*>("D:/Developments/Projects/Native_Projects/SomEngine/Extras/Test.bmp"));
+	FQuad2D Texting(Texture, const_cast<char*>("D:/Developments/Projects/Native_Projects/SomEngine/Extras/img.bmp"));
 	// FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint(0, 0), FPoint(100, 0));	
 	FTriangle2D MyTriangle(FVector2D(-100, -100), FVector2D(-50, 100), FVector2D(80, -50), true);
 
