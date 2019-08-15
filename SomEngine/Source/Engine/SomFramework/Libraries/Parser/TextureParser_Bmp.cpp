@@ -10,39 +10,40 @@ FSomTextureParser_BMP::~FSomTextureParser_BMP()
 {
 }
 
-ULONG* FSomTextureParser_BMP::OpenBMP(char *filename, int *width, int *height)
+bool FSomTextureParser_BMP::OpenBMP(FTexture2D& TargetTexture, char *filename)
 {
 	FILE* fp;
 	errno_t err;
 
 	err = fopen_s(&fp, filename, "rb");
-	if (!fp) return NULL;
+	if (!fp) return false;
 
 	BITMAPFILEHEADER bmpfh;
 	size_t size = fread(&bmpfh, 1, sizeof(BITMAPFILEHEADER), fp);
-	if (size != sizeof(BITMAPFILEHEADER)) return NULL;
+	if (size != sizeof(BITMAPFILEHEADER)) return false;
 
 	BITMAPINFOHEADER bmpih;
 	size = fread(&bmpih, 1, sizeof(BITMAPINFOHEADER), fp);
-	if (size != sizeof(BITMAPINFOHEADER)) return NULL;
+	if (size != sizeof(BITMAPINFOHEADER)) return false;
 
 	int bytePerLine = ((bmpih.biWidth * 3) + 3) &~3;
 	size_t imageSize = bytePerLine * bmpih.biHeight;
 	BYTE *pBmp = new BYTE[imageSize];
-	if (!pBmp) return NULL;
+	if (!pBmp) return false;
 
-	*width = bmpih.biWidth;
-	*height = bmpih.biHeight;
+	TargetTexture.Width = bmpih.biWidth;
+	TargetTexture.Height = bmpih.biHeight;
 	size = fread(pBmp, 1, imageSize, fp);
 	if (size != imageSize)
 	{
 		delete[] pBmp;
-		return NULL;
+		return false;
 	}
 
 	fclose(fp);
 
-	ULONG *pImageBuf = new ULONG[bmpih.biWidth * bmpih.biHeight];
+	// SomWorks :D // 텍스처 버퍼
+	TargetTexture.TexBuffer = new FLinearColor[bmpih.biWidth * bmpih.biHeight]; // ULONG* pImageBuf = new ULONG[bmpih.biWidth * bmpih.biHeight];
 
 	for (int j = 0; j < bmpih.biHeight; j++)
 	{
@@ -55,8 +56,9 @@ ULONG* FSomTextureParser_BMP::OpenBMP(char *filename, int *width, int *height)
 
 			int DestIndex = j * bmpih.biWidth + i;
 			
-			BYTE *CurrentColor = (BYTE *)(pImageBuf + DestIndex);
-			pImageBuf[DestIndex] = RGB(RValue, GValue, BValue);
+			// BYTE* CurrentColor = (BYTE*)(pImageBuf + DestIndex);
+			// pImageBuf[DestIndex] = RGB(RValue, GValue, BValue);
+			TargetTexture.TexBuffer[DestIndex] = FColor(RValue, GValue, BValue);
 		}
 	}
 
@@ -64,10 +66,11 @@ ULONG* FSomTextureParser_BMP::OpenBMP(char *filename, int *width, int *height)
 	{
 		delete[] pBmp;
 	}
-	return (ULONG*)pImageBuf;
+
+	return true; // return (ULONG*)pImageBuf;
 }
 
-ULONG FSomTextureParser_BMP::GetPixel(int x, int width, int y, ULONG* bmp)
+FLinearColor FSomTextureParser_BMP::GetPixel(int x, int width, int y, FTexture2D& bmp)
 {
-	return bmp[y * width + x];
+	return bmp.TexBuffer[y * width + x];
 }

@@ -23,8 +23,9 @@
     <ClInclude Include="Source\Engine\Resource\Resource.h" />
     <ClInclude Include="Source\Engine\Resource\targetver.h" />
     <ClInclude Include="Source\Engine\SomFramework\Game\Object\SomObject.h" />
-    <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Color\Color.h" />
+    <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Color\LinearColor.h" />
     <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Mesh\Triangle\Triangle2D.h" />
+    <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Texture\Texture2D.h" />
     <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Vector\Point.h" />
     <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Vector\Vector2D.h" />
     <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Vector\Vector.h" />

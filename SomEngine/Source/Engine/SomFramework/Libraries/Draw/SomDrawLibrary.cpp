@@ -16,6 +16,7 @@ void FSomDrawLibrary::DrawPixel(int x, int y, FColor PixelColor)
 	if (!FSomMathLibrary::IsInRange(x, y)) return;
 
 	ULONG* dest = (ULONG*)SomFramework_SR::GetInstance()->Bits;
+
 	DWORD offset = SomWidth * SomHeight / 2 + SomWidth / 2 + x + SomWidth * -y; // SomWidth * x + SomHeight * y;
 	*(dest + offset) = PixelColor.GetColor(); // SomFramework_SR::GetInstance()->CurrentColor;
 }

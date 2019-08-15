@@ -10,10 +10,9 @@ public:
 	FSomTextureParser_BMP();
 	~FSomTextureParser_BMP();
 
-	static ULONG* OpenBMP(char *filename, int *pwidth, int *pheight);
+	static bool OpenBMP(FTexture2D& TargetTexture, char *filename);
 
-	static ULONG GetPixel(int x, int width, int y, ULONG* bmp);
-
+	static FLinearColor GetPixel(int x, int width, int y, FTexture2D& bmp);
 private:
 
 protected:

@@ -61,6 +61,9 @@
     <Filter Include="Engine\SomFramework\Libraries\Container\Mesh\Triangle">
       <UniqueIdentifier>{d21513c1-2147-4892-8a73-7da6b33478d7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\SomFramework\Libraries\Container\Texture">
+      <UniqueIdentifier>{1127bea7-d42e-49b9-97cb-626cb9eeb80a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Engine\Engine.h">
@@ -83,9 +86,6 @@
     </ClInclude>
     <ClInclude Include="Source\Engine\SomFramework\Game\Object\SomObject.h">
       <Filter>Engine\SomFramework\Game\Object</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Color\Color.h">
-      <Filter>Engine\SomFramework\Libraries\Container\Color</Filter>
     </ClInclude>
     <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Vector\Vector2D.h">
       <Filter>Engine\SomFramework\Libraries\Container\Vector</Filter>
@@ -113,6 +113,12 @@
     </ClInclude>
     <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Mesh\Triangle\Triangle2D.h">
       <Filter>Engine\SomFramework\Libraries\Container\Mesh\Triangle</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Color\LinearColor.h">
+      <Filter>Engine\SomFramework\Libraries\Container\Color</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Texture\Texture2D.h">
+      <Filter>Engine\SomFramework\Libraries\Container\Texture</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

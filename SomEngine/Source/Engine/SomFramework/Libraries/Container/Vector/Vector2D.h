@@ -81,6 +81,7 @@ public:
 		std::cout << X << ", " << Y << std::endl;
 	}
 
+	// SomWorks :D // º¤ÅÍ ½º¿Ò
 	FORCEINLINE static void Swap(FVector2D& v1, FVector2D& v2)
 	{
 		FVector2D Temp;
@@ -95,6 +96,7 @@ public:
 		return std::sqrtf(std::powf(Value.X, 2) + std::powf(Value.Y, 2));
 	}
 
+	// SomWorks :D // º¤ÅÍ ³ë¸»
 	FORCEINLINE static FVector2D Normalize(const FVector2D& Value)
 	{
 		FVector2D Result;
@@ -112,7 +114,7 @@ public:
 		return Result;
 	}
 
-	// SomWorks :D // º¤ÅÍÀÇ ³»Àû
+	// SomWorks :D // º¤ÅÍ ³»Àû
 	FORCEINLINE static float DotProduct(const FVector2D& v1, const FVector2D& v2)
 	{
 		return v1.X * v2.X + v1.Y * v2.Y;
