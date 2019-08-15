@@ -55,6 +55,12 @@
     <Filter Include="Engine\SomFramework\Libraries\Interface">
       <UniqueIdentifier>{20dc23d9-9e0e-4119-9bbb-f2e627030476}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\SomFramework\Libraries\Container\Mesh">
+      <UniqueIdentifier>{a682cdd0-2280-4407-9fd0-d58c289352a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\SomFramework\Libraries\Container\Mesh\Triangle">
+      <UniqueIdentifier>{d21513c1-2147-4892-8a73-7da6b33478d7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Engine\Engine.h">
@@ -105,6 +111,9 @@
     <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Vector\Point.h">
       <Filter>Engine\SomFramework\Libraries\Container\Vector</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Mesh\Triangle\Triangle2D.h">
+      <Filter>Engine\SomFramework\Libraries\Container\Mesh\Triangle</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Engine\WinMain\Win32Application.cpp">
@@ -136,6 +145,9 @@
     </ClCompile>
     <ClCompile Include="Source\Engine\SomFramework\Libraries\Interface\SomInterface_Actor.cpp">
       <Filter>Engine\SomFramework\Libraries\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\SomFramework\Libraries\Container\Mesh\Triangle\Triangle2D.cpp">
+      <Filter>Engine\SomFramework\Libraries\Container\Mesh\Triangle</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

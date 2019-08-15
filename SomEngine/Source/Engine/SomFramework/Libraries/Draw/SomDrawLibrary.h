@@ -19,14 +19,9 @@ public:
 	// SomWorks :D // 브레젠험 직선 알고리즘 사용
 	static void DrawLine_BresenhamAlgorithm(FPoint Point1, FPoint Point2, FColor PixelColor = FColor(255, 255, 255));
 
-	// SomWorks :D // 삼각형 그리기
-	static void DrawTriangle(FVector2D a, FVector2D b, FVector2D c, bool bFillTriangle = false);
-
-	// SomWorks :D // 삼각형 채우기
-	static void FillTriangle(FVector2D a, FVector2D b, FVector2D c, bool bUseBarycentricCoordinate = false);
-
 	// SomWorks :D // 원 그리기
 	static void DrawCircle(FPoint CenterVec, int r);
+
 private:	
 
 protected:

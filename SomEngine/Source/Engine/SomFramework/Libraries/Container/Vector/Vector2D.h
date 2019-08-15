@@ -81,27 +81,35 @@ public:
 		std::cout << X << ", " << Y << std::endl;
 	}
 
+	FORCEINLINE static void Swap(FVector2D& v1, FVector2D& v2)
+	{
+		FVector2D Temp;
+		Temp = v1;
+		v1 = v2;
+		v2 = Temp;
+	}
+
 	// SomWorks :D // º¤ÅÍÀÇ ±æÀÌ ±¸ÇÏ±â °ø½Ä, ·çÆ®(x Á¦°ö + y Á¦°ö)
-	FORCEINLINE static float GetVectorLength(const FVector2D& Value)
+	FORCEINLINE static float GetLength(const FVector2D& Value)
 	{		
 		return std::sqrtf(std::powf(Value.X, 2) + std::powf(Value.Y, 2));
 	}
 
 	FORCEINLINE static FVector2D Normalize(const FVector2D& Value)
 	{
-		FVector2D temp;
+		FVector2D Result;
 
-		float VectorLength = GetVectorLength(Value);
+		float VectorLength = GetLength(Value);
 
 		if (VectorLength <= 0.001f)
 		{
 			return Value;
 		}
 
-		temp.X = Value.X / VectorLength;
-		temp.Y = Value.Y / VectorLength;
+		Result.X = Value.X / VectorLength;
+		Result.Y = Value.Y / VectorLength;
 
-		return temp;
+		return Result;
 	}
 
 	// SomWorks :D // º¤ÅÍÀÇ ³»Àû

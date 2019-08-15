@@ -44,7 +44,7 @@ void SR_Sample::Render()
 */
 
 	// FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint(0, 0), FPoint(100, 0));	
-	FSomDrawLibrary::DrawTriangle(FVector2D(-100, -100), FVector2D(-50, 100), FVector2D(80, -50), true);
+	FTriangle2D(FVector2D(-100, -100), FVector2D(-50, 100), FVector2D(80, -50), true);
 
 	// end = clock(); // 시간설정
 	// cout << "수행시간 : " << ((float)(end - begin) / CLOCKS_PER_SEC) << endl;
