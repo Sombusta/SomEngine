@@ -64,6 +64,9 @@
     <Filter Include="Engine\SomFramework\Libraries\Container\Texture">
       <UniqueIdentifier>{1127bea7-d42e-49b9-97cb-626cb9eeb80a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\SomFramework\Libraries\Container\Mesh\Quad">
+      <UniqueIdentifier>{15d85823-7680-4c53-8a0f-4927df475fda}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Engine\Engine.h">
@@ -120,6 +123,9 @@
     <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Texture\Texture2D.h">
       <Filter>Engine\SomFramework\Libraries\Container\Texture</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Mesh\Quad\Quad2D.h">
+      <Filter>Engine\SomFramework\Libraries\Container\Mesh\Quad</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Engine\WinMain\Win32Application.cpp">
@@ -154,6 +160,9 @@
     </ClCompile>
     <ClCompile Include="Source\Engine\SomFramework\Libraries\Container\Mesh\Triangle\Triangle2D.cpp">
       <Filter>Engine\SomFramework\Libraries\Container\Mesh\Triangle</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\SomFramework\Libraries\Container\Mesh\Quad\Quad2D.cpp">
+      <Filter>Engine\SomFramework\Libraries\Container\Mesh\Quad</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

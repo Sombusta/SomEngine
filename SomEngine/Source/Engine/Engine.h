@@ -60,6 +60,7 @@ using std::list;
 #include "SomFramework/Libraries/Container/Color/LinearColor.h"
 #include "SomFramework/Libraries/Container/Texture/Texture2D.h"
 #include "SomFramework/Libraries/Container/Mesh/Triangle/Triangle2D.h"
+#include "SomFramework/Libraries/Container/Mesh/Quad/Quad2D.h"
 
 // SomWorks :D // SomFramework Library
 #include "SomFramework/Libraries/Math/SomMathLibrary.h"

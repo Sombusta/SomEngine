@@ -24,6 +24,7 @@
     <ClInclude Include="Source\Engine\Resource\targetver.h" />
     <ClInclude Include="Source\Engine\SomFramework\Game\Object\SomObject.h" />
     <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Color\LinearColor.h" />
+    <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Mesh\Quad\Quad2D.h" />
     <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Mesh\Triangle\Triangle2D.h" />
     <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Texture\Texture2D.h" />
     <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Vector\Point.h" />
@@ -40,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Engine\SomFramework\Game\Object\SomObject.cpp" />
+    <ClCompile Include="Source\Engine\SomFramework\Libraries\Container\Mesh\Quad\Quad2D.cpp" />
     <ClCompile Include="Source\Engine\SomFramework\Libraries\Container\Mesh\Triangle\Triangle2D.cpp" />
     <ClCompile Include="Source\Engine\SomFramework\Libraries\Draw\SomDrawLibrary.cpp" />
     <ClCompile Include="Source\Engine\SomFramework\Libraries\Interface\SomInterface_Actor.cpp" />
