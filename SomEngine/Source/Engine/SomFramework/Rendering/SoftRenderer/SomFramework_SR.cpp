@@ -35,6 +35,7 @@ void SomFramework_SR::InitGDI(HWND hWnd)
 		Instance->hDefaultBitmap = (HBITMAP)SelectObject(Instance->hMemoryDC, Instance->hDIBitmap);
 
 		SomManager_Main::CreateGameManager();
+		SomManager_Texture::CreateTexManager();
 	}
 	else
 	{
@@ -67,6 +68,7 @@ void SomFramework_SR::ReleaseGDI(HWND hWnd)
 		ReleaseDC(hWnd, Instance->hMemoryDC);
 
 		SomManager_Main::TerminateGameManager();
+		SomManager_Texture::TerminateTexManager();
 
 		delete Instance;
 		Instance = nullptr;
@@ -77,7 +79,7 @@ void SomFramework_SR::ReleaseGDI(HWND hWnd)
 void SomFramework_SR::BufferClear()
 {
 	// SomWorks :D // ¹è°æ»ö
-	FColor BG_Color = FColor(32, 128, 255);
+	FLinearColor BG_Color = FLinearColor(32, 128, 255);
 	ULONG BG_Pixel = BG_Color.GetColor();
 
 	ULONG* dest = (ULONG*)Bits;

@@ -129,6 +129,9 @@
     <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Vector\Vertex.h">
       <Filter>Engine\SomFramework\Libraries\Container\Vector</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Main\Core\SomManager_Texture.h">
+      <Filter>Main\Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Engine\WinMain\Win32Application.cpp">
@@ -166,6 +169,9 @@
     </ClCompile>
     <ClCompile Include="Source\Engine\SomFramework\Libraries\Container\Mesh\Quad\Quad2D.cpp">
       <Filter>Engine\SomFramework\Libraries\Container\Mesh\Quad</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Main\Core\SomManager_Texture.cpp">
+      <Filter>Main\Core</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -72,7 +72,9 @@ bool FSomTextureParser_BMP::OpenBMP(FTexture2D& TargetTexture, char *filename)
 
 FLinearColor FSomTextureParser_BMP::GetPixel(int x, int y, FTexture2D& bmp)
 {
-	// return bmp.TexBuffer[y * width + x];
-	return bmp.TexBuffer[x + y * bmp.Width];
+	int Result_X = FSomMathLibrary::Clamp(x, 0, bmp.Width);
+	int Result_Y = FSomMathLibrary::Clamp(y, 0, bmp.Height);
 
+	// return bmp.TexBuffer[y * width + x];
+	return bmp.TexBuffer[Result_X + Result_Y * bmp.Width];
 }

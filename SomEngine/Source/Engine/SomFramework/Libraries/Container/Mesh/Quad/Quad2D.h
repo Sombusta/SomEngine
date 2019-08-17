@@ -9,7 +9,7 @@ class FQuad2D
 public:
 	FQuad2D();
 	FQuad2D(FVector2D a, FVector2D b, bool bFillQuad = false);
-	FQuad2D(const FTexture2D& Tex, char* FileName);
+	FQuad2D(const FTexture2D& Tex);
 	~FQuad2D();
 
 private:

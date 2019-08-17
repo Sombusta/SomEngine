@@ -4,13 +4,15 @@
 
 #include "Vector.h"
 #include "Vector2D.h"
+#include "../Color/LinearColor.h"
 
 // SomWorks :D // Vertex2D
 typedef struct FVertex2D
 {
 public:
 	FVector2D Location;
-	FVector2D UV;
+	FLinearColor Color;
+	FVector2D UV;	
 
 public:
 	FVertex2D() : Location(FVector2D(0.0f,0.0f)), UV(FVector2D(0.0f, 0.0f)) {}
@@ -26,6 +28,7 @@ typedef struct FVertex
 {
 public:
 	FVector Location;
+	FLinearColor Color;
 	FVector UV;
 
 public:

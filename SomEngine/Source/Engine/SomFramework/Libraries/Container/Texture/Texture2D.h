@@ -13,5 +13,6 @@ public:
 	FLinearColor* TexBuffer = nullptr;
 	int Width = 0;
 	int Height = 0;
+	char* FilePath = nullptr;
 
 } FTexture2D;

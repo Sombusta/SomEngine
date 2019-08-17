@@ -19,17 +19,15 @@ FQuad2D::FQuad2D(FVector2D a, FVector2D b, bool bFillQuad) : StartVertex(a.X, a.
 	DrawQuad(true);
 }
 
-FQuad2D::FQuad2D(const FTexture2D& Tex, char* FileName)
+FQuad2D::FQuad2D(const FTexture2D& Tex)
 {
-	bUseBarycentricCoordinate = true;
+	bUseBarycentricCoordinate = false;
 
 	CurrentTex = Tex;
 
-	FSomTextureParser_BMP::OpenBMP(CurrentTex, FileName);
-
 	StartVertex = FVertex2D(0.0f, 0.0f);
 	StartVertex.UV = FVector2D(0, 0);
-	EndVertex = FVertex2D(300.0f, -300.0f);
+	EndVertex = FVertex2D(300.0f, 300.0f);
 	EndVertex.UV = FVector2D(1, 1);
 	//EndVertex = FVector2D(CurrentTex.Width, CurrentTex.Height);
 
@@ -118,9 +116,9 @@ void FQuad2D::DrawQuad(bool bFillQuad)
 
 void FQuad2D::FillQuad()
 {
-	for (int i = StartVertex.Location.Y; i >= EndVertex.Location.Y; --i)
+	for (int i = StartVertex.Location.Y; i < EndVertex.Location.Y; i++)
 	{
-		for (int j = StartVertex.Location.X; j < EndVertex.Location.X; ++j)
+		for (int j = StartVertex.Location.X; j < EndVertex.Location.X; j++)
 		{
 			FVector2D VertexWeight = GetVertexWeight(FVector2D(j, i));
 						
@@ -128,11 +126,8 @@ void FQuad2D::FillQuad()
 
 			Result.X = CurrentTex.Width * VertexWeight.X;
 			Result.Y = CurrentTex.Height * VertexWeight.Y;
-
-			int Testa = FSomMathLibrary::Clamp(static_cast<int>(Result.X), 0, 300);
-			int Testb = FSomMathLibrary::Clamp(static_cast<int>(Result.Y), 0, -300);
 			
-			FColor QuadColor = bUseBarycentricCoordinate ? GetVertexWeightColor(FVector2D(j, i)) : FSomTextureParser_BMP::GetPixel(Testa, Testb, CurrentTex);
+			FColor QuadColor = bUseBarycentricCoordinate ? GetVertexWeightColor(FVector2D(j, i)) : FSomTextureParser_BMP::GetPixel(Result.X, Result.Y, CurrentTex);
 
 			FSomDrawLibrary::DrawPixel(j, i, QuadColor);
 		}

@@ -73,6 +73,7 @@ using std::list;
 // SomWorks :D // SomFramework GamePlay
 #include "SomFramework/Game/Object/SomObject.h"
 #include "Main/Core/SomManager_Main.h"
+#include "Main/Core/SomManager_Texture.h"
 
 #if bUseSR
 #include "SomFramework/Rendering/SoftRenderer/SomFramework_SR.h"
