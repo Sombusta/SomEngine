@@ -30,6 +30,7 @@
     <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Vector\Point.h" />
     <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Vector\Vector2D.h" />
     <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Vector\Vector.h" />
+    <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Vector\Vertex.h" />
     <ClInclude Include="Source\Engine\SomFramework\Libraries\Draw\SomDrawLibrary.h" />
     <ClInclude Include="Source\Engine\SomFramework\Libraries\Interface\SomInterface_Actor.h" />
     <ClInclude Include="Source\Engine\SomFramework\Libraries\Math\SomMathLibrary.h" />

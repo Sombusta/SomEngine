@@ -126,6 +126,9 @@
     <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Mesh\Quad\Quad2D.h">
       <Filter>Engine\SomFramework\Libraries\Container\Mesh\Quad</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Vector\Vertex.h">
+      <Filter>Engine\SomFramework\Libraries\Container\Vector</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Engine\WinMain\Win32Application.cpp">

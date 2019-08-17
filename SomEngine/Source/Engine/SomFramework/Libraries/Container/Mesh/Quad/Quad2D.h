@@ -32,13 +32,13 @@ private:
 	void FillQuad();
 
 private:
-	FVector2D StartVertex;
-	FVector2D EndVertex;
+	FVertex2D StartVertex;
+	FVertex2D EndVertex;
 
-	FVector2D StartVertex_End;
-	FVector2D EndVertex_Start;
+	FVertex2D StartVertex_End;
+	FVertex2D EndVertex_Start;
 
-	vector<FVector2D> Vertices;
+	vector<FVertex2D> Vertices;
 
 	FVector2D V_u;
 	FVector2D V_v;

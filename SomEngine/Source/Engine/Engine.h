@@ -57,6 +57,7 @@ using std::list;
 #include "SomFramework/Libraries/Container/Vector/Point.h"
 #include "SomFramework/Libraries/Container/Vector/Vector2D.h"
 #include "SomFramework/Libraries/Container/Vector/Vector.h"
+#include "SomFramework/Libraries/Container/Vector/Vertex.h"
 #include "SomFramework/Libraries/Container/Color/LinearColor.h"
 #include "SomFramework/Libraries/Container/Texture/Texture2D.h"
 #include "SomFramework/Libraries/Container/Mesh/Triangle/Triangle2D.h"

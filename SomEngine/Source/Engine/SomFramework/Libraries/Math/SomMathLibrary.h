@@ -19,6 +19,10 @@ public:
 	// SomWorks :D // 직선의 방정식, Equation of a Straight Line
 	static int GetEOL(FPoint p1, FPoint p2, int x);
 
+	// SomWorks :D // Clamp
+	template <typename T>
+	static T Clamp(T Value, T Min, T Max);
+
 private:
 
 protected:
@@ -26,3 +30,18 @@ protected:
 public:
 
 };
+
+template<typename T>
+T FSomMathLibrary::Clamp(T Value, T Min, T Max)
+{
+	if (Value > Max)
+	{
+		return Max;
+	}
+	else if (Value < Min)
+	{
+		return Min;
+	}
+
+	return Value;
+}

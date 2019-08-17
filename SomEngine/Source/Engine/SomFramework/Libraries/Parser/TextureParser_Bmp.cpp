@@ -55,7 +55,7 @@ bool FSomTextureParser_BMP::OpenBMP(FTexture2D& TargetTexture, char *filename)
 			BYTE RValue = pBmp[ColorIndex + 2];
 
 			int DestIndex = j * bmpih.biWidth + i;
-			
+
 			// BYTE* CurrentColor = (BYTE*)(pImageBuf + DestIndex);
 			// pImageBuf[DestIndex] = RGB(RValue, GValue, BValue);
 			TargetTexture.TexBuffer[DestIndex] = FColor(RValue, GValue, BValue);
@@ -70,7 +70,9 @@ bool FSomTextureParser_BMP::OpenBMP(FTexture2D& TargetTexture, char *filename)
 	return true; // return (ULONG*)pImageBuf;
 }
 
-FLinearColor FSomTextureParser_BMP::GetPixel(int x, int width, int y, FTexture2D& bmp)
+FLinearColor FSomTextureParser_BMP::GetPixel(int x, int y, FTexture2D& bmp)
 {
-	return bmp.TexBuffer[y * width + x];
+	// return bmp.TexBuffer[y * width + x];
+	return bmp.TexBuffer[x + y * bmp.Width];
+
 }
