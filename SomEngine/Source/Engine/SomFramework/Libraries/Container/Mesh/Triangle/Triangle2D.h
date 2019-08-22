@@ -8,35 +8,36 @@ class FTriangle2D
 {
 public:
 	FTriangle2D();
-	FTriangle2D(FVector2D a, FVector2D b, FVector2D c, bool bFillTriangle = false);
+	FTriangle2D(FVertex2D a, FVertex2D b, FVertex2D c, bool bFillTriangle = false);
+	FTriangle2D(FVertex2D a, FVertex2D b, FVertex2D c, const FTexture2D& Tex, bool bUseTextrue = true);
 	~FTriangle2D();
 
 private:
 	// SomWorks :D // 삼각형 버텍스 소팅
-	void VertexSort(FVector2D a, FVector2D b, FVector2D c);
+	void VertexSort(FVertex2D a, FVertex2D b, FVertex2D c);
 
 	// SomWorks :D // 삼각형 초기화
 	void TriangleInitialize();
 
 	// SomWorks :D // 삼각형 무게중심 좌표 BarycentricCoordinate
-	FVector2D GetVertexWeight(const FVector2D& Value) const;
+	FVector GetVertexWeight(const FVector& Value) const;
 
 	// SomWorks :D // 무게중심 좌표를 사용한 색상 표현
 	FColor GetVertexWeightColor(const FVector2D& Value) const;
 
 	// SomWorks :D // 삼각형 그리기
-	void DrawTriangle(bool bFillTriangle = false);
+	void DrawTriangle(bool bFillTriangle = false, bool bUseTexture = false);
 
 	// SomWorks :D // 삼각형 채우기
-	void FillTriangle();
+	void FillTriangle(bool bUseTexture = false);
 
 private:
-	FVector2D TopVertex;
-	FVector2D MiddleVertex;
-	FVector2D BottomVertex;
+	FVertex2D TopVertex;
+	FVertex2D MiddleVertex;
+	FVertex2D BottomVertex;
 	FVector2D FourthVertex;
 
-	vector<FVector2D> Vertices;
+	vector<FVertex2D> Vertices;
 
 	FVector2D V_u;
 	FVector2D V_v;
@@ -46,6 +47,8 @@ private:
 	float DotUV;
 	float DotVU;
 	float WeightDenominator;
+
+	FTexture2D CurrentTex;
 
 protected:
 
