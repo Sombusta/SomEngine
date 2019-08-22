@@ -21,7 +21,7 @@ FQuad2D::FQuad2D(FVector2D a, FVector2D b, bool bFillQuad) : StartVertex(a.X, a.
 
 FQuad2D::FQuad2D(const FTexture2D& Tex)
 {
-	bUseBarycentricCoordinate = false;
+	bUseBarycentricCoordinate = true;
 
 	CurrentTex = Tex;
 
@@ -60,9 +60,11 @@ void FQuad2D::QuadInitialize()
 
 	V_u = StartVertex.Location - StartVertex_End.Location;
 	V_v = StartVertex.Location - EndVertex_Start.Location;
+	V_w = StartVertex.Location - EndVertex.Location;
 
 	DotUU = FVector2D::DotProduct(V_u, V_u);
 	DotVV = FVector2D::DotProduct(V_v, V_v);
+	DotWW = FVector2D::DotProduct(V_w, V_w);
 	DotUV = FVector2D::DotProduct(V_u, V_v);
 	DotVU = FVector2D::DotProduct(V_v, V_u);
 

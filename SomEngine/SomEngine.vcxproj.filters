@@ -132,6 +132,9 @@
     <ClInclude Include="Source\Main\Core\SomManager_Texture.h">
       <Filter>Main\Core</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Vector\Vector4.h">
+      <Filter>Engine\SomFramework\Libraries\Container\Vector</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Engine\WinMain\Win32Application.cpp">

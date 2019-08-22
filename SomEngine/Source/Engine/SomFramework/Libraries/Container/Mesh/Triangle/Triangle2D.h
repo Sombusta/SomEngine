@@ -31,7 +31,7 @@ private:
 	// SomWorks :D // 삼각형 채우기
 	void FillTriangle(bool bUseTexture = false);
 
-private:
+public:
 	FVertex2D TopVertex;
 	FVertex2D MiddleVertex;
 	FVertex2D BottomVertex;
@@ -42,11 +42,11 @@ private:
 	FVector2D V_u;
 	FVector2D V_v;
 
-	float DotUU;
-	float DotVV;
-	float DotUV;
-	float DotVU;
-	float WeightDenominator;
+	float DotUU = 0.0f;
+	float DotVV = 0.0f;
+	float DotUV = 0.0f;
+	float DotVU = 0.0f;
+	float WeightDenominator = 0.0f;
 
 	FTexture2D CurrentTex;
 

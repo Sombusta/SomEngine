@@ -42,11 +42,13 @@ private:
 
 	FVector2D V_u;
 	FVector2D V_v;
+	FVector2D V_w;
 
 	float DotUU;
 	float DotVV;
+	float DotWW;
 	float DotUV;
-	float DotVU;
+	float DotVU;	
 	float WeightDenominator;
 
 	FTexture2D CurrentTex;
