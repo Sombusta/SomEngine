@@ -39,9 +39,9 @@ void SR_Sample::Render()
 
 	Points.clear();
 */
-	FQuad2D Texting(SomManager_Texture::GetInstance()->T_Test1);
 	// FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint(0, 0), FPoint(100, 0));	
 
+	// FQuad2D test;//Texting(a, b, c, d, SomManager_Texture::GetInstance()->T_Test1);
 
 	FVertex2D a(-100, -100);
 	a.UV = FVector2D(0, 1);
@@ -71,8 +71,8 @@ void SR_Sample::Render()
 	FVertex2D d(200, -200);
 	d.UV = FVector2D(1, 1);
 	
-	FTriangle2D MyTriangle(a, b, c, SomManager_Texture::GetInstance()->T_Test1, true);
-	FTriangle2D MyTriangle2(b, d, c, SomManager_Texture::GetInstance()->T_Test1, true);*/
+	FTriangle2D MyTriangle(a, b, c, SomManager_Texture::GetInstance()->T_Test1, false);
+	FTriangle2D MyTriangle2(b, c, d, SomManager_Texture::GetInstance()->T_Test1, false);*/
 
 	// end = clock(); // 시간설정
 	// cout << "수행시간 : " << ((float)(end - begin) / CLOCKS_PER_SEC) << endl;

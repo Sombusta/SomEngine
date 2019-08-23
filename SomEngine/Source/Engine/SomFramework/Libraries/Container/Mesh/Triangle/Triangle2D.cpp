@@ -176,7 +176,7 @@ void FTriangle2D::FillTriangle(bool bUseTexture)
 
 				//TriangleColor = Test;
 
-				TriangleColor = FSomTextureParser_BMP::GetPixel(Result.X, Result.Y, CurrentTex);
+				TriangleColor = bUseBarycentricCoordinate? Test : FSomTextureParser_BMP::GetPixel(Result.X, Result.Y, CurrentTex);
 			}
 			else
 			{
@@ -230,7 +230,7 @@ void FTriangle2D::FillTriangle(bool bUseTexture)
 
 				//TriangleColor = Test;
 
-				TriangleColor = FSomTextureParser_BMP::GetPixel(Result.X, Result.Y, CurrentTex);
+				TriangleColor = bUseBarycentricCoordinate ? Test : FSomTextureParser_BMP::GetPixel(Result.X, Result.Y, CurrentTex);
 			}
 			else
 			{

@@ -32,12 +32,12 @@ private:
 	void FillTriangle(bool bUseTexture = false);
 
 public:
+	vector<FVertex2D> Vertices;
+	
 	FVertex2D TopVertex;
 	FVertex2D MiddleVertex;
 	FVertex2D BottomVertex;
 	FVector2D FourthVertex;
-
-	vector<FVertex2D> Vertices;
 
 	FVector2D V_u;
 	FVector2D V_v;
@@ -53,6 +53,6 @@ public:
 protected:
 
 public:
-	bool bUseBarycentricCoordinate = true;
+	bool bUseBarycentricCoordinate = false;
 	
 };
