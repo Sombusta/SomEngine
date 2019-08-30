@@ -118,9 +118,9 @@ void FTriangle2D::DrawTriangle(bool bFillTriangle, bool bUseTexture)
 		FillTriangle(bUseTexture);
 
 		// SomWorks :D // Draw Outline
-		/*FSomDrawLibrary::DrawLine_BresenhamAlgorithm(a1, b1); //DrawLine(a1, b1);
+		FSomDrawLibrary::DrawLine_BresenhamAlgorithm(a1, b1); //DrawLine(a1, b1);
 		FSomDrawLibrary::DrawLine_BresenhamAlgorithm(b1, c1); //DrawLine(b1, c1);
-		FSomDrawLibrary::DrawLine_BresenhamAlgorithm(c1, a1); //DrawLine(c1, a1);*/
+		FSomDrawLibrary::DrawLine_BresenhamAlgorithm(c1, a1); //DrawLine(c1, a1);
 	}
 	else
 	{
