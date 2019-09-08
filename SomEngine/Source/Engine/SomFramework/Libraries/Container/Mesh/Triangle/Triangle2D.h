@@ -15,7 +15,7 @@ public:
 private:
 	// SomWorks :D // 삼각형 버텍스 소팅
 	void VertexSort(FVertex2D a, FVertex2D b, FVertex2D c);
-
+	
 	// SomWorks :D // 삼각형 초기화
 	void TriangleInitialize();
 

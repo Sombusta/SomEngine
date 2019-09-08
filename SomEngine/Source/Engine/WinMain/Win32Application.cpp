@@ -44,13 +44,22 @@ int Win32Application::Run(HINSTANCE hInstance, int nCmdShow, SomFrameworkSetup R
 	RECT windowRect = { 0, 0, static_cast<LONG>(SomWidth), static_cast<LONG>(SomHeight) };
 	AdjustWindowRect(&windowRect, WS_OVERLAPPEDWINDOW, FALSE);
 
+	// SomWorks :D // Screen Location Default
+	// CW_USEDEFAULT
+
+	// 현재 모니터 해상도에 설정된 값을 가져옵니다.
+	// 현재 설정된 해상도가 1920 X 1080이라면
+	// screenWidth에는 1920이 screenHeight에는 1080이 대입됩니다.
+	int ScreenWidth = GetSystemMetrics(SM_CXSCREEN);
+	int ScreenHeight = GetSystemMetrics(SM_CYSCREEN);
+	
 	// Create the window and store a handle to it.
 	m_hwnd = CreateWindow(
 		SomTitle,
 		SomTitle,
 		WS_OVERLAPPEDWINDOW,
-		CW_USEDEFAULT,
-		CW_USEDEFAULT,
+		(ScreenWidth - SomWidth) / 2,
+		(ScreenHeight - SomHeight) / 2,
 		windowRect.right - windowRect.left,
 		windowRect.bottom - windowRect.top,
 		nullptr,        // We have no parent window.
