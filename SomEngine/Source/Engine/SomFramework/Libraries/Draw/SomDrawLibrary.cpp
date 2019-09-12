@@ -38,10 +38,10 @@ void FSomDrawLibrary::DrawLine(FPoint Point1, FPoint Point2)
 
 		for (int i = static_cast<int>(StartVertex.Y); i <= EndVertex.Y; i++)
 		{
-			float x1 = EndVertex.X - (EndVertex.Y - i) * (EndVertex.X - StartVertex.X) / (EndVertex.Y - StartVertex.Y);
+			int x1 = EndVertex.X - (EndVertex.Y - i) * (EndVertex.X - StartVertex.X) / (EndVertex.Y - StartVertex.Y);
 			// float x1 = ((EndVertex.Y - StartVertex.Y) / (EndVertex.X - StartVertex.X)) * (i - StartVertex.X) + StartVertex.Y;
 
-			DrawPixel(static_cast<int>(x1), i);
+			DrawPixel(x1, i);
 		}
 	}
 	else
@@ -51,9 +51,9 @@ void FSomDrawLibrary::DrawLine(FPoint Point1, FPoint Point2)
 
 		for (int i = static_cast<int>(StartVertex.Y); i <= EndVertex.Y; i++)
 		{
-			float x1 = EndVertex.X - (EndVertex.Y - i) * (EndVertex.X - StartVertex.X) / (EndVertex.Y - StartVertex.Y);
+			int x1 = EndVertex.X - (EndVertex.Y - i) * (EndVertex.X - StartVertex.X) / (EndVertex.Y - StartVertex.Y);
 
-			DrawPixel(static_cast<int>(x1), i);
+			DrawPixel(x1, i);
 		}
 	}
 }

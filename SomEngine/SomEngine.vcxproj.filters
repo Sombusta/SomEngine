@@ -67,6 +67,9 @@
     <Filter Include="Engine\SomFramework\Libraries\Container\Mesh\Quad">
       <UniqueIdentifier>{15d85823-7680-4c53-8a0f-4927df475fda}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\SomFramework\Network">
+      <UniqueIdentifier>{c4857627-c60f-4f9f-9abb-79e04399fa0c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Engine\Engine.h">
@@ -135,6 +138,12 @@
     <ClInclude Include="Source\Engine\SomFramework\Libraries\Container\Vector\Vector4.h">
       <Filter>Engine\SomFramework\Libraries\Container\Vector</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Network\SomNetLibrary.h">
+      <Filter>Engine\SomFramework\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Network\SomSocket.h">
+      <Filter>Engine\SomFramework\Network</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Engine\WinMain\Win32Application.cpp">
@@ -175,6 +184,12 @@
     </ClCompile>
     <ClCompile Include="Source\Main\Core\SomManager_Texture.cpp">
       <Filter>Main\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\SomFramework\Network\SomNetLibrary.cpp">
+      <Filter>Engine\SomFramework\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\SomFramework\Network\SomSocket.cpp">
+      <Filter>Engine\SomFramework\Network</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -16,7 +16,11 @@ bool FSomTextureParser_BMP::OpenBMP(FTexture2D& TargetTexture, char *filename)
 	errno_t err;
 
 	err = fopen_s(&fp, filename, "rb");
-	if (!fp) return false;
+	if (!fp)
+	{
+		err = fopen_s(&fp, "Source/Engine/Resource/NoTexture.bmp", "rb");
+		if(!fp)	return false;
+	}		
 
 	BITMAPFILEHEADER bmpfh;
 	size_t size = fread(&bmpfh, 1, sizeof(BITMAPFILEHEADER), fp);

@@ -1,29 +1,15 @@
 // Copyright (c) 2014-2019 Sombusta, All Rights Reserved.
 
+//! $(ProjectDir)\Source
+
 #pragma once
 
 // SomWorks :D // 리소스 파일들
 #include "Resource/targetver.h"
 #include "Resource/Resource.h"
 
-// SomWorks :D // WinAPI Windows Setup
-#define SomWidth 1280
-#define SomHeight 720
-#define SomTitle L"SomEngine_Win32"
-
-// SomWorks :D // Rendering Framework Setup
-#define bUseSR true
-#define bUseDX11 false
-#define bUseDX12 false
-
-// SomWorks :D // 프레임워크 셋업 enum
-enum SomFrameworkSetup
-{
-	None,
-	SR,
-	DX11,
-	DX12
-};
+// Somworks :D // Winmm Library
+#pragma  comment(lib, "winmm")
 
 // SomWorks :D // 거의 사용되지 않는 내용을 Windows 헤더에서 제외합니다
 // #define WIN32_LEAN_AND_MEAN // Time 관련 함수를 쓰기 위해서는 Define하면 안됩니다.
@@ -53,6 +39,11 @@ using namespace std;
 using std::vector;
 using std::list;
 
+// SomWorks :D // WinAPI Windows Setup
+#define SomWidth 1280
+#define SomHeight 720
+#define SomTitle L"SomEngine_Win32"
+
 // SomWorks :D // 컨테이너
 #include "SomFramework/Libraries/Container/Vector/Point.h"
 #include "SomFramework/Libraries/Container/Vector/Vector2D.h"
@@ -74,6 +65,20 @@ using std::list;
 #include "SomFramework/Game/Object/SomObject.h"
 #include "Main/Core/SomManager_Main.h"
 #include "Main/Core/SomManager_Texture.h"
+
+// SomWorks :D // Rendering Framework Setup
+#define bUseSR true
+#define bUseDX11 false
+#define bUseDX12 false
+
+// SomWorks :D // 프레임워크 셋업 enum
+enum SomFrameworkSetup
+{
+	None,
+	SR,
+	DX11,
+	DX12
+};
 
 #if bUseSR
 #include "SomFramework/Rendering/SoftRenderer/SomFramework_SR.h"

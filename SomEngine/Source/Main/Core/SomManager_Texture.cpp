@@ -18,7 +18,7 @@ void SomManager_Texture::CreateTexManager()
 	if (Instance == nullptr)
 	{
 		Instance = new SomManager_Texture;
-
+	
 		Instance->Texture_CreateObjects();
 	}
 }
@@ -35,8 +35,8 @@ void SomManager_Texture::TerminateTexManager()
 
 void SomManager_Texture::Texture_CreateObjects()
 {
-	FSomTextureParser_BMP::OpenBMP(T_Test1, const_cast<char*>("D:/Developments/Projects/Native_Projects/SomEngine/Extras/Test.bmp"));
-	FSomTextureParser_BMP::OpenBMP(T_Test2, const_cast<char*>("D:/Developments/Projects/Native_Projects/SomEngine/Extras/Img.bmp"));
+	FSomTextureParser_BMP::OpenBMP(T_Test1, const_cast<char*>("../Extras/Test1.bmp"));
+	FSomTextureParser_BMP::OpenBMP(T_Test2, const_cast<char*>("../Extras/Img.bmp"));
 }
 
 void SomManager_Texture::Texture_DestroyObjects()
