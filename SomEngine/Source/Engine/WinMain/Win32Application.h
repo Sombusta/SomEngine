@@ -12,13 +12,16 @@ public:
 
 	// SomWorks :D // 초기화 성공 여부
 	static bool bIsActive;
-		
+	
 private:
 	static HWND m_hwnd;
 	static HINSTANCE m_hInstance;
 	static SomFrameworkSetup CurrentRenderer;
 
 protected:
+	
+	static LRESULT CALLBACK MessageHandler(HWND, UINT, WPARAM, LPARAM);
+
 	static LRESULT CALLBACK WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
 
 public:

@@ -94,8 +94,23 @@ int Win32Application::Run(HINSTANCE hInstance, int nCmdShow, SomFrameworkSetup R
 			
 			PreviousTime = CurrentTime;
 
-			// SomWorks :D // SoftRender 메인 업데이트, 향후에 DeltaTime 관련 구현해야함. 현재는 0.01로 고정
-			SomFramework_SR::UpdateGDI(0.01f);
+			switch (CurrentRenderer)
+			{
+				case SomFrameworkSetup::SR:
+					// SomWorks :D // SoftRender 메인 업데이트, 향후에 DeltaTime 관련 구현해야함. 현재는 0.01로 고정
+					SomFramework_SR::UpdateGDI(0.01f);
+					break;
+
+				case SomFrameworkSetup::DX11:
+					SomFramework_DX11::Update(0.01f);
+					break;
+
+				case SomFrameworkSetup::DX12:
+					break;
+
+				default:
+					break;
+			}
 		}
 		else
 		{
@@ -105,6 +120,34 @@ int Win32Application::Run(HINSTANCE hInstance, int nCmdShow, SomFrameworkSetup R
 
 	// Return this part of the WM_QUIT message to Windows.
 	return static_cast<char>(msg.wParam);
+}
+
+LRESULT CALLBACK Win32Application::MessageHandler(HWND hwnd, UINT umsg, WPARAM wparam, LPARAM lparam)
+{
+	switch (umsg)
+	{
+		// 키보드가 키가 눌렸는지 확인합니다.
+	case WM_KEYDOWN:
+	{
+		// 키가 눌렸다면 input객체에 이 사실을 전달하여 기록하도록 합니다.
+		SomManager_Input::KeyDown((unsigned int)wparam);
+		return 0;
+	}
+
+	// 키보드의 눌린 키가 떼어졌는지 확인합니다.
+	case WM_KEYUP:
+	{
+		// 키가 떼어졌다면 input객체에 이 사실을 전달하여 이 키를 해제토록합니다.
+		SomManager_Input::KeyUp((unsigned int)wparam);
+		return 0;
+	}
+
+	// 다른 메세지들은 사용하지 않으므로 기본 메세지 처리기에 전달합니다.
+	default:
+	{
+		return DefWindowProc(hwnd, umsg, wparam, lparam);
+	}
+	}
 }
 
 // Main message handler for the sample.
@@ -178,8 +221,27 @@ LRESULT CALLBACK Win32Application::WindowProc(HWND hWnd, UINT message, WPARAM wP
 
 	case WM_CREATE:
 	{
-		// SomWorks :D // SoftRender GDI Initialize
-		SomFramework_SR::InitGDI(hWnd);
+		switch (CurrentRenderer)
+		{
+		case SomFrameworkSetup::SR:
+			// SomWorks :D // SoftRender GDI Initialize
+			SomFramework_SR::InitGDI(hWnd);
+			break;
+
+		case SomFrameworkSetup::DX11:
+			SomFramework_DX11::Init(hWnd);
+			break;
+
+		case SomFrameworkSetup::DX12:
+			break;
+
+		default:
+			break;
+		}
+
+		// SomWorks :D // 인풋 매니저
+		SomManager_Input::CreateInputManager();
+
 		bIsActive = true;
 	}
 	break;
@@ -195,17 +257,35 @@ LRESULT CALLBACK Win32Application::WindowProc(HWND hWnd, UINT message, WPARAM wP
 
 	case WM_DESTROY: // 종료 메시지를 게시하고 반환합니다.
 	{
+		// SomWorks :D // 인풋 매니저
+		SomManager_Input::TerminateInputManager();
+
 		bIsActive = false;
 
-		// SomWorks :D // SoftRender GDI Release
-		SomFramework_SR::ReleaseGDI(hWnd);
+		switch (CurrentRenderer)
+		{
+		case SomFrameworkSetup::SR:
+			// SomWorks :D // SoftRender GDI Release
+			SomFramework_SR::ReleaseGDI(hWnd);
+			break;
 
+		case SomFrameworkSetup::DX11:
+			SomFramework_DX11::Release(hWnd);
+			break;
+
+		case SomFrameworkSetup::DX12:
+			break;
+
+		default:
+			break;
+		}
+		
 		PostQuitMessage(0);
 	}
 	break;
 
 	default:
-		return DefWindowProc(hWnd, message, wParam, lParam);
+		return MessageHandler(hWnd, message, wParam, lParam);
 	}
 	return 0;
 }

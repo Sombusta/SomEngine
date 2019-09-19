@@ -70,6 +70,9 @@
     <Filter Include="Engine\SomFramework\Network">
       <UniqueIdentifier>{c4857627-c60f-4f9f-9abb-79e04399fa0c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\SomFramework\Rendering\DX11">
+      <UniqueIdentifier>{cbd980ce-4cf4-4fd3-b52f-4cff286b4e4f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Engine\Engine.h">
@@ -144,6 +147,12 @@
     <ClInclude Include="Source\Engine\SomFramework\Network\SomSocket.h">
       <Filter>Engine\SomFramework\Network</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Rendering\DX11\SomFramework_DX11.h">
+      <Filter>Engine\SomFramework\Rendering\DX11</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Main\Core\SomManager_Input.h">
+      <Filter>Main\Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Engine\WinMain\Win32Application.cpp">
@@ -190,6 +199,12 @@
     </ClCompile>
     <ClCompile Include="Source\Engine\SomFramework\Network\SomSocket.cpp">
       <Filter>Engine\SomFramework\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\SomFramework\Rendering\DX11\SomFramework_DX11.cpp">
+      <Filter>Engine\SomFramework\Rendering\DX11</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Main\Core\SomManager_Input.cpp">
+      <Filter>Main\Core</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

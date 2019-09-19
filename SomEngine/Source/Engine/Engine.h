@@ -63,12 +63,13 @@ using std::list;
 
 // SomWorks :D // SomFramework GamePlay
 #include "SomFramework/Game/Object/SomObject.h"
+#include "Main/Core/SomManager_Input.h"
 #include "Main/Core/SomManager_Main.h"
 #include "Main/Core/SomManager_Texture.h"
 
 // SomWorks :D // Rendering Framework Setup
 #define bUseSR true
-#define bUseDX11 false
+#define bUseDX11 true
 #define bUseDX12 false
 
 // SomWorks :D // 프레임워크 셋업 enum
@@ -85,7 +86,18 @@ enum SomFrameworkSetup
 #endif
 
 #if bUseDX11
-// #include "SomFramework/Rendering/DX11/SomFramework_DX11.h"
+#pragma comment(lib, "dxgi.lib")
+#pragma comment(lib, "d3dcompiler.lib")
+#pragma comment(lib, "d3d11.lib")
+
+#include <dxgi.h>
+#include <d3dcommon.h>
+#include <d3d11.h>
+#include <DirectXMath.h>
+
+using namespace DirectX;
+
+#include "SomFramework/Rendering/DX11/SomFramework_DX11.h"
 #endif
 
 #if bUseDX12
