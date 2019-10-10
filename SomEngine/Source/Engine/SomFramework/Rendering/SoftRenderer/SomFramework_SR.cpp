@@ -25,8 +25,8 @@ void SomFramework_SR::InitGDI(HWND hWnd)
 		BITMAPINFO bmi;
 		memset(&bmi, 0, sizeof(BITMAPINFO));
 		bmi.bmiHeader.biSize = sizeof(BITMAPINFOHEADER);
-		bmi.bmiHeader.biWidth = SomWidth;
-		bmi.bmiHeader.biHeight = -SomHeight;
+		bmi.bmiHeader.biWidth = WIN_WIDTH;
+		bmi.bmiHeader.biHeight = -WIN_HEIGHT;
 		bmi.bmiHeader.biPlanes = 1;
 		bmi.bmiHeader.biBitCount = 32;
 		bmi.bmiHeader.biCompression = BI_RGB;
@@ -84,7 +84,7 @@ void SomFramework_SR::BufferClear()
 
 	ULONG* dest = (ULONG*)Bits;
 
-	DWORD bytecount = SomWidth * SomHeight * sizeof(ULONG);
+	DWORD bytecount = WIN_WIDTH * WIN_HEIGHT * sizeof(ULONG);
 	bytecount /= 4;
 
 	while (bytecount--)
@@ -99,7 +99,7 @@ void SomFramework_SR::BufferClear()
 // SomWorks :D // 버퍼 스왑
 void SomFramework_SR::BufferSwap()
 {
-	BitBlt(hScreenDC, 0, 0, SomWidth, SomHeight, hMemoryDC, 0, 0, SRCCOPY);
+	BitBlt(hScreenDC, 0, 0, WIN_WIDTH, WIN_HEIGHT, hMemoryDC, 0, 0, SRCCOPY);
 }
 
 // SomWorks :D // 그리드 십자선 그리기
@@ -107,7 +107,7 @@ void SomFramework_SR::DrawGridLine(bool bActivate)
 {
 	if (bActivate)
 	{
-		FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint(0 - SomWidth / 2, 0), FPoint(0 + SomWidth / 2, 0));
-		FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint(0, 0 + SomHeight / 2), FPoint(0, 0 - SomHeight / 2));
+		FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint(0 - WIN_WIDTH / 2, 0), FPoint(0 + WIN_WIDTH / 2, 0));
+		FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint(0, 0 + WIN_HEIGHT / 2), FPoint(0, 0 - WIN_HEIGHT / 2));
 	}
 }

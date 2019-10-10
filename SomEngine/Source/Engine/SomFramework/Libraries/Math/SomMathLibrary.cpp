@@ -12,7 +12,7 @@ FSomMathLibrary::~FSomMathLibrary()
 
 bool FSomMathLibrary::IsInRange(int x, int y)
 {
-	return (abs(x) < (SomWidth / 2)) && (abs(y) < (SomHeight / 2));
+	return (abs(x) < (WIN_WIDTH / 2)) && (abs(y) < (WIN_HEIGHT / 2));
 }
 
 int FSomMathLibrary::GetLineLength(FPoint p1, FPoint p2)

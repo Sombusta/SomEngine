@@ -33,7 +33,7 @@ int Win32Application::Run(HINSTANCE hInstance, int nCmdShow, SomFrameworkSetup R
 	windowClass.hCursor = LoadCursor(nullptr, IDC_ARROW);
 	windowClass.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
 	windowClass.lpszMenuName = MAKEINTRESOURCEW(IDC_SOMENGINE);
-	windowClass.lpszClassName = SomTitle;
+	windowClass.lpszClassName = WIN_TITLE;
 	windowClass.hIconSm = LoadIcon(windowClass.hInstance, MAKEINTRESOURCE(IDI_SMALL));
 
 	RegisterClassEx(&windowClass);
@@ -41,7 +41,7 @@ int Win32Application::Run(HINSTANCE hInstance, int nCmdShow, SomFrameworkSetup R
 	// SomWorks :D // Instance Init // 인스턴스 핸들을 저장하고 주 창을 만듭니다.
 	m_hInstance = hInstance; // 인스턴스 핸들을 전역 변수에 저장합니다.
 
-	RECT windowRect = { 0, 0, static_cast<LONG>(SomWidth), static_cast<LONG>(SomHeight) };
+	RECT windowRect = { 0, 0, static_cast<LONG>(WIN_WIDTH), static_cast<LONG>(WIN_HEIGHT) };
 	AdjustWindowRect(&windowRect, WS_OVERLAPPEDWINDOW, FALSE);
 
 	// SomWorks :D // Screen Location Default
@@ -55,11 +55,11 @@ int Win32Application::Run(HINSTANCE hInstance, int nCmdShow, SomFrameworkSetup R
 	
 	// Create the window and store a handle to it.
 	m_hwnd = CreateWindow(
-		SomTitle,
-		SomTitle,
+		WIN_TITLE,
+		WIN_TITLE,
 		WS_OVERLAPPEDWINDOW,
-		(ScreenWidth - SomWidth) / 2,
-		(ScreenHeight - SomHeight) / 2,
+		(ScreenWidth - WIN_WIDTH) / 2,
+		(ScreenHeight - WIN_HEIGHT) / 2,
 		windowRect.right - windowRect.left,
 		windowRect.bottom - windowRect.top,
 		nullptr,        // We have no parent window.

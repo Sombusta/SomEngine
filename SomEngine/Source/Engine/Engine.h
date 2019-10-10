@@ -9,7 +9,7 @@
 #include "Resource/Resource.h"
 
 // Somworks :D // Winmm Library
-#pragma  comment(lib, "winmm")
+#pragma  comment(lib, "winmm.lib")
 
 // SomWorks :D // 거의 사용되지 않는 내용을 Windows 헤더에서 제외합니다
 // #define WIN32_LEAN_AND_MEAN // Time 관련 함수를 쓰기 위해서는 Define하면 안됩니다.
@@ -40,9 +40,9 @@ using std::vector;
 using std::list;
 
 // SomWorks :D // WinAPI Windows Setup
-#define SomWidth 1280
-#define SomHeight 720
-#define SomTitle L"SomEngine_Win32"
+#define WIN_WIDTH 1280
+#define WIN_HEIGHT 720
+#define WIN_TITLE L"SomEngine_Win32"
 
 // SomWorks :D // 컨테이너
 #include "SomFramework/Libraries/Container/Vector/Point.h"
@@ -86,9 +86,9 @@ enum SomFrameworkSetup
 #endif
 
 #if bUseDX11
-#pragma comment(lib, "dxgi.lib")
 #pragma comment(lib, "d3dcompiler.lib")
 #pragma comment(lib, "d3d11.lib")
+#pragma comment(lib, "dxgi.lib")
 
 #include <dxgi.h>
 #include <d3dcommon.h>
