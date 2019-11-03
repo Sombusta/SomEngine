@@ -1,7 +1,7 @@
 // Copyright (c) 2014-2019 Sombusta, All Rights Reserved.
 
 #include "Quad2D.h"
-#include "Engine/SomFramework/Libraries/Parser/TextureParser_Bmp.h"
+#include "Engine/SomFramework/Libraries/Draw/Texture/TextureParser_Bmp.h"
 
 FQuad2D::FQuad2D() : v1(-200, 200), v2(200, 200), v3(-200, -200), v4(200, -200)
 {

@@ -45,14 +45,14 @@ using std::list;
 #define WIN_TITLE L"SomEngine_Win32"
 
 // SomWorks :D // 컨테이너
-#include "SomFramework/Libraries/Container/Vector/Point.h"
-#include "SomFramework/Libraries/Container/Vector/Vector2D.h"
-#include "SomFramework/Libraries/Container/Vector/Vector.h"
-#include "SomFramework/Libraries/Container/Vector/Vertex.h"
-#include "SomFramework/Libraries/Container/Color/LinearColor.h"
-#include "SomFramework/Libraries/Container/Texture/Texture2D.h"
-#include "SomFramework/Libraries/Container/Mesh/Triangle/Triangle2D.h"
-#include "SomFramework/Libraries/Container/Mesh/Quad/Quad2D.h"
+#include "SomFramework/Libraries/Math/Vector/Point2D.h"
+#include "SomFramework/Libraries/Math/Vector/Vector2D.h"
+#include "SomFramework/Libraries/Math/Vector/Vector.h"
+#include "SomFramework/Libraries/Math/Vector/Vertex.h"
+#include "SomFramework/Libraries/Math/Color/LinearColor.h"
+#include "SomFramework/Libraries/Draw/Texture/Texture2D.h"
+#include "SomFramework/Libraries/Draw/Mesh/Triangle2D.h"
+#include "SomFramework/Libraries/Draw/Mesh/Quad2D.h"
 
 // SomWorks :D // SomFramework Library
 #include "SomFramework/Libraries/Math/SomMathLibrary.h"
@@ -62,7 +62,7 @@ using std::list;
 #include "SomFramework/Libraries/Interface/SomInterface_Actor.h"
 
 // SomWorks :D // SomFramework GamePlay
-#include "SomFramework/Game/Object/SomObject.h"
+#include "SomFramework/Game/Object/GameObject.h"
 #include "Main/Core/SomManager_Input.h"
 #include "Main/Core/SomManager_Main.h"
 #include "Main/Core/SomManager_Texture.h"

@@ -107,7 +107,7 @@ void SomFramework_SR::DrawGridLine(bool bActivate)
 {
 	if (bActivate)
 	{
-		FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint(0 - WIN_WIDTH / 2, 0), FPoint(0 + WIN_WIDTH / 2, 0));
-		FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint(0, 0 + WIN_HEIGHT / 2), FPoint(0, 0 - WIN_HEIGHT / 2));
+		FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint2D(0 - WIN_WIDTH / 2, 0), FPoint2D(0 + WIN_WIDTH / 2, 0));
+		FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint2D(0, 0 + WIN_HEIGHT / 2), FPoint2D(0, 0 - WIN_HEIGHT / 2));
 	}
 }

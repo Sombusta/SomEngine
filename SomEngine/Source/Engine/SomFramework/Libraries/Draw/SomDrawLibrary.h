@@ -14,13 +14,13 @@ public:
 	static void DrawPixel(int x, int y, FColor PixelColor = FColor(255, 255, 255));
 
 	// SomWorks :D // 직선의 방정식만 가지고 제작된 선 긋기 알고리즘
-	static void DrawLine(FPoint Point1, FPoint Point2);
+	static void DrawLine(FPoint2D Point1, FPoint2D Point2);
 
 	// SomWorks :D // 브레젠험 직선 알고리즘 사용
-	static void DrawLine_BresenhamAlgorithm(FPoint Point1, FPoint Point2, FColor PixelColor = FColor(255, 255, 255));
+	static void DrawLine_BresenhamAlgorithm(FPoint2D Point1, FPoint2D Point2, FColor PixelColor = FColor(255, 255, 255));
 
 	// SomWorks :D // 원 그리기
-	static void DrawCircle(FPoint CenterVec, int r);
+	static void DrawCircle(FPoint2D CenterVec, int r);
 
 private:	
 

@@ -4,11 +4,11 @@
 
 #include "Engine/Engine.h"
 
-class SomObject : public ISomInterface_Actor
+class GameObject : public ISomInterface_Actor
 {
 public:
-	SomObject();
-	virtual ~SomObject();
+	GameObject();
+	virtual ~GameObject();
 
 	// √ ±‚»≠
 	virtual void Init() = 0;

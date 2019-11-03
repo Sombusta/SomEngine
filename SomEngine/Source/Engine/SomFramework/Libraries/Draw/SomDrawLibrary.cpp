@@ -22,14 +22,14 @@ void FSomDrawLibrary::DrawPixel(int x, int y, FColor PixelColor)
 }
 
 // SomWorks :D // 직선의 방정식만 가지고 제작된 선 긋기 알고리즘
-void FSomDrawLibrary::DrawLine(FPoint Point1, FPoint Point2)
+void FSomDrawLibrary::DrawLine(FPoint2D Point1, FPoint2D Point2)
 {
 	// SomWorks :D // 직선의 방정식
 	// 1. x = x1 - (y1 - y) * (x2 - x1) / (y2 - y1)
 	// 2. y = (y2 - y1) / (x2 - x1) * (x - x1) + y1
 
-	FPoint StartVertex;
-	FPoint EndVertex;
+	FPoint2D StartVertex;
+	FPoint2D EndVertex;
 
 	if (Point1.Y >= Point2.Y)
 	{
@@ -59,7 +59,7 @@ void FSomDrawLibrary::DrawLine(FPoint Point1, FPoint Point2)
 }
 
 // SomWorks :D // 브레젠험 직선 알고리즘
-void FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint Point1, FPoint Point2, FColor PixelColor)
+void FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint2D Point1, FPoint2D Point2, FColor PixelColor)
 {	
 	// SomWorks :D // X의 길이와 Y의 길이
 	int dx = abs(Point2.X - Point1.X);
@@ -171,7 +171,7 @@ void FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint Point1, FPoint Point2, 
 }
 
 // SomWorks :D // 원 그리기
-void FSomDrawLibrary::DrawCircle(FPoint CenterVec, int r)
+void FSomDrawLibrary::DrawCircle(FPoint2D CenterVec, int r)
 {
 	int x = 0, y = 0;
 

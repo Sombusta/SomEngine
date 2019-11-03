@@ -1,7 +1,7 @@
 // Copyright (c) 2014-2019 Sombusta, All Rights Reserved.
 
 #include "Triangle2D.h"
-#include "Engine/SomFramework/Libraries/Parser/TextureParser_Bmp.h"
+#include "Engine/SomFramework/Libraries/Draw/Texture/TextureParser_Bmp.h"
 
 FTriangle2D::FTriangle2D() : TopVertex(0.0f, 0.0f), MiddleVertex(0.0f, 0.0f), BottomVertex(0.0f, 0.0f)
 {
@@ -109,9 +109,9 @@ FColor FTriangle2D::GetVertexWeightColor(const FVector2D& Value) const
 
 void FTriangle2D::DrawTriangle(bool bFillTriangle, bool bUseTexture)
 {
-	FPoint a1 = FPoint(TopVertex.Location.X, TopVertex.Location.Y);
-	FPoint b1 = FPoint(MiddleVertex.Location.X, MiddleVertex.Location.Y);
-	FPoint c1 = FPoint(BottomVertex.Location.X, BottomVertex.Location.Y);
+	FPoint2D a1 = FPoint2D(TopVertex.Location.X, TopVertex.Location.Y);
+	FPoint2D b1 = FPoint2D(MiddleVertex.Location.X, MiddleVertex.Location.Y);
+	FPoint2D c1 = FPoint2D(BottomVertex.Location.X, BottomVertex.Location.Y);
 
 	if (bFillTriangle)
 	{
@@ -186,7 +186,7 @@ void FTriangle2D::FillTriangle(bool bUseTexture)
 			FSomDrawLibrary::DrawPixel(j, static_cast<int>(testy), TriangleColor);
 		}
 
-		//DrawLine_BresenhamAlgorithm(FPoint(static_cast<int>(x1), i), FPoint(static_cast<int>(x2), i), Test);
+		//DrawLine_BresenhamAlgorithm(FPoint2D(static_cast<int>(x1), i), FPoint2D(static_cast<int>(x2), i), Test);
 	}
 
 	for (int i = static_cast<int>(BottomVertex.Location.Y); i <= MiddleVertex.Location.Y; ++i)
@@ -240,6 +240,6 @@ void FTriangle2D::FillTriangle(bool bUseTexture)
 			FSomDrawLibrary::DrawPixel(j, static_cast<int>(testy), TriangleColor);
 		}
 
-		//DrawLine_BresenhamAlgorithm(FPoint(static_cast<int>(x1), i), FPoint(static_cast<int>(x2), i), Test1);
+		//DrawLine_BresenhamAlgorithm(FPoint2D(static_cast<int>(x1), i), FPoint2D(static_cast<int>(x2), i), Test1);
 	}
 }

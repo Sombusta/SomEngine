@@ -32,14 +32,14 @@ void SR_Sample::Render()
 	Points.push_back(p1);
 	Points.push_back(p2);
 	
-	for (vector<FPoint>::iterator it = Points.begin(); it != Points.end(); it++)
+	for (vector<FPoint2D>::iterator it = Points.begin(); it != Points.end(); it++)
 	{
 		it->Printf();
 	}
 
 	Points.clear();
 */
-	// FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint(0, 0), FPoint(100, 0));	
+	// FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint2D(0, 0), FPoint2D(100, 0));	
 
 	// FQuad2D test;//Texting(a, b, c, d, SomManager_Texture::GetInstance()->T_Test1);
 

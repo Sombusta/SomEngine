@@ -4,7 +4,7 @@
 
 #include "Engine/Engine.h"
 
-class SR_Sample : public SomObject
+class SR_Sample : public GameObject
 {
 public:
 	SR_Sample();
@@ -16,7 +16,7 @@ public:
 	virtual void Terminate() override;
 
 private:
-	vector<FPoint> Points;
+	vector<FPoint2D> Points;
 
 protected:
 

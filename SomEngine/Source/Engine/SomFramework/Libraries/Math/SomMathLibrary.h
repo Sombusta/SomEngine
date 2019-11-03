@@ -14,10 +14,10 @@ public:
 	static bool IsInRange(int x, int y);
 
 	// SomWorks :D // 선의 크기 체크
-	static int GetLineLength(FPoint p1, FPoint p2);
+	static int GetLineLength(FPoint2D p1, FPoint2D p2);
 
 	// SomWorks :D // 직선의 방정식, Equation of a Straight Line
-	static int GetEOL(FPoint p1, FPoint p2, int x);
+	static int GetEOL(FPoint2D p1, FPoint2D p2, int x);
 
 	// SomWorks :D // Clamp
 	template <typename T>

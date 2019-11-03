@@ -3,20 +3,20 @@
 #pragma once
 
 // SomWorks :D // Vector
-typedef struct FPoint
+typedef struct FPoint2D
 {
 public:
 	int X = 0;
 	int Y = 0;
 
 public:
-	FPoint() : X(0), Y(0) {}
+	FPoint2D() : X(0), Y(0) {}
 
-	FPoint(int x, int y) : X(x), Y(y) {}
+	FPoint2D(int x, int y) : X(x), Y(y) {}
 
-	FPoint(float x, float y) : X(static_cast<int>(x)), Y(static_cast<int>(y)) {}
+	FPoint2D(float x, float y) : X(static_cast<int>(x)), Y(static_cast<int>(y)) {}
 
-	FORCEINLINE FPoint& operator=(const FPoint& Value)
+	FORCEINLINE FPoint2D& operator=(const FPoint2D& Value)
 	{
 		if (this == &Value) {
 			return *this;
@@ -28,33 +28,33 @@ public:
 		return *this;
 	}
 
-	FORCEINLINE FPoint operator+(const FPoint& Value) const
+	FORCEINLINE FPoint2D operator+(const FPoint2D& Value) const
 	{
-		FPoint Result;
+		FPoint2D Result;
 		Result.X = this->X + Value.X;
 		Result.Y = this->Y + Value.Y;
 		return Result;
 	}
 
-	FORCEINLINE FPoint operator-(const FPoint& Value) const
+	FORCEINLINE FPoint2D operator-(const FPoint2D& Value) const
 	{
-		FPoint Result;
+		FPoint2D Result;
 		Result.X = this->X - Value.X;
 		Result.Y = this->Y - Value.Y;
 		return Result;
 	}
 
-	FORCEINLINE FPoint operator*(const FPoint& Value) const
+	FORCEINLINE FPoint2D operator*(const FPoint2D& Value) const
 	{
-		FPoint Result;
+		FPoint2D Result;
 		Result.X = this->X * Value.X;
 		Result.Y = this->Y * Value.Y;
 		return Result;
 	}
 
-	FORCEINLINE FPoint operator*(const int& Value) const
+	FORCEINLINE FPoint2D operator*(const int& Value) const
 	{
-		FPoint Result;
+		FPoint2D Result;
 		Result.X = this->X * Value;
 		Result.Y = this->Y * Value;
 		return Result;
@@ -64,4 +64,4 @@ public:
 	{
 		std::cout << X << ", " << Y << std::endl;
 	}
-} FPoint;
+} FPoint2D;
