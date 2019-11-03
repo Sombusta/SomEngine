@@ -43,7 +43,21 @@ void SR_Sample::Render()
 
 	// FQuad2D test;//Texting(a, b, c, d, SomManager_Texture::GetInstance()->T_Test1);
 
-	FVertex2D a(-100, -100);
+	FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint2D(10, 10), FPoint2D(120, 50));
+	FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint2D(10, 10), FPoint2D(50, 120));
+
+	FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint2D(10, -10), FPoint2D(120, -50));
+	FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint2D(10, -10), FPoint2D(50, -120));
+
+	FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint2D(-10, 10), FPoint2D(-120, 50));
+	FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint2D(-10, 10), FPoint2D(-50, 120));
+
+	FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint2D(-10, -10), FPoint2D(-120, -50));
+	FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint2D(-10, -10), FPoint2D(-50, -120));
+
+
+
+	/*FVertex2D a(-100, -100);
 	a.UV = FVector2D(0, 1);
 
 	FVertex2D b(-50, 100);
@@ -56,7 +70,11 @@ void SR_Sample::Render()
 	d.UV = FVector2D(1, 1);
 
 	FTriangle2D MyTriangle(a, b, c, SomManager_Texture::GetInstance()->T_Test1, true);
-	FTriangle2D MyTriangle2(a, d, c, SomManager_Texture::GetInstance()->T_Test1, true);
+	FTriangle2D MyTriangle2(a, d, c, SomManager_Texture::GetInstance()->T_Test1, true);*/
+
+
+
+
 
 /*
 	FVertex2D a(-200, 200);

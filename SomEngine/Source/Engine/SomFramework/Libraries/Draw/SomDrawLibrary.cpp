@@ -59,57 +59,47 @@ void FSomDrawLibrary::DrawLine(FPoint2D Point1, FPoint2D Point2)
 }
 
 // SomWorks :D // 브레젠험 직선 알고리즘
-void FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint2D Point1, FPoint2D Point2, FColor PixelColor)
+void FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint2D StartPoint, FPoint2D EndPoint, FColor PixelColor)
 {	
-	// SomWorks :D // X의 길이와 Y의 길이
-	int dx = abs(Point2.X - Point1.X);
-	int dy = abs(Point2.Y - Point1.Y);
+	FPoint2D TempStart = StartPoint;
+	FPoint2D TempEnd = EndPoint;
+
+	// SomWorks :D // 밑변과 높이 구하기
+	int Width = abs(EndPoint.X - StartPoint.X);
+	int Height = abs(EndPoint.Y - StartPoint.Y);
 
 	// SomWorks :D // 직선의 기울기 구하기
-	//int dc = dy / dx;
-
+	//int dc = Height / Width;
+	   
 	int p_value;
 	int inc_minus;
 	int inc_plus;
 	int inc_value;
-	int ndx;
 
 	//변화폭을 따져 완만한 좌표를 기준으로 점을 찍는다.
 	// SomWorks :D // 기울기가 0 ~ 1
-	if (dy <= dx)
+	if (Height <= Width)
 	{
 		// y 보다 x 변화폭이 클 경우
-		inc_minus = 2 * dy;
-		inc_plus = 2 * (dy - dx);
+		inc_minus = 2 * Height;
+		inc_plus = 2 * (Height - Width);
 
 		//선 x 점을 작은 수부터 그려나가기 위해.
 		//Bresenham 공식은 다음점에 대한 위치를 잡는 것이기 때문에도.
 
-		if (Point2.X < Point1.X)
-		{
-			ndx = Point1.X;
-			Point1.X = Point2.X;
-			Point2.X = ndx;
-
-			ndx = Point1.Y;
-			Point1.Y = Point2.Y;
-			Point2.Y = ndx;
+		if (TempEnd.X < TempStart.X) {
+			FPoint2D::Swap(TempStart, TempEnd);
 		}
 
 		// SomWorks :D // x값에 따른 y값 변화값 고르기
-		if (Point1.Y < Point2.Y) {
-			inc_value = 1;
-		}
-		else {
-			inc_value = -1;
-		}
+		inc_value = TempStart.Y < TempEnd.Y ? 1 : -1;
 
-		DrawPixel(Point1.X, Point1.Y, PixelColor);
-
+		DrawPixel(TempStart.X, TempStart.Y, PixelColor);
+				
 		//처음 판단 값
-		p_value = 2 * dy - dx;
+		p_value = (2 * Height) - Width;
 
-		for (ndx = Point1.X; ndx < Point2.X; ++ndx)
+		for (int i = TempStart.X; i < TempEnd.X; i++)
 		{
 			if (0 > p_value)
 			{
@@ -118,42 +108,35 @@ void FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint2D Point1, FPoint2D Poin
 			else
 			{
 				p_value += inc_plus;
-				Point1.Y += inc_value;
+				TempStart.Y += inc_value;
 			}
-
-			DrawPixel(ndx, Point1.Y, PixelColor);
+			if (i < TempEnd.X - 10)
+			{
+				DrawPixel(i, TempStart.Y, PixelColor);
+			}
+			else
+			{
+				DrawPixel(i, TempStart.Y, FLinearColor(255, 0, 0));
+			}
+			
 		}
 	}
 	else
 	{
-		inc_minus = 2 * dx;
-		inc_plus = 2 * (dx - dy);
+		inc_minus = 2 * Width;
+		inc_plus = 2 * (Width - Height);
 
-		if (Point2.Y < Point1.Y)
-		{
-			ndx = Point1.Y;
-			Point1.Y = Point2.Y;
-			Point2.Y = ndx;
-
-			ndx = Point1.X;
-			Point1.X = Point2.X;
-			Point2.X = ndx;
+		if (TempEnd.Y < TempStart.Y) {
+			FPoint2D::Swap(TempStart, TempEnd);
 		}
 
-		if (Point1.X < Point2.X)
-		{
-			inc_value = 1;
-		}
-		else
-		{
-			inc_value = -1;
-		}
+		inc_value = TempStart.X < TempEnd.X ? 1 : -1;
 
-		DrawPixel(Point1.X, Point1.Y, PixelColor);
+		DrawPixel(TempStart.X, TempStart.Y, PixelColor);
 
-		p_value = 2 * dx - dy;
+		p_value = (2 * Width) - Height;
 
-		for (ndx = Point1.Y; ndx < Point2.Y; ++ndx)
+		for (int i = TempStart.Y; i < TempEnd.Y; i++)
 		{
 			if (0 > p_value)
 			{
@@ -162,10 +145,9 @@ void FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint2D Point1, FPoint2D Poin
 			else
 			{
 				p_value += inc_plus;
-				Point1.X += inc_value;
+				TempStart.X += inc_value;
 			}
-
-			DrawPixel(Point1.X, ndx, PixelColor);
+			DrawPixel(TempStart.X, i, FLinearColor(0, 255, 0));
 		}
 	}
 }

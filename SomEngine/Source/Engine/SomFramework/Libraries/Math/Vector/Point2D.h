@@ -64,4 +64,13 @@ public:
 	{
 		std::cout << X << ", " << Y << std::endl;
 	}
+
+	// SomWorks :D // º¤ÅÍ ½º¿Ò
+	FORCEINLINE static void Swap(FPoint2D& v1, FPoint2D& v2)
+	{
+		FPoint2D Temp;
+		Temp = v1;
+		v1 = v2;
+		v2 = Temp;
+	}
 } FPoint2D;
