@@ -55,8 +55,6 @@ void SR_Sample::Render()
 	FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint2D(-10, -10), FPoint2D(-120, -50));
 	FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint2D(-10, -10), FPoint2D(-50, -120));
 
-
-
 	/*FVertex2D a(-100, -100);
 	a.UV = FVector2D(0, 1);
 

@@ -17,7 +17,7 @@ public:
 	static void DrawLine(FPoint2D Point1, FPoint2D Point2);
 
 	// SomWorks :D // 브레젠험 직선 알고리즘 사용
-	static void DrawLine_BresenhamAlgorithm(FPoint2D StartPoint, FPoint2D EndPoint, FColor PixelColor = FColor(255, 255, 255));
+	static void DrawLine_BresenhamAlgorithm(const FPoint2D& StartPoint, const FPoint2D& EndPoint, FColor PixelColor = FColor(255, 255, 255));
 
 	// SomWorks :D // 원 그리기
 	static void DrawCircle(FPoint2D CenterVec, int r);
