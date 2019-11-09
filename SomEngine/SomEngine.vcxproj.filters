@@ -61,6 +61,9 @@
     <Filter Include="Engine\SomFramework\Libraries\Math\Color">
       <UniqueIdentifier>{bb0dfac1-6b4a-4cba-a74b-1baf6809b3af}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\SomFramework\Libraries\Math\Matrix">
+      <UniqueIdentifier>{449ebcd3-23d0-4412-b492-1acd63ce291f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Engine\Engine.h">
@@ -140,6 +143,15 @@
     </ClInclude>
     <ClInclude Include="Source\Engine\SomFramework\Game\Object\GameObject.h">
       <Filter>Engine\SomFramework\Game\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Libraries\Math\Matrix\Matrix2D.h">
+      <Filter>Engine\SomFramework\Libraries\Math\Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Libraries\Math\Matrix\Matrix3D.h">
+      <Filter>Engine\SomFramework\Libraries\Math\Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Libraries\Math\Matrix\Matrix.h">
+      <Filter>Engine\SomFramework\Libraries\Math\Matrix</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -102,7 +102,7 @@ int Win32Application::Run(HINSTANCE hInstance, int nCmdShow, SomFrameworkSetup R
 					break;
 
 				case SomFrameworkSetup::DX11:
-					SomFramework_DX11::Update(0.01f);
+					// SomFramework_DX11::Update(0.01f);
 					break;
 
 				case SomFrameworkSetup::DX12:
@@ -229,7 +229,7 @@ LRESULT CALLBACK Win32Application::WindowProc(HWND hWnd, UINT message, WPARAM wP
 			break;
 
 		case SomFrameworkSetup::DX11:
-			SomFramework_DX11::Init(hWnd);
+			// SomFramework_DX11::Init(hWnd);
 			break;
 
 		case SomFrameworkSetup::DX12:
@@ -270,7 +270,7 @@ LRESULT CALLBACK Win32Application::WindowProc(HWND hWnd, UINT message, WPARAM wP
 			break;
 
 		case SomFrameworkSetup::DX11:
-			SomFramework_DX11::Release(hWnd);
+			// SomFramework_DX11::Release(hWnd);
 			break;
 
 		case SomFrameworkSetup::DX12:

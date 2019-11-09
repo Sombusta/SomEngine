@@ -30,6 +30,9 @@
     <ClInclude Include="Source\Engine\SomFramework\Libraries\Draw\Texture\TextureParser_Bmp.h" />
     <ClInclude Include="Source\Engine\SomFramework\Libraries\Interface\SomInterface_Actor.h" />
     <ClInclude Include="Source\Engine\SomFramework\Libraries\Math\Color\LinearColor.h" />
+    <ClInclude Include="Source\Engine\SomFramework\Libraries\Math\Matrix\Matrix3D.h" />
+    <ClInclude Include="Source\Engine\SomFramework\Libraries\Math\Matrix\Matrix2D.h" />
+    <ClInclude Include="Source\Engine\SomFramework\Libraries\Math\Matrix\Matrix.h" />
     <ClInclude Include="Source\Engine\SomFramework\Libraries\Math\SomMathLibrary.h" />
     <ClInclude Include="Source\Engine\SomFramework\Libraries\Math\Vector\Point2D.h" />
     <ClInclude Include="Source\Engine\SomFramework\Libraries\Math\Vector\Vector.h" />

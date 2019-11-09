@@ -74,6 +74,6 @@ public:
 
 	FORCEINLINE void Printf()
 	{
-		std::cout << X << ", " << Y << ", " << Z << ", " >> W << std::endl;
+		std::cout << X << ", " << Y << ", " << Z << ", " << W << std::endl;
 	}
-} FVector;
+} FVector4;

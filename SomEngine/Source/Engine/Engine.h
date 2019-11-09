@@ -48,7 +48,11 @@ using std::list;
 #include "SomFramework/Libraries/Math/Vector/Point2D.h"
 #include "SomFramework/Libraries/Math/Vector/Vector2D.h"
 #include "SomFramework/Libraries/Math/Vector/Vector.h"
+#include "SomFramework/Libraries/Math/Vector/Vector4.h"
 #include "SomFramework/Libraries/Math/Vector/Vertex.h"
+#include "SomFramework/Libraries/Math/Matrix/Matrix2D.h"
+#include "SomFramework/Libraries/Math/Matrix/Matrix3D.h"
+#include "SomFramework/Libraries/Math/Matrix/Matrix.h"
 #include "SomFramework/Libraries/Math/Color/LinearColor.h"
 #include "SomFramework/Libraries/Draw/Texture/Texture2D.h"
 #include "SomFramework/Libraries/Draw/Mesh/Triangle2D.h"
@@ -69,7 +73,7 @@ using std::list;
 
 // SomWorks :D // Rendering Framework Setup
 #define bUseSR true
-#define bUseDX11 true
+#define bUseDX11 false
 #define bUseDX12 false
 
 // SomWorks :D // 프레임워크 셋업 enum
