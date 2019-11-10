@@ -102,6 +102,7 @@ FColor FTriangle2D::GetVertexWeightColor(const FVector2D& Value) const
 
 	Result.r = VertexWeight.X * 255;
 	Result.g = VertexWeight.Y * 255;
+
 	Result.b = VertexWeight.Z * 255;
 
 	return Result;

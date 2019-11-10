@@ -96,7 +96,7 @@ public:
 		return std::sqrtf(std::powf(Value.X, 2) + std::powf(Value.Y, 2));
 	}
 
-	// SomWorks :D // ∫§≈Õ ≥Î∏ª
+	// SomWorks :D // ∫§≈Õ ¡§±‘»≠
 	FORCEINLINE static FVector2D Normalize(const FVector2D& Value)
 	{
 		FVector2D Result;
@@ -117,7 +117,7 @@ public:
 	// SomWorks :D // ∫§≈Õ ≥ª¿˚
 	FORCEINLINE static float DotProduct(const FVector2D& v1, const FVector2D& v2)
 	{
-		return v1.X * v2.X + v1.Y * v2.Y;
+		return (v1.X * v2.X) + (v1.Y * v2.Y);
 	}
 
 } FVector2D;

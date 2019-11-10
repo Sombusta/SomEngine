@@ -2,8 +2,6 @@
 
 #pragma once
 
-#include "../Vector/Point2D.h"
-#include "../Vector/Vector2D.h"
 #include "../Vector/Vector.h"
 #include "../Vector/Vector4.h"
 
@@ -23,5 +21,5 @@ public:
 	};
 
 public:
-
+	
 } FMatrix;

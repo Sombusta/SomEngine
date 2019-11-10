@@ -19,6 +19,32 @@ void SR_Sample::Init()
 	FPoint2D p2(100, 100);
 	Points.push_back(p1);
 	Points.push_back(p2);*/
+
+	FMatrix2D Test1;
+	FMatrix2D Test2;
+
+	FVector2D VTest(5, 7);
+
+	Test1._11 = 1;
+	Test1._12 = 2;
+	Test1._21 = 3;
+	Test1._22 = 4;
+
+	Test2._11 = 5;
+	Test2._12 = 6;
+	Test2._21 = 7;
+	Test2._22 = 8;
+
+	FMatrix2D Result = Test1 * Test2;
+
+	cout << Result._11 << ", " << Result._12 << endl;
+	cout << Result._21 << ", " << Result._22 << endl;
+
+	FVector2D RV = Test1 * VTest;
+	cout << VTest.X << ", " << VTest.Y << endl;
+
+	cout << RV.X << ", " << RV.Y << endl;
+
 }
 
 void SR_Sample::Update(float DeltaTime)
@@ -42,8 +68,8 @@ void SR_Sample::Render()
 	{
 		it->Printf();
 	}*/
-
-	FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint2D(10, 10), FPoint2D(120, 50));
+	   
+	/*FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint2D(10, 10), FPoint2D(120, 50));
 	FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint2D(10, 10), FPoint2D(50, 120));
 
 	FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint2D(10, -10), FPoint2D(120, -50));
@@ -53,7 +79,24 @@ void SR_Sample::Render()
 	FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint2D(-10, 10), FPoint2D(-50, 120));
 
 	FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint2D(-10, -10), FPoint2D(-120, -50));
-	FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint2D(-10, -10), FPoint2D(-50, -120));
+	FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint2D(-10, -10), FPoint2D(-50, -120));*/
+
+	FMatrix2D Rot45;
+	Rot45._11 = 0;
+	Rot45._21 = 1;
+	Rot45._12 = -1;
+	Rot45._22 = 0;
+	
+	FVector2D a = Rot45 * FVector2D(10, 10);
+	FVector2D b = Rot45 * FVector2D(120, 50);
+	FVector2D c = Rot45 * FVector2D(50, 120);
+	
+	FPoint2D Test1 = FPoint2D(a.X, a.Y);
+	FPoint2D Test2 = FPoint2D(b.X, b.Y);
+	FPoint2D Test3 = FPoint2D(c.X, c.Y);
+	
+	FSomDrawLibrary::DrawLine_BresenhamAlgorithm(Test1, Test2);
+	FSomDrawLibrary::DrawLine_BresenhamAlgorithm(Test1, Test3);
 
 #ifdef TextureTEST
 #if TextureTEST
