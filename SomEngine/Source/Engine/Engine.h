@@ -67,9 +67,9 @@ using std::list;
 
 // SomWorks :D // SomFramework GamePlay
 #include "SomFramework/Game/Object/GameObject.h"
-#include "Main/Core/SomManager_Input.h"
-#include "Main/Core/SomManager_Main.h"
-#include "Main/Core/SomManager_Texture.h"
+#include "Main/Managers/SomManager_Input.h"
+#include "Main/Managers/SomManager_Main.h"
+#include "Main/Managers/SomManager_Texture.h"
 
 // SomWorks :D // Rendering Framework Setup
 #define bUseSR true
