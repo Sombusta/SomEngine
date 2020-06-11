@@ -1,20 +1,31 @@
 // Copyright (c) 2014-2020 Sombusta, All Rights Reserved.
 
 #include "Win32Application.h"
+#include "Engine/SomFramework/Rendering/Core/SomFramework.h"
+#include "Engine/SomFramework/Rendering/DX11/SomFramework_DX11.h"
 
 HWND Win32Application::m_hwnd = nullptr;
 HINSTANCE Win32Application::m_hInstance = nullptr;
 bool Win32Application::bIsActive = false;
 SomFrameworkSetup Win32Application::CurrentRenderer = SomFrameworkSetup::None;
+SomFramework* Win32Application::TargetFramework = nullptr;
 
 INT_PTR CALLBACK About(HWND, UINT, WPARAM, LPARAM);
 
-int Win32Application::Run(HINSTANCE hInstance, int nCmdShow, SomFrameworkSetup RenderType)
+int Win32Application::Run(HINSTANCE hInstance, int nCmdShow, SomFramework* RenderType)
 {
 	m_hInstance = hInstance;
 	
 	// SomWorks :D // 렌더러 셋업
-	CurrentRenderer = RenderType;
+	if (RenderType != nullptr)
+	{
+		CurrentRenderer = RenderType->GetFrameworkType();
+		TargetFramework = RenderType;
+	}
+	else
+	{
+		CurrentRenderer = SomFrameworkSetup::SR;
+	}
 
 	// Parse the command line parameters
 	int argc;
@@ -102,8 +113,8 @@ int Win32Application::Run(HINSTANCE hInstance, int nCmdShow, SomFrameworkSetup R
 					break;
 
 				case SomFrameworkSetup::DX11:
-					SomFramework_DX11::Update(0.01f);
-					SomFramework_DX11::Render();
+					RenderType->Update(0.01f);
+					RenderType->Render();
 					break;
 
 				case SomFrameworkSetup::DX12:
@@ -200,6 +211,8 @@ LRESULT CALLBACK Win32Application::WindowProc(HWND hWnd, UINT message, WPARAM wP
 	// Handle any messages the switch statement didn't.
 	return DefWindowProc(hWnd, message, wParam, lParam);*/
 
+	// SomFramework* pSample = reinterpret_cast<SomFramework*>(GetWindowLongPtr(hWnd, GWLP_USERDATA));
+		
 	switch (message)
 	{
 	case WM_COMMAND: // 응용 프로그램 메뉴를 처리합니다.
@@ -230,7 +243,7 @@ LRESULT CALLBACK Win32Application::WindowProc(HWND hWnd, UINT message, WPARAM wP
 			break;
 
 		case SomFrameworkSetup::DX11:
-			SomFramework_DX11::Init(hWnd);
+			static_cast<SomFramework_DX11*>(TargetFramework)->Init(hWnd);
 			break;
 
 		case SomFrameworkSetup::DX12:
@@ -271,7 +284,7 @@ LRESULT CALLBACK Win32Application::WindowProc(HWND hWnd, UINT message, WPARAM wP
 			break;
 
 		case SomFrameworkSetup::DX11:
-			// SomFramework_DX11::Release(hWnd);
+			static_cast<SomFramework_DX11*>(TargetFramework)->Release(hWnd);
 			break;
 
 		case SomFrameworkSetup::DX12:

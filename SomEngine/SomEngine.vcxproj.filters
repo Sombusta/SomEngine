@@ -64,6 +64,9 @@
     <Filter Include="Main\Managers">
       <UniqueIdentifier>{c2efacc2-189d-4acd-98bc-aa8950289214}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\SomFramework\Rendering\Core">
+      <UniqueIdentifier>{32339df1-e50d-4d3d-8be8-dd3d8c4b2d53}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Engine\Engine.h">
@@ -153,6 +156,9 @@
     <ClInclude Include="Source\Main\Managers\SomManager_Texture.h">
       <Filter>Main\Managers</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Rendering\Core\SomFramework.h">
+      <Filter>Engine\SomFramework\Rendering\Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Engine\WinMain\Win32Application.cpp">
@@ -205,6 +211,9 @@
     </ClCompile>
     <ClCompile Include="Source\Main\Managers\SomManager_Texture.cpp">
       <Filter>Main\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\SomFramework\Rendering\Core\SomFramework.cpp">
+      <Filter>Engine\SomFramework\Rendering\Core</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -33,6 +33,7 @@
 #include <string>
 #include <vector>
 #include <list>
+#include <map>
 #include <algorithm>
 
 using namespace std;
@@ -43,6 +44,15 @@ using std::list;
 #define WIN_WIDTH 1280
 #define WIN_HEIGHT 720
 #define WIN_TITLE L"SomEngine_Win32"
+
+// SomWorks :D // 프레임워크 셋업 enum
+enum class SomFrameworkSetup
+{
+	None = 0,
+	SR,
+	DX11,
+	DX12
+};
 
 // SomWorks :D // 컨테이너
 #include "SomFramework/Libraries/Math/Vector/Point2D.h"
@@ -71,23 +81,11 @@ using std::list;
 #include "Main/Managers/SomManager_Main.h"
 #include "Main/Managers/SomManager_Texture.h"
 
+#include "Engine/SomFramework/Rendering/SoftRenderer/SomFramework_SR.h"
+
 // SomWorks :D // Rendering Framework Setup
-#define bUseSR true
 #define bUseDX11 true
 #define bUseDX12 false
-
-// SomWorks :D // 프레임워크 셋업 enum
-enum SomFrameworkSetup
-{
-	None,
-	SR,
-	DX11,
-	DX12
-};
-
-#if bUseSR
-#include "SomFramework/Rendering/SoftRenderer/SomFramework_SR.h"
-#endif
 
 #if bUseDX11
 #pragma comment(lib, "d3dcompiler.lib")
@@ -100,9 +98,9 @@ enum SomFrameworkSetup
 #include <DirectXMath.h>
 
 using namespace DirectX;
-
-#include "SomFramework/Rendering/DX11/SomFramework_DX11.h"
 #endif
+
+#include "SomFramework/Rendering/Core/SomFramework.h"
 
 #if bUseDX12
 // SomWorks :D // DirectX 12 Library Header

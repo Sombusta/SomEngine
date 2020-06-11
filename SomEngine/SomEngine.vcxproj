@@ -41,6 +41,7 @@
     <ClInclude Include="Source\Engine\SomFramework\Libraries\Math\Vector\Vertex.h" />
     <ClInclude Include="Source\Engine\SomFramework\Network\SomNetLibrary.h" />
     <ClInclude Include="Source\Engine\SomFramework\Network\SomSocket.h" />
+    <ClInclude Include="Source\Engine\SomFramework\Rendering\Core\SomFramework.h" />
     <ClInclude Include="Source\Engine\SomFramework\Rendering\DX11\SomFramework_DX11.h" />
     <ClInclude Include="Source\Engine\SomFramework\Rendering\SoftRenderer\SomFramework_SR.h" />
     <ClInclude Include="Source\Engine\WinMain\Win32Application.h" />
@@ -59,6 +60,7 @@
     <ClCompile Include="Source\Engine\SomFramework\Libraries\Math\SomMathLibrary.cpp" />
     <ClCompile Include="Source\Engine\SomFramework\Network\SomNetLibrary.cpp" />
     <ClCompile Include="Source\Engine\SomFramework\Network\SomSocket.cpp" />
+    <ClCompile Include="Source\Engine\SomFramework\Rendering\Core\SomFramework.cpp" />
     <ClCompile Include="Source\Engine\SomFramework\Rendering\DX11\SomFramework_DX11.cpp" />
     <ClCompile Include="Source\Engine\SomFramework\Rendering\SoftRenderer\SomFramework_SR.cpp" />
     <ClCompile Include="Source\Engine\WinMain\Win32Application.cpp" />

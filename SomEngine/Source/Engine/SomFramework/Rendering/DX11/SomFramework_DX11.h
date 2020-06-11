@@ -1,38 +1,33 @@
-// Copyright (c) 2014-2019 Sombusta, All Rights Reserved.
+// Copyright (c) 2014-2020 Sombusta, All Rights Reserved.
 
 // SomWorks :D //
 
 #pragma once
 
-#include "Engine/Engine.h"
+#include "Engine/SomFramework/Rendering/Core/SomFramework.h"
 
-class SomFramework_DX11
+class SomFramework_DX11 : public SomFramework
 {
 public:
 	SomFramework_DX11();
-	~SomFramework_DX11();
+	SomFramework_DX11(UINT width, UINT height, wstring name);
+	virtual ~SomFramework_DX11();
 
 	// SomWorks :D // DirectX 11 ∑ª¥ı∑Ø º¬æ˜
-	static void Init(HWND hWnd);
-	static void Update(float DeltaTime);
-	static void Render();
-	static void Release(HWND hWnd);
+	virtual void Init(HWND hWnd);
+	virtual void Update(float DeltaTime);
+	virtual void Render();
+	virtual void Release(HWND hWnd);
 
 private:
-	// SomWorks :D // ΩÃ±€≈œ ∞¥√º
-	static SomFramework_DX11* Instance;
-
-	D3D_DRIVER_TYPE g_driverType = D3D_DRIVER_TYPE_NULL;
-	D3D_FEATURE_LEVEL g_featureLevel = D3D_FEATURE_LEVEL_11_0;
-	ID3D11Device* g_pd3dDevice = NULL;
-	ID3D11DeviceContext* g_pImmediateContext = NULL;
-	IDXGISwapChain* g_pSwapChain = NULL;
-	ID3D11RenderTargetView* g_pRenderTargetView = NULL;
+	D3D_DRIVER_TYPE g_driverType;
+	D3D_FEATURE_LEVEL g_featureLevel;
+	ID3D11Device* g_pd3dDevice;
+	ID3D11DeviceContext* g_pImmediateContext;
+	IDXGISwapChain* g_pSwapChain;
+	ID3D11RenderTargetView* g_pRenderTargetView;
 
 protected:
 
 public:
-
-	// SomWorks :D // ΩÃ±€≈œ ¿ŒΩ∫≈œΩ∫ Getter
-	static SomFramework_DX11* GetInstance() { return Instance; }
 };
