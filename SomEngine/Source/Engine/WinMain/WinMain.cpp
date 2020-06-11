@@ -13,5 +13,5 @@ _Use_decl_annotations_
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int nCmdShow)
 {
 	SomFramework_DX11 SomRenderer_DX11(1280, 720, L"SomEngine_DX11");
-	return Win32Application::Run(hInstance, nCmdShow, &SomRenderer_DX11);
+	return Win32Application::Run(hInstance, nCmdShow, &SomRenderer_DX11); // nullptr = Use SoftRenderer
 }

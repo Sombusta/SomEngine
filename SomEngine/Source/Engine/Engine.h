@@ -1,6 +1,8 @@
 // Copyright (c) 2014-2019 Sombusta, All Rights Reserved.
 
 //! $(ProjectDir)\Source
+//! $(DXSDK_DIR)Include
+//! $(DXSDK_DIR)Lib\x86
 
 #pragma once
 
@@ -95,6 +97,9 @@ enum class SomFrameworkSetup
 #include <dxgi.h>
 #include <d3dcommon.h>
 #include <d3d11.h>
+#include <d3dx11.h>
+#include <d3dcompiler.h>
+//#include <xnamath.h>
 #include <DirectXMath.h>
 
 using namespace DirectX;

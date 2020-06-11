@@ -10,6 +10,11 @@ SomFramework_DX11::SomFramework_DX11() : SomFramework()
 	g_pImmediateContext = nullptr;
 	g_pSwapChain = nullptr;
 	g_pRenderTargetView = nullptr;
+
+	g_pVertexShader = nullptr;
+	g_pPixelShader = nullptr;
+	g_pVertexLayout = nullptr;
+	g_pVertexBuffer = nullptr;
 	
 	CurrentFrameworkType = SomFrameworkSetup::DX11;
 }
@@ -22,6 +27,11 @@ SomFramework_DX11::SomFramework_DX11(UINT width, UINT height, wstring name) : So
 	g_pImmediateContext = nullptr;
 	g_pSwapChain = nullptr;
 	g_pRenderTargetView = nullptr;
+
+	g_pVertexShader = nullptr;
+	g_pPixelShader = nullptr;
+	g_pVertexLayout = nullptr;
+	g_pVertexBuffer = nullptr;
 
 	CurrentFrameworkType = SomFrameworkSetup::DX11;
 }

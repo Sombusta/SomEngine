@@ -67,6 +67,9 @@
     <Filter Include="Engine\SomFramework\Rendering\Core">
       <UniqueIdentifier>{32339df1-e50d-4d3d-8be8-dd3d8c4b2d53}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{348c8bdb-6889-4a64-87cb-cc2ed88aa1fc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Engine\Engine.h">
@@ -228,5 +231,10 @@
     <ResourceCompile Include="Source\Engine\Resource\SomEngine.rc">
       <Filter>Engine\Resource</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="Shaders\Tutorial02.fx">
+      <Filter>Shaders</Filter>
+    </FxCompile>
   </ItemGroup>
 </Project>

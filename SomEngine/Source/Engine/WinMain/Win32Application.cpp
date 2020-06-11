@@ -8,7 +8,7 @@ HWND Win32Application::m_hwnd = nullptr;
 HINSTANCE Win32Application::m_hInstance = nullptr;
 bool Win32Application::bIsActive = false;
 SomFramework* Win32Application::TargetFramework = nullptr;
-bool Win32Application::bUseSoftRenderer = false;
+bool Win32Application::bUseSoftRenderer = true;
 
 INT_PTR CALLBACK About(HWND, UINT, WPARAM, LPARAM);
 
@@ -17,7 +17,7 @@ int Win32Application::Run(HINSTANCE hInstance, int nCmdShow, SomFramework* Rende
 	m_hInstance = hInstance;
 	
 	// SomWorks :D // ·»´õ·¯ ¼Â¾÷
-	TargetFramework = RenderFramework != nullptr ? RenderFramework : nullptr;
+	TargetFramework = RenderFramework;
 	bUseSoftRenderer = RenderFramework != nullptr ? false : true;
 
 	// Parse the command line parameters
