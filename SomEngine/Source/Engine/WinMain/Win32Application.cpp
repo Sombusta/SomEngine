@@ -7,25 +7,18 @@
 HWND Win32Application::m_hwnd = nullptr;
 HINSTANCE Win32Application::m_hInstance = nullptr;
 bool Win32Application::bIsActive = false;
-SomFrameworkSetup Win32Application::CurrentRenderer = SomFrameworkSetup::None;
 SomFramework* Win32Application::TargetFramework = nullptr;
+bool Win32Application::bUseSoftRenderer = false;
 
 INT_PTR CALLBACK About(HWND, UINT, WPARAM, LPARAM);
 
-int Win32Application::Run(HINSTANCE hInstance, int nCmdShow, SomFramework* RenderType)
+int Win32Application::Run(HINSTANCE hInstance, int nCmdShow, SomFramework* RenderFramework)
 {
 	m_hInstance = hInstance;
 	
 	// SomWorks :D // 렌더러 셋업
-	if (RenderType != nullptr)
-	{
-		CurrentRenderer = RenderType->GetFrameworkType();
-		TargetFramework = RenderType;
-	}
-	else
-	{
-		CurrentRenderer = SomFrameworkSetup::SR;
-	}
+	TargetFramework = RenderFramework != nullptr ? RenderFramework : nullptr;
+	bUseSoftRenderer = RenderFramework != nullptr ? false : true;
 
 	// Parse the command line parameters
 	int argc;
@@ -78,6 +71,18 @@ int Win32Application::Run(HINSTANCE hInstance, int nCmdShow, SomFramework* Rende
 		hInstance,
 		nullptr);
 
+	// SomWorks :D // 초기화 단계
+	if (bUseSoftRenderer)
+	{
+		// SomWorks :D // SoftRender GDI Initialize
+		SomFramework_SR::InitGDI(m_hwnd);
+	}
+	else
+	{
+		//static_cast<SomFramework_DX11*>(TargetFramework)->Init(hWnd);
+		TargetFramework->OnInit(m_hwnd);
+	}
+
 	ShowWindow(m_hwnd, nCmdShow);
 	UpdateWindow(m_hwnd);
 	   
@@ -105,29 +110,31 @@ int Win32Application::Run(HINSTANCE hInstance, int nCmdShow, SomFramework* Rende
 			
 			PreviousTime = CurrentTime;
 
-			switch (CurrentRenderer)
+			if (bUseSoftRenderer)
 			{
-				case SomFrameworkSetup::SR:
-					// SomWorks :D // SoftRender 메인 업데이트, 향후에 DeltaTime 관련 구현해야함. 현재는 0.01로 고정
-					SomFramework_SR::UpdateGDI(0.01f);
-					break;
-
-				case SomFrameworkSetup::DX11:
-					RenderType->Update(0.01f);
-					RenderType->Render();
-					break;
-
-				case SomFrameworkSetup::DX12:
-					break;
-
-				default:
-					break;
+				// SomWorks :D // SoftRender 메인 업데이트, 향후에 DeltaTime 관련 구현해야함. 현재는 0.01로 고정
+				SomFramework_SR::UpdateGDI(0.01f);
+			}
+			else
+			{
+				TargetFramework->OnUpdate(0.01f);
+				TargetFramework->OnRender();
 			}
 		}
 		else
 		{
 			WaitMessage();
 		}
+	}
+
+	if (bUseSoftRenderer)
+	{
+		// SomWorks :D // SoftRender GDI Release
+		SomFramework_SR::ReleaseGDI(m_hwnd);
+	}
+	else
+	{
+		TargetFramework->OnDestroy(m_hwnd);
 	}
 
 	// Return this part of the WM_QUIT message to Windows.
@@ -211,8 +218,6 @@ LRESULT CALLBACK Win32Application::WindowProc(HWND hWnd, UINT message, WPARAM wP
 	// Handle any messages the switch statement didn't.
 	return DefWindowProc(hWnd, message, wParam, lParam);*/
 
-	// SomFramework* pSample = reinterpret_cast<SomFramework*>(GetWindowLongPtr(hWnd, GWLP_USERDATA));
-		
 	switch (message)
 	{
 	case WM_COMMAND: // 응용 프로그램 메뉴를 처리합니다.
@@ -235,24 +240,6 @@ LRESULT CALLBACK Win32Application::WindowProc(HWND hWnd, UINT message, WPARAM wP
 
 	case WM_CREATE:
 	{
-		switch (CurrentRenderer)
-		{
-		case SomFrameworkSetup::SR:
-			// SomWorks :D // SoftRender GDI Initialize
-			SomFramework_SR::InitGDI(hWnd);
-			break;
-
-		case SomFrameworkSetup::DX11:
-			static_cast<SomFramework_DX11*>(TargetFramework)->Init(hWnd);
-			break;
-
-		case SomFrameworkSetup::DX12:
-			break;
-
-		default:
-			break;
-		}
-
 		// SomWorks :D // 인풋 매니저
 		SomManager_Input::CreateInputManager();
 
@@ -276,24 +263,6 @@ LRESULT CALLBACK Win32Application::WindowProc(HWND hWnd, UINT message, WPARAM wP
 
 		bIsActive = false;
 
-		switch (CurrentRenderer)
-		{
-		case SomFrameworkSetup::SR:
-			// SomWorks :D // SoftRender GDI Release
-			SomFramework_SR::ReleaseGDI(hWnd);
-			break;
-
-		case SomFrameworkSetup::DX11:
-			static_cast<SomFramework_DX11*>(TargetFramework)->Release(hWnd);
-			break;
-
-		case SomFrameworkSetup::DX12:
-			break;
-
-		default:
-			break;
-		}
-		
 		PostQuitMessage(0);
 	}
 	break;

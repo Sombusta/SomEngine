@@ -11,13 +11,13 @@ public:
 	SomFramework(UINT width, UINT height, wstring name);
 	virtual ~SomFramework() {}
 
-	virtual void Init(HWND hWnd) = 0;
-	virtual void Update(float DeltaTime) = 0;
-	virtual void Render() = 0;
-	virtual void Release(HWND hWnd) = 0;
+	virtual void OnInit(HWND hWnd) = 0;
+	virtual void OnUpdate(float DeltaTime) = 0;
+	virtual void OnRender() = 0;
+	virtual void OnDestroy(HWND hWnd) = 0;
 
 	void SetCustomWindowText(LPCWSTR text);
-	void SetHwnd(HWND* NewHwnd) { TargetHwnd = NewHwnd; }
+	void SetHwnd(HWND NewHwnd) { TargetHwnd = NewHwnd; }
 	
 protected:
 	// Viewport dimensions.
@@ -25,7 +25,7 @@ protected:
 	UINT Height;
 	float AspectRatio;
 
-	HWND* TargetHwnd;
+	HWND TargetHwnd;
 
 	SomFrameworkSetup CurrentFrameworkType;
 

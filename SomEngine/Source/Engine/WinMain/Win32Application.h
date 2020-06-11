@@ -8,7 +8,7 @@ class Win32Application
 {
 public:
 	// SomWorks :D // WinAPI Setup
-	static int Run(HINSTANCE hInstance, int nCmdShow, class SomFramework* RenderType); // SomFrameworkSetup RenderType
+	static int Run(HINSTANCE hInstance, int nCmdShow, class SomFramework* RenderFramework); // SomFrameworkSetup RenderType
 
 	// SomWorks :D // 초기화 성공 여부
 	static bool bIsActive;
@@ -16,8 +16,9 @@ public:
 private:
 	static HWND m_hwnd;
 	static HINSTANCE m_hInstance;
-	static SomFrameworkSetup CurrentRenderer;
 	static SomFramework* TargetFramework;
+	
+	static bool bUseSoftRenderer;
 
 protected:	
 	static LRESULT CALLBACK MessageHandler(HWND, UINT, WPARAM, LPARAM);

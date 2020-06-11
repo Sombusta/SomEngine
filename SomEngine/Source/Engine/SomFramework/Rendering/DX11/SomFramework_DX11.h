@@ -1,7 +1,5 @@
 // Copyright (c) 2014-2020 Sombusta, All Rights Reserved.
 
-// SomWorks :D //
-
 #pragma once
 
 #include "Engine/SomFramework/Rendering/Core/SomFramework.h"
@@ -14,10 +12,10 @@ public:
 	virtual ~SomFramework_DX11();
 
 	// SomWorks :D // DirectX 11 ·»´õ·¯ ¼Â¾÷
-	virtual void Init(HWND hWnd);
-	virtual void Update(float DeltaTime);
-	virtual void Render();
-	virtual void Release(HWND hWnd);
+	virtual void OnInit(HWND hWnd);
+	virtual void OnUpdate(float DeltaTime);
+	virtual void OnRender();
+	virtual void OnDestroy(HWND hWnd);
 
 private:
 	D3D_DRIVER_TYPE g_driverType;

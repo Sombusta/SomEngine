@@ -31,9 +31,9 @@ SomFramework_DX11::~SomFramework_DX11()
 }
 
 // SomWorks :D // GDI 오브젝트 생성
-void SomFramework_DX11::Init(HWND hWnd)
+void SomFramework_DX11::OnInit(HWND hWnd)
 {
-	SetHwnd(&hWnd);
+	SetHwnd(hWnd);
 
 	HRESULT hr = S_OK;
 
@@ -111,13 +111,13 @@ void SomFramework_DX11::Init(HWND hWnd)
 }
 
 // SomWorks :D // 모든 업데이트는 이곳에서
-void SomFramework_DX11::Update(float DeltaTime)
+void SomFramework_DX11::OnUpdate(float DeltaTime)
 {
 	// SomWorks :D // DirectX 11 렌더러 업데이트
 
 }
 
-void SomFramework_DX11::Render()
+void SomFramework_DX11::OnRender()
 {
 	// Just clear the backbuffer
 	float ClearColor[4] = { 0.0f, 0.125f, 0.3f, 1.0f }; //red,green,blue,alpha
@@ -126,7 +126,7 @@ void SomFramework_DX11::Render()
 }
 
 // SomWorks :D // 릴리즈
-void SomFramework_DX11::Release(HWND hWnd)
+void SomFramework_DX11::OnDestroy(HWND hWnd)
 {
 	if (g_pImmediateContext) g_pImmediateContext->ClearState();
 	if (g_pRenderTargetView) g_pRenderTargetView->Release();
