@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019 Sombusta, All Rights Reserved.
+// Copyright (c) 2014-2020 Sombusta, All Rights Reserved.
 
 #include "Win32Application.h"
 
@@ -102,7 +102,8 @@ int Win32Application::Run(HINSTANCE hInstance, int nCmdShow, SomFrameworkSetup R
 					break;
 
 				case SomFrameworkSetup::DX11:
-					// SomFramework_DX11::Update(0.01f);
+					SomFramework_DX11::Update(0.01f);
+					SomFramework_DX11::Render();
 					break;
 
 				case SomFrameworkSetup::DX12:
@@ -229,7 +230,7 @@ LRESULT CALLBACK Win32Application::WindowProc(HWND hWnd, UINT message, WPARAM wP
 			break;
 
 		case SomFrameworkSetup::DX11:
-			// SomFramework_DX11::Init(hWnd);
+			SomFramework_DX11::Init(hWnd);
 			break;
 
 		case SomFrameworkSetup::DX12:

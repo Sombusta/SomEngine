@@ -58,7 +58,7 @@ void SR_Sample::Update(float DeltaTime)
 }
 
 // SomWorks :D // 텍스처 테스트용 define
-// #define TextureTEST 1
+#define TextureTEST 1
 
 void SR_Sample::Render()
 {
@@ -81,6 +81,7 @@ void SR_Sample::Render()
 	FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint2D(-10, -10), FPoint2D(-120, -50));
 	FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint2D(-10, -10), FPoint2D(-50, -120));*/
 
+/*
 	FMatrix2D Rot45;
 	Rot45._11 = 0;
 	Rot45._21 = 1;
@@ -96,7 +97,7 @@ void SR_Sample::Render()
 	FPoint2D Test3 = FPoint2D(c.X, c.Y);
 	
 	FSomDrawLibrary::DrawLine_BresenhamAlgorithm(Test1, Test2);
-	FSomDrawLibrary::DrawLine_BresenhamAlgorithm(Test1, Test3);
+	FSomDrawLibrary::DrawLine_BresenhamAlgorithm(Test1, Test3);*/
 
 #ifdef TextureTEST
 #if TextureTEST

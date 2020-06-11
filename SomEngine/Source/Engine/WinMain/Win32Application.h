@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019 Sombusta, All Rights Reserved.
+// Copyright (c) 2014-2020 Sombusta, All Rights Reserved.
 
 #pragma once
 
@@ -18,10 +18,8 @@ private:
 	static HINSTANCE m_hInstance;
 	static SomFrameworkSetup CurrentRenderer;
 
-protected:
-	
+protected:	
 	static LRESULT CALLBACK MessageHandler(HWND, UINT, WPARAM, LPARAM);
-
 	static LRESULT CALLBACK WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
 
 public:

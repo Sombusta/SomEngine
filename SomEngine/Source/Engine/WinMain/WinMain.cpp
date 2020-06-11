@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019 Sombusta, All Rights Reserved.
+// Copyright (c) 2014-2020 Sombusta, All Rights Reserved.
 
 #include "Win32Application.h"
 
@@ -11,5 +11,5 @@
 _Use_decl_annotations_
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int nCmdShow)
 {
-	return Win32Application::Run(hInstance, nCmdShow, SomFrameworkSetup::SR);
+	return Win32Application::Run(hInstance, nCmdShow, SomFrameworkSetup::DX11);
 }

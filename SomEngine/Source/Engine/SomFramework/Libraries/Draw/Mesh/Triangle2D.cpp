@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019 Sombusta, All Rights Reserved.
+// Copyright (c) 2014-2020 Sombusta, All Rights Reserved.
 
 #include "Triangle2D.h"
 #include "Engine/SomFramework/Libraries/Draw/Texture/TextureParser_Bmp.h"
@@ -100,10 +100,9 @@ FColor FTriangle2D::GetVertexWeightColor(const FVector2D& Value) const
 
 	FColor Result;
 
-	Result.r = VertexWeight.X * 255;
-	Result.g = VertexWeight.Y * 255;
-
-	Result.b = VertexWeight.Z * 255;
+	Result.r = static_cast<BYTE>(VertexWeight.X * 255);
+	Result.g = static_cast<BYTE>(VertexWeight.Y * 255);
+	Result.b = static_cast<BYTE>(VertexWeight.Z * 255);
 
 	return Result;
 }
@@ -177,7 +176,7 @@ void FTriangle2D::FillTriangle(bool bUseTexture)
 
 				//TriangleColor = Test;
 
-				TriangleColor = bUseBarycentricCoordinate? Test : FSomTextureParser_BMP::GetPixel(Result.X, Result.Y, CurrentTex);
+				TriangleColor = bUseBarycentricCoordinate? Test : FSomTextureParser_BMP::GetPixel(static_cast<int>(Result.X), Result.Y, CurrentTex);
 			}
 			else
 			{

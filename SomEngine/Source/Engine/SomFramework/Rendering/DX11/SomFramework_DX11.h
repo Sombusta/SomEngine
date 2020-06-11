@@ -15,11 +15,19 @@ public:
 	// SomWorks :D // DirectX 11 ·»´õ·¯ ¼Â¾÷
 	static void Init(HWND hWnd);
 	static void Update(float DeltaTime);
+	static void Render();
 	static void Release(HWND hWnd);
 
 private:
 	// SomWorks :D // ½Ì±ÛÅÏ °´Ã¼
 	static SomFramework_DX11* Instance;
+
+	D3D_DRIVER_TYPE g_driverType = D3D_DRIVER_TYPE_NULL;
+	D3D_FEATURE_LEVEL g_featureLevel = D3D_FEATURE_LEVEL_11_0;
+	ID3D11Device* g_pd3dDevice = NULL;
+	ID3D11DeviceContext* g_pImmediateContext = NULL;
+	IDXGISwapChain* g_pSwapChain = NULL;
+	ID3D11RenderTargetView* g_pRenderTargetView = NULL;
 
 protected:
 

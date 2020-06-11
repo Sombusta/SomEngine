@@ -73,7 +73,7 @@ using std::list;
 
 // SomWorks :D // Rendering Framework Setup
 #define bUseSR true
-#define bUseDX11 false
+#define bUseDX11 true
 #define bUseDX12 false
 
 // SomWorks :D // 프레임워크 셋업 enum
@@ -111,7 +111,6 @@ using namespace DirectX;
 // #pragma comment(lib, "D3D12.lib")
 // #pragma comment(lib, "dxgi.lib")
 
-// #include "SomFramework/Rendering/DX12/SomFramework_DX12.h"
 #include <d3d12.h>
 #include <dxgi1_4.h>
 #include <D3Dcompiler.h>
@@ -122,4 +121,6 @@ using namespace DirectX;
 // SomWorks :D // DirectX 12 SDK Header
 #include "Engine/DX12/d3dx12.h"
 #include "Engine/DX12/DXSampleHelper.h"
+
+// #include "SomFramework/Rendering/DX12/SomFramework_DX12.h"
 #endif
