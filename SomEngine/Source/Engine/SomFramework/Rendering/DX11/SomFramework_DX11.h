@@ -21,9 +21,17 @@ public:
 private:
 	D3D_DRIVER_TYPE g_driverType;
 	D3D_FEATURE_LEVEL g_featureLevel;
+
+	// Device // 메인 디바이스
 	ID3D11Device* g_pd3dDevice;
+
+	// Immediate Context // 명령을 처리하는 컨텍스트
 	ID3D11DeviceContext* g_pImmediateContext;
+
+	// SwapChain // 백버퍼 스왑체인
 	IDXGISwapChain* g_pSwapChain;
+
+	// RenderTargetView 
 	ID3D11RenderTargetView* g_pRenderTargetView;
 	
 	//----------------------------------------------
