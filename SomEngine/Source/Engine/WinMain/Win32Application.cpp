@@ -79,7 +79,6 @@ int Win32Application::Run(HINSTANCE hInstance, int nCmdShow, SomFramework* Rende
 	}
 	else
 	{
-		//static_cast<SomFramework_DX11*>(TargetFramework)->Init(hWnd);
 		TargetFramework->OnInit(m_hwnd);
 	}
 

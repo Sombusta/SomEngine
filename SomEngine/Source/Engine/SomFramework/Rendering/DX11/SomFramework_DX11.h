@@ -3,6 +3,7 @@
 #pragma once
 
 #include "Engine/SomFramework/Rendering/Core/SomFramework.h"
+#include "RendererLibrary_DX11.h"
 
 class SomFramework_DX11 : public SomFramework
 {
@@ -16,9 +17,7 @@ public:
 	virtual void OnUpdate(float DeltaTime);
 	virtual void OnRender();
 	virtual void OnDestroy(HWND hWnd);
-
-	HRESULT CompileShaderFromFile(WCHAR* szFileName, LPCSTR szEntryPoint, LPCSTR szShaderModel, ID3DBlob** ppBlobOut);
-
+		
 private:
 	D3D_DRIVER_TYPE g_driverType;
 	D3D_FEATURE_LEVEL g_featureLevel;
@@ -33,8 +32,6 @@ private:
 	ID3D11PixelShader* g_pPixelShader;
 	ID3D11InputLayout* g_pVertexLayout;
 	ID3D11Buffer* g_pVertexBuffer;
-
-
 
 protected:
 

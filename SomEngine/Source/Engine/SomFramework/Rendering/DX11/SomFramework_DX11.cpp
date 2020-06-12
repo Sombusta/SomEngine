@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019 Sombusta, All Rights Reserved.
+// Copyright (c) 2014-2020 Sombusta, All Rights Reserved.
 
 #include "SomFramework_DX11.h"
 
@@ -130,7 +130,7 @@ void SomFramework_DX11::OnUpdate(float DeltaTime)
 void SomFramework_DX11::OnRender()
 {
 	// Just clear the backbuffer
-	float ClearColor[4] = { 0.0f, 0.125f, 0.3f, 1.0f }; //red,green,blue,alpha
+	float ClearColor[4] = { 0.0f, 0.125f, 0.3f, 1.0f }; // Red, Green, Blue, Alpha
 	g_pImmediateContext->ClearRenderTargetView(g_pRenderTargetView, ClearColor);
 	g_pSwapChain->Present(0, 0);
 }

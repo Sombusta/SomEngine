@@ -42,6 +42,7 @@
     <ClInclude Include="Source\Engine\SomFramework\Network\SomNetLibrary.h" />
     <ClInclude Include="Source\Engine\SomFramework\Network\SomSocket.h" />
     <ClInclude Include="Source\Engine\SomFramework\Rendering\Core\SomFramework.h" />
+    <ClInclude Include="Source\Engine\SomFramework\Rendering\DX11\RendererLibrary_DX11.h" />
     <ClInclude Include="Source\Engine\SomFramework\Rendering\DX11\SomFramework_DX11.h" />
     <ClInclude Include="Source\Engine\SomFramework\Rendering\SoftRenderer\SomFramework_SR.h" />
     <ClInclude Include="Source\Engine\WinMain\Win32Application.h" />

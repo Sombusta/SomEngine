@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019 Sombusta, All Rights Reserved.
+// Copyright (c) 2014-2020 Sombusta, All Rights Reserved.
 
 //! $(ProjectDir)\Source
 //! $(DXSDK_DIR)Include
@@ -47,15 +47,6 @@ using std::list;
 #define WIN_HEIGHT 720
 #define WIN_TITLE L"SomEngine_Win32"
 
-// SomWorks :D // 프레임워크 셋업 enum
-enum class SomFrameworkSetup
-{
-	None = 0,
-	SR,
-	DX11,
-	DX12
-};
-
 // SomWorks :D // 컨테이너
 #include "SomFramework/Libraries/Math/Vector/Point2D.h"
 #include "SomFramework/Libraries/Math/Vector/Vector2D.h"
@@ -86,26 +77,7 @@ enum class SomFrameworkSetup
 #include "Engine/SomFramework/Rendering/SoftRenderer/SomFramework_SR.h"
 
 // SomWorks :D // Rendering Framework Setup
-#define bUseDX11 true
 #define bUseDX12 false
-
-#if bUseDX11
-#pragma comment(lib, "d3dcompiler.lib")
-#pragma comment(lib, "d3d11.lib")
-#pragma comment(lib, "dxgi.lib")
-
-#include <dxgi.h>
-#include <d3dcommon.h>
-#include <d3d11.h>
-#include <d3dx11.h>
-#include <d3dcompiler.h>
-//#include <xnamath.h>
-#include <DirectXMath.h>
-
-using namespace DirectX;
-#endif
-
-#include "SomFramework/Rendering/Core/SomFramework.h"
 
 #if bUseDX12
 // SomWorks :D // DirectX 12 Library Header

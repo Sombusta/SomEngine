@@ -162,6 +162,9 @@
     <ClInclude Include="Source\Engine\SomFramework\Rendering\Core\SomFramework.h">
       <Filter>Engine\SomFramework\Rendering\Core</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Rendering\DX11\RendererLibrary_DX11.h">
+      <Filter>Engine\SomFramework\Rendering\DX11</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Engine\WinMain\Win32Application.cpp">

@@ -4,6 +4,15 @@
 
 #include "Engine/Engine.h"
 
+// SomWorks :D // 프레임워크 셋업 enum
+enum class SomFrameworkSetup
+{
+	None = 0,
+	SR,
+	DX11,
+	DX12
+};
+
 class SomFramework
 {
 public:

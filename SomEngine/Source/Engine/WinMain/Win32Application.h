@@ -16,7 +16,7 @@ public:
 private:
 	static HWND m_hwnd;
 	static HINSTANCE m_hInstance;
-	static SomFramework* TargetFramework;
+	static class SomFramework* TargetFramework;
 	
 	static bool bUseSoftRenderer;
 
