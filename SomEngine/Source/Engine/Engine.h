@@ -1,6 +1,10 @@
 // Copyright (c) 2014-2020 Sombusta, All Rights Reserved.
 
 //! $(ProjectDir)\Source
+
+//! $(WindowsSDK_IncludePath)
+//! $(WindowsSDK_LibraryPath_x86)
+
 //! $(DXSDK_DIR)Include
 //! $(DXSDK_DIR)Lib\x86
 

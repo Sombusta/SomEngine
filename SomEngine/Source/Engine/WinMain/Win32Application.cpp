@@ -2,7 +2,7 @@
 
 #include "Win32Application.h"
 #include "Engine/SomFramework/Rendering/Core/SomFramework.h"
-#include "Engine/SomFramework/Rendering/DX11/SomFramework_DX11.h"
+#include "Engine/SomFramework/Rendering/DirectX/SomFramework_DX11.h"
 
 HWND Win32Application::m_hwnd = nullptr;
 HINSTANCE Win32Application::m_hInstance = nullptr;
@@ -15,7 +15,7 @@ INT_PTR CALLBACK About(HWND, UINT, WPARAM, LPARAM);
 int Win32Application::Run(HINSTANCE hInstance, int nCmdShow, SomFramework* RenderFramework)
 {
 	m_hInstance = hInstance;
-	
+
 	// SomWorks :D // 렌더러 셋업
 	TargetFramework = RenderFramework;
 	bUseSoftRenderer = RenderFramework != nullptr ? false : true;
@@ -56,7 +56,7 @@ int Win32Application::Run(HINSTANCE hInstance, int nCmdShow, SomFramework* Rende
 	// screenWidth에는 1920이 screenHeight에는 1080이 대입됩니다.
 	int ScreenWidth = GetSystemMetrics(SM_CXSCREEN);
 	int ScreenHeight = GetSystemMetrics(SM_CYSCREEN);
-	
+
 	// Create the window and store a handle to it.
 	m_hwnd = CreateWindow(
 		WIN_TITLE,
@@ -84,13 +84,14 @@ int Win32Application::Run(HINSTANCE hInstance, int nCmdShow, SomFramework* Rende
 
 	ShowWindow(m_hwnd, nCmdShow);
 	UpdateWindow(m_hwnd);
-	   
+
 	// SomWorks :D // Main sample loop.
 	MSG msg = {};
 
 	// SomWorks :D // 이전 시간
 	DWORD PreviousTime = timeGetTime();
 
+	// SomWorks :D // 시스템 메인 루프
 	while (msg.message != WM_QUIT)
 	{
 		// Process any messages in the queue.
@@ -106,7 +107,7 @@ int Win32Application::Run(HINSTANCE hInstance, int nCmdShow, SomFramework* Rende
 
 			// SomWorks :D // 밀리 세컨드 단위, DeltaTime
 			float ElapsedTime = (CurrentTime - PreviousTime) / 1000.f;
-			
+
 			PreviousTime = CurrentTime;
 
 			if (bUseSoftRenderer)
@@ -140,85 +141,20 @@ int Win32Application::Run(HINSTANCE hInstance, int nCmdShow, SomFramework* Rende
 	return static_cast<char>(msg.wParam);
 }
 
-LRESULT CALLBACK Win32Application::MessageHandler(HWND hwnd, UINT umsg, WPARAM wparam, LPARAM lparam)
-{
-	switch (umsg)
-	{
-		// 키보드가 키가 눌렸는지 확인합니다.
-	case WM_KEYDOWN:
-	{
-		// 키가 눌렸다면 input객체에 이 사실을 전달하여 기록하도록 합니다.
-		SomManager_Input::KeyDown((unsigned int)wparam);
-		return 0;
-	}
-
-	// 키보드의 눌린 키가 떼어졌는지 확인합니다.
-	case WM_KEYUP:
-	{
-		// 키가 떼어졌다면 input객체에 이 사실을 전달하여 이 키를 해제토록합니다.
-		SomManager_Input::KeyUp((unsigned int)wparam);
-		return 0;
-	}
-
-	// 다른 메세지들은 사용하지 않으므로 기본 메세지 처리기에 전달합니다.
-	default:
-	{
-		return DefWindowProc(hwnd, umsg, wparam, lparam);
-	}
-	}
-}
-
 // Main message handler for the sample.
 LRESULT CALLBACK Win32Application::WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
-/*
 	switch (message)
 	{
 	case WM_CREATE:
 	{
-		// Save the DXSample* passed in to CreateWindow.
-		LPCREATESTRUCT pCreateStruct = reinterpret_cast<LPCREATESTRUCT>(lParam);
-		SetWindowLongPtr(hWnd, GWLP_USERDATA, reinterpret_cast<LONG_PTR>(pCreateStruct->lpCreateParams));
-	}
-	return 0;
+		// SomWorks :D // 인풋 매니저
+		SomManager_Input::CreateInputManager();
 
-	case WM_COMMAND:
-	{
-		int wmId = LOWORD(wParam);
-		// 메뉴 선택을 구문 분석합니다:
-		switch (wmId)
-		{
-		case IDM_ABOUT:
-			DialogBox(m_hInstance, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
-			break;
-		case IDM_EXIT:
-			DestroyWindow(hWnd);
-			break;
-					default:
-						return DefWindowProc(hWnd, message, wParam, lParam);
-		}
-	}
-	return 0;
-
-	case WM_KEYDOWN:
-		return 0;
-
-	case WM_KEYUP:
-		return 0;
-
-	case WM_PAINT:
-		return 0;
-
-	case WM_DESTROY:
-		PostQuitMessage(0);
+		bIsActive = true;
 		return 0;
 	}
 
-	// Handle any messages the switch statement didn't.
-	return DefWindowProc(hWnd, message, wParam, lParam);*/
-
-	switch (message)
-	{
 	case WM_COMMAND: // 응용 프로그램 메뉴를 처리합니다.
 	{
 		int wmId = LOWORD(wParam);
@@ -234,17 +170,9 @@ LRESULT CALLBACK Win32Application::WindowProc(HWND hWnd, UINT message, WPARAM wP
 		default:
 			return DefWindowProc(hWnd, message, wParam, lParam);
 		}
-	}
-	break;
 
-	case WM_CREATE:
-	{
-		// SomWorks :D // 인풋 매니저
-		SomManager_Input::CreateInputManager();
-
-		bIsActive = true;
+		return 0;
 	}
-	break;
 
 	case WM_PAINT: // 주 창을 그립니다.
 	{
@@ -252,8 +180,8 @@ LRESULT CALLBACK Win32Application::WindowProc(HWND hWnd, UINT message, WPARAM wP
 		HDC hdc = BeginPaint(hWnd, &ps);
 		// TODO: 여기에 hdc를 사용하는 그리기 코드를 추가합니다...
 		EndPaint(hWnd, &ps);
-	}
-	break;
+		return 0;
+	}	
 
 	case WM_DESTROY: // 종료 메시지를 게시하고 반환합니다.
 	{
@@ -263,13 +191,37 @@ LRESULT CALLBACK Win32Application::WindowProc(HWND hWnd, UINT message, WPARAM wP
 		bIsActive = false;
 
 		PostQuitMessage(0);
+		return 0;
 	}
-	break;
 
-	default:
-		return MessageHandler(hWnd, message, wParam, lParam);
+	// 키보드가 키가 눌렸는지 확인합니다.
+	case WM_KEYDOWN:
+	{
+		if(TargetFramework != nullptr) TargetFramework->OnKeyDown(static_cast<UINT8>(wParam));
+
+		// 키가 눌렸다면 input객체에 이 사실을 전달하여 기록하도록 합니다.
+		SomManager_Input::KeyDown((unsigned int)wParam);
+		return 0;
+	}	
+
+	// 키보드의 눌린 키가 떼어졌는지 확인합니다.
+	case WM_KEYUP:
+	{
+		if (TargetFramework != nullptr) TargetFramework->OnKeyUp(static_cast<UINT8>(wParam));
+
+		// 키가 떼어졌다면 input객체에 이 사실을 전달하여 이 키를 해제토록합니다.
+		SomManager_Input::KeyUp((unsigned int)wParam);
+		if (wParam == VK_ESCAPE)
+		{
+			PostQuitMessage(0);
+		}
+		return 0;
 	}
-	return 0;
+	}
+
+	// 다른 메세지들은 사용하지 않으므로 기본 메세지 처리기에 전달합니다.
+	// Handle any messages the switch statement didn't.
+	return DefWindowProc(hWnd, message, wParam, lParam);
 }
 
 // SomWorks :D // 정보 대화 상자의 메시지 처리기입니다.

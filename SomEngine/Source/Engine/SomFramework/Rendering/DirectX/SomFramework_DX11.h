@@ -17,7 +17,11 @@ public:
 	virtual void OnUpdate(float DeltaTime);
 	virtual void OnRender();
 	virtual void OnDestroy(HWND hWnd);
-		
+	
+	void GetProjectionMatrix(XMMATRIX&);
+	void GetWorldMatrix(XMMATRIX&);
+	void GetOrthoMatrix(XMMATRIX&);
+
 private:
 	D3D_DRIVER_TYPE g_driverType;
 	D3D_FEATURE_LEVEL g_featureLevel;
@@ -31,9 +35,16 @@ private:
 	// SwapChain // 백버퍼 스왑체인
 	IDXGISwapChain* g_pSwapChain;
 
-	// RenderTargetView 
+	// Render Target View 
 	ID3D11RenderTargetView* g_pRenderTargetView;
 	
+	// Depth Stencil View
+	ID3D11DepthStencilView* m_DepthStencilView;
+	ID3D11DepthStencilState* m_DepthStencilState;
+
+	// Resterizer
+	ID3D11RasterizerState* m_RasterState;
+
 	//----------------------------------------------
 
 	ID3D11VertexShader* g_pVertexShader;
@@ -41,7 +52,20 @@ private:
 	ID3D11InputLayout* g_pVertexLayout;
 	ID3D11Buffer* g_pVertexBuffer;
 
+	//----------------------------------------------
+
+	XMMATRIX m_projectionMatrix;
+	XMMATRIX m_worldMatrix;
+	XMMATRIX m_orthoMatrix;
+
+	bool m_vsync_enabled;
+	int m_videoCardMemory;
+	char m_videoCardDescription[128];
+
 protected:
 
 public:
+
+	ID3D11Device* GetDevice();
+	ID3D11DeviceContext* GetDeviceContext();
 };

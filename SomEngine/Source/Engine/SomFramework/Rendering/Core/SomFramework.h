@@ -25,6 +25,10 @@ public:
 	virtual void OnRender() = 0;
 	virtual void OnDestroy(HWND hWnd) = 0;
 
+	// Samples override the event handlers to handle specific messages.
+	virtual void OnKeyDown(UINT8 /*key*/) {}
+	virtual void OnKeyUp(UINT8 /*key*/) {}
+
 	void SetCustomWindowText(LPCWSTR text);
 	void SetHwnd(HWND NewHwnd) { TargetHwnd = NewHwnd; }
 	

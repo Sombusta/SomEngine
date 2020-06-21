@@ -43,9 +43,6 @@
     <Filter Include="Engine\SomFramework\Network">
       <UniqueIdentifier>{c4857627-c60f-4f9f-9abb-79e04399fa0c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\SomFramework\Rendering\DX11">
-      <UniqueIdentifier>{cbd980ce-4cf4-4fd3-b52f-4cff286b4e4f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Engine\SomFramework\Libraries\Draw\Texture">
       <UniqueIdentifier>{a11a77f9-59a3-4483-837e-4b8a8e8d4fc5}</UniqueIdentifier>
     </Filter>
@@ -69,6 +66,18 @@
     </Filter>
     <Filter Include="Shaders">
       <UniqueIdentifier>{348c8bdb-6889-4a64-87cb-cc2ed88aa1fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\SomFramework\Rendering\DirectX">
+      <UniqueIdentifier>{cbd980ce-4cf4-4fd3-b52f-4cff286b4e4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\SomFramework\Rendering\DirectX\DX11">
+      <UniqueIdentifier>{23c206f3-b9ee-4688-8ca1-0411c5092078}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\SomFramework\Rendering\DirectX\DX12">
+      <UniqueIdentifier>{976e550d-cdb8-4cc0-9dfa-9f889efed1fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\SomFramework\Rendering\DirectX\Utility">
+      <UniqueIdentifier>{f3b4f18f-af53-4330-905b-c505572c0b9f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -104,9 +113,6 @@
     </ClInclude>
     <ClInclude Include="Source\Engine\SomFramework\Network\SomSocket.h">
       <Filter>Engine\SomFramework\Network</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Rendering\DX11\SomFramework_DX11.h">
-      <Filter>Engine\SomFramework\Rendering\DX11</Filter>
     </ClInclude>
     <ClInclude Include="Source\Engine\SomFramework\Libraries\Draw\Mesh\Quad2D.h">
       <Filter>Engine\SomFramework\Libraries\Draw\Mesh</Filter>
@@ -162,8 +168,23 @@
     <ClInclude Include="Source\Engine\SomFramework\Rendering\Core\SomFramework.h">
       <Filter>Engine\SomFramework\Rendering\Core</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Rendering\DX11\RendererLibrary_DX11.h">
-      <Filter>Engine\SomFramework\Rendering\DX11</Filter>
+    <ClInclude Include="Source\Engine\SomFramework\Rendering\DirectX\RendererLibrary_DX11.h">
+      <Filter>Engine\SomFramework\Rendering\DirectX\DX11</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Rendering\DirectX\SomFramework_DX11.h">
+      <Filter>Engine\SomFramework\Rendering\DirectX\DX11</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Rendering\DirectX\RendererLibrary_DX12.h">
+      <Filter>Engine\SomFramework\Rendering\DirectX\DX12</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Rendering\DirectX\SomFramework_DX12.h">
+      <Filter>Engine\SomFramework\Rendering\DirectX\DX12</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Rendering\DirectX\Utility\d3dx12.h">
+      <Filter>Engine\SomFramework\Rendering\DirectX\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Rendering\DirectX\Utility\DX12Helper.h">
+      <Filter>Engine\SomFramework\Rendering\DirectX\Utility</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -194,9 +215,6 @@
     <ClCompile Include="Source\Engine\SomFramework\Network\SomSocket.cpp">
       <Filter>Engine\SomFramework\Network</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Engine\SomFramework\Rendering\DX11\SomFramework_DX11.cpp">
-      <Filter>Engine\SomFramework\Rendering\DX11</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Engine\SomFramework\Libraries\Draw\Mesh\Quad2D.cpp">
       <Filter>Engine\SomFramework\Libraries\Draw\Mesh</Filter>
     </ClCompile>
@@ -220,6 +238,12 @@
     </ClCompile>
     <ClCompile Include="Source\Engine\SomFramework\Rendering\Core\SomFramework.cpp">
       <Filter>Engine\SomFramework\Rendering\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\SomFramework\Rendering\DirectX\SomFramework_DX11.cpp">
+      <Filter>Engine\SomFramework\Rendering\DirectX\DX11</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\SomFramework\Rendering\DirectX\SomFramework_DX12.cpp">
+      <Filter>Engine\SomFramework\Rendering\DirectX\DX12</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -12,12 +12,18 @@ SomFramework_DX11::SomFramework_DX11() : SomFramework()
 	g_pSwapChain = nullptr;
 	g_pRenderTargetView = nullptr;
 
+	m_DepthStencilView = nullptr;
+	m_DepthStencilState = nullptr;
+	m_RasterState = nullptr;
+
 	g_pVertexShader = nullptr;
 	g_pPixelShader = nullptr;
 	g_pVertexLayout = nullptr;
 	g_pVertexBuffer = nullptr;
 	
 	CurrentFrameworkType = SomFrameworkSetup::DX11;
+
+	memset(m_videoCardDescription, 0, sizeof(m_videoCardDescription));
 }
 
 SomFramework_DX11::SomFramework_DX11(UINT width, UINT height, wstring name) : SomFramework(width, height, name)
@@ -30,12 +36,18 @@ SomFramework_DX11::SomFramework_DX11(UINT width, UINT height, wstring name) : So
 	g_pSwapChain = nullptr;
 	g_pRenderTargetView = nullptr;
 
+	m_DepthStencilView = nullptr;
+	m_DepthStencilState = nullptr;
+	m_RasterState = nullptr;
+
 	g_pVertexShader = nullptr;
 	g_pPixelShader = nullptr;
 	g_pVertexLayout = nullptr;
 	g_pVertexBuffer = nullptr;
 
 	CurrentFrameworkType = SomFrameworkSetup::DX11;
+
+	memset(m_videoCardDescription, 0, sizeof(m_videoCardDescription));
 }
 
 SomFramework_DX11::~SomFramework_DX11()

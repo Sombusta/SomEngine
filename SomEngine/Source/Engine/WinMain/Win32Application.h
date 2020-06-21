@@ -21,7 +21,6 @@ private:
 	static bool bUseSoftRenderer;
 
 protected:	
-	static LRESULT CALLBACK MessageHandler(HWND, UINT, WPARAM, LPARAM);
 	static LRESULT CALLBACK WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
 
 public:
