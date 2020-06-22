@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019 Sombusta, All Rights Reserved.
+// Copyright (c) 2014-2020 Sombusta, All Rights Reserved.
 
 #include "SomManager_Main.h"
 #include "Main/SR_Sample.h"
@@ -36,25 +36,39 @@ void SomManager_Main::TerminateGameManager()
 
 void SomManager_Main::Game_CreateObjects()
 {
-	SampleObject = new SR_Sample;
+	SR_Sample* SampleObject = new SR_Sample;
+
+	GameObjects.push_back(SampleObject);
 }
 
 void SomManager_Main::Game_DestroyObjects()
 {
-	delete SampleObject;
+	for (vector<GameObject*>::iterator it = GameObjects.begin(); it != GameObjects.end(); it++)
+	{
+		delete *it;
+	}
 }
 
 void SomManager_Main::Game_Init()
 {
-	SampleObject->Init();
+	for (vector<GameObject*>::iterator it = GameObjects.begin(); it != GameObjects.end(); it++)
+	{
+		(*it)->Init();
+	}
 }
 
 void SomManager_Main::Game_Update(float DeltaTime)
 {
-	SampleObject->Update(DeltaTime);
+	for (vector<GameObject*>::iterator it = GameObjects.begin(); it != GameObjects.end(); it++)
+	{
+		(*it)->Update(DeltaTime);
+	}
 }
 
 void SomManager_Main::Game_Render()
 {
-	SampleObject->Render();
+	for (vector<GameObject*>::iterator it = GameObjects.begin(); it != GameObjects.end(); it++)
+	{
+		(*it)->Render();
+	}
 }

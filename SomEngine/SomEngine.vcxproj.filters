@@ -22,41 +22,11 @@
     <Filter Include="Engine\SomFramework\Rendering\SoftRenderer">
       <UniqueIdentifier>{00251de8-d0ae-4a97-9fdf-82be990a46a5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\SomFramework\Game">
-      <UniqueIdentifier>{8744b427-17d7-4a1f-b3ad-8f2984491733}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\SomFramework\Game\Object">
-      <UniqueIdentifier>{82823a11-7872-45ed-bca4-98a9922bba3e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Engine\SomFramework\Libraries">
       <UniqueIdentifier>{b602d141-68ee-4e39-bed6-ea6ecdfc75bd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\SomFramework\Libraries\Math">
-      <UniqueIdentifier>{302b98ed-22e8-4fed-bfcb-98a40a4e1d88}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\SomFramework\Libraries\Draw">
-      <UniqueIdentifier>{7b529e7e-7c20-4573-bf0f-c24e1f98413d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Engine\SomFramework\Libraries\Interface">
       <UniqueIdentifier>{20dc23d9-9e0e-4119-9bbb-f2e627030476}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\SomFramework\Network">
-      <UniqueIdentifier>{c4857627-c60f-4f9f-9abb-79e04399fa0c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\SomFramework\Libraries\Draw\Texture">
-      <UniqueIdentifier>{a11a77f9-59a3-4483-837e-4b8a8e8d4fc5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\SomFramework\Libraries\Draw\Mesh">
-      <UniqueIdentifier>{6a4c495c-3410-405e-ac38-042224448160}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\SomFramework\Libraries\Math\Vector">
-      <UniqueIdentifier>{6f1ff974-649d-4288-afb6-be16f6731c03}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\SomFramework\Libraries\Math\Color">
-      <UniqueIdentifier>{bb0dfac1-6b4a-4cba-a74b-1baf6809b3af}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\SomFramework\Libraries\Math\Matrix">
-      <UniqueIdentifier>{449ebcd3-23d0-4412-b492-1acd63ce291f}</UniqueIdentifier>
     </Filter>
     <Filter Include="Main\Managers">
       <UniqueIdentifier>{c2efacc2-189d-4acd-98bc-aa8950289214}</UniqueIdentifier>
@@ -79,6 +49,36 @@
     <Filter Include="Engine\SomFramework\Rendering\DirectX\Utility">
       <UniqueIdentifier>{f3b4f18f-af53-4330-905b-c505572c0b9f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\SomFramework\GameObject">
+      <UniqueIdentifier>{8744b427-17d7-4a1f-b3ad-8f2984491733}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\SomFramework\GameObject\Object">
+      <UniqueIdentifier>{82823a11-7872-45ed-bca4-98a9922bba3e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\SomFramework\Containers">
+      <UniqueIdentifier>{6747324e-4353-4a9f-a7fc-8dd759833101}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\SomFramework\Containers\Math">
+      <UniqueIdentifier>{c7b26a7d-b621-422a-bd11-8290533ff380}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\SomFramework\Containers\Render">
+      <UniqueIdentifier>{77c4806d-5823-4190-ac89-30d566792adb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\SomFramework\Containers\Render\Mesh">
+      <UniqueIdentifier>{d8101866-16fc-4a4a-8060-317e211975fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\SomFramework\Containers\Render\Texture">
+      <UniqueIdentifier>{76ce86bd-f377-47b0-84f6-09fac0e3dc9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\SomFramework\Containers\Math\Color">
+      <UniqueIdentifier>{6967e112-5321-4490-8cc2-021436dac46a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\SomFramework\Containers\Math\Matrix">
+      <UniqueIdentifier>{e5a511cf-b28b-40ec-ae7b-da7ac9424a12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\SomFramework\Containers\Math\Vector">
+      <UniqueIdentifier>{4406e7c8-a6d4-40c8-9ad7-b8829c464f47}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Engine\Engine.h">
@@ -99,62 +99,8 @@
     <ClInclude Include="Source\Engine\SomFramework\Rendering\SoftRenderer\SomFramework_SR.h">
       <Filter>Engine\SomFramework\Rendering\SoftRenderer</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Libraries\Draw\SomDrawLibrary.h">
-      <Filter>Engine\SomFramework\Libraries\Draw</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Libraries\Math\SomMathLibrary.h">
-      <Filter>Engine\SomFramework\Libraries\Math</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Engine\SomFramework\Libraries\Interface\SomInterface_Actor.h">
       <Filter>Engine\SomFramework\Libraries\Interface</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Network\SomNetLibrary.h">
-      <Filter>Engine\SomFramework\Network</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Network\SomSocket.h">
-      <Filter>Engine\SomFramework\Network</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Libraries\Draw\Mesh\Quad2D.h">
-      <Filter>Engine\SomFramework\Libraries\Draw\Mesh</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Libraries\Draw\Mesh\Triangle2D.h">
-      <Filter>Engine\SomFramework\Libraries\Draw\Mesh</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Libraries\Draw\Texture\Texture2D.h">
-      <Filter>Engine\SomFramework\Libraries\Draw\Texture</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Libraries\Math\Vector\Point2D.h">
-      <Filter>Engine\SomFramework\Libraries\Math\Vector</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Libraries\Math\Vector\Vector.h">
-      <Filter>Engine\SomFramework\Libraries\Math\Vector</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Libraries\Math\Vector\Vector2D.h">
-      <Filter>Engine\SomFramework\Libraries\Math\Vector</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Libraries\Math\Vector\Vector4.h">
-      <Filter>Engine\SomFramework\Libraries\Math\Vector</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Libraries\Math\Vector\Vertex.h">
-      <Filter>Engine\SomFramework\Libraries\Math\Vector</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Libraries\Math\Color\LinearColor.h">
-      <Filter>Engine\SomFramework\Libraries\Math\Color</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Libraries\Draw\Texture\TextureParser_Bmp.h">
-      <Filter>Engine\SomFramework\Libraries\Draw\Texture</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Game\Object\GameObject.h">
-      <Filter>Engine\SomFramework\Game\Object</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Libraries\Math\Matrix\Matrix2D.h">
-      <Filter>Engine\SomFramework\Libraries\Math\Matrix</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Libraries\Math\Matrix\Matrix3D.h">
-      <Filter>Engine\SomFramework\Libraries\Math\Matrix</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Libraries\Math\Matrix\Matrix.h">
-      <Filter>Engine\SomFramework\Libraries\Math\Matrix</Filter>
     </ClInclude>
     <ClInclude Include="Source\Main\Managers\SomManager_Input.h">
       <Filter>Main\Managers</Filter>
@@ -186,6 +132,54 @@
     <ClInclude Include="Source\Engine\SomFramework\Rendering\DirectX\Utility\DX12Helper.h">
       <Filter>Engine\SomFramework\Rendering\DirectX\Utility</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Libraries\SomDrawLibrary.h">
+      <Filter>Engine\SomFramework\Libraries</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Libraries\SomMathLibrary.h">
+      <Filter>Engine\SomFramework\Libraries</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Containers\Render\Mesh\Quad2D.h">
+      <Filter>Engine\SomFramework\Containers\Render\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Containers\Render\Mesh\Triangle2D.h">
+      <Filter>Engine\SomFramework\Containers\Render\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Containers\Render\Texture\Texture2D.h">
+      <Filter>Engine\SomFramework\Containers\Render\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Containers\Render\Texture\TextureParser_Bmp.h">
+      <Filter>Engine\SomFramework\Containers\Render\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Containers\Math\Color\LinearColor.h">
+      <Filter>Engine\SomFramework\Containers\Math\Color</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Containers\Math\Matrix\Matrix.h">
+      <Filter>Engine\SomFramework\Containers\Math\Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Containers\Math\Matrix\Matrix2D.h">
+      <Filter>Engine\SomFramework\Containers\Math\Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Containers\Math\Matrix\Matrix3D.h">
+      <Filter>Engine\SomFramework\Containers\Math\Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Containers\Math\Vector\Point2D.h">
+      <Filter>Engine\SomFramework\Containers\Math\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Containers\Math\Vector\Vector.h">
+      <Filter>Engine\SomFramework\Containers\Math\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Containers\Math\Vector\Vector2D.h">
+      <Filter>Engine\SomFramework\Containers\Math\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Containers\Math\Vector\Vector4.h">
+      <Filter>Engine\SomFramework\Containers\Math\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Containers\Math\Vector\Vertex.h">
+      <Filter>Engine\SomFramework\Containers\Math\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\GameObject\Object\GameObject.h">
+      <Filter>Engine\SomFramework\GameObject\Object</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Engine\WinMain\Win32Application.cpp">
@@ -200,32 +194,8 @@
     <ClCompile Include="Source\Engine\SomFramework\Rendering\SoftRenderer\SomFramework_SR.cpp">
       <Filter>Engine\SomFramework\Rendering\SoftRenderer</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Engine\SomFramework\Libraries\Draw\SomDrawLibrary.cpp">
-      <Filter>Engine\SomFramework\Libraries\Draw</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Engine\SomFramework\Libraries\Math\SomMathLibrary.cpp">
-      <Filter>Engine\SomFramework\Libraries\Math</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Engine\SomFramework\Libraries\Interface\SomInterface_Actor.cpp">
       <Filter>Engine\SomFramework\Libraries\Interface</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Engine\SomFramework\Network\SomNetLibrary.cpp">
-      <Filter>Engine\SomFramework\Network</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Engine\SomFramework\Network\SomSocket.cpp">
-      <Filter>Engine\SomFramework\Network</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Engine\SomFramework\Libraries\Draw\Mesh\Quad2D.cpp">
-      <Filter>Engine\SomFramework\Libraries\Draw\Mesh</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Engine\SomFramework\Libraries\Draw\Mesh\Triangle2D.cpp">
-      <Filter>Engine\SomFramework\Libraries\Draw\Mesh</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Engine\SomFramework\Libraries\Draw\Texture\TextureParser_Bmp.cpp">
-      <Filter>Engine\SomFramework\Libraries\Draw\Texture</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Engine\SomFramework\Game\Object\GameObject.cpp">
-      <Filter>Engine\SomFramework\Game\Object</Filter>
     </ClCompile>
     <ClCompile Include="Source\Main\Managers\SomManager_Input.cpp">
       <Filter>Main\Managers</Filter>
@@ -244,6 +214,24 @@
     </ClCompile>
     <ClCompile Include="Source\Engine\SomFramework\Rendering\DirectX\SomFramework_DX12.cpp">
       <Filter>Engine\SomFramework\Rendering\DirectX\DX12</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\SomFramework\Libraries\SomDrawLibrary.cpp">
+      <Filter>Engine\SomFramework\Libraries</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\SomFramework\Libraries\SomMathLibrary.cpp">
+      <Filter>Engine\SomFramework\Libraries</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\SomFramework\Containers\Render\Mesh\Quad2D.cpp">
+      <Filter>Engine\SomFramework\Containers\Render\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\SomFramework\Containers\Render\Mesh\Triangle2D.cpp">
+      <Filter>Engine\SomFramework\Containers\Render\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\SomFramework\Containers\Render\Texture\TextureParser_Bmp.cpp">
+      <Filter>Engine\SomFramework\Containers\Render\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\SomFramework\GameObject\Object\GameObject.cpp">
+      <Filter>Engine\SomFramework\GameObject\Object</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

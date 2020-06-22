@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019 Sombusta, All Rights Reserved.
+// Copyright (c) 2014-2020 Sombusta, All Rights Reserved.
 
 #pragma once
 
@@ -32,8 +32,7 @@ private:
 protected:
 
 public:
-	// SomWorks :D // 전방선언
-	class SR_Sample* SampleObject;
+	vector<class GameObject*> GameObjects;
 
 	// SomWorks :D // 싱글턴 인스턴스 Getter
 	static SomManager_Main* GetInstance() { return Instance; }

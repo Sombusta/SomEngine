@@ -1,7 +1,7 @@
 // Copyright (c) 2014-2020 Sombusta, All Rights Reserved.
 
 #include "Triangle2D.h"
-#include "Engine/SomFramework/Libraries/Draw/Texture/TextureParser_Bmp.h"
+#include "Engine/SomFramework/Containers/Render/Texture/TextureParser_Bmp.h"
 
 FTriangle2D::FTriangle2D() : TopVertex(0.0f, 0.0f), MiddleVertex(0.0f, 0.0f), BottomVertex(0.0f, 0.0f)
 {

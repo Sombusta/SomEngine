@@ -52,28 +52,28 @@ using std::list;
 #define WIN_TITLE L"SomEngine_Win32"
 
 // SomWorks :D // 컨테이너
-#include "SomFramework/Libraries/Math/Vector/Point2D.h"
-#include "SomFramework/Libraries/Math/Vector/Vector2D.h"
-#include "SomFramework/Libraries/Math/Vector/Vector.h"
-#include "SomFramework/Libraries/Math/Vector/Vector4.h"
-#include "SomFramework/Libraries/Math/Vector/Vertex.h"
-#include "SomFramework/Libraries/Math/Matrix/Matrix2D.h"
-#include "SomFramework/Libraries/Math/Matrix/Matrix3D.h"
-#include "SomFramework/Libraries/Math/Matrix/Matrix.h"
-#include "SomFramework/Libraries/Math/Color/LinearColor.h"
-#include "SomFramework/Libraries/Draw/Texture/Texture2D.h"
-#include "SomFramework/Libraries/Draw/Mesh/Triangle2D.h"
-#include "SomFramework/Libraries/Draw/Mesh/Quad2D.h"
+#include "SomFramework/Containers/Math/Vector/Point2D.h"
+#include "SomFramework/Containers/Math/Vector/Vector2D.h"
+#include "SomFramework/Containers/Math/Vector/Vector.h"
+#include "SomFramework/Containers/Math/Vector/Vector4.h"
+#include "SomFramework/Containers/Math/Vector/Vertex.h"
+#include "SomFramework/Containers/Math/Matrix/Matrix2D.h"
+#include "SomFramework/Containers/Math/Matrix/Matrix3D.h"
+#include "SomFramework/Containers/Math/Matrix/Matrix.h"
+#include "SomFramework/Containers/Math/Color/LinearColor.h"
+#include "SomFramework/Containers/Render/Texture/Texture2D.h"
+#include "SomFramework/Containers/Render/Mesh/Triangle2D.h"
+#include "SomFramework/Containers/Render/Mesh/Quad2D.h"
 
 // SomWorks :D // SomFramework Library
-#include "SomFramework/Libraries/Math/SomMathLibrary.h"
-#include "SomFramework/Libraries/Draw/SomDrawLibrary.h"
+#include "SomFramework/Libraries/SomMathLibrary.h"
+#include "SomFramework/Libraries/SomDrawLibrary.h"
 
 // SomWorks :D // SomInterface Library
 #include "SomFramework/Libraries/Interface/SomInterface_Actor.h"
 
 // SomWorks :D // SomFramework GamePlay
-#include "SomFramework/Game/Object/GameObject.h"
+#include "SomFramework/GameObject/Object/GameObject.h"
 #include "Main/Managers/SomManager_Input.h"
 #include "Main/Managers/SomManager_Main.h"
 #include "Main/Managers/SomManager_Texture.h"

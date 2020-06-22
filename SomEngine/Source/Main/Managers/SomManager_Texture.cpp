@@ -1,7 +1,7 @@
 // Copyright (c) 2014-2019 Sombusta, All Rights Reserved.
 
 #include "SomManager_Texture.h"
-#include "Engine/SomFramework/Libraries/Draw/Texture/TextureParser_Bmp.h"
+#include "Engine/SomFramework/Containers/Render/Texture/TextureParser_Bmp.h"
 
 SomManager_Texture* SomManager_Texture::Instance = nullptr;
 
