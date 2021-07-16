@@ -4,11 +4,11 @@
 
 #include "Engine/Engine.h"
 
-class SR_Test1 : public GameObject
+class Main_SR : public GameObject
 {
 public:
-	SR_Test1();
-	~SR_Test1();
+	Main_SR();
+	~Main_SR();
 
 	virtual void Init() override;
 	virtual void Update(float DeltaTime) override;

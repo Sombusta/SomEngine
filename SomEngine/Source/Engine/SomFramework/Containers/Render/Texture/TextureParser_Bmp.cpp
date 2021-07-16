@@ -47,7 +47,7 @@ bool FSomTextureParser_BMP::OpenBMP(FTexture2D& TargetTexture, char *filename)
 	fclose(fp);
 
 	// SomWorks :D // 텍스처 버퍼
-	TargetTexture.TexBuffer = new FLinearColor[bmpih.biWidth * bmpih.biHeight]; // ULONG* pImageBuf = new ULONG[bmpih.biWidth * bmpih.biHeight];
+	TargetTexture.TexBuffer = new FColor[bmpih.biWidth * bmpih.biHeight]; // ULONG* pImageBuf = new ULONG[bmpih.biWidth * bmpih.biHeight];
 
 	for (int j = 0; j < bmpih.biHeight; j++)
 	{
@@ -74,7 +74,7 @@ bool FSomTextureParser_BMP::OpenBMP(FTexture2D& TargetTexture, char *filename)
 	return true; // return (ULONG*)pImageBuf;
 }
 
-FLinearColor FSomTextureParser_BMP::GetPixel(int x, int y, FTexture2D& bmp)
+FColor FSomTextureParser_BMP::GetPixel(int x, int y, FTexture2D& bmp)
 {
 	int Result_X = FSomMathLibrary::Clamp(x, 0, bmp.Width - 1);
 	int Result_Y = FSomMathLibrary::Clamp(y, 0, bmp.Height - 1);

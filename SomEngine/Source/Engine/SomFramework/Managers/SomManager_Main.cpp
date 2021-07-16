@@ -2,7 +2,7 @@
 
 #include "SomManager_Main.h"
 #include "Runtime/SR_Sample.h"
-#include "Runtime/SR_Test1.h"
+#include "Runtime/Main_SR.h"
 
 SomManager_Main* SomManager_Main::Instance = nullptr;
 
@@ -38,10 +38,10 @@ void SomManager_Main::TerminateGameManager()
 void SomManager_Main::Game_CreateObjects()
 {
 	//SR_Sample* SampleObject = new SR_Sample;
-	SR_Test1* SR_Test1Object = new SR_Test1;
+	Main_SR* MainObject_SR = new Main_SR;
 
 	//GameObjects.push_back(SampleObject);
-	GameObjects.push_back(SR_Test1Object);
+	GameObjects.push_back(MainObject_SR);
 }
 
 void SomManager_Main::Game_DestroyObjects()

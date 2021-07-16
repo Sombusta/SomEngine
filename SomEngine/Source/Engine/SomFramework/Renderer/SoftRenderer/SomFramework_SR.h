@@ -21,7 +21,7 @@ public:
 	void BufferSwap();
 
 	// SomWorks :D // 디버그 그리드
-	void DrawGridLine(bool bActivate);
+	void DrawGrid2D();
 	
 private:
 	// SomWorks :D // 싱글턴 객체

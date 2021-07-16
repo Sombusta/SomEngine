@@ -31,9 +31,6 @@
     <Filter Include="Engine\SomFramework\Containers">
       <UniqueIdentifier>{6747324e-4353-4a9f-a7fc-8dd759833101}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\SomFramework\Containers\Math">
-      <UniqueIdentifier>{c7b26a7d-b621-422a-bd11-8290533ff380}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Engine\SomFramework\Containers\Render">
       <UniqueIdentifier>{77c4806d-5823-4190-ac89-30d566792adb}</UniqueIdentifier>
     </Filter>
@@ -69,6 +66,9 @@
     </Filter>
     <Filter Include="Runtime">
       <UniqueIdentifier>{1e2e29a3-7992-4740-9763-e58f04f8c7ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\SomFramework\Math">
+      <UniqueIdentifier>{c7b26a7d-b621-422a-bd11-8290533ff380}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -132,33 +132,6 @@
     <ClInclude Include="Source\Engine\SomFramework\Renderer\SoftRenderer\SomFramework_SR.h">
       <Filter>Engine\SomFramework\Renderer\SoftRenderer</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Containers\Math\Matrix.h">
-      <Filter>Engine\SomFramework\Containers\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Containers\Math\Matrix2D.h">
-      <Filter>Engine\SomFramework\Containers\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Containers\Math\Matrix3D.h">
-      <Filter>Engine\SomFramework\Containers\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Containers\Math\Vector.h">
-      <Filter>Engine\SomFramework\Containers\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Containers\Math\Vector2D.h">
-      <Filter>Engine\SomFramework\Containers\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Containers\Math\Vector4.h">
-      <Filter>Engine\SomFramework\Containers\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Containers\Math\Point2D.h">
-      <Filter>Engine\SomFramework\Containers\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Containers\Math\LinearColor.h">
-      <Filter>Engine\SomFramework\Containers\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Containers\Math\Vertex.h">
-      <Filter>Engine\SomFramework\Containers\Math</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Engine\SomFramework\Managers\SomManager_Input.h">
       <Filter>Engine\SomFramework\Managers</Filter>
     </ClInclude>
@@ -171,8 +144,41 @@
     <ClInclude Include="Source\Runtime\SR_Sample.h">
       <Filter>Runtime</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Runtime\SR_Test1.h">
+    <ClInclude Include="Source\Runtime\Main_SR.h">
       <Filter>Runtime</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Math\Color32.h">
+      <Filter>Engine\SomFramework\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Math\LinearColor.h">
+      <Filter>Engine\SomFramework\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Math\MathUtility.h">
+      <Filter>Engine\SomFramework\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Math\Matrix.h">
+      <Filter>Engine\SomFramework\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Math\Matrix2D.h">
+      <Filter>Engine\SomFramework\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Math\Matrix3D.h">
+      <Filter>Engine\SomFramework\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Math\Point2D.h">
+      <Filter>Engine\SomFramework\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Math\Vector.h">
+      <Filter>Engine\SomFramework\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Math\Vector2D.h">
+      <Filter>Engine\SomFramework\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Math\Vector4.h">
+      <Filter>Engine\SomFramework\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Math\Vertex.h">
+      <Filter>Engine\SomFramework\Math</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -227,8 +233,14 @@
     <ClCompile Include="Source\Runtime\SR_Sample.cpp">
       <Filter>Runtime</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Runtime\SR_Test1.cpp">
+    <ClCompile Include="Source\Runtime\Main_SR.cpp">
       <Filter>Runtime</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\SomFramework\Math\LinearColor.cpp">
+      <Filter>Engine\SomFramework\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\SomFramework\Math\MathUtility.cpp">
+      <Filter>Engine\SomFramework\Math</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

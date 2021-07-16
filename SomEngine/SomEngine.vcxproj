@@ -22,15 +22,6 @@
     <ClInclude Include="Source\Engine\Engine.h" />
     <ClInclude Include="Source\Engine\Resource\Resource.h" />
     <ClInclude Include="Source\Engine\Resource\targetver.h" />
-    <ClInclude Include="Source\Engine\SomFramework\Containers\Math\LinearColor.h" />
-    <ClInclude Include="Source\Engine\SomFramework\Containers\Math\Matrix.h" />
-    <ClInclude Include="Source\Engine\SomFramework\Containers\Math\Matrix2D.h" />
-    <ClInclude Include="Source\Engine\SomFramework\Containers\Math\Matrix3D.h" />
-    <ClInclude Include="Source\Engine\SomFramework\Containers\Math\Point2D.h" />
-    <ClInclude Include="Source\Engine\SomFramework\Containers\Math\Vector.h" />
-    <ClInclude Include="Source\Engine\SomFramework\Containers\Math\Vector2D.h" />
-    <ClInclude Include="Source\Engine\SomFramework\Containers\Math\Vector4.h" />
-    <ClInclude Include="Source\Engine\SomFramework\Containers\Math\Vertex.h" />
     <ClInclude Include="Source\Engine\SomFramework\Containers\Render\Mesh\Quad2D.h" />
     <ClInclude Include="Source\Engine\SomFramework\Containers\Render\Mesh\Triangle2D.h" />
     <ClInclude Include="Source\Engine\SomFramework\Containers\Render\Texture\Texture2D.h" />
@@ -42,6 +33,17 @@
     <ClInclude Include="Source\Engine\SomFramework\Managers\SomManager_Input.h" />
     <ClInclude Include="Source\Engine\SomFramework\Managers\SomManager_Main.h" />
     <ClInclude Include="Source\Engine\SomFramework\Managers\SomManager_Texture.h" />
+    <ClInclude Include="Source\Engine\SomFramework\Math\Color32.h" />
+    <ClInclude Include="Source\Engine\SomFramework\Math\LinearColor.h" />
+    <ClInclude Include="Source\Engine\SomFramework\Math\MathUtility.h" />
+    <ClInclude Include="Source\Engine\SomFramework\Math\Matrix.h" />
+    <ClInclude Include="Source\Engine\SomFramework\Math\Matrix2D.h" />
+    <ClInclude Include="Source\Engine\SomFramework\Math\Matrix3D.h" />
+    <ClInclude Include="Source\Engine\SomFramework\Math\Point2D.h" />
+    <ClInclude Include="Source\Engine\SomFramework\Math\Vector.h" />
+    <ClInclude Include="Source\Engine\SomFramework\Math\Vector2D.h" />
+    <ClInclude Include="Source\Engine\SomFramework\Math\Vector4.h" />
+    <ClInclude Include="Source\Engine\SomFramework\Math\Vertex.h" />
     <ClInclude Include="Source\Engine\SomFramework\Renderer\Core\SomFramework.h" />
     <ClInclude Include="Source\Engine\SomFramework\Renderer\DirectX\RendererLibrary_DX11.h" />
     <ClInclude Include="Source\Engine\SomFramework\Renderer\DirectX\RendererLibrary_DX12.h" />
@@ -52,7 +54,7 @@
     <ClInclude Include="Source\Engine\SomFramework\Renderer\SoftRenderer\SomFramework_SR.h" />
     <ClInclude Include="Source\Engine\WinMain\Win32Application.h" />
     <ClInclude Include="Source\Runtime\SR_Sample.h" />
-    <ClInclude Include="Source\Runtime\SR_Test1.h" />
+    <ClInclude Include="Source\Runtime\Main_SR.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Engine\SomFramework\Containers\Render\Mesh\Quad2D.cpp" />
@@ -65,6 +67,8 @@
     <ClCompile Include="Source\Engine\SomFramework\Managers\SomManager_Input.cpp" />
     <ClCompile Include="Source\Engine\SomFramework\Managers\SomManager_Main.cpp" />
     <ClCompile Include="Source\Engine\SomFramework\Managers\SomManager_Texture.cpp" />
+    <ClCompile Include="Source\Engine\SomFramework\Math\LinearColor.cpp" />
+    <ClCompile Include="Source\Engine\SomFramework\Math\MathUtility.cpp" />
     <ClCompile Include="Source\Engine\SomFramework\Renderer\Core\SomFramework.cpp" />
     <ClCompile Include="Source\Engine\SomFramework\Renderer\DirectX\SomFramework_DX11.cpp" />
     <ClCompile Include="Source\Engine\SomFramework\Renderer\DirectX\SomFramework_DX12.cpp" />
@@ -72,7 +76,7 @@
     <ClCompile Include="Source\Engine\WinMain\Win32Application.cpp" />
     <ClCompile Include="Source\Engine\WinMain\WinMain.cpp" />
     <ClCompile Include="Source\Runtime\SR_Sample.cpp" />
-    <ClCompile Include="Source\Runtime\SR_Test1.cpp" />
+    <ClCompile Include="Source\Runtime\Main_SR.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Source\Engine\Resource\small.ico" />

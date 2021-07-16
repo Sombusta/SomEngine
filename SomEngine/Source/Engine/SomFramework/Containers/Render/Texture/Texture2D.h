@@ -8,9 +8,9 @@ typedef struct FTexture2D
 {
 public:
 	FTexture2D() : Width(0), Height(0) {}
-	FTexture2D(int TexWidth, int TexHeight, FLinearColor* TargetTex) : Width(TexWidth), Height(TexHeight), TexBuffer(TargetTex) {}
+	FTexture2D(int TexWidth, int TexHeight, FColor* TargetTex) : Width(TexWidth), Height(TexHeight), TexBuffer(TargetTex) {}
 
-	FLinearColor* TexBuffer = nullptr;
+	FColor* TexBuffer = nullptr;
 	int Width = 0;
 	int Height = 0;
 	char* FilePath = nullptr;

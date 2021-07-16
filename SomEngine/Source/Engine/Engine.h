@@ -51,16 +51,20 @@ using std::list;
 #define WIN_HEIGHT 720
 #define WIN_TITLE L"SomEngine_Win32"
 
+// SomWorks :D // Math
+#include "SomFramework/Math/MathUtility.h"
+#include "SomFramework/Math/Point2D.h"
+#include "SomFramework/Math/Vector2D.h"
+#include "SomFramework/Math/Vector.h"
+#include "SomFramework/Math/Vector4.h"
+#include "SomFramework/Math/Vertex.h"
+#include "SomFramework/Math/Matrix2D.h"
+#include "SomFramework/Math/Matrix3D.h"
+#include "SomFramework/Math/Matrix.h"
+#include "SomFramework/Math/Color32.h"
+#include "SomFramework/Math/LinearColor.h"
+
 // SomWorks :D // 컨테이너
-#include "SomFramework/Containers/Math/Point2D.h"
-#include "SomFramework/Containers/Math/Vector2D.h"
-#include "SomFramework/Containers/Math/Vector.h"
-#include "SomFramework/Containers/Math/Vector4.h"
-#include "SomFramework/Containers/Math/Vertex.h"
-#include "SomFramework/Containers/Math/Matrix2D.h"
-#include "SomFramework/Containers/Math/Matrix3D.h"
-#include "SomFramework/Containers/Math/Matrix.h"
-#include "SomFramework/Containers/Math/LinearColor.h"
 #include "SomFramework/Containers/Render/Texture/Texture2D.h"
 #include "SomFramework/Containers/Render/Mesh/Triangle2D.h"
 #include "SomFramework/Containers/Render/Mesh/Quad2D.h"
@@ -78,7 +82,7 @@ using std::list;
 #include "SomFramework/Managers/SomManager_Main.h"
 #include "SomFramework/Managers/SomManager_Texture.h"
 
-#include "Engine/SomFramework/Renderer/SoftRenderer/SomFramework_SR.h"
+#include "SomFramework/Renderer/SoftRenderer/SomFramework_SR.h"
 
 // SomWorks :D // Rendering Framework Setup
 #define bUseDX12 false
@@ -103,3 +107,8 @@ using namespace DirectX;
 
 // #include "SomFramework/Rendering/DX12/SomFramework_DX12.h"
 #endif
+
+typedef unsigned char		BYTE;		// 부호 없는 8비트
+typedef unsigned int		UINT32;		// 부호 없는 32비트
+typedef unsigned long long	UINT64;		// 부호 없는 64비트.
+typedef signed long long	INT64;		// 부호 있는 64비트.

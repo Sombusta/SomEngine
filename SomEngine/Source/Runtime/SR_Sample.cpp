@@ -69,17 +69,17 @@ void SR_Sample::Render()
 		it->Printf();
 	}*/
 	   
-	/*FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint2D(10, 10), FPoint2D(120, 50));
-	FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint2D(10, 10), FPoint2D(50, 120));
+	/*FSomDrawLibrary::DrawLine_BA(FPoint2D(10, 10), FPoint2D(120, 50));
+	FSomDrawLibrary::DrawLine_BA(FPoint2D(10, 10), FPoint2D(50, 120));
 
-	FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint2D(10, -10), FPoint2D(120, -50));
-	FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint2D(10, -10), FPoint2D(50, -120));
+	FSomDrawLibrary::DrawLine_BA(FPoint2D(10, -10), FPoint2D(120, -50));
+	FSomDrawLibrary::DrawLine_BA(FPoint2D(10, -10), FPoint2D(50, -120));
 
-	FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint2D(-10, 10), FPoint2D(-120, 50));
-	FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint2D(-10, 10), FPoint2D(-50, 120));
+	FSomDrawLibrary::DrawLine_BA(FPoint2D(-10, 10), FPoint2D(-120, 50));
+	FSomDrawLibrary::DrawLine_BA(FPoint2D(-10, 10), FPoint2D(-50, 120));
 
-	FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint2D(-10, -10), FPoint2D(-120, -50));
-	FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint2D(-10, -10), FPoint2D(-50, -120));*/
+	FSomDrawLibrary::DrawLine_BA(FPoint2D(-10, -10), FPoint2D(-120, -50));
+	FSomDrawLibrary::DrawLine_BA(FPoint2D(-10, -10), FPoint2D(-50, -120));*/
 
 /*
 	FMatrix2D Rot45;
@@ -96,8 +96,8 @@ void SR_Sample::Render()
 	FPoint2D Test2 = FPoint2D(b.X, b.Y);
 	FPoint2D Test3 = FPoint2D(c.X, c.Y);
 	
-	FSomDrawLibrary::DrawLine_BresenhamAlgorithm(Test1, Test2);
-	FSomDrawLibrary::DrawLine_BresenhamAlgorithm(Test1, Test3);*/
+	FSomDrawLibrary::DrawLine_BA(Test1, Test2);
+	FSomDrawLibrary::DrawLine_BA(Test1, Test3);*/
 
 #ifdef TextureTEST
 #if TextureTEST

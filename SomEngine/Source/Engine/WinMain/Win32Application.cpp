@@ -18,7 +18,7 @@ int Win32Application::Run(HINSTANCE hInstance, int nCmdShow, SomFramework* Rende
 
 	// SomWorks :D // ·»´õ·¯ ¼Â¾÷
 	TargetFramework = RenderFramework;
-	bUseSoftRenderer = RenderFramework != nullptr ? false : true;
+	bUseSoftRenderer = RenderFramework == nullptr ? true : false;
 
 	// Parse the command line parameters
 	int argc;

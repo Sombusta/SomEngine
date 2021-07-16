@@ -79,7 +79,7 @@ void SomFramework_SR::ReleaseGDI(HWND hWnd)
 void SomFramework_SR::BufferClear()
 {
 	// SomWorks :D // 배경색
-	FLinearColor BG_Color = FLinearColor(32, 128, 255);
+	FColor BG_Color = FColor(32, 128, 255);
 	ULONG BG_Pixel = BG_Color.GetColor();
 
 	ULONG* dest = (ULONG*)Bits;
@@ -93,7 +93,7 @@ void SomFramework_SR::BufferClear()
 	}
 
 	// SomWorks :D // 그리드 십자선 그리기
-	// Instance->DrawGridLine(true);
+	Instance->DrawGrid2D();
 }
 
 // SomWorks :D // 버퍼 스왑
@@ -103,11 +103,39 @@ void SomFramework_SR::BufferSwap()
 }
 
 // SomWorks :D // 그리드 십자선 그리기
-void SomFramework_SR::DrawGridLine(bool bActivate)
+void SomFramework_SR::DrawGrid2D()
 {
-	if (bActivate)
+	FSomDrawLibrary::DrawLine_BA(FPoint2D(0 - WIN_WIDTH / 2, 0), FPoint2D(0 + WIN_WIDTH / 2, 0), FLinearColor::Red);
+	FSomDrawLibrary::DrawLine_BA(FPoint2D(0, 0 + WIN_HEIGHT / 2), FPoint2D(0, 0 - WIN_HEIGHT / 2), FLinearColor::Green);
+
+	// 그리드 색상
+	FLinearColor GridColor(FLinearColor(0.8f, 0.8f, 0.8f));
+
+	int Grid2DUnit = 10;
+
+	// 가로 세로 라인 그리기
+	/*FPoint2D screenHalfSize = FPoint2D(WIN_WIDTH / 2, WIN_HEIGHT / 2);
+
+	for (int x = screenHalfSize.X; x <= _ScreenSize.X; x += Grid2DUnit)
 	{
-		FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint2D(0 - WIN_WIDTH / 2, 0), FPoint2D(0 + WIN_WIDTH / 2, 0));
-		FSomDrawLibrary::DrawLine_BresenhamAlgorithm(FPoint2D(0, 0 + WIN_HEIGHT / 2), FPoint2D(0, 0 - WIN_HEIGHT / 2));
+		_RSI->DrawFullVerticalLine(x, GridColor);
+		if (x > screenHalfSize.X)
+		{
+			_RSI->DrawFullVerticalLine(2 * screenHalfSize.X - x, gridColor);
+		}
 	}
+
+	for (int y = screenHalfSize.Y; y <= _ScreenSize.Y; y += Grid2DUnit)
+	{
+		_RSI->DrawFullHorizontalLine(y, GridColor);
+		if (y > screenHalfSize.Y)
+		{
+			_RSI->DrawFullHorizontalLine(2 * screenHalfSize.Y - y, gridColor);
+		}
+	}
+
+	// 월드 축 그리기
+	_RSI->DrawFullHorizontalLine(screenHalfSize.Y, FLinearColor::Red);
+	_RSI->DrawFullVerticalLine(screenHalfSize.X, FLinearColor::Green);*/
+
 }

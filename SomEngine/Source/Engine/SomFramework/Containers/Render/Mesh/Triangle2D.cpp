@@ -100,9 +100,9 @@ FColor FTriangle2D::GetVertexWeightColor(const FVector2D& Value) const
 
 	FColor Result;
 
-	Result.r = static_cast<BYTE>(VertexWeight.X * 255);
-	Result.g = static_cast<BYTE>(VertexWeight.Y * 255);
-	Result.b = static_cast<BYTE>(VertexWeight.Z * 255);
+	Result.R = static_cast<BYTE>(VertexWeight.X * 255);
+	Result.G = static_cast<BYTE>(VertexWeight.Y * 255);
+	Result.B = static_cast<BYTE>(VertexWeight.Z * 255);
 
 	return Result;
 }
@@ -118,15 +118,15 @@ void FTriangle2D::DrawTriangle(bool bFillTriangle, bool bUseTexture)
 		FillTriangle(bUseTexture);
 
 		// SomWorks :D // Draw Outline
-		FSomDrawLibrary::DrawLine_BresenhamAlgorithm(a1, b1); //DrawLine(a1, b1);
-		FSomDrawLibrary::DrawLine_BresenhamAlgorithm(b1, c1); //DrawLine(b1, c1);
-		FSomDrawLibrary::DrawLine_BresenhamAlgorithm(c1, a1); //DrawLine(c1, a1);
+		FSomDrawLibrary::DrawLine_BA(a1, b1); //DrawLine(a1, b1);
+		FSomDrawLibrary::DrawLine_BA(b1, c1); //DrawLine(b1, c1);
+		FSomDrawLibrary::DrawLine_BA(c1, a1); //DrawLine(c1, a1);
 	}
 	else
 	{
-		FSomDrawLibrary::DrawLine_BresenhamAlgorithm(a1, b1); //DrawLine(a1, b1);
-		FSomDrawLibrary::DrawLine_BresenhamAlgorithm(b1, c1); //DrawLine(b1, c1);
-		FSomDrawLibrary::DrawLine_BresenhamAlgorithm(c1, a1); //DrawLine(c1, a1);
+		FSomDrawLibrary::DrawLine_BA(a1, b1); //DrawLine(a1, b1);
+		FSomDrawLibrary::DrawLine_BA(b1, c1); //DrawLine(b1, c1);
+		FSomDrawLibrary::DrawLine_BA(c1, a1); //DrawLine(c1, a1);
 	}
 }
 
@@ -170,9 +170,9 @@ void FTriangle2D::FillTriangle(bool bUseTexture)
 				Result.Y = static_cast<float>(CurrentTex.Height) * TextureUV.Y;
 
 				FColor Test;
-				Test.r = (BYTE)TextureUV.X * 255;
-				Test.g = (BYTE)TextureUV.Y * 255;
-				Test.b = 0;
+				Test.R = (BYTE)TextureUV.X * 255;
+				Test.G = (BYTE)TextureUV.Y * 255;
+				Test.B = 0;
 
 				//TriangleColor = Test;
 
@@ -224,9 +224,9 @@ void FTriangle2D::FillTriangle(bool bUseTexture)
 				Result.Y = static_cast<float>(CurrentTex.Height) * TextureUV.Y;
 
 				FColor Test;
-				Test.r = (BYTE)TextureUV.X * 255;
-				Test.g = (BYTE)TextureUV.Y * 255;
-				Test.b = 0;
+				Test.R = (BYTE)TextureUV.X * 255;
+				Test.G = (BYTE)TextureUV.Y * 255;
+				Test.B = 0;
 
 				//TriangleColor = Test;
 

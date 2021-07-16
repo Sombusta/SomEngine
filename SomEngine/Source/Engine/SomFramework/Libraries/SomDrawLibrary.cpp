@@ -59,7 +59,7 @@ void FSomDrawLibrary::DrawLine(FPoint2D Point1, FPoint2D Point2)
 }
 
 // SomWorks :D // 브레젠험 직선 알고리즘
-void FSomDrawLibrary::DrawLine_BresenhamAlgorithm(const FPoint2D& StartPoint, const FPoint2D& EndPoint, FColor PixelColor)
+void FSomDrawLibrary::DrawLine_BA(const FPoint2D& StartPoint, const FPoint2D& EndPoint, FLinearColor PixelColor)
 {	
 	FPoint2D TempStart = StartPoint;
 	FPoint2D TempEnd = EndPoint;
@@ -82,7 +82,7 @@ void FSomDrawLibrary::DrawLine_BresenhamAlgorithm(const FPoint2D& StartPoint, co
 			FPoint2D::Swap(TempStart, TempEnd);
 		}
 
-		DrawPixel(TempStart.X, TempStart.Y, PixelColor);
+		DrawPixel(TempStart.X, TempStart.Y, PixelColor.ToColor32());
 
 		// y 보다 x 변화폭이 클 경우
 		inc_minus = 2 * Height;
@@ -106,7 +106,7 @@ void FSomDrawLibrary::DrawLine_BresenhamAlgorithm(const FPoint2D& StartPoint, co
 				TempStart.Y += inc_value;
 			}
 
-			DrawPixel(i, TempStart.Y, PixelColor);
+			DrawPixel(i, TempStart.Y, PixelColor.ToColor32());
 
 			/*if (i < TempEnd.X - 10)
 			{
@@ -124,7 +124,7 @@ void FSomDrawLibrary::DrawLine_BresenhamAlgorithm(const FPoint2D& StartPoint, co
 			FPoint2D::Swap(TempStart, TempEnd);
 		}
 
-		DrawPixel(TempStart.X, TempStart.Y, PixelColor);
+		DrawPixel(TempStart.X, TempStart.Y, PixelColor.ToColor32());
 
 		inc_minus = 2 * Width;
 		inc_plus = 2 * (Width - Height);
@@ -143,7 +143,7 @@ void FSomDrawLibrary::DrawLine_BresenhamAlgorithm(const FPoint2D& StartPoint, co
 				TempStart.X += inc_value;
 			}
 
-			DrawPixel(TempStart.X, i, PixelColor);
+			DrawPixel(TempStart.X, i, PixelColor.ToColor32());
 		}
 	}
 }

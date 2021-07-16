@@ -12,7 +12,7 @@ public:
 
 	static bool OpenBMP(FTexture2D& TargetTexture, char *filename);
 
-	static FLinearColor GetPixel(int x, int y, FTexture2D& bmp);
+	static FColor GetPixel(int x, int y, FTexture2D& bmp);
 private:
 
 protected:
