@@ -7,9 +7,6 @@
     <Filter Include="Engine\WinMain">
       <UniqueIdentifier>{8acc7cdf-be5a-40d4-8f33-1b4e6e09da59}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Main">
-      <UniqueIdentifier>{1e2e29a3-7992-4740-9763-e58f04f8c7ef}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Engine\Resource">
       <UniqueIdentifier>{e418c61a-bec7-4104-a054-c23282bad268}</UniqueIdentifier>
     </Filter>
@@ -21,9 +18,6 @@
     </Filter>
     <Filter Include="Engine\SomFramework\Libraries\Interface">
       <UniqueIdentifier>{20dc23d9-9e0e-4119-9bbb-f2e627030476}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Main\Managers">
-      <UniqueIdentifier>{c2efacc2-189d-4acd-98bc-aa8950289214}</UniqueIdentifier>
     </Filter>
     <Filter Include="Shaders">
       <UniqueIdentifier>{348c8bdb-6889-4a64-87cb-cc2ed88aa1fc}</UniqueIdentifier>
@@ -70,6 +64,12 @@
     <Filter Include="Engine\SomFramework\Renderer\DirectX\Utility">
       <UniqueIdentifier>{f3b4f18f-af53-4330-905b-c505572c0b9f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\SomFramework\Managers">
+      <UniqueIdentifier>{c2efacc2-189d-4acd-98bc-aa8950289214}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime">
+      <UniqueIdentifier>{1e2e29a3-7992-4740-9763-e58f04f8c7ef}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Engine\Engine.h">
@@ -84,20 +84,8 @@
     <ClInclude Include="Source\Engine\Resource\targetver.h">
       <Filter>Engine\Resource</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Main\SR_Sample.h">
-      <Filter>Main</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Engine\SomFramework\Libraries\Interface\SomInterface_Actor.h">
       <Filter>Engine\SomFramework\Libraries\Interface</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Main\Managers\SomManager_Input.h">
-      <Filter>Main\Managers</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Main\Managers\SomManager_Main.h">
-      <Filter>Main\Managers</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Main\Managers\SomManager_Texture.h">
-      <Filter>Main\Managers</Filter>
     </ClInclude>
     <ClInclude Include="Source\Engine\SomFramework\Libraries\SomDrawLibrary.h">
       <Filter>Engine\SomFramework\Libraries</Filter>
@@ -171,6 +159,21 @@
     <ClInclude Include="Source\Engine\SomFramework\Containers\Math\Vertex.h">
       <Filter>Engine\SomFramework\Containers\Math</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Managers\SomManager_Input.h">
+      <Filter>Engine\SomFramework\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Managers\SomManager_Main.h">
+      <Filter>Engine\SomFramework\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Managers\SomManager_Texture.h">
+      <Filter>Engine\SomFramework\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\SR_Sample.h">
+      <Filter>Runtime</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\SR_Test1.h">
+      <Filter>Runtime</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Engine\WinMain\Win32Application.cpp">
@@ -179,20 +182,8 @@
     <ClCompile Include="Source\Engine\WinMain\WinMain.cpp">
       <Filter>Engine\WinMain</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Main\SR_Sample.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Engine\SomFramework\Libraries\Interface\SomInterface_Actor.cpp">
       <Filter>Engine\SomFramework\Libraries\Interface</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Main\Managers\SomManager_Input.cpp">
-      <Filter>Main\Managers</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Main\Managers\SomManager_Main.cpp">
-      <Filter>Main\Managers</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Main\Managers\SomManager_Texture.cpp">
-      <Filter>Main\Managers</Filter>
     </ClCompile>
     <ClCompile Include="Source\Engine\SomFramework\Libraries\SomDrawLibrary.cpp">
       <Filter>Engine\SomFramework\Libraries</Filter>
@@ -223,6 +214,21 @@
     </ClCompile>
     <ClCompile Include="Source\Engine\SomFramework\Renderer\SoftRenderer\SomFramework_SR.cpp">
       <Filter>Engine\SomFramework\Renderer\SoftRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\SomFramework\Managers\SomManager_Input.cpp">
+      <Filter>Engine\SomFramework\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\SomFramework\Managers\SomManager_Main.cpp">
+      <Filter>Engine\SomFramework\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\SomFramework\Managers\SomManager_Texture.cpp">
+      <Filter>Engine\SomFramework\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\SR_Sample.cpp">
+      <Filter>Runtime</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\SR_Test1.cpp">
+      <Filter>Runtime</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -39,6 +39,9 @@
     <ClInclude Include="Source\Engine\SomFramework\Libraries\Interface\SomInterface_Actor.h" />
     <ClInclude Include="Source\Engine\SomFramework\Libraries\SomDrawLibrary.h" />
     <ClInclude Include="Source\Engine\SomFramework\Libraries\SomMathLibrary.h" />
+    <ClInclude Include="Source\Engine\SomFramework\Managers\SomManager_Input.h" />
+    <ClInclude Include="Source\Engine\SomFramework\Managers\SomManager_Main.h" />
+    <ClInclude Include="Source\Engine\SomFramework\Managers\SomManager_Texture.h" />
     <ClInclude Include="Source\Engine\SomFramework\Renderer\Core\SomFramework.h" />
     <ClInclude Include="Source\Engine\SomFramework\Renderer\DirectX\RendererLibrary_DX11.h" />
     <ClInclude Include="Source\Engine\SomFramework\Renderer\DirectX\RendererLibrary_DX12.h" />
@@ -48,10 +51,8 @@
     <ClInclude Include="Source\Engine\SomFramework\Renderer\DirectX\Utility\DX12Helper.h" />
     <ClInclude Include="Source\Engine\SomFramework\Renderer\SoftRenderer\SomFramework_SR.h" />
     <ClInclude Include="Source\Engine\WinMain\Win32Application.h" />
-    <ClInclude Include="Source\Main\Managers\SomManager_Input.h" />
-    <ClInclude Include="Source\Main\Managers\SomManager_Main.h" />
-    <ClInclude Include="Source\Main\Managers\SomManager_Texture.h" />
-    <ClInclude Include="Source\Main\SR_Sample.h" />
+    <ClInclude Include="Source\Runtime\SR_Sample.h" />
+    <ClInclude Include="Source\Runtime\SR_Test1.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Engine\SomFramework\Containers\Render\Mesh\Quad2D.cpp" />
@@ -61,16 +62,17 @@
     <ClCompile Include="Source\Engine\SomFramework\Libraries\Interface\SomInterface_Actor.cpp" />
     <ClCompile Include="Source\Engine\SomFramework\Libraries\SomDrawLibrary.cpp" />
     <ClCompile Include="Source\Engine\SomFramework\Libraries\SomMathLibrary.cpp" />
+    <ClCompile Include="Source\Engine\SomFramework\Managers\SomManager_Input.cpp" />
+    <ClCompile Include="Source\Engine\SomFramework\Managers\SomManager_Main.cpp" />
+    <ClCompile Include="Source\Engine\SomFramework\Managers\SomManager_Texture.cpp" />
     <ClCompile Include="Source\Engine\SomFramework\Renderer\Core\SomFramework.cpp" />
     <ClCompile Include="Source\Engine\SomFramework\Renderer\DirectX\SomFramework_DX11.cpp" />
     <ClCompile Include="Source\Engine\SomFramework\Renderer\DirectX\SomFramework_DX12.cpp" />
     <ClCompile Include="Source\Engine\SomFramework\Renderer\SoftRenderer\SomFramework_SR.cpp" />
     <ClCompile Include="Source\Engine\WinMain\Win32Application.cpp" />
     <ClCompile Include="Source\Engine\WinMain\WinMain.cpp" />
-    <ClCompile Include="Source\Main\Managers\SomManager_Input.cpp" />
-    <ClCompile Include="Source\Main\Managers\SomManager_Main.cpp" />
-    <ClCompile Include="Source\Main\Managers\SomManager_Texture.cpp" />
-    <ClCompile Include="Source\Main\SR_Sample.cpp" />
+    <ClCompile Include="Source\Runtime\SR_Sample.cpp" />
+    <ClCompile Include="Source\Runtime\SR_Test1.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Source\Engine\Resource\small.ico" />

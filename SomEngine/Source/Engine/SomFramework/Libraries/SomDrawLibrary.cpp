@@ -106,14 +106,16 @@ void FSomDrawLibrary::DrawLine_BresenhamAlgorithm(const FPoint2D& StartPoint, co
 				TempStart.Y += inc_value;
 			}
 
-			if (i < TempEnd.X - 10)
+			DrawPixel(i, TempStart.Y, PixelColor);
+
+			/*if (i < TempEnd.X - 10)
 			{
 				DrawPixel(i, TempStart.Y, PixelColor);
 			}
 			else
 			{
 				DrawPixel(i, TempStart.Y, FLinearColor(255, 0, 0));
-			}			
+			}*/
 		}
 	}
 	else // SomWorks :D // 기울기가 1 초과, X와 Y값을 스왑해서 계산

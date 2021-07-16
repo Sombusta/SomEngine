@@ -74,9 +74,9 @@ using std::list;
 
 // SomWorks :D // SomFramework GamePlay
 #include "SomFramework/GameObject/Object/GameObject.h"
-#include "Main/Managers/SomManager_Input.h"
-#include "Main/Managers/SomManager_Main.h"
-#include "Main/Managers/SomManager_Texture.h"
+#include "SomFramework/Managers/SomManager_Input.h"
+#include "SomFramework/Managers/SomManager_Main.h"
+#include "SomFramework/Managers/SomManager_Texture.h"
 
 #include "Engine/SomFramework/Renderer/SoftRenderer/SomFramework_SR.h"
 
