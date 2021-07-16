@@ -69,6 +69,7 @@
     <ClCompile Include="Source\Engine\SomFramework\Managers\SomManager_Texture.cpp" />
     <ClCompile Include="Source\Engine\SomFramework\Math\LinearColor.cpp" />
     <ClCompile Include="Source\Engine\SomFramework\Math\MathUtility.cpp" />
+    <ClCompile Include="Source\Engine\SomFramework\Math\Vector2D.cpp" />
     <ClCompile Include="Source\Engine\SomFramework\Renderer\Core\SomFramework.cpp" />
     <ClCompile Include="Source\Engine\SomFramework\Renderer\DirectX\SomFramework_DX11.cpp" />
     <ClCompile Include="Source\Engine\SomFramework\Renderer\DirectX\SomFramework_DX12.cpp" />

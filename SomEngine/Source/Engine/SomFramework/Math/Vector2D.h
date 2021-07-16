@@ -2,6 +2,11 @@
 
 #pragma once
 
+#include <iostream>
+#include <math.h>
+
+#define FORCEINLINE __forceinline
+
 // SomWorks :D // Vector2D
 typedef struct FVector2D
 {
@@ -75,6 +80,14 @@ public:
 		Result.Y = this->Y * Value;
 		return Result;
 	}
+
+	// 정적멤버변수 
+	static const FVector2D UnitX;
+	static const FVector2D UnitY;
+	static const FVector2D One;
+	static const FVector2D Zero;
+	static const FVector2D Infinity;
+	static const FVector2D InfinityNeg;
 
 	FORCEINLINE void Printf()
 	{

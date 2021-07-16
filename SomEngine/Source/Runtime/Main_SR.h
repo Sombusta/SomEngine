@@ -18,6 +18,12 @@ public:
 private:
 	vector<FPoint2D> Points;
 
+	// 로직 구현을 위한 멤버 변수
+	float _CurrentScale = 5.f;
+	float _CurrentTime = 0.f;
+	float _CurrentDegree = 0.f;
+	FVector2D _CurrentPosition = FVector2D::Zero;
+
 protected:
 
 public:

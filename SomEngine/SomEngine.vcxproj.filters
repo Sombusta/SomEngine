@@ -70,6 +70,9 @@
     <Filter Include="Engine\SomFramework\Math">
       <UniqueIdentifier>{c7b26a7d-b621-422a-bd11-8290533ff380}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\SomFramework\Math\Private">
+      <UniqueIdentifier>{cbc9a550-86cc-479a-943f-05c9c37955e7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Engine\Engine.h">
@@ -237,10 +240,13 @@
       <Filter>Runtime</Filter>
     </ClCompile>
     <ClCompile Include="Source\Engine\SomFramework\Math\LinearColor.cpp">
-      <Filter>Engine\SomFramework\Math</Filter>
+      <Filter>Engine\SomFramework\Math\Private</Filter>
     </ClCompile>
     <ClCompile Include="Source\Engine\SomFramework\Math\MathUtility.cpp">
-      <Filter>Engine\SomFramework\Math</Filter>
+      <Filter>Engine\SomFramework\Math\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\SomFramework\Math\Vector2D.cpp">
+      <Filter>Engine\SomFramework\Math\Private</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
