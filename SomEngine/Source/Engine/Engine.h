@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2020 Sombusta, All Rights Reserved.
+// Copyright (c) 2014-2021 Sombusta, All Rights Reserved.
 
 //! $(ProjectDir)\Source
 
@@ -52,17 +52,7 @@ using std::list;
 #define WIN_TITLE L"SomEngine_Win32"
 
 // SomWorks :D // Math
-#include "SomFramework/Math/MathUtility.h"
-#include "SomFramework/Math/Point2D.h"
-#include "SomFramework/Math/Vector2D.h"
-#include "SomFramework/Math/Vector.h"
-#include "SomFramework/Math/Vector4.h"
-#include "SomFramework/Math/Vertex.h"
-#include "SomFramework/Math/Matrix2D.h"
-#include "SomFramework/Math/Matrix3D.h"
-#include "SomFramework/Math/Matrix.h"
-#include "SomFramework/Math/Color32.h"
-#include "SomFramework/Math/LinearColor.h"
+#include "Module_Math.h"
 
 // SomWorks :D // 컨테이너
 #include "SomFramework/Containers/Render/Texture/Texture2D.h"

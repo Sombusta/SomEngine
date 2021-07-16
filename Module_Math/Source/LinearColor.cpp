@@ -1,5 +1,6 @@
 // Copyright (c) 2014-2019 Sombusta, All Rights Reserved.
 
+#include "pch.h"
 #include "LinearColor.h"
 
 const float FLinearColor::OneOver255 = 1.f / 255.f;

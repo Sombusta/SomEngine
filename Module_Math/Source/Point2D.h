@@ -2,6 +2,11 @@
 
 #pragma once
 
+#include <iostream>
+#include <math.h>
+
+#define FORCEINLINE __forceinline
+
 // SomWorks :D // Vector
 typedef struct FPoint2D
 {

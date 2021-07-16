@@ -1,5 +1,6 @@
 // Copyright (c) 2014-2019 Sombusta, All Rights Reserved.
 
+#include "pch.h"
 #include "Vector2D.h"
 
 const FVector2D FVector2D::UnitX(1.f, 0.f);
