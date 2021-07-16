@@ -166,17 +166,17 @@ void FTriangle2D::FillTriangle(bool bUseTexture)
 					BottomVertex.UV * VertexWeight.Z;
 
 				FVector2D Result;
-				Result.X = CurrentTex.Width * TextureUV.X;
-				Result.Y = CurrentTex.Height * TextureUV.Y;
+				Result.X = static_cast<float>(CurrentTex.Width) * TextureUV.X;
+				Result.Y = static_cast<float>(CurrentTex.Height) * TextureUV.Y;
 
 				FColor Test;
-				Test.r = TextureUV.X * 255;
-				Test.g = TextureUV.Y * 255;
+				Test.r = (BYTE)TextureUV.X * 255;
+				Test.g = (BYTE)TextureUV.Y * 255;
 				Test.b = 0;
 
 				//TriangleColor = Test;
 
-				TriangleColor = bUseBarycentricCoordinate? Test : FSomTextureParser_BMP::GetPixel(static_cast<int>(Result.X), Result.Y, CurrentTex);
+				TriangleColor = bUseBarycentricCoordinate? Test : FSomTextureParser_BMP::GetPixel(static_cast<int>(Result.X), static_cast<int>(Result.Y), CurrentTex);
 			}
 			else
 			{
@@ -220,17 +220,17 @@ void FTriangle2D::FillTriangle(bool bUseTexture)
 					BottomVertex.UV * VertexWeight.Z;
 
 				FVector2D Result;
-				Result.X = CurrentTex.Width * TextureUV.X;
-				Result.Y = CurrentTex.Height * TextureUV.Y;
+				Result.X = static_cast<float>(CurrentTex.Width) * TextureUV.X;
+				Result.Y = static_cast<float>(CurrentTex.Height) * TextureUV.Y;
 
 				FColor Test;
-				Test.r = TextureUV.X * 255;
-				Test.g = TextureUV.Y * 255;
+				Test.r = (BYTE)TextureUV.X * 255;
+				Test.g = (BYTE)TextureUV.Y * 255;
 				Test.b = 0;
 
 				//TriangleColor = Test;
 
-				TriangleColor = bUseBarycentricCoordinate ? Test : FSomTextureParser_BMP::GetPixel(Result.X, Result.Y, CurrentTex);
+				TriangleColor = bUseBarycentricCoordinate ? Test : FSomTextureParser_BMP::GetPixel(static_cast<int>(Result.X), static_cast<int>(Result.Y), CurrentTex);
 			}
 			else
 			{

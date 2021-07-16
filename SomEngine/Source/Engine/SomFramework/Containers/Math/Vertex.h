@@ -4,7 +4,7 @@
 
 #include "Vector.h"
 #include "Vector2D.h"
-#include "../Color/LinearColor.h"
+#include "LinearColor.h"
 
 // SomWorks :D // Vertex2D
 typedef struct FVertex2D

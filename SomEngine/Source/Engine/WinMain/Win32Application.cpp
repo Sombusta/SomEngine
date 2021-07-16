@@ -1,8 +1,8 @@
 // Copyright (c) 2014-2020 Sombusta, All Rights Reserved.
 
 #include "Win32Application.h"
-#include "Engine/SomFramework/Rendering/Core/SomFramework.h"
-#include "Engine/SomFramework/Rendering/DirectX/SomFramework_DX11.h"
+#include "Engine/SomFramework/Renderer/Core/SomFramework.h"
+#include "Engine/SomFramework/Renderer/DirectX/SomFramework_DX11.h"
 
 HWND Win32Application::m_hwnd = nullptr;
 HINSTANCE Win32Application::m_hInstance = nullptr;

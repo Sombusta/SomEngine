@@ -2,7 +2,7 @@
 
 #pragma once
 
-#include "Engine/Engine.h"
+// #include <windows.h>
 
 typedef struct FLinearColor
 {

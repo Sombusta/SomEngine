@@ -24,7 +24,7 @@ public:
 
 	// SomWorks :D // SomInterface
 	virtual void SetActive(bool bActivate);
-
+		
 private:
 	bool bIsActive = false;
 

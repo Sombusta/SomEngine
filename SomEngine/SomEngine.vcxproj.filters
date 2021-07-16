@@ -16,12 +16,6 @@
     <Filter Include="Engine\SomFramework">
       <UniqueIdentifier>{64a521b2-aad6-4ec0-b425-f2794ad4a3e1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\SomFramework\Rendering">
-      <UniqueIdentifier>{c26288fb-8c97-44dc-b03a-7f70bf402b85}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\SomFramework\Rendering\SoftRenderer">
-      <UniqueIdentifier>{00251de8-d0ae-4a97-9fdf-82be990a46a5}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Engine\SomFramework\Libraries">
       <UniqueIdentifier>{b602d141-68ee-4e39-bed6-ea6ecdfc75bd}</UniqueIdentifier>
     </Filter>
@@ -31,23 +25,8 @@
     <Filter Include="Main\Managers">
       <UniqueIdentifier>{c2efacc2-189d-4acd-98bc-aa8950289214}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\SomFramework\Rendering\Core">
-      <UniqueIdentifier>{32339df1-e50d-4d3d-8be8-dd3d8c4b2d53}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Shaders">
       <UniqueIdentifier>{348c8bdb-6889-4a64-87cb-cc2ed88aa1fc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\SomFramework\Rendering\DirectX">
-      <UniqueIdentifier>{cbd980ce-4cf4-4fd3-b52f-4cff286b4e4f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\SomFramework\Rendering\DirectX\DX11">
-      <UniqueIdentifier>{23c206f3-b9ee-4688-8ca1-0411c5092078}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\SomFramework\Rendering\DirectX\DX12">
-      <UniqueIdentifier>{976e550d-cdb8-4cc0-9dfa-9f889efed1fe}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\SomFramework\Rendering\DirectX\Utility">
-      <UniqueIdentifier>{f3b4f18f-af53-4330-905b-c505572c0b9f}</UniqueIdentifier>
     </Filter>
     <Filter Include="Engine\SomFramework\GameObject">
       <UniqueIdentifier>{8744b427-17d7-4a1f-b3ad-8f2984491733}</UniqueIdentifier>
@@ -70,14 +49,26 @@
     <Filter Include="Engine\SomFramework\Containers\Render\Texture">
       <UniqueIdentifier>{76ce86bd-f377-47b0-84f6-09fac0e3dc9a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\SomFramework\Containers\Math\Color">
-      <UniqueIdentifier>{6967e112-5321-4490-8cc2-021436dac46a}</UniqueIdentifier>
+    <Filter Include="Engine\SomFramework\Renderer">
+      <UniqueIdentifier>{c26288fb-8c97-44dc-b03a-7f70bf402b85}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\SomFramework\Containers\Math\Matrix">
-      <UniqueIdentifier>{e5a511cf-b28b-40ec-ae7b-da7ac9424a12}</UniqueIdentifier>
+    <Filter Include="Engine\SomFramework\Renderer\SoftRenderer">
+      <UniqueIdentifier>{00251de8-d0ae-4a97-9fdf-82be990a46a5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\SomFramework\Containers\Math\Vector">
-      <UniqueIdentifier>{4406e7c8-a6d4-40c8-9ad7-b8829c464f47}</UniqueIdentifier>
+    <Filter Include="Engine\SomFramework\Renderer\Core">
+      <UniqueIdentifier>{32339df1-e50d-4d3d-8be8-dd3d8c4b2d53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\SomFramework\Renderer\DirectX">
+      <UniqueIdentifier>{cbd980ce-4cf4-4fd3-b52f-4cff286b4e4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\SomFramework\Renderer\DirectX\DX11">
+      <UniqueIdentifier>{23c206f3-b9ee-4688-8ca1-0411c5092078}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\SomFramework\Renderer\DirectX\DX12">
+      <UniqueIdentifier>{976e550d-cdb8-4cc0-9dfa-9f889efed1fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\SomFramework\Renderer\DirectX\Utility">
+      <UniqueIdentifier>{f3b4f18f-af53-4330-905b-c505572c0b9f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -96,9 +87,6 @@
     <ClInclude Include="Source\Main\SR_Sample.h">
       <Filter>Main</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Rendering\SoftRenderer\SomFramework_SR.h">
-      <Filter>Engine\SomFramework\Rendering\SoftRenderer</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Engine\SomFramework\Libraries\Interface\SomInterface_Actor.h">
       <Filter>Engine\SomFramework\Libraries\Interface</Filter>
     </ClInclude>
@@ -110,27 +98,6 @@
     </ClInclude>
     <ClInclude Include="Source\Main\Managers\SomManager_Texture.h">
       <Filter>Main\Managers</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Rendering\Core\SomFramework.h">
-      <Filter>Engine\SomFramework\Rendering\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Rendering\DirectX\RendererLibrary_DX11.h">
-      <Filter>Engine\SomFramework\Rendering\DirectX\DX11</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Rendering\DirectX\SomFramework_DX11.h">
-      <Filter>Engine\SomFramework\Rendering\DirectX\DX11</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Rendering\DirectX\RendererLibrary_DX12.h">
-      <Filter>Engine\SomFramework\Rendering\DirectX\DX12</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Rendering\DirectX\SomFramework_DX12.h">
-      <Filter>Engine\SomFramework\Rendering\DirectX\DX12</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Rendering\DirectX\Utility\d3dx12.h">
-      <Filter>Engine\SomFramework\Rendering\DirectX\Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Rendering\DirectX\Utility\DX12Helper.h">
-      <Filter>Engine\SomFramework\Rendering\DirectX\Utility</Filter>
     </ClInclude>
     <ClInclude Include="Source\Engine\SomFramework\Libraries\SomDrawLibrary.h">
       <Filter>Engine\SomFramework\Libraries</Filter>
@@ -150,35 +117,59 @@
     <ClInclude Include="Source\Engine\SomFramework\Containers\Render\Texture\TextureParser_Bmp.h">
       <Filter>Engine\SomFramework\Containers\Render\Texture</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Containers\Math\Color\LinearColor.h">
-      <Filter>Engine\SomFramework\Containers\Math\Color</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Containers\Math\Matrix\Matrix.h">
-      <Filter>Engine\SomFramework\Containers\Math\Matrix</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Containers\Math\Matrix\Matrix2D.h">
-      <Filter>Engine\SomFramework\Containers\Math\Matrix</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Containers\Math\Matrix\Matrix3D.h">
-      <Filter>Engine\SomFramework\Containers\Math\Matrix</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Containers\Math\Vector\Point2D.h">
-      <Filter>Engine\SomFramework\Containers\Math\Vector</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Containers\Math\Vector\Vector.h">
-      <Filter>Engine\SomFramework\Containers\Math\Vector</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Containers\Math\Vector\Vector2D.h">
-      <Filter>Engine\SomFramework\Containers\Math\Vector</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Containers\Math\Vector\Vector4.h">
-      <Filter>Engine\SomFramework\Containers\Math\Vector</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Containers\Math\Vector\Vertex.h">
-      <Filter>Engine\SomFramework\Containers\Math\Vector</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Engine\SomFramework\GameObject\Object\GameObject.h">
       <Filter>Engine\SomFramework\GameObject\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Renderer\Core\SomFramework.h">
+      <Filter>Engine\SomFramework\Renderer\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Renderer\DirectX\RendererLibrary_DX11.h">
+      <Filter>Engine\SomFramework\Renderer\DirectX\DX11</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Renderer\DirectX\SomFramework_DX11.h">
+      <Filter>Engine\SomFramework\Renderer\DirectX\DX11</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Renderer\DirectX\RendererLibrary_DX12.h">
+      <Filter>Engine\SomFramework\Renderer\DirectX\DX12</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Renderer\DirectX\SomFramework_DX12.h">
+      <Filter>Engine\SomFramework\Renderer\DirectX\DX12</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Renderer\DirectX\Utility\d3dx12.h">
+      <Filter>Engine\SomFramework\Renderer\DirectX\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Renderer\DirectX\Utility\DX12Helper.h">
+      <Filter>Engine\SomFramework\Renderer\DirectX\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Renderer\SoftRenderer\SomFramework_SR.h">
+      <Filter>Engine\SomFramework\Renderer\SoftRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Containers\Math\Matrix.h">
+      <Filter>Engine\SomFramework\Containers\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Containers\Math\Matrix2D.h">
+      <Filter>Engine\SomFramework\Containers\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Containers\Math\Matrix3D.h">
+      <Filter>Engine\SomFramework\Containers\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Containers\Math\Vector.h">
+      <Filter>Engine\SomFramework\Containers\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Containers\Math\Vector2D.h">
+      <Filter>Engine\SomFramework\Containers\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Containers\Math\Vector4.h">
+      <Filter>Engine\SomFramework\Containers\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Containers\Math\Point2D.h">
+      <Filter>Engine\SomFramework\Containers\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Containers\Math\LinearColor.h">
+      <Filter>Engine\SomFramework\Containers\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SomFramework\Containers\Math\Vertex.h">
+      <Filter>Engine\SomFramework\Containers\Math</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -191,9 +182,6 @@
     <ClCompile Include="Source\Main\SR_Sample.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Engine\SomFramework\Rendering\SoftRenderer\SomFramework_SR.cpp">
-      <Filter>Engine\SomFramework\Rendering\SoftRenderer</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Engine\SomFramework\Libraries\Interface\SomInterface_Actor.cpp">
       <Filter>Engine\SomFramework\Libraries\Interface</Filter>
     </ClCompile>
@@ -205,15 +193,6 @@
     </ClCompile>
     <ClCompile Include="Source\Main\Managers\SomManager_Texture.cpp">
       <Filter>Main\Managers</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Engine\SomFramework\Rendering\Core\SomFramework.cpp">
-      <Filter>Engine\SomFramework\Rendering\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Engine\SomFramework\Rendering\DirectX\SomFramework_DX11.cpp">
-      <Filter>Engine\SomFramework\Rendering\DirectX\DX11</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Engine\SomFramework\Rendering\DirectX\SomFramework_DX12.cpp">
-      <Filter>Engine\SomFramework\Rendering\DirectX\DX12</Filter>
     </ClCompile>
     <ClCompile Include="Source\Engine\SomFramework\Libraries\SomDrawLibrary.cpp">
       <Filter>Engine\SomFramework\Libraries</Filter>
@@ -232,6 +211,18 @@
     </ClCompile>
     <ClCompile Include="Source\Engine\SomFramework\GameObject\Object\GameObject.cpp">
       <Filter>Engine\SomFramework\GameObject\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\SomFramework\Renderer\Core\SomFramework.cpp">
+      <Filter>Engine\SomFramework\Renderer\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\SomFramework\Renderer\DirectX\SomFramework_DX11.cpp">
+      <Filter>Engine\SomFramework\Renderer\DirectX\DX11</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\SomFramework\Renderer\DirectX\SomFramework_DX12.cpp">
+      <Filter>Engine\SomFramework\Renderer\DirectX\DX12</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\SomFramework\Renderer\SoftRenderer\SomFramework_SR.cpp">
+      <Filter>Engine\SomFramework\Renderer\SoftRenderer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

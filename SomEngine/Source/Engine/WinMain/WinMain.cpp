@@ -1,8 +1,8 @@
 // Copyright (c) 2014-2020 Sombusta, All Rights Reserved.
 
 #include "Win32Application.h"
-#include "Engine/SomFramework/Rendering/DirectX/SomFramework_DX11.h"
-#include "Engine/SomFramework/Rendering/DirectX/SomFramework_DX12.h"
+#include "Engine/SomFramework/Renderer/DirectX/SomFramework_DX11.h"
+#include "Engine/SomFramework/Renderer/DirectX/SomFramework_DX12.h"
 
 #ifdef _DEBUG // SomWorks :D // Debug Console
 #pragma comment(linker, "/entry:WinMainCRTStartup")

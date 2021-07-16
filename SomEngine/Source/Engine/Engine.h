@@ -52,15 +52,15 @@ using std::list;
 #define WIN_TITLE L"SomEngine_Win32"
 
 // SomWorks :D // 컨테이너
-#include "SomFramework/Containers/Math/Vector/Point2D.h"
-#include "SomFramework/Containers/Math/Vector/Vector2D.h"
-#include "SomFramework/Containers/Math/Vector/Vector.h"
-#include "SomFramework/Containers/Math/Vector/Vector4.h"
-#include "SomFramework/Containers/Math/Vector/Vertex.h"
-#include "SomFramework/Containers/Math/Matrix/Matrix2D.h"
-#include "SomFramework/Containers/Math/Matrix/Matrix3D.h"
-#include "SomFramework/Containers/Math/Matrix/Matrix.h"
-#include "SomFramework/Containers/Math/Color/LinearColor.h"
+#include "SomFramework/Containers/Math/Point2D.h"
+#include "SomFramework/Containers/Math/Vector2D.h"
+#include "SomFramework/Containers/Math/Vector.h"
+#include "SomFramework/Containers/Math/Vector4.h"
+#include "SomFramework/Containers/Math/Vertex.h"
+#include "SomFramework/Containers/Math/Matrix2D.h"
+#include "SomFramework/Containers/Math/Matrix3D.h"
+#include "SomFramework/Containers/Math/Matrix.h"
+#include "SomFramework/Containers/Math/LinearColor.h"
 #include "SomFramework/Containers/Render/Texture/Texture2D.h"
 #include "SomFramework/Containers/Render/Mesh/Triangle2D.h"
 #include "SomFramework/Containers/Render/Mesh/Quad2D.h"
@@ -78,7 +78,7 @@ using std::list;
 #include "Main/Managers/SomManager_Main.h"
 #include "Main/Managers/SomManager_Texture.h"
 
-#include "Engine/SomFramework/Rendering/SoftRenderer/SomFramework_SR.h"
+#include "Engine/SomFramework/Renderer/SoftRenderer/SomFramework_SR.h"
 
 // SomWorks :D // Rendering Framework Setup
 #define bUseDX12 false

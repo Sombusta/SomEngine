@@ -2,7 +2,7 @@
 
 #pragma once
 
-#include "../Vector/Vector.h"
+#include "Vector.h"
 
 typedef struct FMatrix3x3
 {

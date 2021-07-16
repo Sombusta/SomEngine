@@ -2,8 +2,8 @@
 
 #pragma once
 
-#include "../Vector/Vector.h"
-#include "../Vector/Vector4.h"
+#include "Vector.h"
+#include "Vector4.h"
 
 typedef struct FMatrix4x4
 {
