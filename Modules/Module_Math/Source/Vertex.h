@@ -2,10 +2,6 @@
 
 #pragma once
 
-#include "Vector.h"
-#include "Vector2D.h"
-#include "LinearColor.h"
-
 // SomWorks :D // Vertex2D
 typedef struct FVertex2D
 {

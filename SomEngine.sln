@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.31424.327
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SomEngine", "SomEngine\SomEngine.vcxproj", "{1FD9C8C8-ABC3-4A6D-852C-A3AE7E64CA73}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Module_Math", "Module_Math\Module_Math.vcxproj", "{37DA7550-6D60-4D67-AAD5-25694DA587FC}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Module_Render", "Modules\Module_Render\Module_Render.vcxproj", "{C81F9405-5453-47F2-98C1-4E4A1C3735B4}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Module_Math", "Modules\Module_Math\Module_Math.vcxproj", "{37DA7550-6D60-4D67-AAD5-25694DA587FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +25,14 @@ Global
 		{1FD9C8C8-ABC3-4A6D-852C-A3AE7E64CA73}.Release|x64.Build.0 = Release|x64
 		{1FD9C8C8-ABC3-4A6D-852C-A3AE7E64CA73}.Release|x86.ActiveCfg = Release|Win32
 		{1FD9C8C8-ABC3-4A6D-852C-A3AE7E64CA73}.Release|x86.Build.0 = Release|Win32
+		{C81F9405-5453-47F2-98C1-4E4A1C3735B4}.Debug|x64.ActiveCfg = Debug|x64
+		{C81F9405-5453-47F2-98C1-4E4A1C3735B4}.Debug|x64.Build.0 = Debug|x64
+		{C81F9405-5453-47F2-98C1-4E4A1C3735B4}.Debug|x86.ActiveCfg = Debug|Win32
+		{C81F9405-5453-47F2-98C1-4E4A1C3735B4}.Debug|x86.Build.0 = Debug|Win32
+		{C81F9405-5453-47F2-98C1-4E4A1C3735B4}.Release|x64.ActiveCfg = Release|x64
+		{C81F9405-5453-47F2-98C1-4E4A1C3735B4}.Release|x64.Build.0 = Release|x64
+		{C81F9405-5453-47F2-98C1-4E4A1C3735B4}.Release|x86.ActiveCfg = Release|Win32
+		{C81F9405-5453-47F2-98C1-4E4A1C3735B4}.Release|x86.Build.0 = Release|Win32
 		{37DA7550-6D60-4D67-AAD5-25694DA587FC}.Debug|x64.ActiveCfg = Debug|x64
 		{37DA7550-6D60-4D67-AAD5-25694DA587FC}.Debug|x64.Build.0 = Debug|x64
 		{37DA7550-6D60-4D67-AAD5-25694DA587FC}.Debug|x86.ActiveCfg = Debug|Win32
