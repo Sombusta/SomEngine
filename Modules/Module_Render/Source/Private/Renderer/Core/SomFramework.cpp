@@ -1,6 +1,7 @@
 // Copyright (c) 2014-2020 Sombusta, All Rights Reserved.
 
-#include "SomFramework.h"
+#include "pch.h"
+#include "Renderer/Core/SomFramework.h"
 
 SomFramework::SomFramework()
 {

@@ -2,7 +2,7 @@
 
 #pragma once
 
-#include "Engine/SomFramework/Renderer/Core/SomFramework.h"
+#include "Module_Render.h"
 #include "RendererLibrary_DX12.h"
 
 class SomFramework_DX12 : public SomFramework

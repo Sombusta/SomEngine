@@ -1,6 +1,7 @@
 // Copyright (c) 2014-2020 Sombusta, All Rights Reserved.
 
-#include "SomFramework_DX11.h"
+#include "pch.h"
+#include "Renderer/DirectX/SomFramework_DX11.h"
 
 SomFramework_DX11::SomFramework_DX11() : SomFramework()
 {

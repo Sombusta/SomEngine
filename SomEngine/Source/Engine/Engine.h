@@ -74,27 +74,3 @@ using std::list;
 #include "SomFramework/Managers/SomManager_Texture.h"
 
 #include "SomFramework/Renderer/SoftRenderer/SomFramework_SR.h"
-
-// SomWorks :D // Rendering Framework Setup
-#define bUseDX12 false
-
-#if bUseDX12
-// SomWorks :D // DirectX 12 Library Header
-
-// #pragma comment(lib, "d3dcompiler.lib")
-// #pragma comment(lib, "D3D12.lib")
-// #pragma comment(lib, "dxgi.lib")
-
-#include <d3d12.h>
-#include <dxgi1_4.h>
-#include <D3Dcompiler.h>
-#include <DirectXMath.h>
-
-using namespace DirectX;
-
-// SomWorks :D // DirectX 12 SDK Header
-#include "Engine/DX12/d3dx12.h"
-#include "Engine/DX12/DXSampleHelper.h"
-
-// #include "SomFramework/Rendering/DX12/SomFramework_DX12.h"
-#endif

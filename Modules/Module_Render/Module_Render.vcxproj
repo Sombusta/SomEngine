@@ -21,10 +21,28 @@
   <ItemGroup>
     <ClInclude Include="Source\Public\Module_Render.h" />
     <ClInclude Include="Source\Public\pch.h" />
+    <ClInclude Include="Source\Public\Renderer\Core\SomFramework.h" />
+    <ClInclude Include="Source\Public\Renderer\DirectX\RendererLibrary_DX11.h" />
+    <ClInclude Include="Source\Public\Renderer\DirectX\RendererLibrary_DX12.h" />
+    <ClInclude Include="Source\Public\Renderer\DirectX\SomFramework_DX11.h" />
+    <ClInclude Include="Source\Public\Renderer\DirectX\SomFramework_DX12.h" />
+    <ClInclude Include="Source\Public\Renderer\DirectX\Utility\d3dx12.h" />
+    <ClInclude Include="Source\Public\Renderer\DirectX\Utility\DX12Helper.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Private\Module_Render.cpp" />
     <ClCompile Include="Source\Private\pch.cpp" />
+    <ClCompile Include="Source\Private\Renderer\Core\SomFramework.cpp" />
+    <ClCompile Include="Source\Private\Renderer\DirectX\SomFramework_DX11.cpp" />
+    <ClCompile Include="Source\Private\Renderer\DirectX\SomFramework_DX12.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="Shaders\Tutorial02.fx">
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">PS</EntryPointName>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">PS</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
+    </FxCompile>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -82,11 +100,15 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)\Build\$(Platform)\$(Configuration)\Library\</OutDir>
     <IntDir>$(SolutionDir)\Saved\$(Configuration)\Module_Render\</IntDir>
+    <IncludePath>$(DXSDK_DIR)Include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(DXSDK_DIR)Lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)\Build\$(Platform)\$(Configuration)\Library\</OutDir>
     <IntDir>$(SolutionDir)\Saved\$(Configuration)\Module_Render\</IntDir>
+    <IncludePath>$(DXSDK_DIR)Include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(DXSDK_DIR)Lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>

@@ -7,6 +7,27 @@
     <Filter Include="Public">
       <UniqueIdentifier>{4735ad39-404f-463e-a2ab-d95ae3bd3e89}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Public\Renderer">
+      <UniqueIdentifier>{0cdb9d96-0656-403d-be3c-f4d56b8030ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Public\Renderer\Core">
+      <UniqueIdentifier>{dcfd9c60-c7c5-4bdf-b387-2fd01ecfb259}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Public\Renderer\DirectX">
+      <UniqueIdentifier>{ca542f59-0677-4e11-8334-5865d520659a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{5a3f2479-d585-4389-8bed-31c4b0d03a63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Public\Renderer\DirectX\Utility">
+      <UniqueIdentifier>{3689fd7b-906b-40a0-861a-675811663e28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\Core">
+      <UniqueIdentifier>{e5d2d6d2-6f99-4591-acd7-5fc1cbacab1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\DirectX">
+      <UniqueIdentifier>{6f7ddcc9-2627-4af6-b6b3-caae85785432}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Public\Module_Render.h">
@@ -14,6 +35,27 @@
     </ClInclude>
     <ClInclude Include="Source\Public\pch.h">
       <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Renderer\Core\SomFramework.h">
+      <Filter>Public\Renderer\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Renderer\DirectX\RendererLibrary_DX11.h">
+      <Filter>Public\Renderer\DirectX</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Renderer\DirectX\RendererLibrary_DX12.h">
+      <Filter>Public\Renderer\DirectX</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Renderer\DirectX\SomFramework_DX11.h">
+      <Filter>Public\Renderer\DirectX</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Renderer\DirectX\SomFramework_DX12.h">
+      <Filter>Public\Renderer\DirectX</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Renderer\DirectX\Utility\d3dx12.h">
+      <Filter>Public\Renderer\DirectX\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Renderer\DirectX\Utility\DX12Helper.h">
+      <Filter>Public\Renderer\DirectX\Utility</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -23,5 +65,19 @@
     <ClCompile Include="Source\Private\pch.cpp">
       <Filter>Private</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Private\Renderer\Core\SomFramework.cpp">
+      <Filter>Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Private\Renderer\DirectX\SomFramework_DX11.cpp">
+      <Filter>Private\DirectX</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Private\Renderer\DirectX\SomFramework_DX12.cpp">
+      <Filter>Private\DirectX</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="Shaders\Tutorial02.fx">
+      <Filter>Shaders</Filter>
+    </FxCompile>
   </ItemGroup>
 </Project>

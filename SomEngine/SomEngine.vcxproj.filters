@@ -19,9 +19,6 @@
     <Filter Include="Engine\SomFramework\Libraries\Interface">
       <UniqueIdentifier>{20dc23d9-9e0e-4119-9bbb-f2e627030476}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Shaders">
-      <UniqueIdentifier>{348c8bdb-6889-4a64-87cb-cc2ed88aa1fc}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Engine\SomFramework\GameObject">
       <UniqueIdentifier>{8744b427-17d7-4a1f-b3ad-8f2984491733}</UniqueIdentifier>
     </Filter>
@@ -45,21 +42,6 @@
     </Filter>
     <Filter Include="Engine\SomFramework\Renderer\SoftRenderer">
       <UniqueIdentifier>{00251de8-d0ae-4a97-9fdf-82be990a46a5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\SomFramework\Renderer\Core">
-      <UniqueIdentifier>{32339df1-e50d-4d3d-8be8-dd3d8c4b2d53}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\SomFramework\Renderer\DirectX">
-      <UniqueIdentifier>{cbd980ce-4cf4-4fd3-b52f-4cff286b4e4f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\SomFramework\Renderer\DirectX\DX11">
-      <UniqueIdentifier>{23c206f3-b9ee-4688-8ca1-0411c5092078}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\SomFramework\Renderer\DirectX\DX12">
-      <UniqueIdentifier>{976e550d-cdb8-4cc0-9dfa-9f889efed1fe}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\SomFramework\Renderer\DirectX\Utility">
-      <UniqueIdentifier>{f3b4f18f-af53-4330-905b-c505572c0b9f}</UniqueIdentifier>
     </Filter>
     <Filter Include="Engine\SomFramework\Managers">
       <UniqueIdentifier>{c2efacc2-189d-4acd-98bc-aa8950289214}</UniqueIdentifier>
@@ -104,27 +86,6 @@
     </ClInclude>
     <ClInclude Include="Source\Engine\SomFramework\GameObject\Object\GameObject.h">
       <Filter>Engine\SomFramework\GameObject\Object</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Renderer\Core\SomFramework.h">
-      <Filter>Engine\SomFramework\Renderer\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Renderer\DirectX\RendererLibrary_DX11.h">
-      <Filter>Engine\SomFramework\Renderer\DirectX\DX11</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Renderer\DirectX\SomFramework_DX11.h">
-      <Filter>Engine\SomFramework\Renderer\DirectX\DX11</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Renderer\DirectX\RendererLibrary_DX12.h">
-      <Filter>Engine\SomFramework\Renderer\DirectX\DX12</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Renderer\DirectX\SomFramework_DX12.h">
-      <Filter>Engine\SomFramework\Renderer\DirectX\DX12</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Renderer\DirectX\Utility\d3dx12.h">
-      <Filter>Engine\SomFramework\Renderer\DirectX\Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SomFramework\Renderer\DirectX\Utility\DX12Helper.h">
-      <Filter>Engine\SomFramework\Renderer\DirectX\Utility</Filter>
     </ClInclude>
     <ClInclude Include="Source\Engine\SomFramework\Renderer\SoftRenderer\SomFramework_SR.h">
       <Filter>Engine\SomFramework\Renderer\SoftRenderer</Filter>
@@ -173,15 +134,6 @@
     <ClCompile Include="Source\Engine\SomFramework\GameObject\Object\GameObject.cpp">
       <Filter>Engine\SomFramework\GameObject\Object</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Engine\SomFramework\Renderer\Core\SomFramework.cpp">
-      <Filter>Engine\SomFramework\Renderer\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Engine\SomFramework\Renderer\DirectX\SomFramework_DX11.cpp">
-      <Filter>Engine\SomFramework\Renderer\DirectX\DX11</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Engine\SomFramework\Renderer\DirectX\SomFramework_DX12.cpp">
-      <Filter>Engine\SomFramework\Renderer\DirectX\DX12</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Engine\SomFramework\Renderer\SoftRenderer\SomFramework_SR.cpp">
       <Filter>Engine\SomFramework\Renderer\SoftRenderer</Filter>
     </ClCompile>
@@ -213,10 +165,5 @@
     <ResourceCompile Include="Source\Engine\Resource\SomEngine.rc">
       <Filter>Engine\Resource</Filter>
     </ResourceCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <FxCompile Include="Shaders\Tutorial02.fx">
-      <Filter>Shaders</Filter>
-    </FxCompile>
   </ItemGroup>
 </Project>
