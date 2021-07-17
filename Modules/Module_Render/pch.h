@@ -4,6 +4,7 @@
 #define PCH_H
 
 // 여기에 미리 컴파일하려는 헤더 추가
+#include "Module_Math.h"
 #include "Module_Render.h"
 
 #endif //PCH_H

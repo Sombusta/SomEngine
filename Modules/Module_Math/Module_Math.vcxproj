@@ -92,9 +92,9 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)\Source</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\Source\Public;$(ProjectDir)\Source\Private</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -110,9 +110,9 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)\Source</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\Source\Public;$(ProjectDir)\Source\Private</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -157,31 +157,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Module_Math.h" />
-    <ClInclude Include="pch.h" />
-    <ClInclude Include="Source\Color32.h" />
-    <ClInclude Include="Source\LinearColor.h" />
-    <ClInclude Include="Source\MathUtility.h" />
-    <ClInclude Include="Source\Matrix.h" />
-    <ClInclude Include="Source\Matrix2D.h" />
-    <ClInclude Include="Source\Matrix3D.h" />
-    <ClInclude Include="Source\Point2D.h" />
-    <ClInclude Include="Source\Vector.h" />
-    <ClInclude Include="Source\Vector2D.h" />
-    <ClInclude Include="Source\Vector4.h" />
-    <ClInclude Include="Source\Vertex.h" />
+    <ClInclude Include="Source\Public\Color32.h" />
+    <ClInclude Include="Source\Public\CoreDefinition.h" />
+    <ClInclude Include="Source\Public\LinearColor.h" />
+    <ClInclude Include="Source\Public\MathUtility.h" />
+    <ClInclude Include="Source\Public\Matrix.h" />
+    <ClInclude Include="Source\Public\Matrix2D.h" />
+    <ClInclude Include="Source\Public\Matrix3D.h" />
+    <ClInclude Include="Source\Public\Module_Math.h" />
+    <ClInclude Include="Source\Public\pch.h" />
+    <ClInclude Include="Source\Public\Point2D.h" />
+    <ClInclude Include="Source\Public\Vector.h" />
+    <ClInclude Include="Source\Public\Vector2D.h" />
+    <ClInclude Include="Source\Public\Vector4.h" />
+    <ClInclude Include="Source\Public\Vertex.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Module_Math.cpp" />
-    <ClCompile Include="pch.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="Source\LinearColor.cpp" />
-    <ClCompile Include="Source\MathUtility.cpp" />
-    <ClCompile Include="Source\Vector2D.cpp" />
+    <ClCompile Include="Source\Private\LinearColor.cpp" />
+    <ClCompile Include="Source\Private\MathUtility.cpp" />
+    <ClCompile Include="Source\Private\Module_Math.cpp" />
+    <ClCompile Include="Source\Private\pch.cpp" />
+    <ClCompile Include="Source\Private\Vector2D.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

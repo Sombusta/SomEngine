@@ -16,24 +16,13 @@
 #include <vector>
 #include <iterator>
 
-typedef unsigned char		BYTE;		// 부호 없는 8비트
-typedef unsigned int		UINT32;		// 부호 없는 32비트
-typedef unsigned long long	UINT64;		// 부호 없는 64비트.
-typedef signed long long	INT64;	// 부호 있는 64비트.
+// SomWorks :D // 
 
-#define SMALL_NUMBER		(1.e-8f)
-#define KINDA_SMALL_NUMBER	(1.e-4f)
-
-#if defined(PLATFORM_WINDOWS)
-#define FORCEINLINE __forceinline
-#endif
-
-#if !defined(FORCEINLINE)
-#define FORCEINLINE inline
-#endif
-
-// SomWorks :D // Math Headers
+// Math Headers
+#include "CoreDefinition.h"
 #include "MathUtility.h"
+
+// Containers
 #include "Point2D.h"
 #include "Vector2D.h"
 #include "Vector.h"

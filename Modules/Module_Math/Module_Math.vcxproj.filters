@@ -7,67 +7,72 @@
     <Filter Include="Public">
       <UniqueIdentifier>{75975b9b-39d5-45fb-9993-81fe8eee28f4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Main">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="Public\Containers">
+      <UniqueIdentifier>{689c9183-bd3f-4cdf-99dd-ced23e64cae7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\Containers">
+      <UniqueIdentifier>{99226517-155e-4907-ab86-4f685a4f8983}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="pch.h">
-      <Filter>Main</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Color32.h">
+    <ClInclude Include="Source\Public\MathUtility.h">
       <Filter>Public</Filter>
     </ClInclude>
-    <ClInclude Include="Source\LinearColor.h">
+    <ClInclude Include="Source\Public\Color32.h">
+      <Filter>Public\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\LinearColor.h">
+      <Filter>Public\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Matrix.h">
+      <Filter>Public\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Matrix2D.h">
+      <Filter>Public\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Matrix3D.h">
+      <Filter>Public\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Point2D.h">
+      <Filter>Public\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Vector.h">
+      <Filter>Public\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Vector2D.h">
+      <Filter>Public\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Vector4.h">
+      <Filter>Public\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Vertex.h">
+      <Filter>Public\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\CoreDefinition.h">
       <Filter>Public</Filter>
     </ClInclude>
-    <ClInclude Include="Source\MathUtility.h">
+    <ClInclude Include="Source\Public\Module_Math.h">
       <Filter>Public</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Matrix.h">
+    <ClInclude Include="Source\Public\pch.h">
       <Filter>Public</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Matrix2D.h">
-      <Filter>Public</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Matrix3D.h">
-      <Filter>Public</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Point2D.h">
-      <Filter>Public</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Vector.h">
-      <Filter>Public</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Vector2D.h">
-      <Filter>Public</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Vector4.h">
-      <Filter>Public</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Vertex.h">
-      <Filter>Public</Filter>
-    </ClInclude>
-    <ClInclude Include="Module_Math.h">
-      <Filter>Main</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="pch.cpp">
-      <Filter>Main</Filter>
+    <ClCompile Include="Source\Private\LinearColor.cpp">
+      <Filter>Private\Containers</Filter>
     </ClCompile>
-    <ClCompile Include="Source\LinearColor.cpp">
+    <ClCompile Include="Source\Private\Vector2D.cpp">
+      <Filter>Private\Containers</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Private\MathUtility.cpp">
       <Filter>Private</Filter>
     </ClCompile>
-    <ClCompile Include="Source\MathUtility.cpp">
+    <ClCompile Include="Source\Private\Module_Math.cpp">
       <Filter>Private</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Vector2D.cpp">
+    <ClCompile Include="Source\Private\pch.cpp">
       <Filter>Private</Filter>
-    </ClCompile>
-    <ClCompile Include="Module_Math.cpp">
-      <Filter>Main</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

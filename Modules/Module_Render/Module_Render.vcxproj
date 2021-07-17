@@ -94,7 +94,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)\Source</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)\Source\Private;$(ProjectDir)\Source\Public;$(SolutionDir)\Modules\Module_Math;$(SolutionDir)\Modules\Module_Math\Source\Public</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -112,7 +112,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)\Source</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)\Source\Private;$(ProjectDir)\Source\Public;$(SolutionDir)\Modules\Module_Math;$(SolutionDir)\Modules\Module_Math\Source\Public</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>
