@@ -9,7 +9,7 @@
 class SomFramework_SR
 {
 public:
-	SomFramework_SR();
+	SomFramework_SR() = default;
 	~SomFramework_SR();
 
 	// SomWorks :D // 소프트 렌더러 셋업

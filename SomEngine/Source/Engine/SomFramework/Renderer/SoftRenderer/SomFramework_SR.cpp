@@ -93,7 +93,7 @@ void SomFramework_SR::BufferClear()
 	}
 
 	// SomWorks :D // 그리드 십자선 그리기
-	Instance->DrawGrid2D();
+	// Instance->DrawGrid2D();
 }
 
 // SomWorks :D // 버퍼 스왑
@@ -137,5 +137,4 @@ void SomFramework_SR::DrawGrid2D()
 	// 월드 축 그리기
 	_RSI->DrawFullHorizontalLine(screenHalfSize.Y, FLinearColor::Red);
 	_RSI->DrawFullVerticalLine(screenHalfSize.X, FLinearColor::Green);*/
-
 }

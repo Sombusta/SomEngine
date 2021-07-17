@@ -28,6 +28,12 @@
     <Filter Include="Private\DirectX">
       <UniqueIdentifier>{6f7ddcc9-2627-4af6-b6b3-caae85785432}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Public\Renderer\DirectX\DX11">
+      <UniqueIdentifier>{b2d4350d-c0a2-4755-bc56-8d6dbf0aa690}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Public\Renderer\DirectX\DX12">
+      <UniqueIdentifier>{b52bc649-1463-4159-8a29-b609ea8a9592}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Public\Module_Render.h">
@@ -39,23 +45,23 @@
     <ClInclude Include="Source\Public\Renderer\Core\SomFramework.h">
       <Filter>Public\Renderer\Core</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Public\Renderer\DirectX\RendererLibrary_DX11.h">
-      <Filter>Public\Renderer\DirectX</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Public\Renderer\DirectX\RendererLibrary_DX12.h">
-      <Filter>Public\Renderer\DirectX</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Public\Renderer\DirectX\SomFramework_DX11.h">
-      <Filter>Public\Renderer\DirectX</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Public\Renderer\DirectX\SomFramework_DX12.h">
-      <Filter>Public\Renderer\DirectX</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Public\Renderer\DirectX\Utility\d3dx12.h">
       <Filter>Public\Renderer\DirectX\Utility</Filter>
     </ClInclude>
     <ClInclude Include="Source\Public\Renderer\DirectX\Utility\DX12Helper.h">
       <Filter>Public\Renderer\DirectX\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Renderer\DirectX\RendererLibrary_DX11.h">
+      <Filter>Public\Renderer\DirectX\DX11</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Renderer\DirectX\SomFramework_DX11.h">
+      <Filter>Public\Renderer\DirectX\DX11</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Renderer\DirectX\RendererLibrary_DX12.h">
+      <Filter>Public\Renderer\DirectX\DX12</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Renderer\DirectX\SomFramework_DX12.h">
+      <Filter>Public\Renderer\DirectX\DX12</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
