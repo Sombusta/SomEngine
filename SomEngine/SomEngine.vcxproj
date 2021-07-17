@@ -134,7 +134,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>$(SolutionDir)\Build\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\Saved\$(Configuration)\SomEngine\</IntDir>
-    <IncludePath>$(WindowsSDK_IncludePath);$(DXSDK_DIR)Include;$(SolutionDir)\Modules\Module_Math\Source;$(SolutionDir)\Modules\Module_Math\Source\Public;$(SolutionDir)\Modules\Module_Render;$(SolutionDir)\Modules\Module_Render\Source;$(IncludePath)</IncludePath>
+    <IncludePath>$(WindowsSDK_IncludePath);$(DXSDK_DIR)Include;$(SolutionDir)\Modules\Module_Math\Source\Public;$(SolutionDir)\Modules\Module_Render\Source\Public;$(IncludePath)</IncludePath>
     <LibraryPath>$(WindowsSDK_LibraryPath_x86);$(DXSDK_DIR)Lib\x86;$(SolutionDir)\Build\$(Platform)\$(Configuration)\Library;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -148,7 +148,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)\Build\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\Saved\$(Configuration)\SomEngine\</IntDir>
-    <IncludePath>$(WindowsSDK_IncludePath);$(DXSDK_DIR)Include;$(SolutionDir)\Modules\Module_Math\Source;$(SolutionDir)\Modules\Module_Math\Source\Public;$(SolutionDir)\Modules\Module_Render;$(SolutionDir)\Modules\Module_Render\Source;$(IncludePath)</IncludePath>
+    <IncludePath>$(WindowsSDK_IncludePath);$(DXSDK_DIR)Include;$(SolutionDir)\Modules\Module_Math\Source\Public;$(SolutionDir)\Modules\Module_Render\Source\Public;$(IncludePath)</IncludePath>
     <LibraryPath>$(WindowsSDK_LibraryPath_x86);$(DXSDK_DIR)Lib\x86;$(SolutionDir)\Build\$(Platform)\$(Configuration)\Library;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">

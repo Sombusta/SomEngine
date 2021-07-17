@@ -1,25 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Main">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="Private">
+      <UniqueIdentifier>{e0195a54-fefc-4203-bd94-58fe1ab522a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Public">
+      <UniqueIdentifier>{4735ad39-404f-463e-a2ab-d95ae3bd3e89}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="pch.h">
-      <Filter>Main</Filter>
+    <ClInclude Include="Source\Public\Module_Render.h">
+      <Filter>Public</Filter>
     </ClInclude>
-    <ClInclude Include="Module_Render.h">
-      <Filter>Main</Filter>
+    <ClInclude Include="Source\Public\pch.h">
+      <Filter>Public</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Module_Render.cpp">
-      <Filter>Main</Filter>
+    <ClCompile Include="Source\Private\Module_Render.cpp">
+      <Filter>Private</Filter>
     </ClCompile>
-    <ClCompile Include="pch.cpp">
-      <Filter>Main</Filter>
+    <ClCompile Include="Source\Private\pch.cpp">
+      <Filter>Private</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
