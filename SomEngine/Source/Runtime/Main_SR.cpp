@@ -33,8 +33,7 @@ void Main_SR::Update(float DeltaTime)
 
 	// [0,1]을 활용해 주기적으로 크기를 반복하기
 	_CurrentScale = FMath::Lerp(scaleMin, scaleMax, alpha);
-
-	
+		
 }
 
 void Main_SR::Render()

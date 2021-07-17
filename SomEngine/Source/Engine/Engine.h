@@ -51,8 +51,9 @@ using std::list;
 #define WIN_HEIGHT 720
 #define WIN_TITLE L"SomEngine_Win32"
 
-// SomWorks :D // Math
+// SomWorks :D // Module
 #include "Module_Math.h"
+#include "Module_Render.h"
 
 // SomWorks :D // 컨테이너
 #include "SomFramework/Containers/Render/Texture/Texture2D.h"
