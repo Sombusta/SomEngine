@@ -18,6 +18,18 @@ void FSomDrawLibrary::DrawPixel(int x, int y, FColor PixelColor)
 	ULONG* dest = (ULONG*)SomFramework_SR::GetInstance()->Bits;
 
 	DWORD offset = WIN_WIDTH * WIN_HEIGHT / 2 + WIN_WIDTH / 2 + x + WIN_WIDTH * -y; // SomWidth * x + SomHeight * y;
+	
+	*(dest + offset) = PixelColor.GetColor(); // SomFramework_SR::GetInstance()->CurrentColor;
+}
+
+void FSomDrawLibrary::DrawPixel(FPoint2D PointLocation, FColor PixelColor)
+{
+	if (!FSomMathLibrary::IsInRange(PointLocation.X, PointLocation.Y)) return;
+
+	ULONG* dest = (ULONG*)SomFramework_SR::GetInstance()->Bits;
+
+	DWORD offset = WIN_WIDTH * WIN_HEIGHT / 2 + WIN_WIDTH / 2 + PointLocation.X + WIN_WIDTH * -PointLocation .Y; // SomWidth * x + SomHeight * y;
+	
 	*(dest + offset) = PixelColor.GetColor(); // SomFramework_SR::GetInstance()->CurrentColor;
 }
 

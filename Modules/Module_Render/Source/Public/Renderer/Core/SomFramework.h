@@ -1,4 +1,5 @@
-// Copyright (c) 2014-2020 Sombusta, All Rights Reserved.
+// Copyright (c) 2014-2021 Sombusta, All Rights Reserved.
+// SomWorks :D // GDI : Graphics Device Interface
 
 #pragma once
 

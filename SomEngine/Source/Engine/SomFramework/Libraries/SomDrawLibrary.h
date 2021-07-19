@@ -12,6 +12,8 @@ public:
 
 	// SomWorks :D // 픽셀 그리기 함수
 	static void DrawPixel(int x, int y, FColor PixelColor = FColor(255, 255, 255));
+	
+	static void DrawPixel(FPoint2D PointLocation, FColor PixelColor = FColor(255, 255, 255));
 
 	// SomWorks :D // 직선의 방정식만 가지고 제작된 선 긋기 알고리즘
 	static void DrawLine(FPoint2D Point1, FPoint2D Point2);

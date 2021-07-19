@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2020 Sombusta, All Rights Reserved.
+// Copyright (c) 2014-2021 Sombusta, All Rights Reserved.
 
 #pragma once
 
@@ -17,13 +17,11 @@ private:
 	static HWND m_hwnd;
 	static HINSTANCE m_hInstance;
 	static class SomFramework* TargetFramework;
-	
-	static bool bUseSoftRenderer;
-
+		
 protected:	
 	static LRESULT CALLBACK WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
 
 public:
-	static HWND GetHwnd() { return m_hwnd; }
-	static HINSTANCE GetHInstnace() { return m_hInstance; }
+	static inline HWND GetHwnd() { return m_hwnd; }
+	static inline HINSTANCE GetHInstnace() { return m_hInstance; }
 };

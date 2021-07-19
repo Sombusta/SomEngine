@@ -16,6 +16,12 @@ public:
 
 	FVector2D(int x, int y) : X(static_cast<float>(x)), Y(static_cast<float>(y)) {}
 
+	explicit FVector2D(const FPoint2D& InPoint2D)
+	{
+		X = static_cast<float>(InPoint2D.X);
+		Y = static_cast<float>(InPoint2D.Y);
+	}
+
 	FORCEINLINE FVector2D& operator=(const FVector2D& Value)
 	{
 		if (this == &Value) {
@@ -126,6 +132,14 @@ public:
 	FORCEINLINE static float DotProduct(const FVector2D& v1, const FVector2D& v2)
 	{
 		return (v1.X * v2.X) + (v1.Y * v2.Y);
+	}
+
+	FORCEINLINE FPoint2D ToPoint2D() const
+	{
+		const float PointX = X;
+		const float PointY = Y;
+
+		return FPoint2D(PointX, PointY);
 	}
 
 } FVector2D;

@@ -63,6 +63,9 @@
     <ClInclude Include="Source\Public\Renderer\DirectX\SomFramework_DX12.h">
       <Filter>Public\Renderer\DirectX\DX12</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Public\Renderer\Core\DeltaTimeManager.h">
+      <Filter>Public\Renderer\Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Private\Module_Render.cpp">
@@ -79,6 +82,9 @@
     </ClCompile>
     <ClCompile Include="Source\Private\Renderer\DirectX\SomFramework_DX12.cpp">
       <Filter>Private\DirectX</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Private\Renderer\Core\DeltaTimeManager.cpp">
+      <Filter>Private\Core</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

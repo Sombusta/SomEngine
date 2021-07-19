@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClInclude Include="Source\Public\Module_Render.h" />
     <ClInclude Include="Source\Public\pch.h" />
+    <ClInclude Include="Source\Public\Renderer\Core\DeltaTimeManager.h" />
     <ClInclude Include="Source\Public\Renderer\Core\SomFramework.h" />
     <ClInclude Include="Source\Public\Renderer\DirectX\RendererLibrary_DX11.h" />
     <ClInclude Include="Source\Public\Renderer\DirectX\RendererLibrary_DX12.h" />
@@ -32,6 +33,7 @@
   <ItemGroup>
     <ClCompile Include="Source\Private\Module_Render.cpp" />
     <ClCompile Include="Source\Private\pch.cpp" />
+    <ClCompile Include="Source\Private\Renderer\Core\DeltaTimeManager.cpp" />
     <ClCompile Include="Source\Private\Renderer\Core\SomFramework.cpp" />
     <ClCompile Include="Source\Private\Renderer\DirectX\SomFramework_DX11.cpp" />
     <ClCompile Include="Source\Private\Renderer\DirectX\SomFramework_DX12.cpp" />
@@ -100,15 +102,15 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)\Build\$(Platform)\$(Configuration)\Library\</OutDir>
     <IntDir>$(SolutionDir)\Saved\$(Configuration)\Module_Render\</IntDir>
-    <IncludePath>$(DXSDK_DIR)Include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(DXSDK_DIR)Lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(DXSDK_DIR)Include;$(SolutionDir)\Modules\Module_Math\Source\Public;$(IncludePath)</IncludePath>
+    <LibraryPath>$(DXSDK_DIR)Lib\x86;$(SolutionDir)\Build\$(Platform)\$(Configuration)\Library;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)\Build\$(Platform)\$(Configuration)\Library\</OutDir>
     <IntDir>$(SolutionDir)\Saved\$(Configuration)\Module_Render\</IntDir>
-    <IncludePath>$(DXSDK_DIR)Include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(DXSDK_DIR)Lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(DXSDK_DIR)Include;$(SolutionDir)\Modules\Module_Math\Source\Public;$(IncludePath)</IncludePath>
+    <LibraryPath>$(DXSDK_DIR)Lib\x86;$(SolutionDir)\Build\$(Platform)\$(Configuration)\Library;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>

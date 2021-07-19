@@ -8,7 +8,6 @@ HWND Win32Application::m_hwnd = nullptr;
 HINSTANCE Win32Application::m_hInstance = nullptr;
 bool Win32Application::bIsActive = false;
 SomFramework* Win32Application::TargetFramework = nullptr;
-bool Win32Application::bUseSoftRenderer = true;
 
 INT_PTR CALLBACK About(HWND, UINT, WPARAM, LPARAM);
 
@@ -18,7 +17,8 @@ int Win32Application::Run(HINSTANCE hInstance, int nCmdShow, SomFramework* Rende
 
 	// SomWorks :D // 렌더러 셋업
 	TargetFramework = RenderFramework;
-	bUseSoftRenderer = RenderFramework == nullptr ? true : false;
+	
+	const bool bUseSoftRenderer = RenderFramework == nullptr ? true : false;
 
 	// Parse the command line parameters
 	int argc;
@@ -56,7 +56,7 @@ int Win32Application::Run(HINSTANCE hInstance, int nCmdShow, SomFramework* Rende
 	// screenWidth에는 1920이 screenHeight에는 1080이 대입됩니다.
 	int ScreenWidth = GetSystemMetrics(SM_CXSCREEN);
 	int ScreenHeight = GetSystemMetrics(SM_CYSCREEN);
-
+			
 	// Create the window and store a handle to it.
 	m_hwnd = CreateWindow(
 		WIN_TITLE,
@@ -74,7 +74,7 @@ int Win32Application::Run(HINSTANCE hInstance, int nCmdShow, SomFramework* Rende
 	// SomWorks :D // 초기화 단계
 	if (bUseSoftRenderer)
 	{
-		// SomWorks :D // SoftRender GDI Initialize
+		// SoftRender GDI Initialize
 		SomFramework_SR::InitGDI(m_hwnd);
 	}
 	else
@@ -88,9 +88,10 @@ int Win32Application::Run(HINSTANCE hInstance, int nCmdShow, SomFramework* Rende
 	// SomWorks :D // Main sample loop.
 	MSG msg = {};
 
-	// SomWorks :D // 이전 시간
-	DWORD PreviousTime = timeGetTime();
+	FDeltaTimeManager* DeltaTimeManager = new FDeltaTimeManager;
 
+	DeltaTimeManager->Initialize();
+	
 	// SomWorks :D // 시스템 메인 루프
 	while (msg.message != WM_QUIT)
 	{
@@ -102,22 +103,24 @@ int Win32Application::Run(HINSTANCE hInstance, int nCmdShow, SomFramework* Rende
 		}
 		else if (bIsActive)
 		{
-			// SomWorks :D // 현재 시간
-			DWORD CurrentTime = timeGetTime();
+			DeltaTimeManager->CalcFrame();
+			
+			const float FPS = DeltaTimeManager->GetFPS();
+			const float Ms = DeltaTimeManager->GetMs();
+			const float DeltaTime = DeltaTimeManager->GetDeltaTime();
 
-			// SomWorks :D // 밀리 세컨드 단위, DeltaTime
-			float ElapsedTime = (CurrentTime - PreviousTime) / 1000.f;
-
-			PreviousTime = CurrentTime;
+			WCHAR NewTitle[100];
+			swprintf_s(NewTitle, 100, L"%s [%.2f FPS] [%.2f ms]", WIN_TITLE, FPS, Ms);
+			SetWindowText(m_hwnd, NewTitle);
 
 			if (bUseSoftRenderer)
 			{
-				// SomWorks :D // SoftRender 메인 업데이트, 향후에 DeltaTime 관련 구현해야함. 현재는 0.01로 고정
-				SomFramework_SR::UpdateGDI(0.01f);
+				// SomWorks :D // SoftRender 메인 업데이트
+				SomFramework_SR::UpdateGDI(DeltaTime);
 			}
 			else
 			{
-				TargetFramework->OnUpdate(0.01f);
+				TargetFramework->OnUpdate(DeltaTime);
 				TargetFramework->OnRender();
 			}
 		}
@@ -126,6 +129,8 @@ int Win32Application::Run(HINSTANCE hInstance, int nCmdShow, SomFramework* Rende
 			WaitMessage();
 		}
 	}
+
+	delete DeltaTimeManager;
 
 	if (bUseSoftRenderer)
 	{

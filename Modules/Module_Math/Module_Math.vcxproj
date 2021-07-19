@@ -159,6 +159,7 @@
   <ItemGroup>
     <ClInclude Include="Source\Public\Color32.h" />
     <ClInclude Include="Source\Public\CoreDefinition.h" />
+    <ClInclude Include="Source\Public\HSVColor.h" />
     <ClInclude Include="Source\Public\LinearColor.h" />
     <ClInclude Include="Source\Public\MathUtility.h" />
     <ClInclude Include="Source\Public\Matrix.h" />

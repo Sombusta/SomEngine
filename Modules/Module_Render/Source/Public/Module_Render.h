@@ -56,6 +56,7 @@ typedef signed long long	INT64;	// 부호 있는 64비트.
 #endif
 
 // SomWorks :D // Som Framework Setup
+#include "Renderer/Core/DeltaTimeManager.h"
 #include "Renderer/Core/SomFramework.h"
 
 // SomWorks :D // Rendering Framework Setup

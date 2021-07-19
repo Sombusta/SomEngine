@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019 Sombusta, All Rights Reserved.
+// Copyright (c) 2014-2021 Sombusta, All Rights Reserved.
 
 // SomWorks :D // GDI : Graphics Device Interface
 
@@ -9,7 +9,7 @@
 class SomFramework_SR
 {
 public:
-	SomFramework_SR() = default;
+	SomFramework_SR();
 	~SomFramework_SR();
 
 	// SomWorks :D // 소프트 렌더러 셋업

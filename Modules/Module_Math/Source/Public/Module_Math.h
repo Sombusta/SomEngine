@@ -33,3 +33,4 @@
 #include "Color32.h"
 #include "LinearColor.h"
 #include "Vertex.h"
+#include "HSVColor.h"

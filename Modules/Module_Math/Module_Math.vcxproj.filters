@@ -57,6 +57,9 @@
     <ClInclude Include="Source\Public\pch.h">
       <Filter>Public</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Public\HSVColor.h">
+      <Filter>Public\Containers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Private\LinearColor.cpp">

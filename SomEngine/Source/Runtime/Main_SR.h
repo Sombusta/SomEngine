@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019 Sombusta, All Rights Reserved.
+// Copyright (c) 2014-2021 Sombusta, All Rights Reserved.
 
 #pragma once
 
@@ -23,6 +23,7 @@ private:
 	float _CurrentTime = 0.f;
 	float _CurrentDegree = 0.f;
 	FVector2D _CurrentPosition = FVector2D::Zero;
+	float _UpdateLerpValue = 0.f;
 
 protected:
 
