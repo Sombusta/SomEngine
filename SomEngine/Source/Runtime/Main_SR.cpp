@@ -20,6 +20,20 @@ void Main_SR::Init()
 
 void Main_SR::Update(float DeltaTime)
 {
+	
+}
+
+void Main_SR::Render()
+{
+	
+}
+
+void Main_SR::Terminate()
+{
+}
+
+void Main_SR::Update_A(float DeltaTime)
+{
 	// 게임 로직에만 사용하는 변수
 	static float moveSpeed = 100.f;
 	static float scaleMin = 3.f;
@@ -35,12 +49,12 @@ void Main_SR::Update(float DeltaTime)
 	float alpha = (sinf(currentRad) + 1) * 0.5f;
 
 	// [0,1]을 활용해 주기적으로 크기를 반복하기
-	_CurrentScale = FMath::Lerp(scaleMin, scaleMax, alpha);		
+	_CurrentScale = FMath::Lerp(scaleMin, scaleMax, alpha);
 
 	_UpdateLerpValue = FMath::Lerp(0.0f, 1.0f, alpha);
 }
 
-void Main_SR::Render()
+void Main_SR::Render_A()
 {
 	static float increment = 0.001f;
 	float rad = 0.f;
@@ -92,7 +106,7 @@ void Main_SR::Render()
 		// 하트에 이동, 회전 값을 적용하기
 		//Vector2 rotatedTarget = target;  // 코드 수정
 		// FVector2D rotatedTarget(target.X * cos - target.Y * sin, target.X * sin + target.Y * cos);
-		
+
 		//rotatedTarget += _CurrentPosition;
 
 		hsv.H += (increment * FMath::InvPI * 0.5f);
@@ -111,8 +125,4 @@ void Main_SR::Render()
 	}
 
 	i = 0;
-}
-
-void Main_SR::Terminate()
-{
 }

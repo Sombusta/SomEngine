@@ -15,6 +15,9 @@ public:
 	virtual void Render() override;
 	virtual void Terminate() override;
 
+	void Update_A(float DeltaTime);
+	void Render_A();
+
 private:
 	vector<FPoint2D> Points;
 
