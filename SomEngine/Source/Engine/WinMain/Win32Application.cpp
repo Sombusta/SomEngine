@@ -75,7 +75,7 @@ int Win32Application::Run(HINSTANCE hInstance, int nCmdShow, SomFramework* Rende
 	if (bUseSoftRenderer)
 	{
 		// SoftRender GDI Initialize
-		SomFramework_SR::InitGDI(m_hwnd);
+		SomFramework_SR::InitGDI(m_hwnd, WIN_WIDTH, WIN_HEIGHT);
 	}
 	else
 	{

@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019 Sombusta, All Rights Reserved.
+// Copyright (c) 2014-2021 Sombusta, All Rights Reserved.
 
 #include "SomFramework_SR.h"
 
@@ -13,7 +13,7 @@ SomFramework_SR::~SomFramework_SR()
 }
 
 // SomWorks :D // GDI 오브젝트 생성
-void SomFramework_SR::InitGDI(HWND hWnd)
+void SomFramework_SR::InitGDI(HWND hWnd, int width, int height)
 {
 	if (Instance == nullptr)
 	{
@@ -22,11 +22,14 @@ void SomFramework_SR::InitGDI(HWND hWnd)
 		Instance->hScreenDC = GetDC(hWnd);
 		Instance->hMemoryDC = CreateCompatibleDC(Instance->hScreenDC);
 
+		Instance->Width = width;
+		Instance->Height = height;
+
 		BITMAPINFO bmi;
 		memset(&bmi, 0, sizeof(BITMAPINFO));
 		bmi.bmiHeader.biSize = sizeof(BITMAPINFOHEADER);
-		bmi.bmiHeader.biWidth = WIN_WIDTH;
-		bmi.bmiHeader.biHeight = -WIN_HEIGHT;
+		bmi.bmiHeader.biWidth = width;
+		bmi.bmiHeader.biHeight = -height;
 		bmi.bmiHeader.biPlanes = 1;
 		bmi.bmiHeader.biBitCount = 32;
 		bmi.bmiHeader.biCompression = BI_RGB;
@@ -79,12 +82,15 @@ void SomFramework_SR::ReleaseGDI(HWND hWnd)
 void SomFramework_SR::BufferClear()
 {
 	// SomWorks :D // 배경색
-	FColor BG_Color = FColor(32, 128, 255);
+	//FColor BG_Color = FColor(32, 128, 255);
+		
+	FColor BG_Color = FLinearColor::Black.ToColor32();
+	
 	ULONG BG_Pixel = BG_Color.GetColor();
 
 	ULONG* dest = (ULONG*)Bits;
 
-	DWORD bytecount = WIN_WIDTH * WIN_HEIGHT * sizeof(ULONG);
+	DWORD bytecount = Width * Height * sizeof(ULONG);
 	bytecount /= 4;
 
 	while (bytecount--)
@@ -99,14 +105,14 @@ void SomFramework_SR::BufferClear()
 // SomWorks :D // 버퍼 스왑
 void SomFramework_SR::BufferSwap()
 {
-	BitBlt(hScreenDC, 0, 0, WIN_WIDTH, WIN_HEIGHT, hMemoryDC, 0, 0, SRCCOPY);
+	BitBlt(hScreenDC, 0, 0, Width, Height, hMemoryDC, 0, 0, SRCCOPY);
 }
 
 // SomWorks :D // 그리드 십자선 그리기
 void SomFramework_SR::DrawGrid2D()
 {
-	FSomDrawLibrary::DrawLine_BA(FPoint2D(0 - WIN_WIDTH / 2, 0), FPoint2D(0 + WIN_WIDTH / 2, 0), FLinearColor::Red);
-	FSomDrawLibrary::DrawLine_BA(FPoint2D(0, 0 + WIN_HEIGHT / 2), FPoint2D(0, 0 - WIN_HEIGHT / 2), FLinearColor::Green);
+	FSomDrawLibrary::DrawLine_BA(FPoint2D(0 - Width / 2, 0), FPoint2D(0 + Width / 2, 0), FLinearColor::Red);
+	FSomDrawLibrary::DrawLine_BA(FPoint2D(0, 0 + Height / 2), FPoint2D(0, 0 - Height / 2), FLinearColor::Green);
 
 	// 그리드 색상
 	FLinearColor GridColor(FLinearColor(0.8f, 0.8f, 0.8f));

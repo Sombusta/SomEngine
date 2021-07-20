@@ -13,7 +13,7 @@ public:
 	~SomFramework_SR();
 
 	// SomWorks :D // ¼ÒÇÁÆ® ·»´õ·¯ ¼Â¾÷
-	static void InitGDI(HWND hWnd);
+	static void InitGDI(HWND hWnd, int width, int height);
 	static void UpdateGDI(float DeltaTime);
 	static void ReleaseGDI(HWND hWnd);
 
@@ -26,6 +26,9 @@ public:
 private:
 	// SomWorks :D // ½Ì±ÛÅÏ °´Ã¼
 	static SomFramework_SR* Instance;
+	
+	int Width;
+	int Height;
 
 protected:
 
