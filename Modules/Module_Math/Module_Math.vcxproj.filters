@@ -60,6 +60,9 @@
     <ClInclude Include="Source\Public\HSVColor.h">
       <Filter>Public\Containers</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Public\ScreenPoint2D.h">
+      <Filter>Public\Containers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Private\LinearColor.cpp">

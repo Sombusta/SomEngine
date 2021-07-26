@@ -168,6 +168,7 @@
     <ClInclude Include="Source\Public\Module_Math.h" />
     <ClInclude Include="Source\Public\pch.h" />
     <ClInclude Include="Source\Public\Point2D.h" />
+    <ClInclude Include="Source\Public\ScreenPoint2D.h" />
     <ClInclude Include="Source\Public\Vector.h" />
     <ClInclude Include="Source\Public\Vector2D.h" />
     <ClInclude Include="Source\Public\Vector4.h" />

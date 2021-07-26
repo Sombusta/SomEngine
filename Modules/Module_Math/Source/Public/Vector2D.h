@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019 Sombusta, All Rights Reserved.
+// Copyright (c) 2014-2021 Sombusta, All Rights Reserved.
 
 #pragma once
 

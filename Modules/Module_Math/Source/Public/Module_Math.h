@@ -34,3 +34,5 @@
 #include "LinearColor.h"
 #include "Vertex.h"
 #include "HSVColor.h"
+
+#include "ScreenPoint2D.h"
